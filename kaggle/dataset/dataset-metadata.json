@@ -6,7 +6,7 @@
       "name": "CC-BY-4.0"
     }
   ],
-  "subtitle": "Public release of derived tables, figures, and manuscript assets for ecological validation of a Digital Exposome Ageing Index in India",
+  "subtitle": "Derived outputs for DEAI ecological validation in India",
   "description": "This dataset contains the public release for the manuscript 'Development and ecological validation of a digital exposome ageing index for healthy ageing surveillance in India using LASI Wave 1'. It includes processed state-level tables, publication figures, manuscript assets, and reproducibility materials derived from publicly available aggregate sources. DEAI is an ecological surveillance index and should not be interpreted as an individual-level biological-age or clinical risk score.",
   "keywords": [
     "india",

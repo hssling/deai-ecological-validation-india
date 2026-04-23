@@ -9,13 +9,5 @@
   "enable_internet": false,
   "dataset_sources": [
     "jkhospital/deai-healthy-ageing-india-lasi-wave1"
-  ],
-  "keywords": [
-    "aging",
-    "ageing",
-    "india",
-    "lasi",
-    "public health",
-    "ecological analysis"
   ]
 }
