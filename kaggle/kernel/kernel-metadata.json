@@ -1,0 +1,21 @@
+{
+  "id": "jkhospital/deai-ecological-validation-notebook",
+  "title": "DEAI Ecological Validation Notebook",
+  "code_file": "deai_ecological_validation_public.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": false,
+  "enable_internet": false,
+  "dataset_sources": [
+    "jkhospital/deai-healthy-ageing-india-lasi-wave1"
+  ],
+  "keywords": [
+    "aging",
+    "ageing",
+    "india",
+    "lasi",
+    "public health",
+    "ecological analysis"
+  ]
+}

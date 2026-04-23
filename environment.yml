@@ -1,0 +1,45 @@
+name: deai
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - numpy=1.26.*
+  - pandas=2.2.*
+  - scipy=1.13.*
+  - scikit-learn=1.5.*
+  - statsmodels=0.14.*
+  - matplotlib=3.9.*
+  - seaborn=0.13.*
+  - plotly=5.22.*
+  - jupyterlab=4.*
+  - ipykernel
+  - pyyaml=6.*
+  - openpyxl
+  - xlrd
+  - requests
+  - tqdm
+  - joblib
+  - pyarrow
+  - fastparquet
+  - pytest
+  - pytest-cov
+  - black
+  - isort
+  - pip:
+    - xgboost==2.0.*
+    - lightgbm==4.*
+    - shap==0.45.*
+    - lifelines==0.28.*
+    - GEOparse==2.0.*
+    - pydeseq2==0.4.*
+    - gseapy==1.1.*
+    - missingno==0.5.*
+    - tableone==0.8.*
+    - dcurves==0.5.*
+    - prince==0.12.*
+    - factor-analyzer==0.5.*
+    - adjustText==1.0.*
+    - kaleido==0.2.*

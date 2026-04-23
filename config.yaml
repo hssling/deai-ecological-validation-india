@@ -1,0 +1,165 @@
+# =============================================================================
+# Digital Exposome Aging Index (DEAI) — Master Configuration
+# =============================================================================
+# All pipeline scripts read from this file via src/utils/config.py
+# Modify paths here; never hardcode paths in scripts.
+
+project:
+  name: "DEAI — Digital Exposome Aging Index"
+  version: "0.1.0"
+  seed: 42
+  date_run: "2026-04-22"
+
+paths:
+  data_raw: "data_raw"
+  data_processed: "data_processed"
+  metadata: "metadata"
+  results_tables: "results/tables"
+  results_figures: "results/figures"
+  results_supplement: "results/supplement"
+  logs: "logs"
+  docs: "docs"
+  manuscript: "manuscript"
+
+data_sources:
+  who_mortality:
+    url: "https://cdn.who.int/media/docs/default-source/gho-documents/global-health-estimates/ghe2019_life-tables.zip"
+    description: "WHO Global Health Estimates — Life tables 2019"
+    local_file: "data_raw/who_life_tables.zip"
+    accessible: true
+
+  global_burden:
+    url: "https://ghdx.healthdata.org/record/ihme-data/gbd-2019-cause-specific-mortality-rates-sex-age-country-region-global-1950-2019"
+    description: "GBD 2019 — cause-specific mortality (IHME)"
+    local_file: "data_raw/gbd_2019_mortality.csv"
+    accessible: false  # requires account; fallback = GBD compare tool CSV exports
+    fallback: "Use GBD Compare tool exports placed manually in data_raw/"
+
+  openaq_air_pollution:
+    url: "https://openaq.org/developers/api/"
+    description: "OpenAQ PM2.5 / PM10 time-series (API)"
+    local_file: "data_raw/openaq_pm25.csv"
+    accessible: true
+    api_key_env: "OPENAQ_API_KEY"
+
+  global_pm25:
+    url: "https://ghdx.healthdata.org/record/ihme-data/global-burden-disease-risk-factors-particulate-matter-air-pollution-1990-2019"
+    description: "IHME Global PM2.5 exposure estimates 1990–2019"
+    local_file: "data_raw/ihme_pm25_global.csv"
+    accessible: false
+    fallback: "Use WHO ambient air quality database CSV (free download)"
+
+  who_air_quality:
+    url: "https://www.who.int/data/gho/data/themes/air-pollution/who-ambient-air-quality-database"
+    description: "WHO Ambient Air Quality Database (city-level PM2.5)"
+    local_file: "data_raw/who_aaq_database.xlsx"
+    accessible: true
+
+  nfhs5_summary:
+    url: "https://dhsprogram.com/data/"
+    description: "NFHS-5 India summary indicators (DHS program)"
+    local_file: "data_raw/nfhs5_district_factsheets.csv"
+    accessible: true  # public factsheets; microdata requires registration
+    note: "District-level factsheets only; microdata at dhsprogram.com"
+
+  lancet_countdown:
+    url: "https://www.lancetcountdown.org/data-repository/"
+    description: "Lancet Countdown health-climate indicators"
+    local_file: "data_raw/lancet_countdown.csv"
+    accessible: true
+
+  geo_aging_gse:
+    - accession: "GSE65765"
+      description: "Blood transcriptomics across age spectrum (human)"
+      platform: "GPL10558"
+    - accession: "GSE40279"
+      description: "Methylation / expression ageing signatures (Hannum)"
+      platform: "GPL13534"
+    - accession: "GSE30272"
+      description: "Brain cortex ageing gene expression (Harvard)"
+      platform: "GPL4685"
+
+features:
+  exposome_domains:
+    - "air_pollution"
+    - "heat_stress"
+    - "urbanicity"
+    - "lifestyle_diet"
+    - "lifestyle_tobacco"
+    - "lifestyle_alcohol"
+    - "ses_education"
+    - "ses_income_proxy"
+    - "healthcare_access"
+
+  outcome_variables:
+    primary:
+      - "frailty_index_proxy"
+      - "multimorbidity_count"
+      - "disability_adl_proxy"
+      - "self_rated_health"
+    secondary:
+      - "mortality_risk_proxy"
+      - "healthy_life_expectancy_gap"
+
+  covariates:
+    - "age_years"
+    - "sex"
+    - "education_years"
+    - "ses_quintile"
+    - "region"
+    - "tobacco_ever"
+    - "alcohol_ever"
+
+models:
+  test_size: 0.20
+  val_size: 0.15
+  cv_folds: 5
+  random_state: 42
+  thresholds:
+    auc_minimum: 0.60
+    nri_report: true
+
+  xgboost:
+    n_estimators: 500
+    max_depth: 4
+    learning_rate: 0.05
+    subsample: 0.8
+    colsample_bytree: 0.8
+    early_stopping_rounds: 50
+
+  lightgbm:
+    n_estimators: 500
+    max_depth: 4
+    learning_rate: 0.05
+    num_leaves: 31
+
+  elastic_net:
+    l1_ratio: [0.1, 0.5, 0.7, 0.9, 0.95, 1.0]
+    max_iter: 10000
+
+deai:
+  versions:
+    - "knowledge_weighted"
+    - "pca_based"
+    - "elastic_net_score"
+    - "xgboost_risk_score"
+  standardize: true
+  primary_version: "xgboost_risk_score"
+  age_acceleration_residual: true
+
+omics:
+  min_samples: 20
+  min_genes: 5000
+  log2_transform: true
+  variance_filter_percentile: 20
+  pathway_db: "MSigDB_Hallmarks"
+  fdr_threshold: 0.05
+
+manuscript:
+  journal_primary: "Nature Aging"
+  journal_secondary: "The Lancet Healthy Longevity"
+  journal_tertiary: "npj Aging"
+  word_limit_main: 4500
+  word_limit_abstract: 250
+  max_display_figures: 6
+  max_display_tables: 4
