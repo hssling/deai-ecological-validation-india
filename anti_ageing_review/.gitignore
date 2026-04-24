@@ -1,0 +1,6 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+data_raw/full_text/
+*.ris
+*.nb.html

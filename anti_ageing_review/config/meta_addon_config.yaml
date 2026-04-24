@@ -1,0 +1,36 @@
+project:
+  title: "Quantitative Meta-analysis Add-on for Human Anti-ageing Interventions"
+  version: "0.1.0"
+  run_label: "meta_addon_initial"
+paths:
+  results_tables: "results/tables"
+  results_figures: "results/figures"
+  logs: "logs"
+  data_processed: "data_processed"
+  meta_addon_root: "results/meta_addon"
+  meta_addon_tables: "results/meta_addon/tables"
+  meta_addon_figures: "results/meta_addon/figures"
+  meta_addon_docs: "docs/meta_addon"
+  meta_addon_manuscript: "manuscript/meta_addon"
+meta_addon:
+  source_priority:
+    - "pmc_xml"
+    - "supplementary_source_data"
+    - "publisher_html"
+    - "publisher_pdf"
+    - "pubmed_xml"
+    - "figure_digitization"
+  empirical_design_keywords:
+    - "randomized"
+    - "trial"
+    - "cohort"
+    - "prospective"
+    - "clinical trial"
+  endpoint_families:
+    - "frailty_function"
+    - "epigenetic_biological_age"
+    - "mortality_survival"
+    - "cognition"
+  priority_endpoints:
+    - "frailty_function"
+    - "epigenetic_biological_age"

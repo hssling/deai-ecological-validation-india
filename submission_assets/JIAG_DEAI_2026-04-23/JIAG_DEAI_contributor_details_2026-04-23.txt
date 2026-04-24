@@ -1,0 +1,31 @@
+JOURNAL OF THE INDIAN ACADEMY OF GERIATRICS
+CONTRIBUTOR DETAILS FOR ONLINE FORM
+
+Manuscript title:
+Digital Exposome Aging Index for Healthy Ageing Surveillance in India: A Reproducible Pipeline and State-Level LASI Validation
+
+Author:
+Siddalingaiah H. S.
+
+Corresponding author:
+Siddalingaiah H. S.
+Email: hssling@yahoo.com
+Phone: +91 8941087719
+ORCID: 0000-0002-4771-8285
+
+Contribution categories:
+Concept/design: Siddalingaiah H. S.
+Data acquisition/curation: Siddalingaiah H. S.
+Statistical analysis: Siddalingaiah H. S.
+Manuscript preparation: Siddalingaiah H. S.
+Critical review: Siddalingaiah H. S.
+Guarantor: Siddalingaiah H. S.
+
+Funding:
+No external funding.
+
+Conflicts of interest:
+None declared.
+
+Ethics:
+IEC approval not applicable; secondary data analysis from public-domain aggregate data; no identifiable participant data.

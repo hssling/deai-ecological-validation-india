@@ -1,0 +1,15 @@
+JIAG DEAI SUBMISSION AUDIT NOTE
+
+Generated: 23 April 2026
+
+Major strengthening steps completed:
+1. Rebuilt the short draft into a full-length Original Article.
+2. Main text word count is 2958 words excluding abstract, references, tables, and figure legends.
+3. Embedded four tables and four figures in the manuscript DOCX.
+4. Added in-text numbered references and Vancouver-style reference list.
+5. Added reference metadata verification file.
+6. Preserved cautious scientific interpretation: mortality is stable nominal/supportive; multimorbidity is robust but interpreted as epidemiological transition/ascertainment.
+7. Retained blinding in manuscript file and moved author details to title page.
+
+Residual issue:
+Open the DOCX in Word before portal upload to check table width and figure placement.

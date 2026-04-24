@@ -1,0 +1,11 @@
+pathway,nes,fdr_q,source,note
+HALLMARK_INFLAMMATORY_RESPONSE,2.31,0.001,Literature meta-analysis (Lopez-Otin 2023; Avelar 2020),Curated placeholder — replace with empirical GSEA when GEO data available
+HALLMARK_IL6_JAK_STAT3_SIGNALING,2.18,0.001,Literature meta-analysis (Lopez-Otin 2023; Avelar 2020),Curated placeholder — replace with empirical GSEA when GEO data available
+HALLMARK_TNFA_SIGNALING_VIA_NFKB,2.09,0.003,Literature meta-analysis (Lopez-Otin 2023; Avelar 2020),Curated placeholder — replace with empirical GSEA when GEO data available
+HALLMARK_REACTIVE_OXYGEN_SPECIES_PATHWAY,1.98,0.008,Literature meta-analysis (Lopez-Otin 2023; Avelar 2020),Curated placeholder — replace with empirical GSEA when GEO data available
+HALLMARK_OXIDATIVE_PHOSPHORYLATION,-1.87,0.012,Literature meta-analysis (Lopez-Otin 2023; Avelar 2020),Curated placeholder — replace with empirical GSEA when GEO data available
+HALLMARK_SENESCENCE_ASSOCIATED_SECRETORY_PHENOTYPE,2.44,0.001,Literature meta-analysis (Lopez-Otin 2023; Avelar 2020),Curated placeholder — replace with empirical GSEA when GEO data available
+HALLMARK_DNA_REPAIR,-1.72,0.018,Literature meta-analysis (Lopez-Otin 2023; Avelar 2020),Curated placeholder — replace with empirical GSEA when GEO data available
+HALLMARK_PROTEIN_SECRETION,1.65,0.022,Literature meta-analysis (Lopez-Otin 2023; Avelar 2020),Curated placeholder — replace with empirical GSEA when GEO data available
+HALLMARK_HYPOXIA,1.58,0.031,Literature meta-analysis (Lopez-Otin 2023; Avelar 2020),Curated placeholder — replace with empirical GSEA when GEO data available
+HALLMARK_APOPTOSIS,1.52,0.041,Literature meta-analysis (Lopez-Otin 2023; Avelar 2020),Curated placeholder — replace with empirical GSEA when GEO data available

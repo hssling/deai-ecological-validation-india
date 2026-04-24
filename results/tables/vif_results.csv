@@ -1,0 +1,9 @@
+feature,VIF
+pm25_annual_ugm3_t,1.140332409055245
+heat_days_per_year_t,1.001608654785744
+tobacco_ever_t,1.0128446448184456
+alcohol_ever_t,1.0116046271002623
+diet_diversity_score_t,1.3449631749649336
+urban_rural_t,1.0712064671449006
+ses_quintile_t,1.1437769028661495
+education_years_t,1.2673155353990813

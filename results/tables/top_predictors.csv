@@ -1,0 +1,11 @@
+feature,feature_label,mean_abs_shap,modifiable,rank
+age_years,Chronological Age,1.5952743,False,1
+education_years,Education (years),0.7829384,False,2
+diet_diversity_score_t,Diet Diversity,0.4581732,True,3
+pm25_annual_ugm3_t,PM2.5 Exposure,0.3250573,True,4
+heat_days_per_year_t,Heat Stress Days,0.21777233,True,5
+tobacco_ever_t,Tobacco Use,0.13289984,True,6
+ses_quintile,SES Quintile,0.12769988,False,7
+alcohol_ever_t,Alcohol Use,0.030553503,True,8
+sex,Sex,0.025072115,False,9
+urban_rural_t,Rural Location,0.021132277,False,10

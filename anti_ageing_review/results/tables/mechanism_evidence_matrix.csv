@@ -1,0 +1,15 @@
+intervention,cellular_senescence,dna_repair_genomic,epigenetic_alterations,inflammaging,microbiome_host,mitochondrial_function,nutrient_sensing,proteostasis_autophagy,sirtuin_nad,stem_cell_effects,unclear
+caloric_restriction,0,0,1,0,0,0,3,1,0,0,52
+controversial,0,2,1,1,0,2,0,0,0,0,16
+exercise,1,1,4,0,1,1,0,0,0,0,72
+fasting,0,0,0,0,0,1,0,1,0,1,10
+lifestyle_bundle,0,0,2,0,0,0,0,0,0,0,3
+metformin,0,0,1,0,0,0,15,0,0,1,0
+microbiome,2,0,1,2,58,0,0,0,0,0,0
+nad_sirtuin,2,0,2,1,0,7,1,1,66,1,0
+rapamycin_mtor,3,0,0,1,0,0,33,1,0,1,1
+reprogramming,1,0,13,0,0,0,0,0,0,0,0
+senolytics,59,0,4,3,0,1,0,0,0,0,4
+sleep_circadian,0,0,3,0,1,0,2,0,5,0,8
+stem_cell,0,0,2,1,0,2,0,0,0,34,0
+supplements,0,0,2,0,0,0,0,0,0,0,5

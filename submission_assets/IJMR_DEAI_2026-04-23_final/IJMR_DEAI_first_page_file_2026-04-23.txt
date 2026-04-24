@@ -1,0 +1,70 @@
+INDIAN JOURNAL OF MEDICAL RESEARCH
+FIRST PAGE FILE
+
+Covering letter note:
+This manuscript addresses healthy ageing surveillance, exposome-related public health, and epidemiological interpretation using nationally relevant LASI data. Its public-health and methodological relevance makes IJMR an appropriate venue.
+
+Title:
+Development and ecological validation of a digital exposome ageing index for healthy ageing surveillance in India using LASI Wave 1
+
+Running title (maximum 40 characters requested by journal):
+DEAI ecological validation
+
+Article category:
+Original Article
+
+Author:
+Dr Siddalingaiah H S
+Professor, Community Medicine
+Shridevi Institute of Medical Sciences and Research Hospital, Tumkur, Karnataka, India
+Mobile: +91 8941087719
+Email: hssling@yahoo.com
+ORCID: 0000-0002-4771-8285
+
+Department and institution to which the work is attributed:
+Department of Community Medicine, Shridevi Institute of Medical Sciences and Research Hospital, Tumkur, Karnataka, India
+
+Name, address and email of corresponding author:
+Dr Siddalingaiah H S
+Shridevi Institute of Medical Sciences and Research Hospital, Tumkur, Karnataka, India
+Email: hssling@yahoo.com
+Mobile: +91 8941087719
+
+Contributors' credits:
+Concept and design: Dr Siddalingaiah H S
+Data curation and analysis: Dr Siddalingaiah H S
+Interpretation: Dr Siddalingaiah H S
+Drafting and revision: Dr Siddalingaiah H S
+Guarantor: Dr Siddalingaiah H S
+
+Declaration on competing interests:
+None.
+
+Funding:
+No external funding.
+
+Ethical clearance status:
+Not applicable. This study used public-domain aggregate data and no individual-level identifiable participant data.
+Ethics Committee name, date and number:
+Not applicable.
+
+Clinical trial registration number:
+Not applicable.
+
+Data sharing statement:
+Derived tables, figures, reproducible scripts, and the public release package are available at https://github.com/hssling/deai-ecological-validation-india; source public data are available from LASI/IIPS and related public reports.
+
+Declaration of Artificial Intelligence (AI) in scientific writing:
+Computational tools were used for data processing, reproducible analysis, document assembly, language editing support, and formatting support. Final responsibility for the scientific content rests with the author.
+
+Word count (excluding abstract, tables, figures, acknowledgment, key messages, and references):
+1779
+
+Number of tables:
+4
+
+Number of figures:
+4
+
+Disclaimers:
+None.

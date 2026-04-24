@@ -1,0 +1,13 @@
+sources:
+  pubmed:
+    type: peer_reviewed_metadata
+    base: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
+  europe_pmc:
+    type: mixed_literature_metadata
+    base: "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
+  crossref:
+    type: bibliographic_metadata
+    base: "https://api.crossref.org/works"
+  medrxiv_biorxiv:
+    type: preprint_stream
+    note: "Captured through Europe PMC where source labels indicate preprint."

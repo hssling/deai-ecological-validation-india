@@ -1,0 +1,42 @@
+23 April 2026
+
+To
+The Editor-in-Chief
+Journal of the Indian Academy of Geriatrics
+
+Subject: Submission of original article for consideration in the Journal of the Indian Academy of Geriatrics
+
+Dear Editor,
+
+Please consider my original article, "Digital Exposome Aging Index for Healthy Ageing Surveillance in India: A Reproducible Pipeline and State-Level LASI Validation," for publication in the Journal of the Indian Academy of Geriatrics.
+
+This full-length original article presents a reproducible Digital Exposome Aging Index (DEAI) for healthy-ageing surveillance in India and validates it using public LASI Wave 1 state/UT summary data. The manuscript includes structured methods, embedded tables and figures, robustness checks, indexed references, and a cautious epidemiological interpretation of the mortality and multimorbidity findings.
+
+I confirm the following:
+
+1. This manuscript is original, has not been published previously, and is not under consideration elsewhere.
+2. I have read and approved the submitted version.
+3. I meet authorship criteria and accept responsibility for the work.
+4. The study used publicly available aggregate data and involved no direct participant contact.
+5. No individual-identifiable data are presented.
+6. IEC approval is not applicable because this is a secondary data analysis from public-domain aggregate data.
+7. There was no external funding.
+8. I declare no conflicts of interest.
+9. The manuscript avoids individual-level causal inference and clearly labels the real-data analysis as ecological.
+
+The corresponding author for all editorial communication is:
+
+Dr Siddalingaiah H S
+Professor, Community Medicine
+Shridevi Institute of Medical Sciences and Research Hospital
+Tumkur, Karnataka, India
+Email: hssling@yahoo.com
+Phone: +91 8941087719
+ORCID: 0000-0002-4771-8285
+
+Thank you for your consideration.
+
+Sincerely,
+
+Dr Siddalingaiah H S
+Sole author

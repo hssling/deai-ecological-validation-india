@@ -1,0 +1,2 @@
+outcome_name,n_studies,study_ids,fixed_effect_estimate,fixed_effect_ci,random_effect_estimate,random_effect_ci,i_squared_percent
+DunedinPACE,2,37118425; 39900648,-0.203,-0.306 to -0.100,-0.203,-0.306 to -0.100,0.0

@@ -1,0 +1,10 @@
+tool_name,purpose,best_use,url
+GROBID,scholarly PDF structure and metadata extraction,"references, sections, body structure",https://github.com/grobidOrg/grobid
+Docling,document conversion and table-aware extraction,complex PDF tables and mixed layouts,https://github.com/DS4SD/docling
+Marker,PDF to markdown/json conversion,quick structured capture from scientific PDFs,https://github.com/VikParuchuri/marker
+pdfplumber,text and table extraction with geometry control,machine-generated PDFs with irregular tables,https://github.com/jsvine/pdfplumber
+Camelot,rule-based PDF table extraction,bordered or lattice-like tables,https://camelot-py.readthedocs.io/
+Tabula,alternate PDF table extraction,manual rescue for difficult machine-generated tables,https://tabula.technology/
+OCRmyPDF,OCR text layer generation,scanned PDFs before parsing,https://github.com/ocrmypdf/OCRmyPDF
+WebPlotDigitizer,digitize plotted data from figures,when tables are unavailable but curves/bars are shown,https://automeris.io/docs/
+metaDigitise,reproducible R-based figure digitization,batch extraction from figures for meta-analysis,https://github.com/daniel1noble/metaDigitise

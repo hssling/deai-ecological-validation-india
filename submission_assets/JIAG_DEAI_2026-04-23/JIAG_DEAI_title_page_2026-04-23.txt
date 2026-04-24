@@ -1,0 +1,62 @@
+JOURNAL OF THE INDIAN ACADEMY OF GERIATRICS
+TITLE PAGE
+
+Article type: Original Article
+
+Full title:
+Digital Exposome Aging Index for Healthy Ageing Surveillance in India: A Reproducible Pipeline and State-Level LASI Validation
+
+Running title:
+DEAI healthy-ageing surveillance
+
+Author:
+Siddalingaiah H. S.
+Professor, Department of Community Medicine
+Shridevi Institute of Medical Sciences and Research Hospital
+Tumkur, Karnataka, India
+Email: hssling@yahoo.com
+Phone: +91 8941087719
+ORCID: 0000-0002-4771-8285
+
+Affiliation:
+Department of Community Medicine, Shridevi Institute of Medical Sciences and Research Hospital, Tumkur, Karnataka, India.
+
+Corresponding author:
+Dr Siddalingaiah H S
+Professor, Community Medicine
+Shridevi Institute of Medical Sciences and Research Hospital
+Tumkur, Karnataka, India
+Email: hssling@yahoo.com
+Phone: +91 8941087719
+ORCID: 0000-0002-4771-8285
+
+Word counts:
+Structured abstract: 236 words
+Main text from Introduction through Conclusions, excluding abstract, references, tables, and figure legends: 2958 words
+References: 12
+Tables: 4
+Figures: 4
+
+Source of support:
+None. No external funding was received.
+
+Acknowledgment:
+The author acknowledges the public availability of LASI Wave 1 state/UT factsheets and NFHS-5 summary data.
+
+Prior presentation:
+None declared for this DEAI manuscript.
+
+Clinical trial registration:
+Not applicable.
+
+Conflicts of interest:
+The author declares no financial or non-financial conflicts of interest related to this submission.
+
+Authorship statement:
+The author meets authorship criteria, approved the submitted version, and accepts accountability for the work.
+
+Approval statement:
+The manuscript has been read and approved by the author, who believes that the manuscript represents honest work.
+
+Ethics summary for editorial use:
+IEC approval is not applicable because this is a secondary data analysis of publicly available aggregate LASI/NFHS summary indicators and synthetic reproducibility data. No individual-level identifiable human participant data were accessed.

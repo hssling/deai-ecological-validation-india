@@ -1,0 +1,29 @@
+INDIAN JOURNAL OF MEDICAL RESEARCH
+AUTHOR DECLARATIONS
+
+Title:
+Development and ecological validation of a digital exposome ageing index for healthy ageing surveillance in India using LASI Wave 1
+
+Funding:
+No external funding.
+
+Conflicts of interest:
+None.
+
+Ethics approval:
+Not applicable. This study used publicly available aggregate LASI and related summary indicators. No individual-level identifiable participant data were accessed.
+
+Consent to participate:
+Not applicable.
+
+Consent for publication:
+Not applicable.
+
+Data availability:
+Derived tables, figures, and scripts are available in the project workspace. Source public data are available from LASI/IIPS and related public reports.
+
+Author contributions:
+Dr Siddalingaiah H S: concept, study design, data curation, statistical analysis, manuscript preparation, manuscript review, and guarantor.
+
+Declaration of AI in scientific writing:
+Computational tools were used for data processing, reproducible analysis, document assembly, and formatting support. Final responsibility for the scientific content rests with the author.

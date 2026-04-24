@@ -1,0 +1,5 @@
+metric,value,interpretation
+states_only_n,36.0,State/UT rows after excluding national India row.
+deai_component_cronbach_alpha,0.688,Internal consistency of adverse exposome components; moderate values are expected for a multi-domain index.
+mortality_states_only_rho,0.341,Primary real-data ecological validation signal.
+multimorbidity_states_only_rho,-0.777,Transition/ascertainment signal; not interpreted as protective effect.

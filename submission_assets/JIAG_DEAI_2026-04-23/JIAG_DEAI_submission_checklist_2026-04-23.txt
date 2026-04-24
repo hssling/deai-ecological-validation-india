@@ -1,0 +1,32 @@
+JOURNAL OF THE INDIAN ACADEMY OF GERIATRICS
+SUBMISSION CHECKLIST
+
+Prepared files
+- Title page: JIAG_DEAI_title_page_2026-04-23.txt/docx
+- Cover letter: JIAG_DEAI_cover_letter_2026-04-23.txt/docx
+- Blinded manuscript with embedded tables/figures: JIAG_DEAI_manuscript_blinded_2026-04-23.txt/docx
+- Declarations: JIAG_DEAI_declarations_2026-04-23.txt/docx
+- Contributor details: JIAG_DEAI_contributor_details_2026-04-23.txt/docx
+- Figure file map: JIAG_DEAI_figure_file_map_2026-04-23.txt/docx
+- Reference metadata: JIAG_DEAI_reference_metadata_2026-04-23.csv
+- Supporting tables: tables/*.csv
+
+Journal-specific checks
+- Full-length Original Article prepared: Yes
+- Separate title page and blinded manuscript prepared: Yes
+- Author identities removed from blinded manuscript: Yes
+- Structured abstract approximately 250 words: Yes
+- In-text references indexed in numerical Vancouver style: Yes
+- Vancouver reference list included: Yes
+- Tables embedded in manuscript: Yes
+- Figures embedded in manuscript DOCX and copied separately: Yes
+- Funding statement included: Yes
+- Conflict of interest statement included: Yes
+- IEC approval not applicable statement included: Yes
+- Ecological design and limitations stated: Yes
+- Multiple-testing correction, bootstrap intervals, and leave-one-out robustness reported: Yes
+
+Items to verify manually before portal upload
+- Open Word file and confirm page breaks, table fit, spacing, margins, and image rendering.
+- Confirm final JIAG portal requirements for signed copyright/conflict forms.
+- Confirm whether the portal wants separate figure upload despite figures being embedded.

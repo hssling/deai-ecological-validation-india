@@ -1,0 +1,14 @@
+IJMR DEAI PACKAGE AUDIT NOTE
+
+Generated: 23 April 2026
+
+Summary
+- Source manuscript: JIAG DEAI package adapted for IJMR as an Original Article.
+- Main text word count: 1773
+- Structured abstract reformatted to IJMR style headings.
+- Reference citations converted to superscript numbering without brackets.
+- References, Tables, and Legends to Figures arranged in IJMR order.
+- First page file, cover letter, blinded manuscript, declarations, figures DOCX, and checklist prepared.
+
+Residual manual check
+- Open the DOCX in Word before submission to confirm pagination, table width, and image placement.

@@ -1,0 +1,10 @@
+endpoint_family,effect_metric,rows,unique_studies,ready_rows,ci_rows,arm_level_rows
+epigenetic_biological_age,cohens_d_standardized_change_difference,11,2,11,11,0
+epigenetic_biological_age,mean_difference_change_se_from_reported_p_sensitivity,2,2,0,2,0
+epigenetic_biological_age,mean_difference_change,8,1,0,8,0
+frailty_function,hedges_g_post_intervention,5,1,5,0,5
+epigenetic_biological_age,mean_difference_condition_change_crossover_unpaired_sensitivity,4,1,0,0,4
+frailty_function,mean_difference_change,2,1,2,2,0
+cognition,beta_difference,1,1,1,1,0
+frailty_function,beta_difference,1,1,1,1,0
+frailty_function,hedges_g_sensitivity_reported_means_assumed_sd,1,1,0,0,1

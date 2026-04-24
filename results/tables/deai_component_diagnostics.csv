@@ -1,0 +1,9 @@
+component,label,weight,spearman_with_deai,p_value,n_states
+underweight_pct,Underweight (%) (nutritional deficit),0.07,0.874,0.0,36
+tobacco_pct,Tobacco Use (% current consumers),0.2,0.727,0.0,36
+adv_indoor_pollution,Indoor Air Pollution (% no clean fuel),0.22,0.711,0.0,36
+indoor_pollution_pct,Reported Indoor Pollution Exposure (%),0.08,0.672,0.0,36
+adv_literacy,Low Literacy (% illiterate),0.15,0.572,0.0003,36
+adv_sanitation,Poor Sanitation (% no improved),0.1,0.571,0.0003,36
+heavy_drinking_pct,Heavy Episodic Drinking (%),0.08,0.119,0.4954,35
+adv_water,Poor Water Access (% no improved source),0.1,0.035,0.8382,36

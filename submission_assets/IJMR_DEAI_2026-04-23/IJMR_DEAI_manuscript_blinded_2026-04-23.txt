@@ -1,0 +1,155 @@
+Development and ecological validation of a digital exposome ageing index for healthy ageing surveillance in India using LASI Wave 1
+
+Structured Abstract
+
+Background & objectives: Healthy-ageing surveillance requires scalable measures of upstream environmental and social adversity. This study developed a Digital Exposome Ageing Index (DEAI) and assessed its ecological validity using publicly available Longitudinal Ageing Study in India (LASI) Wave 1 state and union territory indicators. Methods: Eight adverse exposome components were standardized and combined using pre-specified knowledge weights into a state-level composite score. Outcomes were death rate among adults aged 60 years and above, falls, activities of daily living (ADL) and instrumental activities of daily living (IADL) limitations, poor self-rated health, depression, and diagnosed multimorbidity. Spearman correlations, bootstrap confidence intervals, Benjamini-Hochberg false-discovery-rate correction, leave-one-out analysis, and component diagnostics were used. Results: After excluding the national India row, Odisha, Jharkhand, Bihar, Uttar Pradesh, and Assam had the highest adverse DEAI burden. DEAI showed a nominal positive association with death rate at age 60 years and above (rho=+0.341, p=0.042; bootstrap 95% CI +0.013 to +0.620; FDR q=0.146) and a robust inverse association with diagnosed multimorbidity (rho=-0.777, p<0.001; bootstrap 95% CI -0.875 to -0.607; FDR q<0.001). Correlations with falls, disability, poor self-rated health, and depression were weaker and not statistically robust. Internal consistency was acceptable for a multi-domain ecological index (Cronbach alpha=0.688). Interpretation & conclusions: DEAI is a feasible ecological index for summarizing adverse exposome burden in Indian healthy-ageing surveillance. The inverse multimorbidity finding is more plausibly explained by epidemiological transition, survival, and diagnostic ascertainment than by any protective effect. Further individual-level and longitudinal validation is required before operational use.
+
+Keywords: ageing; exposome; LASI; multimorbidity; mortality; India
+
+Introduction
+
+Population ageing is now a major public-health challenge in India. Healthy ageing depends not only on chronological age and disease counts, but also on the environments in which older adults live. Public data systems such as LASI and NFHS make it possible to examine whether state-level upstream adversity aligns with patterns of mortality, disability, and diagnosed chronic disease in later life.
+
+The exposome concept captures cumulative environmental exposure across the life course. In ageing research, it offers a way to connect environmental, lifestyle, and socioeconomic adversity with pathways relevant to functional decline and survival. However, biomarker-intensive ageing measures are not routinely available for programme use in India. A practical alternative is to construct a reproducible ecological index from indicators already available in public datasets.
+
+Such an ecological index should not be confused with direct biological-age measurement. Its role is upstream: to summarize cumulative adverse living conditions that may accelerate disability, frailty, and mortality vulnerability at population level. This distinction matters in public health because programme planning often relies on diagnosed disease counts alone, which may miss regions where risk accumulates through poverty-linked exposures, poor household infrastructure, and nutritional deficit.
+
+This study developed a Digital Exposome Ageing Index (DEAI) and evaluated its state-level ecological validity using public LASI Wave 1 factsheet data. The aim was not to estimate biological age, but to test whether a summary measure of adverse upstream exposures shows interpretable relationships with ageing outcomes relevant to surveillance and programme planning.
+
+Material & Methods
+
+This was a methodological ecological study using publicly available aggregate LASI Wave 1 state/UT factsheet indicators. The unit of analysis was the state/UT. The national India row was retained for descriptive comparison but excluded from primary robustness estimates because it was not an independent state-level observation.
+
+DEAI was designed as a state-level adverse exposome index using eight components available in the public summaries: lack of clean cooking fuel, poor sanitation, low literacy, tobacco use, heavy episodic drinking, poor water access, reported indoor pollution exposure, and underweight prevalence. Each component was coded so that higher values indicated greater adverse burden. Missing values were median-imputed within the state-level dataset, each component was standardized as a z score, and the weighted linear score for state s was computed as DEAI_raw(s) = sum_i(w_i x z_si).
+
+The pre-specified knowledge weights were: no clean cooking fuel 0.22, tobacco use 0.20, low literacy 0.15, poor sanitation 0.10, poor water access 0.10, heavy episodic drinking 0.08, reported indoor pollution exposure 0.08, and underweight prevalence 0.07. The resulting weighted score was then standardized across observations as DEAI_Z(s) = [DEAI_raw(s) - mean(DEAI_raw)] / SD(DEAI_raw). Higher DEAI values therefore indicate greater adverse exposome burden, not greater resilience or better ageing. The largest weights were assigned to clean-fuel deficit, tobacco use, low literacy, sanitation, and water access because these domains have strong links to respiratory, inflammatory, nutritional, and socioeconomic pathways relevant to healthy ageing.
+
+State-level ageing outcomes were death rate among adults aged 60 years and above, falls, ADL limitation, IADL limitation, poor self-rated health, depression by CIDI-SF, and diagnosed multimorbidity. Multimorbidity was interpreted cautiously because diagnosis-based disease prevalence may reflect survival and diagnostic ascertainment as well as underlying burden.
+
+Spearman correlation was used because the analysis was ecological and the sample size modest. Robustness checks included exclusion of the national India row, 5,000-sample bootstrap confidence intervals, Benjamini-Hochberg false-discovery-rate adjustment, leave-one-out influence analysis, and component diagnostics including Spearman correlation with total DEAI and Cronbach alpha. No individual-level identifiable data were accessed; ethics approval was therefore not applicable.
+
+Results
+
+Odisha, Jharkhand, Bihar, Uttar Pradesh, and Assam had the highest adverse DEAI scores. The top ten states/UTs are shown in Table I and the full ranking in Figure 1.
+
+DEAI showed a nominal positive association with death rate among adults aged 60 years and above. In states/UTs only, the Spearman correlation was +0.341 (p=0.042; bootstrap 95% CI +0.013 to +0.620). This direction remained stable in leave-one-out analysis, with rho ranging from +0.291 to +0.419, and the largest influence attributable to Sikkim. However, it did not survive false-discovery-rate correction (FDR q=0.146).
+
+The strongest association was inverse and involved diagnosed multimorbidity. In states/UTs only, DEAI correlated with multimorbidity at rho=-0.777 (p<0.001; bootstrap 95% CI -0.875 to -0.607; FDR q<0.001). Leave-one-out estimates ranged from -0.809 to -0.765, indicating that the finding was not driven by a single state/UT. Table II and Figure 2 summarize the robustness pattern.
+
+The remaining endpoints were directionally mixed and statistically weaker. Fall prevalence showed a positive but non-significant correlation with DEAI (rho=+0.310, p=0.066; bootstrap 95% CI -0.054 to +0.614), while IADL limitation also trended positive (rho=+0.214, p=0.209; bootstrap 95% CI -0.113 to +0.522). ADL limitation and poor self-rated health were weakly inverse, with confidence intervals spanning the null, and depression by CIDI-SF showed little relation to DEAI at state level (rho=+0.065, p=0.711). Taken together, these findings indicate that the present ecological signal is stronger for contextual mortality vulnerability and ascertainment-sensitive multimorbidity than for disability, mood, or self-rated health measures.
+
+Internal consistency was acceptable for a multi-domain ecological index (Cronbach alpha=0.688). The strongest component correlations with total DEAI were seen for underweight prevalence, tobacco use, lack of clean cooking fuel, indoor pollution exposure, low literacy, and poor sanitation. Table III and Figure 4 summarize these component relationships.
+
+Karnataka ranked 14 in the descriptive ranking including the India row. Its DEAI Z-score was 0.35, close to the India value of 0.44. Karnataka had lower death rate at age 60 years and above (32.4 vs 38.4 per 1,000) and lower poor self-rated health (8.4% vs 17.6%), but higher IADL limitation (44.6% vs 35.9%). Table IV presents the Karnataka profile and Figure 3 shows the same comparison visually.
+
+Discussion
+
+This study presents a reproducible ecological index for summarizing adverse exposome burden in Indian healthy-ageing surveillance. The principal contribution is methodological: DEAI offers a compact way to integrate multiple upstream environmental, household, lifestyle, and socioeconomic indicators relevant to ageing. Because it is explicitly constructed as a weighted sum of standardized adverse exposures, it should be interpreted as a surveillance marker of contextual burden rather than as a biological clock or individual-level risk score.
+
+The mortality association was directionally consistent with expectation. States with greater adverse exposome burden tended to have higher death rate among older adults. The association remained stable after exclusion of the national India row and during leave-one-out analysis, suggesting that it was not driven by a single observation. However, because it did not survive false-discovery-rate correction, the proper interpretation is cautious: DEAI shows supportive ecological plausibility for mortality vulnerability, but not confirmatory evidence.
+
+The inverse multimorbidity association was statistically stronger and biologically counterintuitive. It should not be interpreted as evidence that adverse exposures are protective against chronic disease. The more plausible interpretation is epidemiological transition and ascertainment. In higher-adversity settings, cumulative poverty-linked exposures may increase mortality and reduce survival to ages at which chronic diseases are diagnosed and recorded. In later-transition settings, older adults may survive longer, interact more with health systems, and have greater diagnostic ascertainment of hypertension, diabetes, cardiovascular disease, and other chronic conditions. Diagnosed disease prevalence at ecological level may therefore behave partly as a marker of survival and detection rather than a monotonic marker of adverse ageing burden.
+
+The weaker and mixed findings for falls, disability, poor self-rated health, and depression are also informative. They suggest that a state-level adverse exposome summary may not map cleanly onto all later-life outcomes in cross-sectional ecological data, especially for endpoints influenced by reporting practices, household adaptation, cultural thresholds, and access to diagnosis or rehabilitation. This pattern supports retaining DEAI as a surveillance-context indicator rather than overextending it as a universal proxy for every ageing dimension.
+
+This interpretation has practical value for public-health planning. Disease counts alone may underestimate need in high-adversity states. An upstream exposure-burden index may therefore complement geriatric services, NCD screening, tobacco control, nutrition programmes, clean-fuel promotion, sanitation improvement, and age-friendly primary care planning. Karnataka illustrates why mixed profiles matter: its DEAI was close to the national value, yet its mortality, self-rated health, and IADL profiles did not all move in the same direction. A dashboard that combines DEAI with disability, mortality, diagnosed disease, and service-use indicators is likely to be more informative than any single metric.
+
+The index also illustrates the value of combining public data streams. LASI provides older-adult outcomes and state-level social and health indicators, while NFHS and global public-health datasets provide context on household infrastructure, behavioural risks, and environmental adversity. A reproducible open pipeline allows these relationships to be updated as new LASI waves and better denominator data become available.
+
+The study has several strengths. It uses real public LASI data, transparent component coding, reproducible scripts, pre-specified adverse-direction coding, bootstrap confidence intervals, false-discovery-rate adjustment, leave-one-out influence checks, and component diagnostics. The manuscript also avoids the common error of treating ecological associations as individual-level risk estimates. The inclusion of explicit weight disclosure and the scoring formula makes the construction auditable rather than opaque.
+
+The limitations are equally important. The analysis is ecological and cross-sectional; it cannot estimate individual-level risk, causality, or biological age. The weights are knowledge-based and therefore interpretable, but they are not individually validated causal coefficients, and alternative weighting schemes could change rankings at the margin. Public state factsheets limit adjustment for age structure, sex composition, urban-rural heterogeneity, wealth, health-care access, and diagnostic intensity. Diagnosed multimorbidity remains vulnerable to survival and ascertainment bias. Relevant exposures such as outdoor PM2.5, heat stress, occupational exposure, migration, and neighbourhood context were not directly included in the real score. The moderate Cronbach alpha should be interpreted as acceptable for a multi-domain index, not as evidence of a single latent construct.
+
+Future work should validate DEAI using individual-level LASI microdata, longitudinal outcomes, district-level environmental linkage, and programme indicators such as geriatric outpatient attendance, rehabilitation use, and screening coverage. Weight-sensitivity analysis and external validation against independently measured environmental indicators would further strengthen the index. Until such validation is completed, DEAI should be treated as a surveillance and hypothesis-generation tool rather than a clinical decision rule.
+
+Conclusion
+
+DEAI is a feasible and reproducible ecological index for summarizing adverse exposome burden in Indian healthy-ageing surveillance. The present state-level validation shows geographic plausibility, a stable nominal mortality signal, and a robust inverse multimorbidity pattern that is best interpreted through epidemiological transition and diagnostic ascertainment. Individual-level and longitudinal validation are required before any clinical or programme-targeting use.
+
+Acknowledgment
+
+The author acknowledges IIPS, LASI, NFHS, WHO, UN DESA, and public data providers whose aggregate indicators enabled this analysis.
+
+Conflicts of Interest
+
+None.
+
+References
+
+1. International Institute for Population Sciences, National Programme for Health Care of Elderly, Ministry of Health and Family Welfare, Harvard T.H. Chan School of Public Health, University of Southern California. Longitudinal Ageing Study in India (LASI) Wave 1, 2017-18: India Report. Mumbai: International Institute for Population Sciences; 2020.
+2. International Institute for Population Sciences. Longitudinal Ageing Study in India (LASI) Wave 1: State and Union Territory Factsheets. Mumbai: International Institute for Population Sciences; 2022.
+3. International Institute for Population Sciences, ICF. National Family Health Survey (NFHS-5), India, 2019-21. Mumbai: International Institute for Population Sciences; 2021.
+4. World Health Organization. World report on ageing and health. Geneva: World Health Organization; 2015.
+5. Wild CP. Complementing the genome with an exposome: the outstanding challenge of environmental exposure measurement in molecular epidemiology. Cancer Epidemiol Biomarkers Prev. 2005;14(8):1847-1850. doi:10.1158/1055-9965.EPI-05-0456.
+6. Lopez-Otin C, Blasco MA, Partridge L, Serrano M, Kroemer G. Hallmarks of aging: An expanding universe. Cell. 2023;186(2):243-278. doi:10.1016/j.cell.2022.11.001.
+7. GBD 2019 Risk Factors Collaborators. Global burden of 87 risk factors in 204 countries and territories, 1990-2019: a systematic analysis for the Global Burden of Disease Study 2019. Lancet. 2020;396(10258):1223-1249. doi:10.1016/S0140-6736(20)30752-2.
+8. Watts N, Amann M, Arnell N, et al. The 2023 report of the Lancet Countdown on health and climate change: the imperative for a health-centred response in a world facing irreversible harms. Lancet. 2023;402(10419):2346-2394. doi:10.1016/S0140-6736(23)01859-7.
+9. World Health Organization. WHO global air quality guidelines: particulate matter, ozone, nitrogen dioxide, sulfur dioxide and carbon monoxide. Geneva: World Health Organization; 2021.
+10. Benjamini Y, Hochberg Y. Controlling the false discovery rate: a practical and powerful approach to multiple testing. J R Stat Soc Series B Stat Methodol. 1995;57(1):289-300.
+
+Tables
+
+
+Table I. States/UTs with highest adverse DEAI burden
+
+| State/UT             |   DEAI Z |   Death rate 60+ |   Multimorbidity index |   Clean fuel % |   Literacy % |   Tobacco % |   Underweight % |
+|:---------------------|---------:|-----------------:|-----------------------:|---------------:|-------------:|------------:|----------------:|
+| Odisha               |     2.06 |             37.5 |                   8.64 |           26.8 |         54.3 |        55.4 |            29.8 |
+| Jharkhand            |     1.77 |             40.3 |                   9.2  |           31.2 |         44.9 |        31.9 |            27.4 |
+| Bihar                |     1.66 |             30.6 |                  10.04 |           31.5 |         34.5 |        27.5 |            25.1 |
+| Uttar Pradesh        |     1.38 |             44.5 |                   8.44 |           44.6 |         41.7 |        24.4 |            28.9 |
+| Assam                |     1.21 |             40.8 |                   9.77 |           34.1 |         61.3 |        42.3 |            24.7 |
+| Chhattisgarh         |     1.2  |             47.7 |                   7.84 |           28.2 |         39.3 |        23   |            32.2 |
+| Manipur              |     1.12 |             35.4 |                  10.3  |           54.2 |         59.4 |        31.8 |            12.1 |
+| Madhya Pradesh       |     0.76 |             45.3 |                   8.9  |           36.1 |         47.2 |        17.4 |            26.7 |
+| Dadra & Nagar Haveli |     0.73 |             32.2 |                  10.59 |           59.6 |         50.4 |        20.2 |            26.9 |
+| Tripura              |     0.69 |             38.4 |                  12.64 |           41.5 |         64.9 |        39.2 |            27   |
+
+Table II. DEAI correlations with ageing outcomes and robustness checks
+
+| Outcome                    |   rho incl. India | p incl. India   |   rho states only | p states only   |   Bootstrap 95% low |   Bootstrap 95% high | FDR q   | Direction   |
+|:---------------------------|------------------:|:----------------|------------------:|:----------------|--------------------:|---------------------:|:--------|:------------|
+| ADL Limitations (%)        |            -0.222 | 0.187           |            -0.24  | 0.159           |              -0.494 |                0.064 | 0.278   | sensitive   |
+| IADL Limitations (%)       |             0.217 | 0.197           |             0.214 | 0.209           |              -0.113 |                0.522 | 0.293   | sensitive   |
+| Poor Self-Rated Health (%) |            -0.087 | 0.609           |            -0.098 | 0.571           |              -0.434 |                0.257 | 0.666   | sensitive   |
+| Depression — CIDI-SF (%)   |             0.078 | 0.650           |             0.065 | 0.711           |              -0.298 |                0.401 | 0.711   | sensitive   |
+| Multimorbidity Index       |            -0.778 | <0.001          |            -0.777 | <0.001          |              -0.875 |               -0.607 | <0.001  | stable      |
+| Fall Prevalence (%)        |             0.317 | 0.056           |             0.31  | 0.066           |              -0.054 |                0.614 | 0.153   | sensitive   |
+| Death Rate 60+ (per 1,000) |             0.342 | 0.038           |             0.341 | 0.042           |               0.013 |                0.62  | 0.146   | stable      |
+
+Table III. DEAI component diagnostics and internal construct contribution
+
+| Component                                |   Weight |   rho with DEAI | p value   |   N |
+|:-----------------------------------------|---------:|----------------:|:----------|----:|
+| Underweight (%) (nutritional deficit)    |     0.07 |           0.874 | <0.001    |  36 |
+| Tobacco Use (% current consumers)        |     0.2  |           0.727 | <0.001    |  36 |
+| Indoor Air Pollution (% no clean fuel)   |     0.22 |           0.711 | <0.001    |  36 |
+| Reported Indoor Pollution Exposure (%)   |     0.08 |           0.672 | <0.001    |  36 |
+| Low Literacy (% illiterate)              |     0.15 |           0.572 | <0.001    |  36 |
+| Poor Sanitation (% no improved)          |     0.1  |           0.571 | <0.001    |  36 |
+| Heavy Episodic Drinking (%)              |     0.08 |           0.119 | 0.495     |  35 |
+| Poor Water Access (% no improved source) |     0.1  |           0.035 | 0.838     |  36 |
+
+Table IV. Karnataka profile compared with India national LASI estimate
+
+| Indicator                  |   Karnataka |   India |
+|:---------------------------|------------:|--------:|
+| DEAI Z-score               |        0.35 |    0.44 |
+| Death rate 60+ per 1,000   |       32.4  |   38.4  |
+| Multimorbidity index       |       12.62 |   11.66 |
+| Poor self-rated health (%) |        8.4  |   17.6  |
+| ADL limitation (%)         |       11.7  |   15.9  |
+| IADL limitation (%)        |       44.6  |   35.9  |
+| Tobacco use (%)            |       18.9  |   19.8  |
+| Clean cooking fuel (%)     |       55.2  |   52.4  |
+
+Legends to Figures
+
+
+Figure 1. State-level DEAI ranking across Indian states/UTs using LASI Wave 1 public indicators.
+
+Figure 2. Scatter plots of state-level DEAI against ageing outcomes.
+
+Figure 3. Karnataka exposome profile compared with the India national LASI estimate.
+
+Figure 4. Heatmap of Spearman correlations between DEAI components and ageing outcomes.

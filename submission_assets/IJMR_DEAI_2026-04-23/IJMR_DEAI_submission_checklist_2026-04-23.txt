@@ -1,0 +1,28 @@
+INDIAN JOURNAL OF MEDICAL RESEARCH
+SUBMISSION CHECKLIST
+
+Prepared files
+- First page file
+- Cover letter
+- Blinded manuscript
+- Author declarations
+- Figures DOCX file
+- Reference metadata
+- Separate figure files
+- Separate table CSV files
+
+Checks completed
+- Article category aligned as Original Article
+- Structured abstract prepared in four-part IJMR format
+- Title page details separated from blinded manuscript
+- In-text references converted to superscript numbered style without brackets
+- References ordered by first appearance in text
+- Tables moved after References section
+- Figure legends included in manuscript after Tables section
+- Figures copied separately and compiled in a separate DOCX file
+- Conflicts/funding/ethics/AI/data-sharing statements included
+
+Manual checks before upload
+- Confirm the latest IJMR portal requires any additional signed copyright or author forms
+- Open the DOCX in Word and confirm table fit and figure placement
+- Confirm the running title length and abstract word count on the final portal version

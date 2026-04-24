@@ -1,0 +1,28 @@
+23 April 2026
+
+To
+The Editor
+Indian Journal of Medical Research
+
+Subject: Submission of Original Article
+
+Dear Editor,
+
+Please consider the enclosed manuscript entitled "Development and ecological validation of a digital exposome ageing index for healthy ageing surveillance in India using LASI Wave 1" for publication as an Original Article in the Indian Journal of Medical Research.
+
+This manuscript presents a reproducible ecological index for summarizing adverse exposome burden in healthy-ageing surveillance in India and evaluates it using public LASI Wave 1 state and union territory indicators. The analysis includes bootstrap confidence intervals, false-discovery-rate correction, leave-one-out robustness checks, and an explicit interpretation of the inverse multimorbidity finding through epidemiological transition and diagnostic ascertainment.
+
+This topic is suitable for IJMR because it addresses nationally relevant public health, epidemiology, community medicine, and ageing surveillance rather than a narrow subspecialty audience.
+
+I confirm that the manuscript is original, has not been published previously in full, and is not under consideration elsewhere. The study used only public-domain aggregate data and involved no individual-level identifiable information; ethics approval was therefore not applicable. There was no external funding and no conflicts of interest.
+
+Thank you for your consideration.
+
+Sincerely,
+
+Dr Siddalingaiah H S
+Professor, Community Medicine
+Shridevi Institute of Medical Sciences and Research Hospital, Tumkur, Karnataka, India
+Email: hssling@yahoo.com
+Phone: +91 8941087719
+ORCID: 0000-0002-4771-8285

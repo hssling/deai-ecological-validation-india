@@ -1,0 +1,8 @@
+outcome,outcome_label,spearman_r,p_value,n_states,significant
+death_rate_60plus_per1000,"Death Rate 60+ (per 1,000)",0.342,0.038,37,True
+fall_pct,Fall Prevalence (%),0.317,0.0563,37,False
+iadl_limitation_pct,IADL Limitations (%),0.217,0.1974,37,False
+depression_cidi_pct,Depression — CIDI-SF (%),0.078,0.6505,36,False
+poor_srh_pct,Poor Self-Rated Health (%),-0.087,0.6091,37,False
+adl_limitation_pct,ADL Limitations (%),-0.222,0.1868,37,False
+multimorbidity_index,Multimorbidity Index,-0.778,0.0,37,True

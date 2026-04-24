@@ -1,0 +1,3 @@
+analysis,value,interpretation
+Max VIF (multicollinearity),1.3449631749649336,VIF < 5 = acceptable
+Negative control AUC,0.4862063999999999,Should be ~0.50 (confirms no inflation)

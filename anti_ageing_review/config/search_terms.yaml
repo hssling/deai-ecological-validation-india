@@ -1,0 +1,31 @@
+core_concepts:
+  ageing: ["aging", "ageing", "longevity", "lifespan", "healthspan", "rejuvenation", "age reversal", "biological age", "epigenetic clock", "senescence", "frailty"]
+interventions:
+  caloric_restriction: ["caloric restriction", "calorie restriction", "dietary restriction"]
+  fasting: ["intermittent fasting", "fasting mimicking diet", "time restricted eating"]
+  exercise: ["exercise", "physical activity", "resistance training", "aerobic training"]
+  sleep_circadian: ["sleep", "circadian", "chronotherapy"]
+  metformin: ["metformin"]
+  rapamycin_mtor: ["rapamycin", "sirolimus", "mTOR"]
+  nad_sirtuin: ["NAD", "nicotinamide riboside", "NMN", "sirtuin"]
+  senolytics: ["senolytic", "senomorphic", "dasatinib quercetin", "fisetin"]
+  stem_cell: ["stem cell", "regenerative medicine"]
+  reprogramming: ["Yamanaka", "partial reprogramming", "epigenetic reprogramming"]
+  microbiome: ["microbiome", "probiotic", "fecal microbiota"]
+  supplements: ["resveratrol", "curcumin", "omega-3", "vitamin D", "supplement"]
+  lifestyle_bundle: ["lifestyle intervention", "combined lifestyle", "multidomain intervention"]
+  controversial: ["parabiosis", "young plasma", "plasma dilution", "telomerase"]
+queries:
+  broad:
+    - '(aging OR ageing OR longevity OR healthspan OR lifespan) AND (intervention OR trial OR treatment OR therapy)'
+    - '("biological age" OR "epigenetic clock" OR "DNA methylation age") AND (intervention OR trial OR therapy)'
+    - '(rejuvenation OR "age reversal" OR "reverse aging" OR "reverse ageing")'
+  narrow:
+    - '(aging OR ageing OR healthspan OR lifespan) AND ("caloric restriction" OR "dietary restriction" OR fasting)'
+    - '(aging OR ageing OR healthspan OR frailty) AND (exercise OR "physical activity" OR "resistance training")'
+    - '(aging OR ageing OR longevity OR frailty) AND (metformin OR rapamycin OR sirolimus OR mTOR)'
+    - '(aging OR ageing OR "epigenetic clock") AND (NAD OR "nicotinamide riboside" OR NMN OR sirtuin)'
+    - '(aging OR ageing OR senescence OR frailty) AND (senolytic OR senomorphic OR fisetin OR dasatinib OR quercetin)'
+    - '(aging OR ageing OR rejuvenation) AND ("stem cell" OR "partial reprogramming" OR Yamanaka)'
+    - '(aging OR ageing OR healthspan) AND (microbiome OR probiotic OR "fecal microbiota")'
+    - '(aging OR ageing OR rejuvenation) AND (parabiosis OR "young plasma" OR "plasma dilution")'

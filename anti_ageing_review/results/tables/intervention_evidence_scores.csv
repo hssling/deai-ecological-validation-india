@@ -1,0 +1,15 @@
+intervention_name,n_records,max_claim_score,mean_claim_score,human_records,animal_records,cellular_records,classification
+caloric_restriction,57,11.0,7.08,5,6,1,promising_but_incomplete
+controversial,22,7.5,3.5,2,6,6,speculative_or_hype_heavy
+exercise,80,13.5,9.17,37,2,1,supported_for_healthspan_related_benefit
+fasting,13,10.5,7.15,5,1,1,promising_but_incomplete
+lifestyle_bundle,5,12.0,9.0,3,0,0,supported_for_healthspan_related_benefit
+metformin,15,11.0,7.27,1,1,2,promising_but_incomplete
+microbiome,58,12.0,6.37,8,4,1,promising_but_incomplete
+nad_sirtuin,66,9.5,6.22,8,5,8,biomarker_or_preclinical_evidence
+rapamycin_mtor,34,11.0,7.01,7,5,3,promising_but_incomplete
+reprogramming,13,8.0,4.23,0,2,4,speculative_or_hype_heavy
+senolytics,63,10.0,7.1,7,14,20,promising_but_incomplete
+sleep_circadian,17,11.0,6.65,1,1,1,promising_but_incomplete
+stem_cell,34,5.5,4.53,0,3,27,biomarker_or_preclinical_evidence
+supplements,7,9.0,7.79,6,0,0,biomarker_or_preclinical_evidence

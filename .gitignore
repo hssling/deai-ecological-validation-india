@@ -1,0 +1,71 @@
+# Data — never commit raw or processed data
+data_raw/
+data_processed/
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+
+# Keep results tables and metadata CSVs, but not raw/processed data CSVs
+*.csv
+*.tsv
+*.xlsx
+!results/tables/*.csv
+!metadata/*.csv
+!anti_ageing_review/results/tables/*.csv
+!anti_ageing_review/results/meta_addon/tables/*.csv
+!anti_ageing_review/submission_assets/**/tables/*.csv
+!anti_ageing_review/metadata/*.csv
+
+# Large binary open-text cache files (download via pipeline)
+anti_ageing_review/data_processed/
+anti_ageing_review/data_raw/
+
+# Environment
+.env
+*.env
+__pycache__/
+*.py[cod]
+*.pyo
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Conda / venv
+.conda/
+venv/
+env/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs (keep logs/ but not large log files)
+*.log
+logs/*.txt
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Misc
+*.zip
+*.tar.gz
+*.gz
+*.bz2
+deai_public_release/

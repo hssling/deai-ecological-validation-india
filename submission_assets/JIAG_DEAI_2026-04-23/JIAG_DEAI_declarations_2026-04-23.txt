@@ -1,0 +1,35 @@
+JOURNAL OF THE INDIAN ACADEMY OF GERIATRICS
+DECLARATIONS
+
+Manuscript title:
+Digital Exposome Aging Index for Healthy Ageing Surveillance in India: A Reproducible Pipeline and State-Level LASI Validation
+
+Funding:
+No external funding was received.
+
+Conflicts of interest:
+The author declares no financial or non-financial conflicts of interest related to this work.
+
+Ethics approval:
+IEC approval is not applicable because this manuscript uses publicly available aggregate LASI/NFHS summary indicators and synthetic reproducibility data only. No individual-level identifiable human participant data were accessed.
+
+Consent to participate:
+Not applicable.
+
+Consent for publication:
+Not applicable. No individual-identifiable information is presented.
+
+Data availability:
+All derived tables and analysis scripts are available in the project workspace. Source LASI state/UT factsheets and NFHS-5 summary indicators are publicly available from IIPS/DHS sources.
+
+Author contributions:
+Siddalingaiah H. S.: Concept, study design, data curation, formal analysis, statistical analysis, manuscript preparation, manuscript review, and guarantor.
+
+Acknowledgment:
+The author acknowledges IIPS, LASI, NFHS/DHS, WHO, UN DESA, and public data providers whose aggregate indicators enabled this analysis.
+
+Originality statement:
+This manuscript is original, has not been published previously in full, and is not under consideration by another journal.
+
+Prior presentation:
+None declared.

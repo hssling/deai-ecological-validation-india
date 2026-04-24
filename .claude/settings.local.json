@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python src/ingest/build_synthetic_cohort.py --config config.yaml)",
+      "Bash(pip install *)",
+      "Bash(python -c \"import pyarrow; print\\('pyarrow', pyarrow.__version__\\)\")",
+      "Bash(python src/features/build_features.py --config config.yaml)",
+      "Bash(python src/models/deai_build.py --config config.yaml)",
+      "Bash(python src/models/train_models.py --config config.yaml)",
+      "Bash(python src/models/explain.py --config config.yaml)",
+      "Bash(python src/stats/sensitivity_analysis.py --config config.yaml)",
+      "Bash(python src/stats/dag_analysis.py --config config.yaml)",
+      "Bash(python src/ingest/download_who_aaq.py --config config.yaml)",
+      "Bash(python -c \"import requests; r = requests.get\\('https://www.who.int/data/gho/data/themes/air-pollution/who-ambient-air-quality-database', timeout=20, headers={'User-Agent':'Mozilla/5.0'}\\); print\\(r.status_code\\)\")",
+      "Bash(python src/omics/pathway_scoring.py --config config.yaml)",
+      "Bash(python src/viz/publication_figures.py --config config.yaml)",
+      "Read(//d/Tumkur NPHCE/LASI data//**)",
+      "Read(//d/Tumkur NPHCE/external//**)",
+      "Read(//d/Tumkur NPHCE/lasi_extensions//**)",
+      "Bash(python src/ingest/ingest_lasi_real.py --config config.yaml)",
+      "Bash(python src/models/deai_real.py --config config.yaml)",
+      "Bash(find \"D:\\\\Anti ageing research\\\\anti_ageing_review\\\\submission_assets\\\\MJDRDYPU_AntiAgeing_2026-04-23_final_v2\" -type f -exec ls -lh {} \\\\;)",
+      "Bash(awk '{print $9, $5, $6, $7, $8}')",
+      "Bash(xargs ls *)",
+      "Bash(find \"D:/Anti ageing research/anti_ageing_review\" -type f -exec ls -lh {} +)",
+      "Bash(cat)",
+      "Bash(bash /tmp/file_inventory.sh)",
+      "Bash(python -c ' *)",
+      "Bash(python anti_ageing_review/src/generate_qa_package.py)",
+      "Bash(python anti_ageing_review/src/embed_tables_figures.py)"
+    ]
+  }
+}

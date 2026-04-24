@@ -1,0 +1,20 @@
+JOURNAL OF THE INDIAN ACADEMY OF GERIATRICS
+FIGURE FILE MAP
+
+Figure 1:
+File: figures/real_fig1_state_deai_ranking.png
+Legend: State-level DEAI ranking across Indian states/UTs using LASI Wave 1 public indicators.
+
+Figure 2:
+File: figures/real_fig2_deai_outcome_scatter.png
+Legend: Scatter plots of state-level DEAI against ageing outcomes.
+
+Figure 3:
+File: figures/real_fig3_karnataka_exposome_profile.png
+Legend: Karnataka exposome profile compared with India national LASI estimate.
+
+Figure 4:
+File: figures/real_fig4_exposome_outcome_heatmap.png
+Legend: Heatmap of Spearman correlations between DEAI components and ageing outcomes.
+
+Note: Figures are embedded in the main manuscript DOCX and also provided as separate PNG files.

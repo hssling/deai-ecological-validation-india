@@ -1,0 +1,5 @@
+endpoint_family,n_studies,pmc_xml_available,pubmed_xml_only,figure_digitization_needed
+other,15,3,0,3
+frailty_function,5,3,0,1
+epigenetic_biological_age,3,2,0,0
+cognition,3,0,0,0
