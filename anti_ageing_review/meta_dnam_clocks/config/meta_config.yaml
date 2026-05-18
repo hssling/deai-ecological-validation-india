@@ -1,0 +1,63 @@
+project:
+  name: dnam_clocks_meta_analysis
+  freeze_date: "2026-05-18"
+  random_seed: 42
+  authors:
+    - {name: "Dr Siddalingaiah H S", role: corresponding, orcid: "0000-0000-0000-0000"}
+    - {name: "Dr Chandrakala D", role: coauthor, orcid: "0000-0000-0000-0000"}
+  target_journal: "Biogerontology"
+paths:
+  root: "anti_ageing_review/meta_dnam_clocks"
+  data_raw: "anti_ageing_review/meta_dnam_clocks/data/raw"
+  data_interim: "anti_ageing_review/meta_dnam_clocks/data/interim"
+  data_processed: "anti_ageing_review/meta_dnam_clocks/data/processed"
+  results_figs: "anti_ageing_review/meta_dnam_clocks/results/figures"
+  results_tabs: "anti_ageing_review/meta_dnam_clocks/results/tables"
+  submission: "anti_ageing_review/meta_dnam_clocks/submission_assets"
+  existing_master: "anti_ageing_review/results/tables/extracted_studies_master.csv"
+  docs: "anti_ageing_review/meta_dnam_clocks/docs"
+  manuscript: "anti_ageing_review/meta_dnam_clocks/manuscript"
+clocks:
+  - DunedinPACE
+  - GrimAge
+  - GrimAge2
+  - PhenoAge
+  - Horvath
+  - Hannum
+  - PCClock
+  - DNAmTL
+search:
+  sources: [pubmed, europepmc, crossref, openalex, clinicaltrials]
+  block_clock_terms:
+    - "DunedinPACE"
+    - "GrimAge"
+    - "PhenoAge"
+    - "Horvath clock"
+    - "Hannum clock"
+    - "epigenetic age"
+    - "epigenetic clock"
+    - "DNA methylation age"
+    - "DNAm age"
+    - "PCClock"
+    - "DNAmTL"
+  block_intervention_terms:
+    - "randomized"
+    - "randomised"
+    - "trial"
+    - "intervention"
+    - "supplement"
+    - "exercise"
+    - "diet"
+    - "caloric restriction"
+    - "rapamycin"
+    - "metformin"
+    - "NAD"
+    - "senolytic"
+  date_from: "2010-01-01"
+synthesis:
+  min_studies_for_pool: 3
+  min_studies_for_metareg: 10
+  min_studies_for_nma: 10
+  min_studies_for_pubbias: 10
+  hksj_sensitivity: true
+  bayes_tau_prior: "halfnormal(0, 0.5)"
