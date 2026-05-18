@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?><article xml:lang="en" article-type="brief-report"><front><journal-meta><journal-id journal-id-type="pmc-domain-id">2481</journal-id><journal-id journal-id-type="pmc-domain">acel</journal-id><journal-title-group><journal-title>Aging Cell</journal-title><abbrev-journal-title>Aging Cell</abbrev-journal-title></journal-title-group><publisher><publisher-name>Wiley</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC10776116</article-id><article-id pub-id-type="pmcaid">10776116</article-id><article-id pub-id-type="pmcaiid">10776116</article-id><article-id pub-id-type="pmid">37675817</article-id><article-id pub-id-type="doi">10.1111/acel.13926</article-id><title-group><article-title>Cell‐type specific impact of metformin on monocyte epigenetic age reversal in virally suppressed older people living with HIV
+</article-title></title-group><contrib-group content-type="author"><contrib><name name-style="western"><surname>Corley</surname><given-names initials="MJ">Michael J</given-names></name><xref ref-type="aff" rid="acel13926-aff-0001">1</xref></contrib><contrib><name name-style="western"><surname>Pang</surname><given-names initials="APS">Alina P S</given-names></name><xref ref-type="aff" rid="acel13926-aff-0001">1</xref></contrib><contrib><name name-style="western"><surname>Shikuma</surname><given-names initials="CM">Cecilia M</given-names></name><xref ref-type="aff" rid="acel13926-aff-0002">2</xref></contrib><contrib><name name-style="western"><surname>Ndhlovu</surname><given-names initials="LC">Lishomwa C</given-names></name><xref ref-type="aff" rid="acel13926-aff-0001">1</xref><xref ref-type="author-notes" rid="_fncrsp93pmc__">✉</xref></contrib></contrib-group><aff id="acel13926-aff-0001"><label>
+<sup>1</sup>
+</label>Department of Medicine, Division of Infectious Diseases, Weill Cornell Medicine, New York City, New York, USA</aff><aff id="acel13926-aff-0002"><label>
+<sup>2</sup>
+</label>Hawaii Center for AIDS, John A. Burns School of Medicine, University of Hawaii, Honolulu, Hawaii, USA</aff><author-notes><fn id="correspondenceTo"><label>*</label><p>
+
+<bold>Correspondence</bold>
+, 
+Lishomwa C. Ndhlovu, Department of Medicine, Division of Infectious Diseases, Weill Cornell Medicine New York, NY, USA. 
+Email: <email>lndhlovu@med.cornell.edu</email>
+
+</p></fn><fn id="_fncrsp93pmc__"><label>✉</label><p>Corresponding author.</p></fn></author-notes><pub-date><day>7</day><month>9</month><year>2023</year></pub-date><volume>23</volume><issue>1</issue><fpage>e13926</fpage><page-range>e13926</page-range><pub-history><event event-type="pmc-release"><date><day>10</day><month>1</month><year>2024</year></date></event></pub-history><permissions><copyright-statement>© 2023 The Authors. <italic>Aging Cell</italic> published by the Anatomical Society and John Wiley &amp; Sons Ltd.</copyright-statement><license><license-p>This is an open access article under the terms of the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://creativecommons.org/licenses/by/4.0/" ext-link-type="uri">http://creativecommons.org/licenses/by/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ACEL-23-e13926.pdf" content-type="pmc-pdf"><?cloudpmc-path 4fc7/10776116/1e37dbc8807d/ACEL-23-e13926.pdf?><?cloudpmc-bucket app?><?size 2141830?></self-uri><abstract id="abstract1"><title>Abstract</title><p>The anti‐diabetic drug metformin may promote healthy aging. However, few clinical trials of metformin assessing biomarkers of aging have been completed. In this communication, we retrospectively examined the effect of metformin on epigenetic age using principal component (PC)‐based epigenetic clocks, mitotic clocks, and pace of aging in peripheral monocytes and CD8<sup>+</sup> T cells from participants in two clinical trials of virologically‐suppressed people living with HIV (PLWH) with normal glucose receiving metformin. In a small 24‐week clinical trial that randomized participants to receive either adjunctive metformin or observation, we observed significantly decreased PCPhenoAge and PCGrimAge estimates of monocytes from only participants in the metformin arm by a mean decrease of 3.53 and 1.84 years from baseline to Week 24. In contrast, we observed no significant differences in all PC clocks for participants in the observation arm over 24 weeks. Notably, our analysis of epigenetic mitotic clocks revealed significant increases for monocytes in the metformin arm when comparing baseline to Week 24, suggesting an impact of metformin on myeloid cell kinetics. Analysis of a single‐arm clinical trial of adjunctive metformin in eight PLWH revealed no significant differences across all epigenetic clocks assessed in CD8<sup>+</sup> T cells at 4‐ and 8‐week time points. Our results suggest cell‐type‐specific myeloid effects of metformin captured by PC‐based epigenetic clock biomarkers. Larger clinical studies of metformin are needed to validate these observations and this report highlights the need for further inclusion of PLWH in geroscience trials evaluating the effect of metformin on increasing healthspan and lifespan.</p><sec id="kwd-group1" sec-type="kwd-group" disp-level="2"><p><bold>Keywords:</bold> DNA methylation, epigenetic age, epigenetics, HIV, metformin, monocytes</p></sec></abstract><abstract id="abstract2" abstract-type="graphical"><p>People living with HIV exhibit immune dysfunction, chronic inflammation, and heightened signs of biological aging captured by epigenetic clocks. Here, we performed a post hoc cell‐type specific epigenetic age analysis of monocytes and CD8<sup>+</sup> T cells using principal component‐based epigenetic clocks, epigenetic mitotic clocks, and a pace of aging epigenetic clock of two small metformin clinical trials in people living with HIV.</p><boxed-text id="acel13926-blkfxd-0001" position="anchor"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="jats-graphic-1" xlink:href="ACEL-23-e13926-g002.jpg"><?cloudpmc-path blobs/4fc7/10776116/9e4eae0a7f8a/ACEL-23-e13926-g002.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 149?><?original-width 331?><?scaled-height 149?><?scaled-width 331?></graphic></boxed-text></abstract><custom-meta-group><custom-meta><meta-name>status</meta-name><meta-value>released</meta-value></custom-meta><custom-meta><meta-name>display-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>is-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-journal-matter</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-scanned</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-retracted</meta-name><meta-value>no</meta-value></custom-meta></custom-meta-group></article-meta><notes notes-type="article-notes"><sec id="historyarticle-meta1" sec-type="history" disp-level="2"><p>Revised 2023 Jun 22; Received 2023 May 5; Accepted 2023 Jun 28; Collection date 2024 Jan.</p></sec></notes></front><body><sec id="acel13926-sec-0001" disp-level="1"><label>1.</label><title>INTRODUCTION</title><p>Metformin is an FDA‐approved diabetes drug impacting aging biology (Barzilai et al., <xref rid="acel13926-bib-0001" ref-type="bibr">2016</xref>), though metformin's effects on lifespan and healthspan remain controversial (Soukas et al., <xref rid="acel13926-bib-0026" ref-type="bibr">2019</xref>). Moreover, few clinical studies have been conducted in potential target “accelerated” aging populations for metformin such as older, euglycemic, virally suppressed individuals living with HIV (PLWH), who exhibit heightened signs of biological aging (Cole et al., <xref rid="acel13926-bib-0006" ref-type="bibr">2017</xref>; Guaraldi et al., <xref rid="acel13926-bib-0012" ref-type="bibr">2009</xref>; Justice, <xref rid="acel13926-bib-0018" ref-type="bibr">2010</xref>) due to HIV, chronic inflammation, antiretroviral therapy, and lifestyle effects (Deeks et al., <xref rid="acel13926-bib-0008" ref-type="bibr">2013</xref>; Goulet et al., <xref rid="acel13926-bib-0010" ref-type="bibr">2007</xref>; High et al., <xref rid="acel13926-bib-0015" ref-type="bibr">2012</xref>). Epigenetic clocks detect HIV‐related aging effects (Gross et al., <xref rid="acel13926-bib-0011" ref-type="bibr">2016</xref>; Horvath et al., <xref rid="acel13926-bib-0017" ref-type="bibr">2018</xref>; Horvath &amp; Levine, <xref rid="acel13926-bib-0016" ref-type="bibr">2015</xref>; Leung et al., <xref rid="acel13926-bib-0019" ref-type="bibr">2017</xref>; Shiau et al., <xref rid="acel13926-bib-0024" ref-type="bibr">2021</xref>). However, no study has examined metformin's impact on these biomarkers in PLWH on adjunctive metformin. Here, we performed a post hoc cell‐type specific epigenetic age analysis using principal component (PC)‐based epigenetic clocks (Higgins‐Chen et al., <xref rid="acel13926-bib-0014" ref-type="bibr">2022</xref>), epigenetic mitotic clocks (Teschendorff, <xref rid="acel13926-bib-0028" ref-type="bibr">2020</xref>; Yang et al., <xref rid="acel13926-bib-0029" ref-type="bibr">2016</xref>), and a pace of aging epigenetic clock (Belsky et al., <xref rid="acel13926-bib-0003" ref-type="bibr">2022</xref>) of two small metformin clinical trials in euglycemic virally suppressed PLWH.</p></sec><sec id="acel13926-sec-0002" disp-level="1"><label>2.</label><title>RESULTS AND DISCUSSION</title><p>First, we examined epigenetic clocks of monocyte cells from a 24‐week clinical trial of 12 participants (time since HIV diagnosis ranged from 13 to 29 years) that were randomized 1:1 to receive either adjunctive metformin (500 mg extended release increasing to 1000 mg at Week 4 until 24 weeks) or observation. The study design of the retrospective analysis of a 24 week adjunctive metformin clinical trial is shown in Figure <xref rid="acel13926-fig-0001" ref-type="fig">1a</xref> and have been previously reported (Shikuma et al., <xref rid="acel13926-bib-0025" ref-type="bibr">2020</xref>). The median chronological age did not significantly differ between groups for six participants randomized to the metformin arm (range, 51–60 years) and for five participants in the observational arm (range, 50–65 years). The study excluded participants with a history of diabetes. Hence, the baseline median fasting glucose of participants was 83 mg/mL (range, 71–104 mg/mL) in the metformin arm and 92 mg/mL (range, 75–105 mg/mL) in the observational arm.</p><fig id="acel13926-fig-0001" position="float"><?disp-level 2?><label>FIGURE 1</label><caption><p>Epigenetic clock estimates in monocytes (a) Overview of 24 week clinical trial (b, c) Monocyte subsets did not significantly differ in participants in the metformin and observation arms. (d) PCGrimAge was significantly decreased in the metformin arm, <italic>p</italic> = 0.01(e) PCGrimAge did not significantly differ in the observation arm. (f) PCPhenoAge was significantly decreased in the metformin arm, <italic>p</italic> = 0.01. (g) PCPhenoAge did not significantly differ in the observation arm. (h, i) PCHorvath1, PCHorvath2, and PCHannum did not significantly differ in the metformin and observation arms. (j) EpiTOC and EpiTOC2 significantly increased in the metformin arm. (k) DunedinPACE did not significantly differ in the metformin arm. (l, m) EpiTOC, EpiTOC2, and DunedinPACE did not significantly differ in participants in the observation arm.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="jats-graphic-3" xlink:href="ACEL-23-e13926-g003.jpg"><?cloudpmc-path blobs/4fc7/10776116/f09c353ea4a9/ACEL-23-e13926-g003.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 986?><?original-width 1064?><?scaled-height 657?><?scaled-width 709?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="ACEL-23-e13926-g003.gif"><?cloudpmc-path blobs/4fc7/10776116/60e583d55a76/ACEL-23-e13926-g003.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>We observed no significant differences in the percent of total monocytes, classical CD14<sup>++</sup> CD16<sup>−</sup> monocytes, intermediate CD14<sup>++</sup> CD16<sup>+</sup> monocytes, and nonclassical CD14<sup>+</sup> CD16<sup>++</sup> monocytes comparing Week 24 for both the metformin and observation groups using flow cytometry immunophenotyping (Figure <xref rid="acel13926-fig-0001" ref-type="fig">1b,c</xref>). To evaluate the impact of metformin on epigenetic clock biomarkers associated with age and mortality in total monocytes, we quantified DNA methylation (DNAm) levels at single nucleotide resolution using the MethylationEPIC platform from metformin and observation arm trial participants at Weeks 0 and 24. To minimize technical variation in epigenetic clock estimates that has been previously reported (Bose et al., <xref rid="acel13926-bib-0004" ref-type="bibr">2014</xref>; Sugden et al., <xref rid="acel13926-bib-0027" ref-type="bibr">2020</xref>), we harnessed a principal component (PC)‐based computational approach that increases reliability of epigenetic clocks tailored for use in longitudinal studies and clinical trials of interventions (Higgins‐Chen et al., <xref rid="acel13926-bib-0014" ref-type="bibr">2022</xref>). We found that PCGrimAge, an epigenetic clock built on time‐to‐death and related to mortality and lifespan (Lu et al., <xref rid="acel13926-bib-0021" ref-type="bibr">2019</xref>), was significantly decreased comparing Weeks 0–24 (<italic>p</italic> = 0.01; 95% Confidence Interval [CI], −3.03 to −0.64) by a mean of 1.84 years for participants in the metformin treatment group (Figure <xref rid="acel13926-fig-0001" ref-type="fig">1d</xref>). In contrast, PCGrimAge did not significantly differ for participants in the observation group (<italic>p</italic> = 0.29; 95% CI, −2.44 to 6.19) (Figure <xref rid="acel13926-fig-0001" ref-type="fig">1e</xref>). Additionally, we observed that PCPhenoAge, an epigenetic clock for lifespan and healthspan with a 1‐year increase associated with an increase in the risk of all‐cause mortality, was also significantly decreased comparing Weeks 0–24 (<italic>p</italic> = 0.01; 95% CI, −6.06 to −0.99) by a mean of 3.53 years for participants in the metformin treatment group (Figure <xref rid="acel13926-fig-0001" ref-type="fig">1f</xref>). PCPhenoAge did not significantly differ for participants in the observation group over 24 weeks (<italic>p</italic> = 0.13; 95% CI, −1.82 to 9.79) (Figure <xref rid="acel13926-fig-0001" ref-type="fig">1g</xref>). We did not observe any significant differences in chronological clocks including PCHorvath1 (Metformin: <italic>p</italic> = 0.65; 95% CI, −3.19 to 2.18; Observation: <italic>p</italic> = 0.47; 95% CI, −5.49 to 9.83), PCHorvath2 (Metformin: <italic>p</italic> = 0.90; 95% CI, −2.36 to 2.60; Observation: <italic>p</italic> = 0.82; 95% CI, −2.25 to 2.68), PCHannum (Metformin: <italic>p</italic> = 0.44; 95% CI, −2.89 to 1.46; Observation: <italic>p</italic> = 0.44; 95% CI, −8.37 to 15.8) over 24 weeks for participants in both the metformin treatment and observation arms (Figure <xref rid="acel13926-fig-0001" ref-type="fig">1h,i</xref>). Only GrimAge in the metformin treatment arm was significantly decreased comparing Weeks 0–24 (<italic>p</italic> = 0.02; 95% CI, −2.61 to −0.30) using original, non‐PC versions of epigenetic clocks (Figure <xref rid="acel13926-supitem-0001" ref-type="supplementary-material">S1</xref>). We did not observe any significant differences in the DunedinPACE pace of aging biomarker over 24 weeks for participants in both the metformin treatment and observation arms (Metformin: <italic>p</italic> = 0.88; 95% CI, −0.21 to 0.19 Observation: <italic>p</italic> = 0.11; 95% CI, −0.04 to 0.28) (Belsky et al., <xref rid="acel13926-bib-0003" ref-type="bibr">2022</xref>). The lack of change due to metformin in first generation epigenetic clocks and DunedinPACE within monocytes may reflect cell‐type specific DNAm differences captured in the distinct construction of mortality epigenetic clocks versus chronological and pace of aging clocks.</p><p>Next, we utilized the DNAm dataset to examine whether metformin impacted monocytes DNAm mitotic clocks constructed from CpGs that map to gene promoters marked by the polycomb repressive complex 2 (PRC2) in human embryonic stem cells that estimate the relative stem cell division rate (Beerman et al., <xref rid="acel13926-bib-0002" ref-type="bibr">2013</xref>; Teschendorff, <xref rid="acel13926-bib-0028" ref-type="bibr">2020</xref>; Yang et al., <xref rid="acel13926-bib-0029" ref-type="bibr">2016</xref>). We found that DNAm mitotic clock estimates EpiTOC and EpiTOC2 significantly increased comparing Weeks 0–24 for participants in the metformin group (EpiTOC: <italic>p</italic> = 0.003; 95% CI, −0.003 to 0.008; EpiTOC2: <italic>p</italic> = 0.01; 95% CI, 78.54 to 570.7) but did not differ for participants in the observation group (EpiTOC: <italic>p</italic> = 0.53; 95% CI, −0.017 to 0.027; EpiTOC2: <italic>p</italic> = 0.41; 95% CI, −797.6 to 1578) (Figure <xref rid="acel13926-fig-0001" ref-type="fig">1j,l</xref>).The implications of metformin's effect on the predicted increase in the mitotic clock in monocytes for aging improvement are not yet clear. Some studies suggest that aging leads to a decline in monocyte production and turnover, while others indicate an increase in monocyte turnover associated with age‐related immune dysfunction (De Maeyer &amp; Chambers, <xref rid="acel13926-bib-0007" ref-type="bibr">2021</xref>; He et al., <xref rid="acel13926-bib-0013" ref-type="bibr">2018</xref>).</p><p>We next retrospectively examined epigenetic age of CD8<sup>+</sup> T cells from a single arm 8‐week clinical trial that examined the effects of brief adjunctive metformin therapy in eight male euglycemic virally suppressed PLWH (Chew et al., <xref rid="acel13926-bib-0005" ref-type="bibr">2021</xref>). We generated longitudinal DNAm from isolated CD8<sup>+</sup> T cells for all participants at weeks 0, 4, and 8 (Figure <xref rid="acel13926-fig-0002" ref-type="fig">2a</xref>). Notably, we observed that PCGrimAge, PCPhenoAge, PCHorvath1, PCHorvath2, PCHannum, EpiTOC, EpiTOC2, and DunedinPACE did not significantly change in CD8<sup>+</sup> T cells following either 4 weeks or 8 weeks of metformin therapy (Figure <xref rid="acel13926-fig-0002" ref-type="fig">2b‐i</xref>). Longer duration studies may be required to see an effect in T cells, which do not turnover as rapidly as monocyte cells. The effect of metformin on CD8<sup>+</sup> T cells is not conclusive.</p><fig id="acel13926-fig-0002" position="float"><?disp-level 2?><label>FIGURE 2</label><caption><p>Epigenetic clock estimates in CD8<sup>+</sup> T cells (a) Overview of 8 week clinical trial (b–I) No significant differences were observed in PCGrimAge, PCPhenoAge, PCHorvath1, PCHorvath2, PCHannum, EpiTOC, EpiTOC2, and pace of aging DunedinPACE in CD8<sup>+</sup> T cells of participants comparing Weeks 0–4 and Week 8.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="jats-graphic-5" xlink:href="ACEL-23-e13926-g001.jpg"><?cloudpmc-path blobs/4fc7/10776116/5becec8728dd/ACEL-23-e13926-g001.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 339?><?original-width 1064?><?scaled-height 226?><?scaled-width 709?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="ACEL-23-e13926-g001.gif"><?cloudpmc-path blobs/4fc7/10776116/a6397b49d311/ACEL-23-e13926-g001.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>Observational epigenetic clock studies have reported conflicting metformin results on reducing epigenetic aging estimates (Li et al., <xref rid="acel13926-bib-0020" ref-type="bibr">2022</xref>; Quach et al., <xref rid="acel13926-bib-0023" ref-type="bibr">2017</xref>). A randomized metformin trial found no significant impact on epigenetic aging in overweight/obese breast cancer survivors (Nwanaji‐Enwerem et al., <xref rid="acel13926-bib-0022" ref-type="bibr">2021</xref>), while another small trial combining metformin with human growth hormone and dehydroepiandrosterone in healthy men reported a reversal of epigenetic aging that persisted for 6 months posttreatment (Fahy et al., <xref rid="acel13926-bib-0009" ref-type="bibr">2019</xref>). Our short report suggests metformin may benefit a subset of PLWH experiencing chronic systemic inflammation who may have the highest potential for epigenetic age reduction/reversal.</p><p>In summary, this brief report suggests adjunctive metformin in PLWH reduces mortality‐based epigenetic clocks in monocyte cells, potentially impacting accelerated and or accentuated aging—a major concern for PLWH due to increased age‐related comorbidities. It is crucial to further investigate metformin's cell‐type specific effects on monocytes through clinical trials. This report's limitations include a small sample size and the absence of follow‐up after metformin therapy to assess the durability of epigenetic clock changes in short‐lived monocyte cells. Our findings highlight the importance of pursuing more geroscience interventions that target biological aging in PLWH who stand to gain the most benefits and incorporating epigenetic clocks in clinical trials of metformin for aging to provide valuable insights into assessing treatment effects, understanding mechanisms, and longitudinal monitoring.</p></sec><sec id="acel13926-sec-0003" disp-level="1"><title>AUTHOR CONTRIBUTIONS</title><p>Michael J. Corley and Lishomwa C. Ndhlovu conceived, designed and carried out experiments. Alina PS Pang contributed to data analysis and interpretation. Cecilia M Shikuma contributed biological specimens and clinical data. Michael J. Corley and Lishomwa C. Ndhlovu drafted the manuscript. All authors critically reviewed and edited the final version of the manuscript.</p></sec><sec id="acel13926-sec-0005" disp-level="1"><title>FUNDING INFORMATION</title><p>L. C. N. and M.J.C. were supported during the draft of the manuscript in part by the National Institutes of Health (NIH) grant number UM1AI164559.</p></sec><sec id="acel13926-sec-0006" disp-level="1"><title>CONFLICT OF INTEREST STATEMENT</title><p>L.C.N. reports grants from the NIH and has received consulting fees from work as a scientific advisor for AbbVie, ViiV Healthcare, and Cytodyn and for service on the Board of Directors of CytoDyn and has financial interests in Ledidi AS, all for work outside of the submitted work. All other authors declare no competing interests.</p></sec><sec id="sec6" disp-level="1"><title>Supporting information</title><supplementary-material id="acel13926-supitem-0001" position="float"><caption><p>
+Figure S1:
+</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ACEL-23-e13926-s001.docx" mimetype="application" mime-subtype="vnd.openxmlformats-officedocument.wordprocessingml.document"><?cloudpmc-path 4fc7/10776116/133271e37f76/ACEL-23-e13926-s001.docx?><?cloudpmc-bucket app?><?size 379436?><caption><p>Click here for additional data file.</p></caption></media></supplementary-material></sec><sec id="acel13926-sec-0004" sec-type="ack" disp-level="1"><title>ACKNOWLEDGMENTS</title><p>We gratefully acknowledge the study participants and the Hawaii Center for AIDS (HICFA) clinical study staff who made this work possible. We acknowledge support from Annette Jones at the UH Cancer Center for DNA methylation profiling of all samples.</p></sec><sec id="notes1" disp-level="1"><p>
+
+
+Corley, M. J.
+, 
+Pang, A. P. S.
+, 
+Shikuma, C. M.
+, &amp; 
+Ndhlovu, L. C.
+ (2024). Cell‐type specific impact of metformin on monocyte epigenetic age reversal in virally suppressed older people living with HIV
+. Aging Cell, 23, e13926. 10.1111/acel.13926
+
+
+</p></sec><sec id="acel13926-sec-0008" disp-level="1"><title>DATA AVAILABILITY STATEMENT</title><p>The data from this study was submitted to the NCBI Gene Expression Omnibus (GEO) <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ncbi.nlm.nih.gov/geo/" ext-link-type="uri">http://www.ncbi.nlm.nih.gov/geo/</ext-link>.</p></sec><sec id="acel13926-bibl-0001" sec-type="ref-list" disp-level="1"><title>REFERENCES</title><sec id="acel13926-bibl-0001_sec2" disp-level="2"><ref-list><ref id="acel13926-bib-0001"><mixed-citation id="acel13926-cit-0001"><named-content content-type="citation-string">
+
+Barzilai, N.
+, 
+Crandall, J. P.
+, 
+Kritchevsky, S. B.
+, &amp; 
+Espeland, M. A.
+ (2016). Metformin as a tool to target aging. Cell Metabolism, 23, 1060–1065.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.cmet.2016.05.011"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5943638"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27304507"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cell Metabolism&amp;title=Metformin as a tool to target aging&amp;author=N. Barzilai&amp;author=J. P. Crandall&amp;author=S. B. Kritchevsky&amp;author=M. A. Espeland&amp;volume=23&amp;publication_year=2016&amp;pages=1060-1065&amp;pmid=27304507&amp;doi=10.1016/j.cmet.2016.05.011&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0002"><mixed-citation id="acel13926-cit-0002"><named-content content-type="citation-string">
+
+Beerman, I.
+, 
+Bock, C.
+, 
+Garrison, B. S.
+, 
+Smith, Z. D.
+, 
+Gu, H.
+, 
+Meissner, A.
+, &amp; 
+Rossi, D. J.
+ (2013). Proliferation‐dependent alterations of the DNA methylation landscape underlie hematopoietic stem cell aging. Cell Stem Cell, 12, 413–425.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.stem.2013.01.017"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC12163706"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="23415915"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Cell Stem Cell&amp;title=Proliferation‐dependent alterations of the DNA methylation landscape underlie hematopoietic stem cell aging&amp;author=I. Beerman&amp;author=C. Bock&amp;author=B. S. Garrison&amp;author=Z. D. Smith&amp;author=H. Gu&amp;volume=12&amp;publication_year=2013&amp;pages=413-425&amp;pmid=23415915&amp;doi=10.1016/j.stem.2013.01.017&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0003"><mixed-citation id="acel13926-cit-0003"><named-content content-type="citation-string">
+
+Belsky, D. W.
+, 
+Caspi, A.
+, 
+Corcoran, D. L.
+, 
+Sugden, K.
+, 
+Poulton, R.
+, 
+Arseneault, L.
+, 
+Baccarelli, A.
+, 
+Chamarti, K.
+, 
+Gao, X.
+, 
+Hannon, E.
+, 
+Harrington, H. L.
+, 
+Houts, R.
+, 
+Kothari, M.
+, 
+Kwon, D.
+, 
+Mill, J.
+, 
+Schwartz, J.
+, 
+Vokonas, P.
+, 
+Wang, C.
+, 
+Williams, B. S.
+, &amp; 
+Moffitt, T. E.
+ (2022). DunedinPACE, a DNA methylation biomarker of the pace of aging. eLife, 11, 1–26. 10.7554/eLife.73420
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.7554/eLife.73420"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8853656"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35029144"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=eLife&amp;title=DunedinPACE, a DNA methylation biomarker of the pace of aging&amp;author=D. W. Belsky&amp;author=A. Caspi&amp;author=D. L. Corcoran&amp;author=K. Sugden&amp;author=R. Poulton&amp;volume=11&amp;publication_year=2022&amp;pages=1-26&amp;pmid=35029144&amp;doi=10.7554/eLife.73420&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0004"><mixed-citation id="acel13926-cit-0004"><named-content content-type="citation-string">
+
+Bose, M.
+, 
+Wu, C.
+, 
+Pankow, J. S.
+, 
+Demerath, E. W.
+, 
+Bressler, J.
+, 
+Fornage, M.
+, 
+Grove, M. L.
+, 
+Mosley, T. H.
+, 
+Hicks, C.
+, 
+North, K.
+, 
+Kao, W. H.
+, 
+Zhang, Y.
+, 
+Boerwinkle, E.
+, &amp; 
+Guan, W.
+ (2014). Evaluation of microarray‐based DNA methylation measurement using technical replicates: The atherosclerosis risk In communities (ARIC) study. BMC Bioinformatics, 15, 312.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1186/1471-2105-15-312"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4180315"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="25239148"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=BMC Bioinformatics&amp;title=Evaluation of microarray‐based DNA methylation measurement using technical replicates: The atherosclerosis risk In communities (ARIC) study&amp;author=M. Bose&amp;author=C. Wu&amp;author=J. S. Pankow&amp;author=E. W. Demerath&amp;author=J. Bressler&amp;volume=15&amp;publication_year=2014&amp;pages=312&amp;pmid=25239148&amp;doi=10.1186/1471-2105-15-312&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0005"><mixed-citation id="acel13926-cit-0005"><named-content content-type="citation-string">
+
+Chew, G. M.
+, 
+Padua, A. J. P.
+, 
+Chow, D. C.
+, 
+Souza, S. A.
+, 
+Clements, D. M.
+, 
+Corley, M. J.
+, 
+Pang, A. P. S.
+, 
+Alejandria, M. M.
+, 
+Gerschenson, M.
+, 
+Shikuma, C. M.
+, &amp; 
+Ndhlovu, L. C.
+ (2021). Effects of brief adjunctive metformin therapy in Virologically suppressed HIV‐infected adults on polyfunctional HIV‐specific CD8 T cell responses to PD‐L1 blockade. AIDS Research and Human Retroviruses, 37, 24–33.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1089/aid.2020.0172"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7864091"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33019813"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=AIDS Research and Human Retroviruses&amp;title=Effects of brief adjunctive metformin therapy in Virologically suppressed HIV‐infected adults on polyfunctional HIV‐specific CD8 T cell responses to PD‐L1 blockade&amp;author=G. M. Chew&amp;author=A. J. P. Padua&amp;author=D. C. Chow&amp;author=S. A. Souza&amp;author=D. M. Clements&amp;volume=37&amp;publication_year=2021&amp;pages=24-33&amp;pmid=33019813&amp;doi=10.1089/aid.2020.0172&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0006"><mixed-citation id="acel13926-cit-0006"><named-content content-type="citation-string">
+
+Cole, J. H.
+, 
+Underwood, J.
+, 
+Caan, M. W. A.
+, 
+De Francesco, D.
+, 
+van Zoest, R. A.
+, 
+Leech, R.
+, 
+Wit, F. W. N. M.
+, 
+Portegies, P.
+, 
+Geurtsen, G. J.
+, 
+Schmand, B. A.
+, 
+Schim van der Loeff, M. F.
+, 
+Franceschi, C.
+, 
+Sabin, C. A.
+, 
+Majoie, C. B. L. M.
+, 
+Winston, A.
+, 
+Reiss, P.
+, 
+Sharp, D. J.
+, &amp; COBRA collaboration
+. (2017). Increased brain‐predicted aging in treated HIV disease. Neurology, 88, 1349–1357.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1212/WNL.0000000000003790"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5379929"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28258081"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Neurology&amp;title=Increased brain‐predicted aging in treated HIV disease&amp;author=J. H. Cole&amp;author=J. Underwood&amp;author=M. W. A. Caan&amp;author=D. De Francesco&amp;author=R. A. van Zoest&amp;volume=88&amp;publication_year=2017&amp;pages=1349-1357&amp;pmid=28258081&amp;doi=10.1212/WNL.0000000000003790&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0007"><mixed-citation id="acel13926-cit-0007"><named-content content-type="citation-string">
+
+De Maeyer, R. P. H.
+, &amp; 
+Chambers, E. S.
+ (2021). The impact of ageing on monocytes and macrophages. Immunology Letters, 230, 1–10.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.imlet.2020.12.003"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33309673"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Immunology Letters&amp;title=The impact of ageing on monocytes and macrophages&amp;author=R. P. H. De Maeyer&amp;author=E. S. Chambers&amp;volume=230&amp;publication_year=2021&amp;pages=1-10&amp;pmid=33309673&amp;doi=10.1016/j.imlet.2020.12.003&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0008"><mixed-citation id="acel13926-cit-0008"><named-content content-type="citation-string">
+
+Deeks, S. G.
+, 
+Tracy, R.
+, &amp; 
+Douek, D. C.
+ (2013). Systemic effects of inflammation on health during chronic HIV infection. Immunity, 39, 633–645.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.immuni.2013.10.001"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4012895"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="24138880"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Immunity&amp;title=Systemic effects of inflammation on health during chronic HIV infection&amp;author=S. G. Deeks&amp;author=R. Tracy&amp;author=D. C. Douek&amp;volume=39&amp;publication_year=2013&amp;pages=633-645&amp;pmid=24138880&amp;doi=10.1016/j.immuni.2013.10.001&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0009"><mixed-citation id="acel13926-cit-0009"><named-content content-type="citation-string">
+
+Fahy, G. M.
+, 
+Brooke, R. T.
+, 
+Watson, J. P.
+, 
+Good, Z.
+, 
+Vasanawala, S. S.
+, 
+Maecker, H.
+, 
+Leipold, M. D.
+, 
+Lin, D. T. S.
+, 
+Kobor, M. S.
+, &amp; 
+Horvath, S.
+ (2019). Reversal of epigenetic aging and immunosenescent trends in humans. Aging Cell, 18, e13028.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/acel.13028"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6826138"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31496122"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Aging Cell&amp;title=Reversal of epigenetic aging and immunosenescent trends in humans&amp;author=G. M. Fahy&amp;author=R. T. Brooke&amp;author=J. P. Watson&amp;author=Z. Good&amp;author=S. S. Vasanawala&amp;volume=18&amp;publication_year=2019&amp;pages=e13028&amp;pmid=31496122&amp;doi=10.1111/acel.13028&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0010"><mixed-citation id="acel13926-cit-0010"><named-content content-type="citation-string">
+
+Goulet, J. L.
+, 
+Fultz, S. L.
+, 
+Rimland, D.
+, 
+Butt, A.
+, 
+Gibert, C.
+, 
+Rodriguez‐Barradas, M.
+, 
+Bryant, K.
+, &amp; 
+Justice, A. C.
+ (2007). Aging and infectious diseases: Do patterns of comorbidity vary by HIV status, age, and HIV severity?
+Clinical Infectious Diseases, 45, 1593–1601.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1086/523577"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC3687553"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="18190322"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Clinical Infectious Diseases&amp;title=Aging and infectious diseases: Do patterns of comorbidity vary by HIV status, age, and HIV severity?&amp;author=J. L. Goulet&amp;author=S. L. Fultz&amp;author=D. Rimland&amp;author=A. Butt&amp;author=C. Gibert&amp;volume=45&amp;publication_year=2007&amp;pages=1593-1601&amp;pmid=18190322&amp;doi=10.1086/523577&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0011"><mixed-citation id="acel13926-cit-0011"><named-content content-type="citation-string">
+
+Gross, A. M.
+, 
+Jaeger, P. A.
+, 
+Kreisberg, J. F.
+, 
+Licon, K.
+, 
+Jepsen, K. L.
+, 
+Khosroheidari, M.
+, 
+Morsey, B. M.
+, 
+Swindells, S.
+, 
+Shen, H.
+, 
+Ng, C. T.
+, 
+Flagg, K.
+, 
+Chen, D.
+, 
+Zhang, K.
+, 
+Fox, H. S.
+, &amp; 
+Ideker, T.
+ (2016). Methylome‐wide analysis of chronic HIV infection reveals five‐year increase in biological age and epigenetic targeting of HLA. Molecular Cell, 62, 157–168.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.molcel.2016.03.019"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4995115"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27105112"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Molecular Cell&amp;title=Methylome‐wide analysis of chronic HIV infection reveals five‐year increase in biological age and epigenetic targeting of HLA&amp;author=A. M. Gross&amp;author=P. A. Jaeger&amp;author=J. F. Kreisberg&amp;author=K. Licon&amp;author=K. L. Jepsen&amp;volume=62&amp;publication_year=2016&amp;pages=157-168&amp;pmid=27105112&amp;doi=10.1016/j.molcel.2016.03.019&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0012"><mixed-citation id="acel13926-cit-0012"><named-content content-type="citation-string">
+
+Guaraldi, G.
+, 
+Zona, S.
+, 
+Alexopoulos, N.
+, 
+Orlando, G.
+, 
+Carli, F.
+, 
+Ligabue, G.
+, 
+Fiocchi, F.
+, 
+Lattanzi, A.
+, 
+Rossi, R.
+, 
+Modena, M. G.
+, 
+Esposito, R.
+, 
+Palella, F.
+, &amp; 
+Raggi, P.
+ (2009). Coronary aging in HIV‐infected patients. Clinical Infectious Diseases, 49, 1756–1762.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1086/648080"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="19886793"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Clinical Infectious Diseases&amp;title=Coronary aging in HIV‐infected patients&amp;author=G. Guaraldi&amp;author=S. Zona&amp;author=N. Alexopoulos&amp;author=G. Orlando&amp;author=F. Carli&amp;volume=49&amp;publication_year=2009&amp;pages=1756-1762&amp;pmid=19886793&amp;doi=10.1086/648080&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0013"><mixed-citation id="acel13926-cit-0013"><named-content content-type="citation-string">
+
+He, Z.
+, 
+Allers, C.
+, 
+Sugimoto, C.
+, 
+Ahmed, N.
+, 
+Fujioka, H.
+, 
+Kim, W.‐K.
+, 
+Didier, E. S.
+, &amp; 
+Kuroda, M. J.
+ (2018). Rapid turnover and High production rate of myeloid cells in adult rhesus macaques with compensations during aging. Journal of Immunology, 200, 4059–4067.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.4049/jimmunol.1800207"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6263173"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29728510"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Journal of Immunology&amp;title=Rapid turnover and High production rate of myeloid cells in adult rhesus macaques with compensations during aging&amp;author=Z. He&amp;author=C. Allers&amp;author=C. Sugimoto&amp;author=N. Ahmed&amp;author=H. Fujioka&amp;volume=200&amp;publication_year=2018&amp;pages=4059-4067&amp;pmid=29728510&amp;doi=10.4049/jimmunol.1800207&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0014"><mixed-citation id="acel13926-cit-0014"><named-content content-type="citation-string">
+
+Higgins‐Chen, A. T.
+, 
+Thrush, K. L.
+, 
+Wang, Y.
+, 
+Minteer, C. J.
+, 
+Kuo, P.‐L.
+, 
+Wang, M.
+, 
+Niimi, P.
+, 
+Sturm, G.
+, 
+Lin, J.
+, 
+Moore, A. Z.
+, 
+Bandinelli, S.
+, 
+Vinkers, C. H.
+, 
+Vermetten, E.
+, 
+Rutten, B. P. F.
+, 
+Geuze, E.
+, 
+Okhuijsen‐Pfeifer, C.
+, 
+van der Horst, M. Z.
+, 
+Schreiter, S.
+, 
+Gutwinski, S.
+, … 
+Levine, M. E.
+ (2022). A computational solution for bolstering reliability of epigenetic clocks: Implications for clinical trials and longitudinal tracking. Nature Aging, 2, 644–661.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s43587-022-00248-2"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9586209"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36277076"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nature Aging&amp;title=A computational solution for bolstering reliability of epigenetic clocks: Implications for clinical trials and longitudinal tracking&amp;author=A. T. Higgins‐Chen&amp;author=K. L. Thrush&amp;author=Y. Wang&amp;author=C. J. Minteer&amp;author=P.‐L. Kuo&amp;volume=2&amp;publication_year=2022&amp;pages=644-661&amp;pmid=36277076&amp;doi=10.1038/s43587-022-00248-2&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0015"><mixed-citation id="acel13926-cit-0015"><named-content content-type="citation-string">
+
+High, K. P.
+, 
+Brennan‐Ing, M.
+, 
+Clifford, D. B.
+, 
+Cohen, M. H.
+, 
+Currier, J.
+, 
+Deeks, S. G.
+, 
+Deren, S.
+, 
+Effros, R. B.
+, 
+Gebo, K.
+, 
+Goronzy, J. J.
+, 
+Justice, A. C.
+, 
+Landay, A.
+, 
+Levin, J.
+, 
+Miotti, P. G.
+, 
+Munk, R. J.
+, 
+Nass, H.
+, 
+Rinaldo, C. R., Jr.
+, 
+Shlipak, M. G.
+, 
+Tracy, R.
+, … OAR Working Group on HIV and Aging
+. (2012). HIV and aging: State of knowledge and areas of critical need for research. A report to the NIH Office of AIDS Research by the HIV and aging working group. Journal of Acquired Immune Deficiency Syndromes, 60(Suppl 1), S1–S18.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1097/QAI.0b013e31825a3668"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC3413877"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="22688010"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Journal of Acquired Immune Deficiency Syndromes&amp;title=HIV and aging: State of knowledge and areas of critical need for research. A report to the NIH Office of AIDS Research by the HIV and aging working group&amp;author=K. P. High&amp;author=M. Brennan‐Ing&amp;author=D. B. Clifford&amp;author=M. H. Cohen&amp;author=J. Currier&amp;volume=60&amp;issue=Suppl 1&amp;publication_year=2012&amp;pages=S1-S18&amp;pmid=22688010&amp;doi=10.1097/QAI.0b013e31825a3668&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0016"><mixed-citation id="acel13926-cit-0016"><named-content content-type="citation-string">
+
+Horvath, S.
+, &amp; 
+Levine, A. J.
+ (2015). HIV‐1 infection accelerates age according to the epigenetic clock. The Journal of Infectious Diseases, 212, 1563–1573.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/infdis/jiv277"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4621253"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="25969563"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=The Journal of Infectious Diseases&amp;title=HIV‐1 infection accelerates age according to the epigenetic clock&amp;author=S. Horvath&amp;author=A. J. Levine&amp;volume=212&amp;publication_year=2015&amp;pages=1563-1573&amp;pmid=25969563&amp;doi=10.1093/infdis/jiv277&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0017"><mixed-citation id="acel13926-cit-0017"><named-content content-type="citation-string">
+
+Horvath, S.
+, 
+Stein, D. J.
+, 
+Phillips, N.
+, 
+Heany, S. J.
+, 
+Kobor, M. S.
+, 
+Lin, D. T. S.
+, 
+Myer, L.
+, 
+Zar, H. J.
+, 
+Levine, A. J.
+, &amp; 
+Hoare, J.
+ (2018). Perinatally acquired HIV infection accelerates epigenetic aging in south African adolescents. Aids, 32, 1465–1474.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1097/QAD.0000000000001854"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6026068"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29746298"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Aids&amp;title=Perinatally acquired HIV infection accelerates epigenetic aging in south African adolescents&amp;author=S. Horvath&amp;author=D. J. Stein&amp;author=N. Phillips&amp;author=S. J. Heany&amp;author=M. S. Kobor&amp;volume=32&amp;publication_year=2018&amp;pages=1465-1474&amp;pmid=29746298&amp;doi=10.1097/QAD.0000000000001854&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0018"><mixed-citation id="acel13926-cit-0018"><named-content content-type="citation-string">
+
+Justice, A. C.
+ (2010). HIV and aging: Time for a new paradigm. Current HIV/AIDS Reports, 7, 69–76.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s11904-010-0041-9"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="20425560"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Current HIV/AIDS Reports&amp;title=HIV and aging: Time for a new paradigm&amp;author=A. C. Justice&amp;volume=7&amp;publication_year=2010&amp;pages=69-76&amp;pmid=20425560&amp;doi=10.1007/s11904-010-0041-9&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0019"><mixed-citation id="acel13926-cit-0019"><named-content content-type="citation-string">
+
+Leung, J. M.
+, 
+Fishbane, N.
+, 
+Jones, M.
+, 
+Morin, A.
+, 
+Xu, S.
+, 
+Liu, J. C.
+, 
+MacIsaac, J.
+, 
+Milloy, M.‐J.
+, 
+Hayashi, K.
+, 
+Montaner, J.
+, 
+Horvath, S.
+, 
+Kobor, M.
+, 
+Sin, D. D.
+, 
+Harrigan, P. R.
+, &amp; 
+Man, S. F. P.
+ (2017). Longitudinal study of surrogate aging measures during human immunodeficiency virus seroconversion. Aging, 9, 687–705.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.18632/aging.101184"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5391226"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28237978"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Aging&amp;title=Longitudinal study of surrogate aging measures during human immunodeficiency virus seroconversion&amp;author=J. M. Leung&amp;author=N. Fishbane&amp;author=M. Jones&amp;author=A. Morin&amp;author=S. Xu&amp;volume=9&amp;publication_year=2017&amp;pages=687-705&amp;pmid=28237978&amp;doi=10.18632/aging.101184&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0020"><mixed-citation id="acel13926-cit-0020"><named-content content-type="citation-string">
+
+Li, M.
+, 
+Bao, L.
+, 
+Zhu, P.
+, &amp; 
+Wang, S.
+ (2022). Effect of metformin on the epigenetic age of peripheral blood in patients with diabetes mellitus. Frontiers in Genetics, 13, 955835.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3389/fgene.2022.955835"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9548538"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36226195"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Frontiers in Genetics&amp;title=Effect of metformin on the epigenetic age of peripheral blood in patients with diabetes mellitus&amp;author=M. Li&amp;author=L. Bao&amp;author=P. Zhu&amp;author=S. Wang&amp;volume=13&amp;publication_year=2022&amp;pages=955835&amp;pmid=36226195&amp;doi=10.3389/fgene.2022.955835&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0021"><mixed-citation id="acel13926-cit-0021"><named-content content-type="citation-string">
+
+Lu, A. T.
+, 
+Quach, A.
+, 
+Wilson, J. G.
+, 
+Reiner, A. P.
+, 
+Aviv, A.
+, 
+Raj, K.
+, 
+Hou, L.
+, 
+Baccarelli, A. A.
+, 
+Li, Y.
+, 
+Stewart, J. D.
+, 
+Whitsel, E. A.
+, 
+Assimes, T. L.
+, 
+Ferrucci, L.
+, &amp; 
+Horvath, S.
+ (2019). DNA methylation GrimAge strongly predicts lifespan and healthspan. Aging, 11, 303–327.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.18632/aging.101684"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6366976"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30669119"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Aging&amp;title=DNA methylation GrimAge strongly predicts lifespan and healthspan&amp;author=A. T. Lu&amp;author=A. Quach&amp;author=J. G. Wilson&amp;author=A. P. Reiner&amp;author=A. Aviv&amp;volume=11&amp;publication_year=2019&amp;pages=303-327&amp;pmid=30669119&amp;doi=10.18632/aging.101684&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0022"><mixed-citation id="acel13926-cit-0022"><named-content content-type="citation-string">
+
+Nwanaji‐Enwerem, J. C.
+, 
+Chung, F. F.‐L.
+, 
+Van der Laan, L.
+, 
+Novoloaca, A.
+, 
+Cuenin, C.
+, 
+Johansson, H.
+, 
+Bonanni, B.
+, 
+Hubbard, A. E.
+, 
+Smith, M. T.
+, 
+Hartman, S. J.
+, 
+Cardenas, A.
+, 
+Sears, D. D.
+, &amp; 
+Herceg, Z.
+ (2021). An epigenetic aging analysis of randomized metformin and weight loss interventions in overweight postmenopausal breast cancer survivors. Clinical Epigenetics, 13, 224.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1186/s13148-021-01218-y"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8684118"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34920739"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Clinical Epigenetics&amp;title=An epigenetic aging analysis of randomized metformin and weight loss interventions in overweight postmenopausal breast cancer survivors&amp;author=J. C. Nwanaji‐Enwerem&amp;author=F. F.‐L. Chung&amp;author=L. Van der Laan&amp;author=A. Novoloaca&amp;author=C. Cuenin&amp;volume=13&amp;publication_year=2021&amp;pages=224&amp;pmid=34920739&amp;doi=10.1186/s13148-021-01218-y&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0023"><mixed-citation id="acel13926-cit-0023"><named-content content-type="citation-string">
+
+Quach, A.
+, 
+Levine, M. E.
+, 
+Tanaka, T.
+, 
+Lu, A. T.
+, 
+Chen, B. H.
+, 
+Ferrucci, L.
+, 
+Ritz, B.
+, 
+Bandinelli, S.
+, 
+Neuhouser, M. L.
+, 
+Beasley, J. M.
+, 
+Snetselaar, L.
+, 
+Wallace, R. B.
+, 
+Tsao, P. S.
+, 
+Absher, D.
+, 
+Assimes, T. L.
+, 
+Stewart, J. D.
+, 
+Li, Y.
+, 
+Hou, L.
+, 
+Baccarelli, A. A.
+, … 
+Horvath, S.
+ (2017). Epigenetic clock analysis of diet, exercise, education, and lifestyle factors. Aging, 9, 419–446.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.18632/aging.101168"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5361673"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28198702"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Aging&amp;title=Epigenetic clock analysis of diet, exercise, education, and lifestyle factors&amp;author=A. Quach&amp;author=M. E. Levine&amp;author=T. Tanaka&amp;author=A. T. Lu&amp;author=B. H. Chen&amp;volume=9&amp;publication_year=2017&amp;pages=419-446&amp;pmid=28198702&amp;doi=10.18632/aging.101168&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0024"><mixed-citation id="acel13926-cit-0024"><named-content content-type="citation-string">
+
+Shiau, S.
+, 
+Cantos, A.
+, 
+Ramon, C. V.
+, 
+Shen, Y.
+, 
+Shah, J.
+, 
+Jang, G.
+, 
+Baccarelli, A. A.
+, 
+Arpadi, S. M.
+, &amp; 
+Yin, M. T.
+ (2021). Epigenetic age in young African American adults with perinatally acquired HIV. Journal of Acquired Immune Deficiency Syndromes, 87, 1102–1109.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1097/QAI.0000000000002687"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8217147"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33765682"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Journal of Acquired Immune Deficiency Syndromes&amp;title=Epigenetic age in young African American adults with perinatally acquired HIV&amp;author=S. Shiau&amp;author=A. Cantos&amp;author=C. V. Ramon&amp;author=Y. Shen&amp;author=J. Shah&amp;volume=87&amp;publication_year=2021&amp;pages=1102-1109&amp;pmid=33765682&amp;doi=10.1097/QAI.0000000000002687&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0025"><mixed-citation id="acel13926-cit-0025"><named-content content-type="citation-string">
+
+Shikuma, C. M.
+, 
+Chew, G. M.
+, 
+Kohorn, L.
+, 
+Souza, S. A.
+, 
+Chow, D.
+, 
+SahBandar, I. N.
+, 
+Park, E.‐Y.
+, 
+Hanks, N.
+, 
+Gangcuangco, L. M. A.
+, 
+Gerschenson, M.
+, &amp; 
+Ndhlovu, L. C.
+ (2020). Short communication: Metformin reduces CD4 T cell exhaustion in HIV‐infected adults on suppressive antiretroviral therapy. AIDS Research and Human Retroviruses, 36, 303–305.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1089/aid.2019.0078"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7185314"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31731885"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=AIDS Research and Human Retroviruses&amp;title=Short communication: Metformin reduces CD4 T cell exhaustion in HIV‐infected adults on suppressive antiretroviral therapy&amp;author=C. M. Shikuma&amp;author=G. M. Chew&amp;author=L. Kohorn&amp;author=S. A. Souza&amp;author=D. Chow&amp;volume=36&amp;publication_year=2020&amp;pages=303-305&amp;pmid=31731885&amp;doi=10.1089/aid.2019.0078&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0026"><mixed-citation id="acel13926-cit-0026"><named-content content-type="citation-string">
+
+Soukas, A. A.
+, 
+Hao, H.
+, &amp; 
+Wu, L.
+ (2019). Metformin as anti‐aging therapy: Is it for everyone?
+Trends in Endocrinology and Metabolism: TEM, 30, 745–755.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.tem.2019.07.015"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6779524"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31405774"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Trends in Endocrinology and Metabolism: TEM&amp;title=Metformin as anti‐aging therapy: Is it for everyone?&amp;author=A. A. Soukas&amp;author=H. Hao&amp;author=L. Wu&amp;volume=30&amp;publication_year=2019&amp;pages=745-755&amp;pmid=31405774&amp;doi=10.1016/j.tem.2019.07.015&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0027"><mixed-citation id="acel13926-cit-0027"><named-content content-type="citation-string">
+
+Sugden, K.
+, 
+Hannon, E. J.
+, 
+Arseneault, L.
+, 
+Belsky, D. W.
+, 
+Corcoran, D. L.
+, 
+Fisher, H. L.
+, 
+Houts, R. M.
+, 
+Kandaswamy, R.
+, 
+Moffitt, T. E.
+, 
+Poulton, R.
+, 
+Prinz, J. A.
+, 
+Rasmussen, L. J. H.
+, 
+Williams, B. S.
+, 
+Wong, C. C. Y.
+, 
+Mill, J.
+, &amp; 
+Caspi, A.
+ (2020). Patterns of reliability: Assessing the reproducibility and integrity of DNA methylation measurement. Patterns (New York, N.Y.), 1, 100014. 10.1016/j.patter.2020.100014
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.patter.2020.100014"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7467214"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32885222"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Patterns (New York, N.Y.)&amp;title=Patterns of reliability: Assessing the reproducibility and integrity of DNA methylation measurement&amp;author=K. Sugden&amp;author=E. J. Hannon&amp;author=L. Arseneault&amp;author=D. W. Belsky&amp;author=D. L. Corcoran&amp;volume=1&amp;publication_year=2020&amp;pages=100014&amp;pmid=32885222&amp;doi=10.1016/j.patter.2020.100014&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0028"><mixed-citation id="acel13926-cit-0028"><named-content content-type="citation-string">
+
+Teschendorff, A. E.
+ (2020). A comparison of epigenetic mitotic‐like clocks for cancer risk prediction. Genome Medicine, 12, 56.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1186/s13073-020-00752-3"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7315560"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32580750"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Genome Medicine&amp;title=A comparison of epigenetic mitotic‐like clocks for cancer risk prediction&amp;author=A. E. Teschendorff&amp;volume=12&amp;publication_year=2020&amp;pages=56&amp;pmid=32580750&amp;doi=10.1186/s13073-020-00752-3&amp;"/></mixed-citation></ref><ref id="acel13926-bib-0029"><mixed-citation id="acel13926-cit-0029"><named-content content-type="citation-string">
+
+Yang, Z.
+, 
+Wong, A.
+, 
+Kuh, D.
+, 
+Paul, D. S.
+, 
+Rakyan, V. K.
+, 
+Leslie, R. D.
+, 
+Zheng, S. C.
+, 
+Widschwendter, M.
+, 
+Beck, S.
+, &amp; 
+Teschendorff, A. E.
+ (2016). Correlation of an epigenetic mitotic clock with cancer risk. Genome Biology, 17, 205.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1186/s13059-016-1064-3"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5046977"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27716309"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Genome Biology&amp;title=Correlation of an epigenetic mitotic clock with cancer risk&amp;author=Z. Yang&amp;author=A. Wong&amp;author=D. Kuh&amp;author=D. S. Paul&amp;author=V. K. Rakyan&amp;volume=17&amp;publication_year=2016&amp;pages=205&amp;pmid=27716309&amp;doi=10.1186/s13059-016-1064-3&amp;"/></mixed-citation></ref></ref-list></sec></sec><sec id="_ad93_" xml:lang="en" sec-type="associated-data" disp-level="1"><title>Associated Data</title><sec id="_adsm93_" xml:lang="en" sec-type="supplementary-materials" disp-level="2"><title>Supplementary Materials</title><supplementary-material id="db_ds_supplementary-material1_reqid_" position="float"><caption><p>
+Figure S1:
+</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ACEL-23-e13926-s001.docx" mimetype="application" mime-subtype="vnd.openxmlformats-officedocument.wordprocessingml.document"><?cloudpmc-path 4fc7/10776116/133271e37f76/ACEL-23-e13926-s001.docx?><?cloudpmc-bucket app?><?size 379436?><caption><p>Click here for additional data file.</p></caption></media></supplementary-material></sec><sec id="_adda93_" xml:lang="en" sec-type="data-availability-statement" disp-level="2"><title>Data Availability Statement</title><p>The data from this study was submitted to the NCBI Gene Expression Omnibus (GEO) <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ncbi.nlm.nih.gov/geo/" ext-link-type="uri">http://www.ncbi.nlm.nih.gov/geo/</ext-link>.</p></sec></sec></body></article>

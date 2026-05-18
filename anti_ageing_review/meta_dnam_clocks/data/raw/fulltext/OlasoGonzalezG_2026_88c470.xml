@@ -1,0 +1,773 @@
+
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.4 20241031//EN" "JATS-archivearticle1-4-mathml3.dtd">
+<article id="acel70376" xml:lang="en" article-type="research-article" dtd-version="1.4"><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Aging Cell</journal-id><journal-id journal-id-type="iso-abbrev">Aging Cell</journal-id><journal-id journal-id-type="pmc-domain-id">2481</journal-id><journal-id journal-id-type="pmc-domain">acel</journal-id><journal-id journal-id-type="publisher-id">ACEL</journal-id><journal-title-group><journal-title>Aging Cell</journal-title></journal-title-group><issn pub-type="ppub">1474-9718</issn><issn pub-type="epub">1474-9726</issn><publisher><publisher-name>Wiley</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC12895478</article-id><article-id pub-id-type="pmcid-ver">PMC12895478.1</article-id><article-id pub-id-type="pmcaid">12895478</article-id><article-id pub-id-type="pmcaiid">12895478</article-id><article-id pub-id-type="pmid">41677077</article-id><article-id pub-id-type="doi">10.1111/acel.70376</article-id><article-id pub-id-type="publisher-id">ACEL70376</article-id><article-id pub-id-type="other">2137438</article-id><article-version article-version-type="pmc-version">1</article-version><article-categories><subj-group subj-group-type="overline"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Research Article</subject></subj-group></article-categories><title-group><article-title>A Multidomain Lifestyle Intervention Is Associated With Improved Functional Trajectories and Favorable Changes in Epigenetic Aging Markers in Frail Older Adults: A Randomized Controlled Trial</article-title></title-group><contrib-group><contrib id="acel70376-cr-0001" contrib-type="author"><name name-style="western"><surname>Olaso‐Gonzalez</surname><given-names initials="G">Gloria</given-names></name><xref rid="acel70376-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="acel70376-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="acel70376-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="acel70376-cr-0002" contrib-type="author"><name name-style="western"><surname>Millan‐Domingo</surname><given-names initials="F">Fernando</given-names></name><xref rid="acel70376-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="acel70376-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="acel70376-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref><xref rid="acel70376-aff-0004" ref-type="aff">
+<sup>4</sup>
+</xref></contrib><contrib id="acel70376-cr-0003" contrib-type="author"><name name-style="western"><surname>Garcia‐Fernandez</surname><given-names initials="L">Luis</given-names></name><xref rid="acel70376-aff-0005" ref-type="aff">
+<sup>5</sup>
+</xref></contrib><contrib id="acel70376-cr-0004" contrib-type="author"><name name-style="western"><surname>Garcia‐Tercero</surname><given-names initials="E">Elisa</given-names></name><xref rid="acel70376-aff-0005" ref-type="aff">
+<sup>5</sup>
+</xref></contrib><contrib id="acel70376-cr-0005" contrib-type="author"><name name-style="western"><surname>Cebrian</surname><given-names initials="M">Monica</given-names></name><xref rid="acel70376-aff-0006" ref-type="aff">
+<sup>6</sup>
+</xref></contrib><contrib id="acel70376-cr-0006" contrib-type="author"><name name-style="western"><surname>Garcia‐Dominguez</surname><given-names initials="C">Cristina</given-names></name><xref rid="acel70376-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="acel70376-aff-0007" ref-type="aff">
+<sup>7</sup>
+</xref></contrib><contrib id="acel70376-cr-0007" contrib-type="author"><name name-style="western"><surname>Carbonell</surname><given-names initials="JA">Juan Antonio</given-names></name><xref rid="acel70376-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="acel70376-cr-0008" contrib-type="author"><name name-style="western"><surname>Casabo‐Valles</surname><given-names initials="G">German</given-names></name><xref rid="acel70376-aff-0008" ref-type="aff">
+<sup>8</sup>
+</xref></contrib><contrib id="acel70376-cr-0009" contrib-type="author"><name name-style="western"><surname>Garcia‐Gimenez</surname><given-names initials="JL">Jose Luis</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0001-7547-7872</contrib-id><xref rid="acel70376-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="acel70376-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="acel70376-aff-0008" ref-type="aff">
+<sup>8</sup>
+</xref><xref rid="acel70376-aff-0009" ref-type="aff">
+<sup>9</sup>
+</xref></contrib><contrib id="acel70376-cr-0010" contrib-type="author"><name name-style="western"><surname>Tamayo‐Torres</surname><given-names initials="E">Eva</given-names></name><xref rid="acel70376-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="acel70376-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="acel70376-cr-0011" contrib-type="author"><name name-style="western"><surname>Gambini</surname><given-names initials="J">Juan</given-names></name><xref rid="acel70376-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="acel70376-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="acel70376-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="acel70376-cr-0012" contrib-type="author"><name name-style="western"><surname>Tarazona‐Santabalbina</surname><given-names initials="FJ">Francisco Jose</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0003-4531-1446</contrib-id><xref rid="acel70376-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref><xref rid="acel70376-aff-0005" ref-type="aff">
+<sup>5</sup>
+</xref><xref rid="acel70376-aff-0010" ref-type="aff">
+<sup>10</sup>
+</xref></contrib><contrib id="acel70376-cr-0013" contrib-type="author"><name name-style="western"><surname>Vina</surname><given-names initials="J">Jose</given-names></name><xref rid="acel70376-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="acel70376-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="acel70376-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="acel70376-cr-0014" contrib-type="author" corresp="yes"><name name-style="western"><surname>Gomez‐Cabrera</surname><given-names initials="MC">Maria Carmen</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0003-4000-1684</contrib-id><xref rid="acel70376-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="acel70376-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="acel70376-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref><address><email>carmen.gomez@uv.es</email></address></contrib></contrib-group><aff id="acel70376-aff-0001">
+<label>
+<sup>1</sup>
+</label>
+<named-content content-type="organisation-division">Department of Physiology, Faculty of Medicine</named-content>
+<institution>University of Valencia</institution>
+<city>Valencia</city>
+<country country="ES">Spain</country>
+</aff><aff id="acel70376-aff-0002">
+<label>
+<sup>2</sup>
+</label>
+<named-content content-type="organisation-division">INCLIVA</named-content>
+<institution>Health Research Institute</institution>
+<city>Valencia</city>
+<country country="ES">Spain</country>
+</aff><aff id="acel70376-aff-0003">
+<label>
+<sup>3</sup>
+</label>
+<institution>CIBER de Fragilidad y Envejecimiento Saludable (CIBERFES) ISCIII</institution>
+<city>Madrid</city>
+<country country="ES">Spain</country>
+</aff><aff id="acel70376-aff-0004">
+<label>
+<sup>4</sup>
+</label>
+<institution>Body, Physical Activity and Sport Study Group (GECAFD), Sports Department, Universidad Industrial de Santander</institution>
+<city>Bucaramanga</city>
+<country country="CO">Colombia</country>
+</aff><aff id="acel70376-aff-0005">
+<label>
+<sup>5</sup>
+</label>
+<named-content content-type="organisation-division">Department of Geriatric Medicine</named-content>
+<institution>Hospital Universitario de la Ribera</institution>
+<city>Valencia</city>
+<country country="ES">Spain</country>
+</aff><aff id="acel70376-aff-0006">
+<label>
+<sup>6</sup>
+</label>
+<named-content content-type="organisation-division">Instituto de</named-content>
+<institution>Investigación Sanitaria La Fe</institution>
+<city>Valencia</city>
+<country country="ES">Spain</country>
+</aff><aff id="acel70376-aff-0007">
+<label>
+<sup>7</sup>
+</label>
+<named-content content-type="organisation-division">Department of Internal Medicine</named-content>
+<institution>Hospital Royo de Villanueva</institution>
+<city>Zaragoza</city>
+<country country="ES">Spain</country>
+</aff><aff id="acel70376-aff-0008">
+<label>
+<sup>8</sup>
+</label>
+<named-content content-type="organisation-division">EpiDisease S.L.</named-content>
+<institution>Scientific Park, University of Valencia</institution>
+<city>Paterna</city>
+<country country="ES">Spain</country>
+</aff><aff id="acel70376-aff-0009">
+<label>
+<sup>9</sup>
+</label>
+<institution>CIBER de Enfermedades Raras (CIBERER) ISCIII, Madrid</institution>
+<city>Madrid</city>
+<country country="ES">Spain</country>
+</aff><aff id="acel70376-aff-0010">
+<label>
+<sup>10</sup>
+</label>
+<named-content content-type="organisation-division">Medical School</named-content>
+<institution>Universidad Católica de Valencia San Vicente Mártir</institution>
+<city>Valencia</city>
+<country country="ES">Spain</country>
+</aff><author-notes><corresp id="correspondenceTo">
+<label>*</label>
+<bold>Correspondence:</bold>
+<break/>
+Maria Carmen Gomez‐Cabrera (<email>carmen.gomez@uv.es</email>)<break/>
+</corresp></author-notes><pub-date pub-type="epub"><day>12</day><month>2</month><year>2026</year></pub-date><pub-date pub-type="collection"><month>2</month><year>2026</year></pub-date><volume>25</volume><issue seq="110">2</issue><issue-id pub-id-type="pmc-issue-id">504716</issue-id><issue-id pub-id-type="doi">10.1111/acel.v25.2</issue-id><elocation-id>e70376</elocation-id><history>
+<date date-type="rev-recd"><day>30</day><month>12</month><year>2025</year></date>
+<date date-type="received"><day>05</day><month>6</month><year>2025</year></date>
+<date date-type="accepted"><day>03</day><month>1</month><year>2026</year></date>
+</history><pub-history><event event-type="pmc-release"><date><day>12</day><month>02</month><year>2026</year></date></event><event event-type="pmc-live"><date><day>13</day><month>02</month><year>2026</year></date></event><event event-type="pmc-last-change"><date iso-8601-date="2026-02-13 10:25:12.640"><day>13</day><month>02</month><year>2026</year></date></event></pub-history><permissions><copyright-statement content-type="article-copyright">© 2026 The Author(s). <italic toggle="yes">Aging Cell</italic> published by Anatomical Society and John Wiley &amp; Sons Ltd.</copyright-statement><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an open access article under the terms of the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pmc-pdf" xlink:href="ACEL-25-e70376.pdf"><?pdf-name ACEL-25-e70376.pdf?><?pdf-size 2505528?><?pdf-md5 36073634fc7e92630f57f9830bc9267d?><?pdf-image-server-status NEVER_LOAD?><?pdf-cloudpmc-urn urn:app:920d/12895478/36073634fc7e/ACEL-25-e70376.pdf?></self-uri><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pdf" xlink:href="file:ACEL-25-e70376.pdf"/><abstract><title>ABSTRACT</title><p>Frailty emerges as the intermediate stage preceding disability, but there is a gap in molecular signatures for early detection of subclinical cellular changes, which could help predict frailty onset or the effectiveness of interventions. In this randomized, controlled study, we assessed phenotypical and functional changes in frail individuals before and after a 6‐month multidomain lifestyle intervention (nutritional supplement and supervised exercise) vs habitual care. We also analyzed whole‐blood methylome, including five epigenetic clocks, a DNA methylation‐based telomere length estimator, and the Rate of Epigenetic Aging (REA). Between October 2019 and July 2022, we recruited 47 frail, community‐dwelling individuals in Spain. Mean age was 80.2 years (SD 3.1) in the control group (CG; <italic toggle="no">n</italic> = 19) and 80.5 years (4.3) in the intervention group (IG; <italic toggle="no">n</italic> = 28). Compared with the CG, a significant reduction in frailty, assessed by the SHARE‐FI score, was observed in the IG (<italic toggle="no">p</italic> &lt; 0.0001). The IG also showed improved grip strength (<italic toggle="no">p</italic> = 0.0053), gait speed (<italic toggle="no">p</italic> = 0.0125), the Tinetti score (<italic toggle="no">p</italic> = 0.0031), and Barthel Index (<italic toggle="no">p</italic> = 0.0484). The intervention was also associated with statistically significant improvements in nutritional blood markers, indicators of biological aging, including reduced DNAm PhenoAge (<italic toggle="no">p</italic> = 0.0253) and preserved telomere length (<italic toggle="no">p</italic> = 0.0246). REA using DNAm PhenoAge indicated an acceleration of epigenetic aging in the CG (<italic toggle="no">p</italic> = 0.0300). Other epigenetic clocks showed nonsignificant changes. Our findings suggest potential geroprotective effects of a multidomain intervention and indicate that DNAm PhenoAge and methylation‐based telomere length may serve as complementary markers for assessing health span‐related changes in frail older adults.</p><p>
+<bold>Trial Registration:</bold> This trial was retrospectively registered: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmc:clinical-trial" xlink:href="NCT06975540">NCT06975540</ext-link></p></abstract><abstract abstract-type="graphical"><p>In frail older adults, a 6‐month lifestyle intervention slowed epigenetic aging and improved functional outcomes, suggesting lifestyle strategies may delay biological aging and disability progression.<boxed-text position="anchor" content-type="graphic" id="acel70376-blkfxd-0001" orientation="portrait"><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-1" orientation="portrait" xlink:href="ACEL-25-e70376-g002.jpg"><?image-name ACEL-25-e70376-g002.jpg?><?image-size 57924?><?image-md5 f7de36279c3e0da3420d134525a18452?><?image-image-server-status NEVER_LOAD?><?image-original-height 273?><?image-original-width 331?><?image-scaled-height 273?><?image-scaled-width 331?><?image-cloudpmc-urn urn:cdn:blobs/920d/12895478/f7de36279c3e/ACEL-25-e70376-g002.jpg?></graphic></boxed-text>
+</p></abstract><kwd-group kwd-group-type="author-generated"><kwd id="acel70376-kwd-0001">epigenetic clock</kwd><kwd id="acel70376-kwd-0002">exercise</kwd><kwd id="acel70376-kwd-0003">frailty</kwd><kwd id="acel70376-kwd-0004">healthy aging</kwd><kwd id="acel70376-kwd-0005">nutrition</kwd><kwd id="acel70376-kwd-0006">telomere length</kwd></kwd-group><funding-group><award-group id="funding-0001"><funding-source>
+<institution-wrap><institution>Instituto de Salud Carlos III</institution><institution-id institution-id-type="doi">10.13039/501100004587</institution-id></institution-wrap>
+</funding-source><award-id>CB16/10/00435 (CIBERFES)</award-id></award-group><award-group id="funding-0002"><funding-source>
+<institution-wrap><institution>Ministerio de Ciencia, Innovación y Universidades</institution><institution-id institution-id-type="doi">10.13039/100014440</institution-id></institution-wrap>
+</funding-source><award-id>PID2022‐142470OB‐I00</award-id><award-id>Red EXERNET‐RED DE EJERCICIO FISICO Y SALUD (RED2022‐134800)</award-id></award-group><award-group id="funding-0003"><funding-source>
+<institution-wrap><institution>Consellería de Educación, Universidades, y Empleo de la Generalitat Valenciana</institution></institution-wrap>
+</funding-source><award-id>PROMETEO (CIPROM/2022/56)</award-id></award-group><award-group id="funding-0004"><funding-source>
+<institution-wrap><institution>European Commission</institution><institution-id institution-id-type="doi">10.13039/501100000780</institution-id></institution-wrap>
+</funding-source><award-id>DIABFRAIL‐LATAM (Ref: 825546)</award-id></award-group></funding-group><counts><fig-count count="5"/><table-count count="0"/><page-count count="11"/><word-count count="8000"/></counts><custom-meta-group><custom-meta><meta-name>pmc-status-qastatus</meta-name><meta-value>0</meta-value></custom-meta><custom-meta><meta-name>pmc-status-live</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-status-embargo</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-status-released</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-open-access</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-legally-suppressed</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-supplement</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-pdf-only</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-suppress-copyright</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-real-version</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-scanned-article</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-in-epmc</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-license-ref</meta-name><meta-value>CC BY</meta-value></custom-meta><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>February 2026</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:6.6.8 mode:remove_FC converted:12.02.2026</meta-value></custom-meta></custom-meta-group></article-meta><notes><p content-type="self-citation">
+<mixed-citation publication-type="journal" id="acel70376-cit-1001">
+<string-name name-style="western">
+<surname>Olaso‐Gonzalez</surname>, <given-names>G.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Millan‐Domingo</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Garcia‐Fernandez</surname>
+</string-name>, et al. <year>2026</year>. “<article-title>A Multidomain Lifestyle Intervention Is Associated With Improved Functional Trajectories and Favorable Changes in Epigenetic Aging Markers in Frail Older Adults: A Randomized Controlled Trial</article-title>.” <source>Aging Cell</source>
+<volume>25</volume>, no. <issue>2</issue>: <elocation-id>e70376</elocation-id>. <pub-id pub-id-type="doi">10.1111/acel.70376</pub-id>.</mixed-citation>
+</p></notes></front><body id="acel70376-body-0001"><sec id="acel70376-sec-0001"><label>1</label><title>Introduction</title><p>Frailty is a state of diminished capacity to handle stressors resulting from a decline in functional reserves (Fried et al. <xref rid="acel70376-bib-0013" ref-type="bibr">2004</xref>; Arc‐Chagnaud et al. <xref rid="acel70376-bib-0002" ref-type="bibr">2019</xref>). Frailty exhibits a higher predictive value than chronic diseases for adverse outcomes among older individuals. An essential determinant of frailty is having an unhealthy lifestyle, characterized by poor dietary habits, low levels of physical activity, and obesity (Strandberg et al. <xref rid="acel70376-bib-0043" ref-type="bibr">2012</xref>), which together accelerate physiological decline (Rodriguez‐Mañas and Fried <xref rid="acel70376-bib-0035" ref-type="bibr">2015</xref>). These modifiable factors offer critical opportunities for prevention and intervention to delay or mitigate the onset of frailty (Millan‐Domingo et al. <xref rid="acel70376-bib-0029" ref-type="bibr">2022</xref>). However, while assessment of modifiable risk factors is important, such measures capture downstream or overt manifestations of vulnerability and may not fully reflect early, subclinical biological dysregulation.</p><p>A critical gap in frailty research is the lack of validated molecular signatures capable of identifying individuals at risk before functional impairment becomes clinically evident or of predicting heterogeneity in response to interventions (Cummings and Kritchevsky <xref rid="acel70376-bib-0007" ref-type="bibr">2022</xref>). Molecular biomarkers may provide complementary information on underlying cellular and molecular processes, improving early detection, risk stratification, and the evaluation of intervention effectiveness beyond what can be achieved through lifestyle and clinical assessments alone.</p><p>Epigenetic clocks are DNA methylation‐based algorithms that analyze genome‐wide methylation patterns to estimate biological aging relative to chronological age (Horvath <xref rid="acel70376-bib-0018" ref-type="bibr">2013</xref>). Methylated CpG islands in gene promoters have been associated with long‐term gene silencing and are related to transcriptomic changes (García‐Giménez et al. <xref rid="acel70376-bib-0015" ref-type="bibr">2021</xref>). Because the methylome operates at the interface between the genome and the environment, it can shift in response to environmental stimuli, such as pollutants (Seale et al. <xref rid="acel70376-bib-0041" ref-type="bibr">2022</xref>), exercise, or diet (Barrès et al. <xref rid="acel70376-bib-0004" ref-type="bibr">2012</xref>; Urdinguio et al. <xref rid="acel70376-bib-0046" ref-type="bibr">2021</xref>).</p><p>The first‐generation epigenetic clocks (Horvath's and Hannum's clocks) were originally trained to determine chronological age (Hannum et al. <xref rid="acel70376-bib-0017" ref-type="bibr">2013</xref>; Horvath <xref rid="acel70376-bib-0018" ref-type="bibr">2013</xref>). More recent epigenetic clocks were developed with the aim of predicting biological age, particularly morbidity and mortality risk (second‐generation clocks as DNAm PhenoAge and DNAm GrimAge) or even to predict functional capacity, rate of aging, and health span trajectories (third‐generation clocks as DNAm FitAge) (Levine et al. <xref rid="acel70376-bib-0023" ref-type="bibr">2018</xref>; Lu et al. <xref rid="acel70376-bib-0025" ref-type="bibr">2022</xref>; McGreevy et al. <xref rid="acel70376-bib-0028" ref-type="bibr">2023</xref>).</p><p>Few longitudinal and lifestyle‐based interventional studies are available for epigenetic clocks. These clocks have been utilized to assess the impact of various drug interventions in humans (Fahy et al. <xref rid="acel70376-bib-0008" ref-type="bibr">2019</xref>) and of caloric restriction (Waziry et al. <xref rid="acel70376-bib-0047" ref-type="bibr">2023</xref>).</p><p>Our prospective study aimed to evaluate a multidomain lifestyle intervention vs habitual care to reverse frailty among community‐dwelling older adults. Our intervention included a daily nutritional supplement intake and a supervised and personalized multicomponent exercise program 3 days a week for 6 months. Apart from a deep phenotypical and functional characterization with pre‐ and post‐intervention assessments, we performed a parallel methylome analysis to characterize epigenetic changes in whole blood cells. This included five epigenetic clocks (Horvath, Hannum, PhenoAge, GrimAge, and FitAge), a DNAm‐based telomere length estimator, and the REA.</p><p>This study integrates well‐established biomarkers of biological aging with comprehensive assessments of phenotypic and functional domains in a longitudinal design in old, frail individuals.</p></sec><sec sec-type="methods" id="acel70376-sec-0002"><label>2</label><title>Methods</title><p>Our study is a prospective, interventional, controlled, randomized clinical study (protocol number MEJ‐NES‐2019). The researchers responsible for the exercise intervention and data gathering were independent to guarantee the study's blindness. Assessors were not informed of participants' assignment. The study was conducted between October 14, 2019, and July 29, 2022. Informed consent was obtained from each participant who signed it after fully understanding the procedures (<italic toggle="yes">n</italic> = 47).</p><p>Eligibility criteria included: (i) age ≥ 70 years; (ii) sedentary lifestyle per WHO (WHO <xref rid="acel70376-bib-0048" ref-type="bibr">2020</xref>); (iii) frail according to the Survey of Health, Aging and Retirement in Europe‐Frailty Instrument (SHARE‐FI) (Romero‐Ortuno et al. <xref rid="acel70376-bib-0036" ref-type="bibr">2011</xref>); (iv) gait speed ≤ 0.8 m/s; and (v) community dwellers.</p><p>Exclusion criteria were: (i) life expectancy &lt; 12 months; (ii) uncontrolled diabetes (HbA1c &gt; 9%); (iii) cognitive impairment (MMSE &lt; 17); (iv) disability (Barthel Index &lt; 50); (v) recent acute coronary event; (vi) hospital admission in past 3 months; (vii) active cancer treatment; (viii) major surgery in past 6 months; (ix) institutionalization; (x) NYHA class 3–4 dyspnea; (xi) lactose intolerance; (xii) use of multivitamins or protein supplements; (xiii) refusal to consent. Baseline sample characteristics are shown in Figure <xref rid="acel70376-fig-0001" ref-type="fig">1</xref> and Table <xref rid="acel70376-supitem-0002" ref-type="supplementary-material">S1</xref>.</p><fig position="float" fig-type="FIGURE" id="acel70376-fig-0001" orientation="portrait"><label>FIGURE 1</label><caption><p>Study design and anthropometric characteristics of the participants. (a) Overview of selection criteria and study design. The histogram represents the age distribution in the control group (<italic toggle="yes">n</italic> = 19) and the intervention group (<italic toggle="yes">n</italic> = 28). (b) Flowchart of participant selection and progression. (c) Main anthropometric data of participants before and after the intervention, including BMI, percentage of lean mass, percentage of fat mass, and abdominal girth (<italic toggle="yes">n</italic>
+<sub>cont</sub> = 14–15, <italic toggle="yes">n</italic>
+<sub>int</sub> = 27–28). Inverted triangles represent female participants, while circles represent male participants. A two‐sided ANOVA test was used to assess statistically significant differences.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-3" orientation="portrait" xlink:href="ACEL-25-e70376-g001.jpg"><?image-name ACEL-25-e70376-g001.jpg?><?image-size 88139?><?image-md5 1ec00cb744df79d5f47f2e07aaf20ad0?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 562?><?image-original-width 1064?><?image-scaled-height 374?><?image-scaled-width 709?><?image-cloudpmc-urn urn:cdn:blobs/920d/12895478/1ec00cb744df/ACEL-25-e70376-g001.jpg?><?thumb-name ACEL-25-e70376-g001.gif?><?thumb-size 12480?><?thumb-md5 6ee9787bc54c9bbca18327baa357267e?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 151?><?thumb-cloudpmc-urn urn:cdn:blobs/920d/12895478/6ee9787bc54c/ACEL-25-e70376-g001.gif?></graphic></fig><sec id="acel70376-sec-0003"><label>2.1</label><title>Randomization and Power Calculation</title><p>The listing of individuals was obtained from the Valencian Community health database and participants were recruited primarily through telephone contact. Forty‐seven community‐dwelling frail older adults (age ≥ 70) were recruited and divided into two experimental groups: a control group (<italic toggle="yes">n</italic> = 19) and a multidomain (exercise training and nutritionally supplemented) group (<italic toggle="yes">n</italic> = 28). The towns where the intervention and control programs were conducted were randomly assigned using simple randomization procedures performed by the Department of Research of the Health Department in La Ribera. Participants were randomly assigned to the intervention or control group using a 3:2 allocation ratio (intervention:control). Participants assigned to the control group received habitual care and did not receive specific nutritional or exercise advice, nor any additional contact beyond the standard follow‐up assessments. Figure <xref rid="acel70376-fig-0001" ref-type="fig">1</xref> outlines the subjects flow diagram from first contact to study completion.</p><p>With the final sample size achieved at the end of the study, 15 participants in the control group and 28 in the intervention group, the statistical power for detecting differences in the SHARE‐FI score was 1.0.</p><p>The effect size in SHARE‐FI was 3.2, calculated from group means of 4.0 and 0.8, assuming a standard deviation of 1.0 in each group. The comparison was performed using a two‐tailed Wilcoxon–Mann–Whitney test and G*Power version 3.1.9.7.</p></sec><sec id="acel70376-sec-0004"><label>2.2</label><title>Multidomain Intervention</title><p>The intervention group followed a multidomain intervention consisting of a specific nutritional supplement and a multicomponent exercise program.</p><sec id="acel70376-sec-0005"><label>2.2.1</label><title>Nutritional Intervention</title><p>It included a daily intake of two servings of Meritene Strength and Vitality nutritional supplement (ready‐to‐mix powder ONS). Each serving (35 g of powder diluted in 200 mL of partially skimmed milk) provides 199 kcal, 16 g of high‐quality protein, and 19 essential vitamins and minerals (Nestlé Health Science, Switzerland).</p></sec><sec id="acel70376-sec-0006"><label>2.2.2</label><title>Multicomponent Exercise Program</title><p>The multicomponent exercise program consisted of supervised, group‐based sessions conducted three times per week for 24 weeks, each lasting 60 min. The intervention included 5 min of warm‐up, 20 min of progressive resistance training (ranging from 45%–55% to 70%–75% of one‐repetition maximum), 20 min of cardiorespiratory exercise (55%–75% of maximum heart rate), 10 min of neuromotor and balance exercises, and 5 min of stretching. All sessions were supervised by a sport scientist (Tarazona‐Santabalbina et al. <xref rid="acel70376-bib-0044" ref-type="bibr">2016</xref>; Millan‐Domingo et al. <xref rid="acel70376-bib-0029" ref-type="bibr">2022</xref>).</p><p>The exercise sessions targeted the major muscle groups of both the upper and lower limbs, as well as core stability and postural control. Resistance training was performed using elastic bands and bodyweight exercises, including concentric, eccentric, and isometric contractions that engaged the quadriceps, hamstrings, gluteal muscles, biceps, triceps, and forearm flexors and extensors. Cardiorespiratory training consisted of walking circuits and stair climbing. Neuromotor exercises emphasized balance, proprioception, and coordination through dynamic postural control and flexibility work of the lumbopelvic region. Stretching exercises focused on the neck, upper and lower limbs to promote and maintain joint mobility.</p><p>The training program was conducted during the COVID‐19 pandemic, with strict adherence to hand hygiene, mask‐wearing, and social distancing measures by both patients and trainers.</p></sec></sec><sec id="acel70376-sec-0007"><label>2.3</label><title>Safety and Tolerability</title><p>Safety and tolerability were monitored throughout the course of the study for all groups.</p></sec><sec id="acel70376-sec-0008"><label>2.4</label><title>Measurements</title><p>The primary outcome in our trial was the change in frailty status after 180 days, assessed using the SHARE‐FI (Romero‐Ortuno et al. <xref rid="acel70376-bib-0037" ref-type="bibr">2010</xref>). We also included the evaluation of the Fried's frailty criteria (Fried et al. <xref rid="acel70376-bib-0014" ref-type="bibr">2001</xref>). Both instruments evaluate five core domains of the frailty phenotype: fatigue, unintentional weight loss or reduced appetite, weakness (grip strength), slowness, and low physical activity. These domains are measured through a combination of self‐reported items and an objective assessment of grip strength, providing both a continuous frailty score and a categorical classification (non‐frail, pre‐frail, or frail) based on sex‐specific cut‐off values.</p><p>Collected data included age, gender, marital status, and anthropometric measurements (BMI, abdominal, brachial, and calf girths). Body composition was measured via bioelectrical impedance (Tanita BC‐601). Nutritional status was evaluated with the MNA‐LF (Guigoz and Vellas <xref rid="acel70376-bib-0016" ref-type="bibr">2021</xref>). Functional status included Barthel, Lawton and Brody, Tinetti, and handgrip strength. Cognitive, emotional, and social aspects were assessed using the MMSE, Duke, EQ‐5D, and Yesavage scales; age‐related conditions, geriatric syndromes, and healthcare usage were also recorded.</p></sec><sec id="acel70376-sec-0009"><label>2.5</label><title>Biochemical Analysis</title><p>Serum and plasma were collected before and after the intervention and stored at −80°C. A complete hematological and biochemical analysis was performed in the hospital's clinical laboratory following standard methods (See Table <xref rid="acel70376-supitem-0002" ref-type="supplementary-material">S3</xref>).</p></sec><sec id="acel70376-sec-0010"><label>2.6</label><title>
+<styled-content style="fixed-case" toggle="no">DNA</styled-content> Extraction</title><p>Genomic DNA was extracted from whole blood using Chemagic DNA Blood 400 Kit H96 (PerkinElmer, Waltham, MA, USA) and the Chemagic 360 Instrument (PerkinElmer, Waltham, MA, USA) following the manufacturer's instructions.</p></sec><sec id="acel70376-sec-0011"><label>2.7</label><title>
+<styled-content style="fixed-case" toggle="no">DNA</styled-content> Bisulfite Conversion</title><p>The DNA bisulfite conversion was performed using the EZ DNA Methylation Kit (Zymo Research, Cat. No.: D5001; Irvine, USA). For each sample, 500 ng of DNA was used and normalized to a concentration of 12 ng/μL by adding the required amount of H<sub>2</sub>O to achieve a final volume of 45 μL.</p></sec><sec id="acel70376-sec-0012"><label>2.8</label><title>
+<styled-content style="fixed-case" toggle="no">DNA</styled-content> Methylation Analysis</title><p>The DNA methylation analysis was performed using the Infinium MethylationEPIC v2.0 BeadChips (Illumina Inc., San Diego, CA, USA), which target over 930 k unique methylation sites in the most biologically significant regions of the human methylome. Samples were hybridized at 48°C for 16 h. Unbound and non‐specific DNA was washed away. A single‐base extension was performed using labeled nucleotides (biotin and DNP), followed by fluorescent staining with specific antibodies. The BeadChip was then washed, protected, and scanned on the Illumina HiScan SQ.</p></sec><sec id="acel70376-sec-0013"><label>2.9</label><title>Bioinformatic Analysis</title><p>The IDAT files from Illumina arrays were processed using the <italic toggle="yes">minfi</italic> R package (Aryee et al. <xref rid="acel70376-bib-0003" ref-type="bibr">2014</xref>). Quality control removed samples with poor hybridization (mean detection <italic toggle="yes">p</italic>‐value &gt; 0.05) and redundant paired samples. Cell‐type proportions were estimated using the FlowSorted.Blood.EPIC package (Salas et al. <xref rid="acel70376-bib-0039" ref-type="bibr">2018</xref>). Data were normalized using quantile normalization. Probes with low detection, on sex chromosomes, with SNPs, or with cross‐reactivity were excluded.</p></sec><sec id="acel70376-sec-0014"><label>2.10</label><title>Analysis of <styled-content style="fixed-case" toggle="no">DNAm</styled-content> Clocks and Pace of Aging Measures</title><p>Epigenetic age was estimated using the <italic toggle="yes">methylclock</italic> R package (Pelegí‐Sisó et al. <xref rid="acel70376-bib-0032" ref-type="bibr">2021</xref>) for Horvath's (Horvath <xref rid="acel70376-bib-0018" ref-type="bibr">2013</xref>), Hannum's (Hannum et al. <xref rid="acel70376-bib-0017" ref-type="bibr">2013</xref>) and DNAm PhenoAge (Levine et al. <xref rid="acel70376-bib-0023" ref-type="bibr">2018b</xref>) clocks. A total of 31, 12, and 13 CpG sites were missing for these clocks, respectively, and were excluded from the estimations. DNAm GrimAge2 (Lu et al. <xref rid="acel70376-bib-0025" ref-type="bibr">2022</xref>) and DNAm FitAge (McGreevy et al. <xref rid="acel70376-bib-0028" ref-type="bibr">2023</xref>) are not currently available for calculation in this package and were computed using the online DNAm Age Calculator (Horvath <xref rid="acel70376-bib-0018" ref-type="bibr">2013</xref>). All 1331 GrimAge2 probes were used for the estimation, while 3 of 789 FitAge probes were missing and therefore not considered. All epigenetic clocks were computed following their original published algorithms and preprocessing procedures. Although data originated from different DNA methylation array platforms, cross‐platform validation studies indicate that this has minimal impact on clock comparability (Föhr et al. <xref rid="acel70376-bib-0011" ref-type="bibr">2021</xref>; Apsley et al. <xref rid="acel70376-bib-0001" ref-type="bibr">2025</xref>; Tay et al. <xref rid="acel70376-bib-0045" ref-type="bibr">2025</xref>).</p></sec><sec id="acel70376-sec-0015"><label>2.11</label><title>Rate of Epigenetic Aging</title><p>To assess the longitudinal dynamics of epigenetic aging, we calculated the REA, defined as the ratio of the difference between epigenetic age at the follow‐up time point (6 months) and the beginning of the study (baseline) to the difference between chronological age for the same time points, as previously reported (Sehl et al. <xref rid="acel70376-bib-0042" ref-type="bibr">2021</xref>; Schoepf et al. <xref rid="acel70376-bib-0040" ref-type="bibr">2023</xref>).<disp-formula id="acel70376-disp-0001">
+<mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="jats-math-1" display="block" overflow="scroll"><mml:mrow><mml:mrow><mml:mtable><mml:mtr><mml:mtd columnalign="left"><mml:mrow><mml:mtext>Rate of Epigenetic aging</mml:mtext><mml:mo linebreak="goodbreak">=</mml:mo><mml:mfenced close="]" open="["><mml:mrow><mml:mtext>Epigenetic</mml:mtext><mml:mspace width="0.25em"/><mml:mi>age</mml:mi><mml:mspace width="0.25em"/><mml:mfenced close=")" open="("><mml:mrow><mml:mn>6</mml:mn><mml:mspace width="0.25em"/><mml:mtext>months</mml:mtext></mml:mrow></mml:mfenced></mml:mrow></mml:mfenced></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd columnalign="left"><mml:mrow><mml:mo>–</mml:mo><mml:mfenced close="]" open="["><mml:mrow><mml:mtext>Epigenetic</mml:mtext><mml:mspace width="0.25em"/><mml:mi>age</mml:mi><mml:mspace width="0.25em"/><mml:mfenced close=")" open="("><mml:mtext>Baseline</mml:mtext></mml:mfenced></mml:mrow></mml:mfenced><mml:mo>/</mml:mo><mml:mfenced close="]" open="["><mml:mrow><mml:mtext>Chronological</mml:mtext><mml:mspace width="0.25em"/><mml:mi>age</mml:mi><mml:mspace width="0.25em"/><mml:mfenced close=")" open="("><mml:mrow><mml:mn>6</mml:mn><mml:mspace width="0.25em"/><mml:mtext>months</mml:mtext></mml:mrow></mml:mfenced></mml:mrow></mml:mfenced></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd columnalign="left"><mml:mrow><mml:mo>–</mml:mo><mml:mfenced close="]" open="["><mml:mrow><mml:mtext>Chronological</mml:mtext><mml:mspace width="0.25em"/><mml:mi>age</mml:mi><mml:mspace width="0.25em"/><mml:mfenced close=")" open="("><mml:mtext>Baseline</mml:mtext></mml:mfenced></mml:mrow></mml:mfenced></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:mrow></mml:math>
+</disp-formula>
+</p></sec><sec id="acel70376-sec-0016"><label>2.12</label><title>Epigenetic Age Acceleration</title><p>Age Acceleration was calculated by regressing DNAm PhenoAge on chronological age across all participants (Horvath et al. <xref rid="acel70376-bib-0020" ref-type="bibr">2015</xref>). The residuals from this model, representing the difference between observed and predicted DNAm age, were used as Age Acceleration values. Positive values indicate accelerated epigenetic aging relative to chronological age.</p></sec><sec id="acel70376-sec-0017"><label>2.13</label><title>Statistical Analysis</title><p>Statistical analysis was performed using GraphPad Prism (Version 10). The normality of the data was assessed using the Shapiro–Wilk or Kolmogorov–Smirnov tests. For normally distributed variables comparisons were performed using a paired <italic toggle="yes">t</italic>‐test, while between‐group differences were analyzed with an independent samples <italic toggle="yes">t</italic>‐test. For variables that were not normally distributed, the Wilcoxon signed‐rank test was used for paired (related) samples. The Mann–Whitney U test was applied to compare independent groups. A two‐way ANOVA was conducted to analyze the interaction between two independent variables (time and intervention). Correlation between age and epigenetic age was carried out using Spearman's rho statistic. Factor Analysis of Mixed Data (FAMD) was performed using R version 4.4.1 and the <italic toggle="yes">PCAmixdata</italic> package.</p><p>Data were examined for outliers, which were excluded based on predefined statistical criteria before analysis. Analyses were conducted on an available‐case basis, including all participants with valid data for each outcome. Sample sizes varied accordingly, and missing data were not imputed. Except for methylomic outcomes, obtained in a smaller subsample, missingness was low.</p><p>Statistical significance was set at a <italic toggle="yes">p</italic>‐value &lt; 0.05. No adjustment for multiplicity was carried out. Frailty score, assessed using the SHARE‐FI, was designated as the primary outcome of the study. All other measured variables were considered secondary or exploratory outcomes.</p></sec></sec><sec sec-type="results" id="acel70376-sec-0018"><label>3</label><title>Results</title><sec id="acel70376-sec-0019"><label>3.1</label><title>Study Participants</title><p>Figure <xref rid="acel70376-fig-0001" ref-type="fig">1a</xref> shows an overview of selection criteria and study design. The histogram represents the distribution of ages among the control group (<italic toggle="yes">n</italic> = 19) and intervention group (<italic toggle="yes">n</italic> = 28).</p><p>We screened 287 potential participants telephonically; 147 were assessed for eligibility, 47 were recruited and randomized, 28 to the intervention, and 19 to the control group (Figure <xref rid="acel70376-fig-0001" ref-type="fig">1b</xref>). Baseline characteristics of the participants are available in Table <xref rid="acel70376-supitem-0002" ref-type="supplementary-material">S1</xref>. We found no relevant differences between the groups in the main conditions studied or in the prevalence of geriatric syndromes. The intervention group did not differ from controls in terms of gender (<italic toggle="yes">p</italic> = 0.4), weight (<italic toggle="yes">p</italic> = 0.9), BMI (<italic toggle="yes">p</italic> = 0.3) or chronological age (<italic toggle="yes">p</italic> = 0.8) (Figure <xref rid="acel70376-fig-0001" ref-type="fig">1a,c</xref>). No significant differences were found in either the SHARE‐FI index or Linda Fried's frailty criteria (Oviedo‐Briones et al. <xref rid="acel70376-bib-0031" ref-type="bibr">2021</xref>).</p><p>No adverse events or health complications related to the exercise program or nutritional supplementation were observed during the study period.</p></sec><sec id="acel70376-sec-0020"><label>3.2</label><title>Effect of a Six‐Month Multidomain Intervention on Functional, Cognitive, Emotional, and Social Losses in Frail Individuals</title><p>Figure <xref rid="acel70376-fig-0001" ref-type="fig">1c</xref> and Table <xref rid="acel70376-supitem-0002" ref-type="supplementary-material">S2</xref> show that the anthropometric baseline characteristics of the two groups were very similar at the beginning of the study. Our multidomain intervention significantly improved lean mass, body fat percentage, and reduced abdominal girth. Participants' exercise compliance was 64.3% (95% CI 49.8–68.6). Adherence to the nutritional supplement was 71.2% (95% CI 67.5–74.6).</p><p>Figure <xref rid="acel70376-fig-0002" ref-type="fig">2a</xref> shows that patients who took the supplement and participated in the exercise program exhibited a reduction of −2.5 [−2.9, −2.0] points in frailty according to the SHARE‐FI (Romero‐Ortuno et al. <xref rid="acel70376-bib-0036" ref-type="bibr">2011</xref>) and also exhibited a reduction in Fried's frailty criteria of −1.8 [−2.2, −1.5] points (Fried et al. <xref rid="acel70376-bib-0014" ref-type="bibr">2001</xref>) (Table <xref rid="acel70376-supitem-0002" ref-type="supplementary-material">S2</xref>). This was accompanied by a remarkable increase in grip strength, gait speed, and balance (as measured by the Tinetti score) following the multidomain intervention. In contrast, the control group deteriorated in all these parameters after 6 months. We also found significant improvement in performance in activities of daily living (Barthel Index). The number of visits to the primary care center was significantly reduced in the intervention group, indicating an optimization of healthcare resource utilization (Figure <xref rid="acel70376-fig-0002" ref-type="fig">2a</xref>).</p><fig position="float" fig-type="FIGURE" id="acel70376-fig-0002" orientation="portrait"><label>FIGURE 2</label><caption><p>Effects of the multidomain intervention. (a) Functional parameters of participants before and after the intervention including frailty (SHARE‐FI scale), handgrip strength, gait speed, balance (Tinetti scale), Barthel Index, and the number of visits to primary care centers (<italic toggle="yes">n</italic>
+<sub>cont</sub> = 14–15, <italic toggle="yes">n</italic>
+<sub>int</sub> = 27–28). (b) Nutritional parameters, including MNA score and biochemical data: Blood levels of folic acid, calcidiol, calcium, total protein, and urea (<italic toggle="yes">n</italic>
+<sub>cont</sub> = 9–15, <italic toggle="yes">n</italic>
+<sub>int</sub> = 22–28). Inverted triangles represent female participants, while circles represent male participants. A two‐sided ANOVA test was used to assess statistically significant differences.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-5" orientation="portrait" xlink:href="ACEL-25-e70376-g004.jpg"><?image-name ACEL-25-e70376-g004.jpg?><?image-size 102675?><?image-md5 2f67648d16ea2fa9204aafaa50679837?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 700?><?image-original-width 1064?><?image-scaled-height 466?><?image-scaled-width 709?><?image-cloudpmc-urn urn:cdn:blobs/920d/12895478/2f67648d16ea/ACEL-25-e70376-g004.jpg?><?thumb-name ACEL-25-e70376-g004.gif?><?thumb-size 12332?><?thumb-md5 ac8850eab7fde1f07bb9ff6eeb2c9390?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 121?><?thumb-cloudpmc-urn urn:cdn:blobs/920d/12895478/ac8850eab7fd/ACEL-25-e70376-g004.gif?></graphic></fig><p>No differences were found at the beginning of the study in the MNA (Figure <xref rid="acel70376-fig-0002" ref-type="fig">2b</xref>). An increase in MNA scores toward the well‐nourished category was observed in patients who received the nutritional supplement, although this change did not reach statistical significance. We accompanied the MNA with a blood analysis that included different malnutrition‐related parameters. Figure <xref rid="acel70376-fig-0002" ref-type="fig">2b</xref> shows a significant increase in the intervention group's blood calcidiol, total proteins, calcium, and folic acid levels. We also found a decrease in the urea blood levels at the end of the 6 months in the intervention group (Table <xref rid="acel70376-supitem-0002" ref-type="supplementary-material">S3</xref>).</p><p>No significant changes were observed following the intervention in participants' emotional well‐being (Yesavage scale), social support (Duke scale), cognitive function (MMSE), or perceived quality of life (EQ‐5D). Similarly, the intervention did not significantly improve other geriatric syndromes, including the number of falls, performance in instrumental activities of daily living (Lawton and Brody scale), or frequency of emergency service visits (Table <xref rid="acel70376-supitem-0002" ref-type="supplementary-material">S2</xref>).</p><p>Figure <xref rid="acel70376-fig-0003" ref-type="fig">3</xref> presents a FAMD which combines both quantitative and qualitative variables to explore overall patterns and relationships among participants. This multivariate approach allows visualization of how individuals cluster based on their anthropometric, functional, cognitive, and socio‐emotional profiles. On the left‐hand side, the panel displays the distribution of individuals before the intervention (baseline), showing their similarity based on the combined variables. In the central panel, the post‐intervention distribution shows a clear separation along Dimension 1, distinguishing two groups: intervention and control. The right‐hand panel highlights the quantitative variables contributing most strongly to the dimensions with frailty, fat mass percentage, calf girth, gait speed, and the Tinetti scale being the five most influential (Details can be seen in Figure <xref rid="acel70376-supitem-0001" ref-type="supplementary-material">S1</xref>).</p><fig position="float" fig-type="FIGURE" id="acel70376-fig-0003" orientation="portrait"><label>FIGURE 3</label><caption><p>Factor Analysis of Mixed Data, including anthropometric, functional, cognitive, and socio‐emotional variables before (left) and after (right) the intervention. Inverted triangles represent female participants, while circles represent male participants. The histogram displays the variables contributing to Dimension 1 of the FAMD at the final time point of the study, with a contribution &gt; 2.5%. Blue bars represent variables with higher values on the right‐hand side of the diagram (where the control group participants are placed). Gray bars represent variables with higher values on the left hand‐side of the diagram (where the intervention group participants are placed).</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-7" orientation="portrait" xlink:href="ACEL-25-e70376-g003.jpg"><?image-name ACEL-25-e70376-g003.jpg?><?image-size 53058?><?image-md5 d53a34895854e75e0722ef6d4e2bd14d?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 346?><?image-original-width 1064?><?image-scaled-height 231?><?image-scaled-width 709?><?image-cloudpmc-urn urn:cdn:blobs/920d/12895478/d53a34895854/ACEL-25-e70376-g003.jpg?><?thumb-name ACEL-25-e70376-g003.gif?><?thumb-size 9645?><?thumb-md5 8eb6801175756f8c316f2bd7c099ca2f?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 65?><?thumb-scaled-width 200?><?thumb-cloudpmc-urn urn:cdn:blobs/920d/12895478/8eb680117575/ACEL-25-e70376-g003.gif?></graphic></fig></sec><sec id="acel70376-sec-0021"><label>3.3</label><title>Comparison of Epigenetic Aging Trajectories Between Intervention and Control Groups</title><p>Our study faced a significant challenge during the recruitment phase due to the outbreak of COVID‐19, which significantly impacted sample collection and participant follow‐up (see Limitations of the Study). As a result, we could only obtain complete blood DNA methylation data for 48 samples from 24 participants, each with pre‐ and post‐intervention samples. These included 8 participants in the control group and 16 in the intervention group.</p><p>We calculated five different epigenetic clocks using published algorithms. Figure <xref rid="acel70376-fig-0004" ref-type="fig">4a–e</xref> includes box plots (left and center panels) illustrating changes in DNAm clock estimates. The right panels display plots showing the mean change from baseline to the 6‐month follow‐up for the experimental groups. Figure <xref rid="acel70376-fig-0004" ref-type="fig">4a,b</xref> show no significant differences in chronological age prediction using Horvath's and Hannum's epigenetic clocks before and after the intervention. Participants in the control group experienced an increase of +4.1 years in biological age, as measured by DNAm PhenoAge, over the 6 months. In contrast, those in the multidomain intervention group did not increase; instead, they exhibited a slight decrease of −0.9 years. This difference was statistically significant (<italic toggle="yes">p</italic> = 0.03) (Figure <xref rid="acel70376-fig-0004" ref-type="fig">4c</xref>). Minor changes were found with the DNAm GrimAge version 2 (Lu et al. <xref rid="acel70376-bib-0025" ref-type="bibr">2022</xref>) and the DNAm FitAge (McGreevy et al. <xref rid="acel70376-bib-0028" ref-type="bibr">2023</xref>) between the experimental groups, as shown in Figure <xref rid="acel70376-fig-0004" ref-type="fig">4d,e</xref>.</p><fig position="float" fig-type="FIGURE" id="acel70376-fig-0004" orientation="portrait"><label>FIGURE 4</label><caption><p>Effects of the intervention on epigenetic age. (a) Effect of the intervention on epigenetic age calculated using Horvath's clock; (b) Hannum's clock; (c) DNAm PhenoAge clock; (d) DNAm GrimAge2 clock; (e) DNAm FitAge clock; (f) DNA methylation‐based telomere length estimation before and after the intervention in the control group (left), in the intervention group (center), and the increase in epigenetic age in both groups (right). For the five epigenetic clocks and estimated telomere length, pre‐ and post‐intervention comparisons were performed using a paired <italic toggle="yes">t</italic>‐test, while between‐group differences in the box plots were analyzed with an independent samples <italic toggle="yes">t</italic>‐test. (g) Variations in the differences between chronological age and epigenetic age, calculated using the five epigenetic clocks. (h) Rate of epigenetic age, defined as the variation in epigenetic age relative to the variation in chronological age. For panels (g and h), mean values and 95% confidence intervals (CI) are represented for each group and each epigenetic clock. An unpaired t‐test assessed statistically significant differences between experimental groups for each clock (<italic toggle="yes">n</italic>
+<sub>cont</sub> = 6–7, <italic toggle="yes">n</italic>
+<sub>int</sub> = 16).</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-9" orientation="portrait" xlink:href="ACEL-25-e70376-g005.jpg"><?image-name ACEL-25-e70376-g005.jpg?><?image-size 93566?><?image-md5 c1edd66c82a123b7097845d9a853bdca?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 721?><?image-original-width 1064?><?image-scaled-height 480?><?image-scaled-width 709?><?image-cloudpmc-urn urn:cdn:blobs/920d/12895478/c1edd66c82a1/ACEL-25-e70376-g005.jpg?><?thumb-name ACEL-25-e70376-g005.gif?><?thumb-size 11206?><?thumb-md5 f12ecd8455b1d6f37d6df94ca8e239a6?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 118?><?thumb-cloudpmc-urn urn:cdn:blobs/920d/12895478/f12ecd8455b1/ACEL-25-e70376-g005.gif?></graphic></fig><p>We also applied a DNA methylation‐based estimator of telomere length (TL) (Lu et al. <xref rid="acel70376-bib-0026" ref-type="bibr">2019</xref>). As shown in Figure <xref rid="acel70376-fig-0004" ref-type="fig">4f</xref>, TL was reduced in the control group but preserved in the group that underwent the multidomain intervention (<italic toggle="yes">p</italic> = 0.03).</p><p>In general terms, the participant's epigenetic ages (EAs) were lower or very similar to their chronological ages (As) at baseline [(EA‐A)<sub>0</sub> ≤ 0, Table <xref rid="acel70376-supitem-0002" ref-type="supplementary-material">S4</xref>] in the control and intervention groups for the five clocks analyzed. Epigenetic age showed a higher decrease after the six‐month follow‐up in the intervention [(EA‐A)<sub>6</sub> &lt; 0] when compared to the control group in four of the five epigenetic clocks. The only exception to these decreases was the DNAm FitAge (Table <xref rid="acel70376-supitem-0002" ref-type="supplementary-material">S4</xref>).</p><p>We also assessed the change in the difference between epigenetic and chronological age over the six months calculated as [(EA‐A)<sub>6</sub>–(EA‐A)<sub>0</sub>] (Fahy et al. <xref rid="acel70376-bib-0008" ref-type="bibr">2019</xref>). For the DNAm PhenoAge clock, the difference between the control and intervention groups reached statistical significance (<italic toggle="yes">p</italic> = 0.04). Only minor changes in this parameter were observed when using the DNAm GrimAge2 and DNAm FitAge clocks. A graphical representation of these differences is provided in Figure <xref rid="acel70376-fig-0004" ref-type="fig">4g</xref>.</p><p>We correlated the changes in the epigenetic age after six months [(EA‐A)<sub>6</sub>–(EA‐A)<sub>0</sub>] with the chronological age [A<sub>0</sub>] in all the participants. We only found a positive correlation between the two variables in the control group for the DNAm PhenoAge (<italic toggle="yes">r</italic> = 0.82, <italic toggle="yes">p</italic> = 0.04), meaning that the older individuals were more prone to increase their epigenetic age in the control group. Very interestingly, no significant correlations were found among the intervention group (Table <xref rid="acel70376-supitem-0002" ref-type="supplementary-material">S4</xref>).</p><p>We used the REA to assess the longitudinal dynamics of epigenetic aging in our study (Sehl et al. <xref rid="acel70376-bib-0042" ref-type="bibr">2021</xref>; Schoepf et al. <xref rid="acel70376-bib-0040" ref-type="bibr">2023</xref>). REA = 1 means that epigenetic age increases by 1 year per chronological year. REA &gt; 1 indicates that epigenetic aging is advancing faster than chronological aging, and REA &lt; 1 suggests that epigenetic aging is progressing more slowly than chronological aging (Schoepf et al. <xref rid="acel70376-bib-0040" ref-type="bibr">2023</xref>). Mean REA was &gt; 1 for the first‐generation epigenetic clocks in the control group, while it was &lt; 1 in the intervention group (Figure <xref rid="acel70376-fig-0004" ref-type="fig">4h</xref>). The differences reached statistical significance with the DNAm PhenoAge (<italic toggle="yes">p</italic> = 0.03). Although the results showed high variability in the control group, according to this biological clock, the control group's mean REA after the six months was +8.4, whereas the intervention group showed a reduction in this parameter, −1.7 (<italic toggle="yes">p</italic> = 0.03). DNAm GrimAge2 and DNAm FitAge exhibited opposing trends; however, these differences did not reach statistical significance.</p><p>We calculated the Epigenetic Age Advancement from the five epigenetic clocks (Figure <xref rid="acel70376-supitem-0001" ref-type="supplementary-material">S2a</xref>). Consistent with the results shown in Figure <xref rid="acel70376-fig-0004" ref-type="fig">4a–e</xref>, only DNAm PhenoAge demonstrated a statistically significant difference in Epigenetic Age Advancement between the intervention and control groups.</p><p>We also quantified the Epigenetic Age Acceleration using the data from the DNAm PhenoAge. Age Acceleration is defined as the difference between DNAm age value and the value predicted by the linear regression model that includes all the participants in the study (control and intervention groups) (Figure <xref rid="acel70376-supitem-0001" ref-type="supplementary-material">S2b</xref>, left panel). A positive value of the Age Acceleration indicates that DNA methylation age is higher than that predicted from the regression model. Figure <xref rid="acel70376-supitem-0001" ref-type="supplementary-material">S2b</xref>, right panel, shows this is the case in the control group, while the intervention group does not show an increase in Age Acceleration (<italic toggle="yes">p</italic> = 0.55).</p><p>We aimed to assess whether there is a correlation between changes in epigenetic age and some of the main variables analyzed. In the control group, the increase in epigenetic age correlated with the increase in waist circumference (<italic toggle="yes">r</italic> = 0.84) (Figure <xref rid="acel70376-supitem-0001" ref-type="supplementary-material">S3</xref>). However, no correlation was observed between changes in epigenetic age and frailty as measured by SHARE‐FI or Fried's criteria in either the control or intervention group (see Figures <xref rid="acel70376-supitem-0001" ref-type="supplementary-material">S3</xref> and <xref rid="acel70376-supitem-0001" ref-type="supplementary-material">S4</xref>).</p><p>No changes in blood cell composition were found in the groups either in basal conditions or after the intervention (see Table <xref rid="acel70376-supitem-0002" ref-type="supplementary-material">S3</xref>).</p></sec></sec><sec sec-type="discussion" id="acel70376-sec-0022"><label>4</label><title>Discussion</title><p>The FINGER trial was the first to apply a multidomain lifestyle intervention, including nutritional guidance and exercise, to target major risk factors for dementia (Ngandu et al. <xref rid="acel70376-bib-0030" ref-type="bibr">2015</xref>; Rosenberg et al. <xref rid="acel70376-bib-0038" ref-type="bibr">2018</xref>). Following this work, the European SPRINTT trial demonstrated that a program integrating physical activity, nutritional counseling, and behavioral support can reduce mobility disability in older adults (Bernabei et al. <xref rid="acel70376-bib-0005" ref-type="bibr">2022</xref>). These successful interventions highlight the potential of multidomain approaches in aging populations and motivated us to explore their application in frail older adults at risk not for cognitive decline, but for functional decline, domains where effective preventive strategies remain limited.</p><p>Within the framework of health span research, the benefits of interventions can be quantified using the metrics of aging, which span molecular (biological), phenotypic, and functional domains (Ferrucci et al. <xref rid="acel70376-bib-0009" ref-type="bibr">2018</xref>).</p><p>Our prospective study investigating a multidomain lifestyle intervention versus habitual care in frail older individuals, with pre‐ and post‐intervention assessments, demonstrates significant improvements across all three domains. Our results can be summarized in two major findings:</p><p>First, our intervention was associated with a slowing trend in epigenetic aging, as assessed using DNAm PhenoAge. This pattern was observed across the analytical approaches that included changes in methylation age during the intervention, the difference between epigenetic and chronological age (Δ[EA–A]), and the rate of epigenetic aging. Our results are consistent with prior observational studies reporting the sensitivity of second‐generation clocks to lifestyle interventions (Quach et al. <xref rid="acel70376-bib-0033" ref-type="bibr">2017</xref>; Jain et al. <xref rid="acel70376-bib-0021" ref-type="bibr">2022</xref>; Fox et al. <xref rid="acel70376-bib-0012" ref-type="bibr">2023</xref>).</p><p>We also found that the age‐associated shortening of telomere length was significantly attenuated in participants receiving the lifestyle intervention. Telomere shortening and alteration in DNA methylation are two well‐established hallmarks of aging related to genomic instability (Zhang et al. <xref rid="acel70376-bib-0049" ref-type="bibr">2020</xref>). It has been suggested that the modulation of these two processes may be central to the effectiveness of age‐delaying interventions (Zhang et al. <xref rid="acel70376-bib-0049" ref-type="bibr">2020</xref>; Martínez‐Ezquerro et al. <xref rid="acel70376-bib-0027" ref-type="bibr">2024</xref>). While our findings provide longitudinal evidence suggesting that lifestyle strategies could influence aging at the molecular‐level without altering the genomic sequence, further studies are needed to confirm the biological significance and long‐term impact of such interventions.</p><p>Second, our intervention led to significant improvements in both phenotypic and functional domains. After 6 months, the FAMD revealed a clear separation into two distinct clusters corresponding to the intervention and control groups. The five variables that contributed most strongly to this separation were frailty status, fat mass, calf girth, gait speed, and the Tinetti scale, which are well‐established indicators of physical function and resilience in older adults. These findings suggest that the intervention resulted in multidimensional enhancements in health‐related function extending beyond molecular‐level changes.</p><p>While longitudinal data on aging phenotypes are well documented, there is a lack of prospective studies examining human biological aging mechanisms. Our study addresses this gap by incorporating two well‐established biomarkers of biological aging, epigenetic clocks and telomere length, integrated with comprehensive assessments of phenotypic and functional domains in a longitudinal design.</p><p>Studies investigating dietary influences on epigenetic aging have primarily focused on caloric restriction. While caloric restriction has demonstrated promising effects in preclinical models and human studies involving healthy adults (Fitzgerald et al. <xref rid="acel70376-bib-0010" ref-type="bibr">2021</xref>; Rajado et al. <xref rid="acel70376-bib-0034" ref-type="bibr">2023</xref>; Waziry et al. <xref rid="acel70376-bib-0047" ref-type="bibr">2023</xref>), its translational applicability to frail older populations remains limited, particularly considering that approximately 23% of European adults over 65 are at risk of malnutrition (Leij‐Halfwerk et al. <xref rid="acel70376-bib-0022" ref-type="bibr">2019</xref>).</p><p>Our approach aimed to improve poor nutritional status and low protein intake, which have been identified as pathophysiologic factors leading to frailty. 4.7% of our sample had malnutrition using the MNA, 72.1% were at risk of malnutrition, and 23.2% were well‐nourished. The nutritional intervention resulted in improvements not only in MNA scores but also in blood biomarkers associated with nutritional status.</p><p>Exercise is key to maintaining health and functional independence in older adults. Most exercise interventions targeting older adults rely on non‐tailored and self‐administered protocols primarily because of their scalability and cost‐effectiveness. For instance, in the DO‐HEALTH Bio‐Age trial, it was shown that vitamin D, omega‐3 supplementation, and a simple home‐based exercise program provided additive benefits on biological aging, as measured by DNAm PhenoAge and DNAm GrimAge2, resulting in an age deceleration of 2.9–3.8 months over a 3‐year period (Bischoff‐Ferrari et al. <xref rid="acel70376-bib-0006" ref-type="bibr">2025</xref>). In 2021, a clinical study involving 43 older adults introduced an eight‐week intervention that integrated caloric restriction, unsupervised physical activity, nutritional supplementation, and lifestyle coaching (Fitzgerald et al. <xref rid="acel70376-bib-0010" ref-type="bibr">2021</xref>). This intervention reduced epigenetic age by 2 to 3 years, as determined by Horvath's DNA methylation clock. In both trials, the lack of individualization and supervision of the exercise program could limit the effectiveness of such interventions (Liang et al. <xref rid="acel70376-bib-0024" ref-type="bibr">2024</xref>).</p><p>Our intervention outperformed previous studies by incorporating a supervised and individualized exercise program tailored to each participant's fitness level and functional capacity (Tarazona‐Santabalbina et al. <xref rid="acel70376-bib-0044" ref-type="bibr">2016</xref>; Millan‐Domingo et al. <xref rid="acel70376-bib-0029" ref-type="bibr">2022</xref>).</p><p>In sum, our analysis provides evidence supporting the geroprotective benefits of combining a nutritional supplement with a multicomponent supervised and individualized exercise program in community‐dwelling old, frail individuals.</p></sec><sec id="acel70376-sec-0023"><label>5</label><title>Limitations of the Study</title><p>Our study faced significant challenges due to COVID‐19 during recruitment. Older, frail participants were reluctant to join a long‐term intervention, and conducting supervised, in‐person exercise was challenging. Consequently, we could not collect biological samples from all enrolled individuals, limiting our molecular results due to a smaller sample size.</p><p>As DNA methylation was measured only in whole blood, it remains unclear whether the apparent rejuvenating effect of our intervention can be extrapolated to other tissues. Nonetheless, a previous study demonstrated that epigenetic age acceleration correlates across eleven different tissues within the same individual (Horvath et al. <xref rid="acel70376-bib-0019" ref-type="bibr">2022</xref>).</p><p>No formal multiple comparison adjustments were made for functional or biochemical outcomes to avoid increased type II error with our moderate sample size. Multiple‐testing correction was applied only to methylomic analyses, where it is standard due to the large number of comparisons.</p><p>Both exercise and nutrition exert wide‐ranging effects across multiple biological systems. We could not analyze the individual effects of nutritional supplementation and exercise on the outcome variables, as the intervention was intentionally designed as a combined approach. This model needs to be investigated further, particularly concerning the contribution of each component to the overall results. Additionally, the intervention was conducted over a relatively short duration of 6 months, and thus the long‐term sustainability and significance of the observed effects remain uncertain.</p></sec><sec id="acel70376-sec-0024"><title>Author Contributions</title><p>M.C.G.‐C. and J.V. conceptualized and supervised the study, wrote the manuscript, and granted financial support. G.O.‐G. and F.M.‐D. performed the experiments, analyzed the data, and wrote the manuscript. F.J.T.‐S., E.T.‐T., and J.G. supervised the clinical study and discussed the data. L.G.‐F., C.G.‐D. and E.G.‐T. recruited and evaluated all the patients. M.C. served as a trial coordinator. J.A.C. performed Factor Analysis of Mixed Data. G.C.‐V. and J.L.G.‐G. performed the methylation experiments and analysis. All authors provided final approval of the manuscript</p></sec><sec id="acel70376-sec-0026"><title>Funding</title><p>This work was supported by the following grants: ISCIII CB16/10/00435 (CIBERFES); PID2022‐142470OB‐I00 and Red EXERNET‐RED DE EJERCICIO FISICO Y SALUD (RED2022‐134800) from the Ministry of Science, Innovation and Universities; PROMETEO (CIPROM/2022/56) from the Consellería de Educación, Universidades, y Empleo de la Generalitat Valenciana; EU Funded H2020‐ DIABFRAIL‐LATAM (Ref: 825546). Generalitat Valenciana has funded part of the equipment employed in this work and co‐financed with FEDER funds (OP FEDER of Comunitat Valenciana 2014–2020). Nestlé Health Science financially supported part of this study.</p></sec><sec id="acel70376-sec-0029"><title>Ethics Statement</title><p>The study protocol was reviewed and approved by the Research Ethics Committee of the Hospital Universitario de La Ribera, Spain (approval code: HULR22072020). The study was conducted in accordance with the Declaration of Helsinki. All participants provided written informed consent prior to inclusion, and the trial followed a randomized design as approved by the ethics committee.</p></sec><sec sec-type="conclusions" id="acel70376-sec-0027"><title>Consent</title><p>All authors agree with the content of the manuscript and consent to publication.</p></sec><sec sec-type="COI-statement" id="acel70376-sec-0028"><title>Conflicts of Interest</title><p>All authors declare independence from the sponsoring body in analyzing results and formulating conclusions. They also report no conflicts of interest with the organizations mentioned above. The authors confirm that AI‐assisted technology, based on OpenAI's GPT‐4 architecture, was used solely to enhance the readability and language of the work in specific paragraphs in the manuscript. This technology was not employed to replace tasks such as generating scientific insights, analyzing and interpreting data, or drawing scientific conclusions. Nestlé Health Science provided financial support for part of this study but had no role in the study design, data collection, data analysis, or data interpretation and did not influence the decision to publish.</p></sec><sec sec-type="supplementary-material"><title>Supporting information</title><supplementary-material id="acel70376-supitem-0001" position="float" content-type="local-data" orientation="portrait"><caption><p>
+<bold>Figure S1:</bold> FAMD variable factor map. The vectors represent the variables used in the analysis. The direction and length of each vector indicate the contribution of the corresponding variable to the separation of the groups along the factorial axes (right: control, left: intervention).</p><p>
+<bold>Figure S2:</bold> Effects of the intervention on epigenetic age advancement and acceleration. (a) Epigenetic age advancement, calculated as the difference in the mean epigenetic age of each group before and after the intervention. Mean values and 95% confidence intervals (CI) are represented for each group and each epigenetic clock. An unpaired t‐test assessed statistically significant differences between experimental groups for each clock (<italic toggle="yes">n</italic>
+<sub>cont</sub> = 6–7, <italic toggle="yes">n</italic>
+<sub>int</sub> = 16). (b) (Left) Epigenetic age of participants, estimated using DNAm PhenoAge, from both experimental groups − control (dark red diamonds) and intervention (dark green diamonds) − at baseline. The dashed black line represents the regression line fitted to these data (<italic toggle="yes">y</italic> = 0.6681<italic toggle="yes">x</italic> + 22.39, <italic toggle="yes">R</italic>
+<sup>2</sup> = 0.16), which was used to estimate the epigenetic age of all participants at the end of the study (6 months). Light red (control group) and light green (intervention group) diamonds represent the measured epigenetic age for all subjects at the end of the study. (Right) Epigenetic age acceleration is calculated as the difference between the measured epigenetic age at the end of the study and the estimated epigenetic age based on the baseline regression model for both experimental groups.</p><p>
+<bold>Figure S3:</bold> Correlation plots between changes in epigenetic age (estimated using the DNAm PhenoAge) in the control group and the main variables analyzed in the study. The numbers represent the <italic toggle="yes">R</italic> values for each correlation. Red asterisks indicate statistical significance.</p><p>
+<bold>Figure S4:</bold> Correlation plots between changes in epigenetic age (estimated using the DNAm PhenoAge) in the intervention group and the main variables analyzed in the study. The numbers represent the <italic toggle="yes">R</italic> values for each correlation. Red asterisks indicate statistical significance.</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ACEL-25-e70376-s002.pdf" position="float" orientation="portrait"><?suppdata-name ACEL-25-e70376-s002.pdf?><?suppdata-size 590826?><?suppdata-md5 7475f86092aa13cf5b28761815a12c20?><?suppdata-image-server-status NEVER_LOAD?><?suppdata-mime-type application?><?suppdata-mime-sub-type pdf?><?suppdata-cloudpmc-urn urn:app:920d/12895478/7475f86092aa/ACEL-25-e70376-s002.pdf?></media></supplementary-material><supplementary-material id="acel70376-supitem-0002" position="float" content-type="local-data" orientation="portrait"><caption><p>
+<bold>Table S1:</bold> Baseline characteristics of the participants.</p><p>
+<bold>Table S2:</bold> Additional anthropometric and functional variables.</p><p>
+<bold>Table S3:</bold> Blood analysis of the participants.</p><p>
+<bold>Table S4:</bold> Epigenetic aging characteristics of the study population.</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ACEL-25-e70376-s001.docx" position="float" orientation="portrait"><?suppdata-name ACEL-25-e70376-s001.docx?><?suppdata-size 56117?><?suppdata-md5 1ce4b0b227e80d9b15dc6c7450419f19?><?suppdata-image-server-status NEVER_LOAD?><?suppdata-mime-type application?><?suppdata-mime-sub-type vnd.openxmlformats-officedocument.wordprocessingml.document?><?suppdata-cloudpmc-urn urn:app:920d/12895478/1ce4b0b227e8/ACEL-25-e70376-s001.docx?></media></supplementary-material></sec></body><back><ack id="acel70376-sec-0025"><title>Acknowledgements</title><p>We sincerely thank all the patients who participated in the study and our team members for their technical assistance and insightful discussions.</p></ack><sec sec-type="data-availability" id="acel70376-sec-0031"><title>Data Availability Statement</title><p>The data that support the findings of this study are available on request from the corresponding author. The data are not publicly available due to privacy or ethical restrictions.</p></sec><ref-list content-type="cited-references" id="acel70376-bibl-0001"><title>References</title><ref id="acel70376-bib-0001"><mixed-citation publication-type="journal" id="acel70376-cit-0001">
+<string-name name-style="western">
+<surname>Apsley</surname>, <given-names>A. T.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>Q.</given-names>
+<surname>Ye</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Caspi</surname>
+</string-name>, et al. <year>2025</year>. “<article-title>Cross‐Tissue Comparison of Epigenetic Aging Clocks in Humans</article-title>.” <source>Aging Cell</source>
+<volume>24</volume>: <elocation-id>e14451</elocation-id>.<pub-id pub-id-type="pmid">39780748</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/acel.14451</pub-id><pub-id pub-id-type="pmcid">PMC11984668</pub-id></mixed-citation></ref><ref id="acel70376-bib-0002"><mixed-citation publication-type="journal" id="acel70376-cit-0002">
+<string-name name-style="western">
+<surname>Arc‐Chagnaud</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Millan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Salvador‐Pascual</surname>
+</string-name>, et al. <year>2019</year>. “<article-title>Reversal of Age‐Associated Frailty by Controlled Physical Exercise: The Pre‐Clinical and Clinical Evidences</article-title>.” <source>Sports Medicine and Health Science</source>
+<volume>1</volume>: <fpage>33</fpage>–<lpage>39</lpage>.<pub-id pub-id-type="pmid">35782461</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.smhs.2019.08.007</pub-id><pub-id pub-id-type="pmcid">PMC9219339</pub-id></mixed-citation></ref><ref id="acel70376-bib-0003"><mixed-citation publication-type="journal" id="acel70376-cit-0003">
+<string-name name-style="western">
+<surname>Aryee</surname>, <given-names>M. J.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>A. E.</given-names>
+<surname>Jaffe</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Corrada‐Bravo</surname>
+</string-name>, et al. <year>2014</year>. “<article-title>Minfi: A Flexible and Comprehensive Bioconductor Package for the Analysis of Infinium DNA Methylation Microarrays</article-title>.” <source>Bioinformatics</source>
+<volume>30</volume>: <fpage>1363</fpage>–<lpage>1369</lpage>.<pub-id pub-id-type="pmid">24478339</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/bioinformatics/btu049</pub-id><pub-id pub-id-type="pmcid">PMC4016708</pub-id></mixed-citation></ref><ref id="acel70376-bib-0004"><mixed-citation publication-type="journal" id="acel70376-cit-0004">
+<string-name name-style="western">
+<surname>Barrès</surname>, <given-names>R.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Yan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Egan</surname>
+</string-name>, et al. <year>2012</year>. “<article-title>Acute Exercise Remodels Promoter Methylation in Human Skeletal Muscle</article-title>.” <source>Cell Metabolism</source>
+<volume>15</volume>: <fpage>405</fpage>–<lpage>411</lpage>.<pub-id pub-id-type="pmid">22405075</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.cmet.2012.01.001</pub-id></mixed-citation></ref><ref id="acel70376-bib-0005"><mixed-citation publication-type="journal" id="acel70376-cit-0005">
+<string-name name-style="western">
+<surname>Bernabei</surname>, <given-names>R.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Landi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Calvani</surname>
+</string-name>, et al. <year>2022</year>. “<article-title>Multicomponent Intervention to Prevent Mobility Disability in Frail Older Adults: Randomised Controlled Trial (SPRINTT Project)</article-title>.” <source>BMJ</source>
+<volume>377</volume>: <elocation-id>e068788</elocation-id>.<pub-id pub-id-type="pmid">35545258</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1136/bmj-2021-068788</pub-id><pub-id pub-id-type="pmcid">PMC9092831</pub-id></mixed-citation></ref><ref id="acel70376-bib-0006"><mixed-citation publication-type="journal" id="acel70376-cit-0006">
+<string-name name-style="western">
+<surname>Bischoff‐Ferrari</surname>, <given-names>H. A.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Gängler</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Wieczorek</surname>
+</string-name>, et al. <year>2025</year>. “<article-title>Individual and Additive Effects of Vitamin D, Omega‐3 and Exercise on DNA Methylation Clocks of Biological Aging in Older Adults From the DO‐HEALTH Trial</article-title>.” <source>Nature Aging</source>
+<volume>5</volume>: <elocation-id>1423</elocation-id>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s43587-024-00793-y</pub-id><pub-id pub-id-type="pmcid">PMC11922767</pub-id><pub-id pub-id-type="pmid">39900648</pub-id></mixed-citation></ref><ref id="acel70376-bib-0007"><mixed-citation publication-type="journal" id="acel70376-cit-0007">
+<string-name name-style="western">
+<surname>Cummings</surname>, <given-names>S. R.</given-names>
+</string-name>, and <string-name name-style="western">
+<given-names>S. B.</given-names>
+<surname>Kritchevsky</surname>
+</string-name>. <year>2022</year>. “<article-title>Endpoints for Geroscience Clinical Trials: Health Outcomes, Biomarkers, and Biologic Age</article-title>.” <source>Geroscience</source>
+<volume>44</volume>: <fpage>2925</fpage>–<lpage>2931</lpage>.<pub-id pub-id-type="pmid">36260264</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/s11357-022-00671-8</pub-id><pub-id pub-id-type="pmcid">PMC9768060</pub-id></mixed-citation></ref><ref id="acel70376-bib-0008"><mixed-citation publication-type="journal" id="acel70376-cit-0008">
+<string-name name-style="western">
+<surname>Fahy</surname>, <given-names>G. M.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>R. T.</given-names>
+<surname>Brooke</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. P.</given-names>
+<surname>Watson</surname>
+</string-name>, et al. <year>2019</year>. “<article-title>Reversal of Epigenetic Aging and Immunosenescent Trends in Humans</article-title>.” <source>Aging Cell</source>
+<volume>18</volume>: <elocation-id>e13028</elocation-id>.<pub-id pub-id-type="pmid">31496122</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/acel.13028</pub-id><pub-id pub-id-type="pmcid">PMC6826138</pub-id></mixed-citation></ref><ref id="acel70376-bib-0009"><mixed-citation publication-type="journal" id="acel70376-cit-0009">
+<string-name name-style="western">
+<surname>Ferrucci</surname>, <given-names>L.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>M. E.</given-names>
+<surname>Levine</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P. L.</given-names>
+<surname>Kuo</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>E. M.</given-names>
+<surname>Simonsick</surname>
+</string-name>. <year>2018</year>. “<article-title>Time and the Metrics of Aging</article-title>.” <source>Circulation Research</source>
+<volume>123</volume>: <fpage>740</fpage>–<lpage>744</lpage>.<pub-id pub-id-type="pmid">30355074</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1161/CIRCRESAHA.118.312816</pub-id><pub-id pub-id-type="pmcid">PMC6205734</pub-id></mixed-citation></ref><ref id="acel70376-bib-0010"><mixed-citation publication-type="journal" id="acel70376-cit-0010">
+<string-name name-style="western">
+<surname>Fitzgerald</surname>, <given-names>K. N.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Hodges</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Hanes</surname>
+</string-name>, et al. <year>2021</year>. “<article-title>Potential Reversal of Epigenetic Age Using a Diet and Lifestyle Intervention: A Pilot Randomized Clinical Trial</article-title>.” <source>Aging (Albany NY)</source>
+<volume>13</volume>: <fpage>9419</fpage>–<lpage>9432</lpage>.<pub-id pub-id-type="pmid">33844651</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.18632/aging.202913</pub-id><pub-id pub-id-type="pmcid">PMC8064200</pub-id></mixed-citation></ref><ref id="acel70376-bib-0011"><mixed-citation publication-type="journal" id="acel70376-cit-0011">
+<string-name name-style="western">
+<surname>Föhr</surname>, <given-names>T.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Waller</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Viljanen</surname>
+</string-name>, et al. <year>2021</year>. “<article-title>Does the Epigenetic Clock GrimAge Predict Mortality Independent of Genetic Influences: An 18 Year Follow‐Up Study in Older Female Twin Pairs</article-title>.” <source>Clinical Epigenetics</source>
+<volume>13</volume>: <elocation-id>128</elocation-id>.<pub-id pub-id-type="pmid">34120642</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1186/s13148-021-01112-7</pub-id><pub-id pub-id-type="pmcid">PMC8201844</pub-id></mixed-citation></ref><ref id="acel70376-bib-0012"><mixed-citation publication-type="journal" id="acel70376-cit-0012">
+<string-name name-style="western">
+<surname>Fox</surname>, <given-names>F. A. U.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. M. B.</given-names>
+<surname>Breteler</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>N. A.</given-names>
+<surname>Aziz</surname>
+</string-name>. <year>2023</year>. “<article-title>Physical Activity Is Associated With Slower Epigenetic Ageing‐Findings From the Rhineland Study</article-title>.” <source>Aging Cell</source>
+<volume>22</volume>: <elocation-id>e13828</elocation-id>.<pub-id pub-id-type="pmid">37036021</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/acel.13828</pub-id><pub-id pub-id-type="pmcid">PMC10265180</pub-id></mixed-citation></ref><ref id="acel70376-bib-0013"><mixed-citation publication-type="journal" id="acel70376-cit-0013">
+<string-name name-style="western">
+<surname>Fried</surname>, <given-names>L. P.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Ferrucci</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Darer</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. D.</given-names>
+<surname>Williamson</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Anderson</surname>
+</string-name>. <year>2004</year>. “<article-title>Untangling the Concepts of Disability, Frailty, and Comorbidity: Implications for Improved Targeting and Care</article-title>.” <source>Journals of Gerontology Series A: Biological Sciences and Medical Sciences</source>
+<volume>59</volume>: <fpage>M255</fpage>–<lpage>M263</lpage>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/gerona/59.3.m255</pub-id><pub-id pub-id-type="pmid">15031310</pub-id></mixed-citation></ref><ref id="acel70376-bib-0014"><mixed-citation publication-type="journal" id="acel70376-cit-0014">
+<string-name name-style="western">
+<surname>Fried</surname>, <given-names>L. P.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>C. M.</given-names>
+<surname>Tangen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Walston</surname>
+</string-name>, et al. <year>2001</year>. “<article-title>Frailty in Older Adults: Evidence for a Phenotype</article-title>.” <source>Journals of Gerontology. Series A, Biological Sciences and Medical Sciences</source>
+<volume>56</volume>: <fpage>M146</fpage>–<lpage>M157</lpage>.<pub-id pub-id-type="pmid">11253156</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/gerona/56.3.m146</pub-id></mixed-citation></ref><ref id="acel70376-bib-0015"><mixed-citation publication-type="journal" id="acel70376-cit-0015">
+<string-name name-style="western">
+<surname>García‐Giménez</surname>, <given-names>J. L.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Mena‐Molla</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F. J.</given-names>
+<surname>Tarazona‐Santabalbina</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Viña</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. C.</given-names>
+<surname>Gomez‐Cabrera</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>F. V.</given-names>
+<surname>Pallardó</surname>
+</string-name>. <year>2021</year>. “<article-title>Implementing Precision Medicine in Human Frailty Through Epigenetic Biomarkers</article-title>.” <source>International Journal of Environmental Research and Public Health</source>
+<volume>18</volume>: <elocation-id>4789</elocation-id>.<pub-id pub-id-type="pmid">33672064</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3390/ijerph18041883</pub-id><pub-id pub-id-type="pmcid">PMC7919465</pub-id></mixed-citation></ref><ref id="acel70376-bib-0016"><mixed-citation publication-type="journal" id="acel70376-cit-0016">
+<string-name name-style="western">
+<surname>Guigoz</surname>, <given-names>Y.</given-names>
+</string-name>, and <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Vellas</surname>
+</string-name>. <year>2021</year>. “<article-title>Nutritional Assessment in Older Adults: MNA 25 Years of a Screening Tool and a Reference Standard for Care and Research; What Next?</article-title>” <source>Journal of Nutrition, Health &amp; Aging</source>
+<volume>25</volume>: <fpage>528</fpage>–<lpage>583</lpage>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/s12603-021-1601-y</pub-id><pub-id pub-id-type="pmcid">PMC12876745</pub-id><pub-id pub-id-type="pmid">33786572</pub-id></mixed-citation></ref><ref id="acel70376-bib-0017"><mixed-citation publication-type="journal" id="acel70376-cit-0017">
+<string-name name-style="western">
+<surname>Hannum</surname>, <given-names>G.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Guinney</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Zhao</surname>
+</string-name>, et al. <year>2013</year>. “<article-title>Genome‐Wide Methylation Profiles Reveal Quantitative Views of Human Aging Rates</article-title>.” <source>Molecular Cell</source>
+<volume>49</volume>: <fpage>359</fpage>–<lpage>367</lpage>.<pub-id pub-id-type="pmid">23177740</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.molcel.2012.10.016</pub-id><pub-id pub-id-type="pmcid">PMC3780611</pub-id></mixed-citation></ref><ref id="acel70376-bib-0018"><mixed-citation publication-type="journal" id="acel70376-cit-0018">
+<string-name name-style="western">
+<surname>Horvath</surname>, <given-names>S.</given-names>
+</string-name>
+<year>2013</year>. “<article-title>DNA Methylation Age of Human Tissues and Cell Types</article-title>.” <source>Genome Biology</source>
+<volume>14</volume>: <fpage>R115</fpage>.<pub-id pub-id-type="pmid">24138928</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1186/gb-2013-14-10-r115</pub-id><pub-id pub-id-type="pmcid">PMC4015143</pub-id></mixed-citation></ref><ref id="acel70376-bib-0019"><mixed-citation publication-type="journal" id="acel70376-cit-0019">
+<string-name name-style="western">
+<surname>Horvath</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>D. T. S.</given-names>
+<surname>Lin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. S.</given-names>
+<surname>Kobor</surname>
+</string-name>, et al. <year>2022</year>. “<article-title>HIV, Pathology and Epigenetic Age Acceleration in Different Human Tissues</article-title>.” <source>Geroscience</source>
+<volume>44</volume>: <fpage>1609</fpage>–<lpage>1620</lpage>.<pub-id pub-id-type="pmid">35411474</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/s11357-022-00560-0</pub-id><pub-id pub-id-type="pmcid">PMC9213580</pub-id></mixed-citation></ref><ref id="acel70376-bib-0020"><mixed-citation publication-type="journal" id="acel70376-cit-0020">
+<string-name name-style="western">
+<surname>Horvath</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Pirazzini</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. G.</given-names>
+<surname>Bacalini</surname>
+</string-name>, et al. <year>2015</year>. “<article-title>Decreased Epigenetic Age of PBMCs From Italian Semi‐Supercentenarians and Their Offspring</article-title>.” <source>Aging (Albany NY)</source>
+<volume>7</volume>: <fpage>1159</fpage>–<lpage>1170</lpage>.<pub-id pub-id-type="pmid">26678252</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.18632/aging.100861</pub-id><pub-id pub-id-type="pmcid">PMC4712339</pub-id></mixed-citation></ref><ref id="acel70376-bib-0021"><mixed-citation publication-type="journal" id="acel70376-cit-0021">
+<string-name name-style="western">
+<surname>Jain</surname>, <given-names>P.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>A. M.</given-names>
+<surname>Binder</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Chen</surname>
+</string-name>, et al. <year>2022</year>. “<article-title>Analysis of Epigenetic Age Acceleration and Healthy Longevity Among Older US Women</article-title>.” <source>JAMA Network Open</source>
+<volume>5</volume>: <elocation-id>e2223285</elocation-id>.<pub-id pub-id-type="pmid">35895062</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1001/jamanetworkopen.2022.23285</pub-id><pub-id pub-id-type="pmcid">PMC9331104</pub-id></mixed-citation></ref><ref id="acel70376-bib-0022"><mixed-citation publication-type="journal" id="acel70376-cit-0022">
+<string-name name-style="western">
+<surname>Leij‐Halfwerk</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>M. H.</given-names>
+<surname>Verwijs</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>van Houdt</surname>
+</string-name>, et al. <year>2019</year>. “<article-title>Prevalence of Protein‐Energy Malnutrition Risk in European Older Adults in Community, Residential and Hospital Settings, According to 22 Malnutrition Screening Tools Validated for Use in Adults ≥65 Years: A Systematic Review and Meta‐Analysis</article-title>.” <source>Maturitas</source>
+<volume>126</volume>: <fpage>80</fpage>–<lpage>89</lpage>.<pub-id pub-id-type="pmid">31239123</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.maturitas.2019.05.006</pub-id></mixed-citation></ref><ref id="acel70376-bib-0023"><mixed-citation publication-type="journal" id="acel70376-cit-0023">
+<string-name name-style="western">
+<surname>Levine</surname>, <given-names>M. E.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>A. T.</given-names>
+<surname>Lu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Quach</surname>
+</string-name>, et al. <year>2018</year>. “<article-title>An Epigenetic Biomarker of Aging for Lifespan and Healthspan</article-title>.” <source>Aging</source>
+<volume>10</volume>: <fpage>573</fpage>–<lpage>591</lpage>.<pub-id pub-id-type="pmid">29676998</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.18632/aging.101414</pub-id><pub-id pub-id-type="pmcid">PMC5940111</pub-id></mixed-citation></ref><ref id="acel70376-bib-0024"><mixed-citation publication-type="journal" id="acel70376-cit-0024">
+<string-name name-style="western">
+<surname>Liang</surname>, <given-names>I. J.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>O. J.</given-names>
+<surname>Perkin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P. M.</given-names>
+<surname>McGuigan</surname>
+</string-name>, et al. <year>2024</year>. “<article-title>The Effectiveness of Unsupervised Home‐Based Exercise for Improving Lower Extremity Physical Function in Older Adults in Western and Eastern Cultures: A Systematic Review and Meta‐Analysis</article-title>.” <source>BMC Geriatrics</source>
+<volume>24</volume>: <elocation-id>800</elocation-id>.<pub-id pub-id-type="pmid">39354428</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1186/s12877-024-05393-4</pub-id><pub-id pub-id-type="pmcid">PMC11443890</pub-id></mixed-citation></ref><ref id="acel70376-bib-0025"><mixed-citation publication-type="journal" id="acel70376-cit-0025">
+<string-name name-style="western">
+<surname>Lu</surname>, <given-names>A. T.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>A. M.</given-names>
+<surname>Binder</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Zhang</surname>
+</string-name>, et al. <year>2022</year>. “<article-title>DNA Methylation GrimAge Version 2</article-title>.” <source>Aging (Albany NY)</source>
+<volume>14</volume>: <fpage>9484</fpage>–<lpage>9549</lpage>.<pub-id pub-id-type="pmid">36516495</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.18632/aging.204434</pub-id><pub-id pub-id-type="pmcid">PMC9792204</pub-id></mixed-citation></ref><ref id="acel70376-bib-0026"><mixed-citation publication-type="journal" id="acel70376-cit-0026">
+<string-name name-style="western">
+<surname>Lu</surname>, <given-names>A. T.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Seeboth</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P. C.</given-names>
+<surname>Tsai</surname>
+</string-name>, et al. <year>2019</year>. “<article-title>DNA Methylation‐Based Estimator of Telomere Length</article-title>.” <source>Aging (Albany NY)</source>
+<volume>11</volume>: <fpage>5895</fpage>–<lpage>5923</lpage>.<pub-id pub-id-type="pmid">31422385</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.18632/aging.102173</pub-id><pub-id pub-id-type="pmcid">PMC6738410</pub-id></mixed-citation></ref><ref id="acel70376-bib-0027"><mixed-citation publication-type="journal" id="acel70376-cit-0027">
+<string-name name-style="western">
+<surname>Martínez‐Ezquerro</surname>, <given-names>J. D.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Ortiz‐Ramírez</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>de la García‐ Torre</surname>
+</string-name>, <string-name name-style="western">
+<given-names>V.</given-names>
+<surname>González‐Covarrubias</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Sánchez‐García</surname>
+</string-name>. <year>2024</year>. “<article-title>Physical Performance and Telomere Length in Older Adults</article-title>.” <source>Archives of Medical Research</source>
+<volume>55</volume>: <elocation-id>103046</elocation-id>.<pub-id pub-id-type="pmid">39013263</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.arcmed.2024.103046</pub-id></mixed-citation></ref><ref id="acel70376-bib-0028"><mixed-citation publication-type="journal" id="acel70376-cit-0028">
+<string-name name-style="western">
+<surname>McGreevy</surname>, <given-names>K. M.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>Z.</given-names>
+<surname>Radak</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Torma</surname>
+</string-name>, et al. <year>2023</year>. “<article-title>DNAmFitAge: Biological Age Indicator Incorporating Physical Fitness</article-title>.” <source>Aging (Albany NY)</source>
+<volume>15</volume>: <fpage>3904</fpage>–<lpage>3938</lpage>.<pub-id pub-id-type="pmid">36812475</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.18632/aging.204538</pub-id><pub-id pub-id-type="pmcid">PMC10258016</pub-id></mixed-citation></ref><ref id="acel70376-bib-0029"><mixed-citation publication-type="journal" id="acel70376-cit-0029">
+<string-name name-style="western">
+<surname>Millan‐Domingo</surname>, <given-names>F.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>F. J.</given-names>
+<surname>Tarazona‐Santabalbina</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Carretero</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Olaso‐Gonzalez</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Viña</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>M. C.</given-names>
+<surname>Gomez‐Cabrera</surname>
+</string-name>. <year>2022</year>. “<article-title>Real‐Life Outcomes of a Multicomponent Exercise Intervention in Community‐Dwelling Frail Older Adults and Its Association With Nutritional‐Related Factors</article-title>.” <source>Nutrients</source>
+<volume>14</volume>: <elocation-id>4756</elocation-id>.<pub-id pub-id-type="pmid">36501177</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3390/nu14235147</pub-id><pub-id pub-id-type="pmcid">PMC9737109</pub-id></mixed-citation></ref><ref id="acel70376-bib-0030"><mixed-citation publication-type="journal" id="acel70376-cit-0030">
+<string-name name-style="western">
+<surname>Ngandu</surname>, <given-names>T.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Lehtisalo</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Solomon</surname>
+</string-name>, et al. <year>2015</year>. “<article-title>A 2 Year Multidomain Intervention of Diet, Exercise, Cognitive Training, and Vascular Risk Monitoring Versus Control to Prevent Cognitive Decline in At‐Risk Elderly People (FINGER): A Randomised Controlled Trial</article-title>.” <source>Lancet</source>
+<volume>385</volume>: <fpage>2255</fpage>–<lpage>2263</lpage>.<pub-id pub-id-type="pmid">25771249</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/S0140-6736(15)60461-5</pub-id></mixed-citation></ref><ref id="acel70376-bib-0031"><mixed-citation publication-type="journal" id="acel70376-cit-0031">
+<string-name name-style="western">
+<surname>Oviedo‐Briones</surname>, <given-names>M.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>Á.</given-names>
+<surname>Laso</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. A.</given-names>
+<surname>Carnicero</surname>
+</string-name>, et al. <year>2021</year>. “<article-title>A Comparison of Frailty Assessment Instruments in Different Clinical and Social Care Settings: The Frailtools Project</article-title>.” <source>Journal of the American Medical Directors Association</source>
+<volume>22</volume>: <fpage>607</fpage>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.jamda.2020.09.024</pub-id><pub-id pub-id-type="pmid">33162359</pub-id></mixed-citation></ref><ref id="acel70376-bib-0032"><mixed-citation publication-type="journal" id="acel70376-cit-0032">
+<string-name name-style="western">
+<surname>Pelegí‐Sisó</surname>, <given-names>D.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>de Prado</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Ronkainen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Bustamante</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>J. R.</given-names>
+<surname>González</surname>
+</string-name>. <year>2021</year>. “<article-title>Methylclock: A Bioconductor Package to Estimate DNA Methylation Age</article-title>.” <source>Bioinformatics</source>
+<volume>37</volume>: <fpage>1759</fpage>–<lpage>1760</lpage>.<pub-id pub-id-type="pmid">32960939</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/bioinformatics/btaa825</pub-id></mixed-citation></ref><ref id="acel70376-bib-0033"><mixed-citation publication-type="journal" id="acel70376-cit-0033">
+<string-name name-style="western">
+<surname>Quach</surname>, <given-names>A.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>M. E.</given-names>
+<surname>Levine</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Tanaka</surname>
+</string-name>, et al. <year>2017</year>. “<article-title>Epigenetic Clock Analysis of Diet, Exercise, Education, and Lifestyle Factors</article-title>.” <source>Aging (Albany NY)</source>
+<volume>9</volume>: <fpage>419</fpage>–<lpage>446</lpage>.<pub-id pub-id-type="pmid">28198702</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.18632/aging.101168</pub-id><pub-id pub-id-type="pmcid">PMC5361673</pub-id></mixed-citation></ref><ref id="acel70376-bib-0034"><mixed-citation publication-type="journal" id="acel70376-cit-0034">
+<string-name name-style="western">
+<surname>Rajado</surname>, <given-names>A. T.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Silva</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Esteves</surname>
+</string-name>, et al. <year>2023</year>. “<article-title>How Can We Modulate Aging Through Nutrition and Physical Exercise? An Epigenetic Approach</article-title>.” <source>Aging (Albany NY)</source>
+<volume>15</volume>: <fpage>3191</fpage>–<lpage>3217</lpage>.<pub-id pub-id-type="pmid">37086262</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.18632/aging.204668</pub-id><pub-id pub-id-type="pmcid">PMC10188329</pub-id></mixed-citation></ref><ref id="acel70376-bib-0035"><mixed-citation publication-type="journal" id="acel70376-cit-0035">
+<string-name name-style="western">
+<surname>Rodriguez‐Mañas</surname>, <given-names>L.</given-names>
+</string-name>, and <string-name name-style="western">
+<given-names>L. P.</given-names>
+<surname>Fried</surname>
+</string-name>. <year>2015</year>. “<article-title>Frailty in the Clinical Scenario</article-title>.” <source>Lancet</source>
+<volume>385</volume>: <fpage>e7</fpage>–<lpage>e9</lpage>.<pub-id pub-id-type="pmid">25468154</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/S0140-6736(14)61595-6</pub-id></mixed-citation></ref><ref id="acel70376-bib-0036"><mixed-citation publication-type="journal" id="acel70376-cit-0036">
+<string-name name-style="western">
+<surname>Romero‐Ortuno</surname>, <given-names>R.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>D.</given-names>
+<surname>O'Shea</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>R. A.</given-names>
+<surname>Kenny</surname>
+</string-name>. <year>2011</year>. “<article-title>The SHARE Frailty Instrument for Primary Care Predicts Incident Disability in a European Population‐Based Sample</article-title>.” <source>Quality in Primary Care</source>
+<volume>19</volume>: <fpage>301</fpage>–<lpage>309</lpage>.<pub-id pub-id-type="pmid">22186172</pub-id></mixed-citation></ref><ref id="acel70376-bib-0037"><mixed-citation publication-type="journal" id="acel70376-cit-0037">
+<string-name name-style="western">
+<surname>Romero‐Ortuno</surname>, <given-names>R.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>C. D.</given-names>
+<surname>Walsh</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B. A.</given-names>
+<surname>Lawlor</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>R. A.</given-names>
+<surname>Kenny</surname>
+</string-name>. <year>2010</year>. “<article-title>A Frailty Instrument for Primary Care: Findings From the Survey of Health, Ageing and Retirement in Europe (SHARE)</article-title>.” <source>BMC Geriatrics</source>
+<volume>10</volume>: <elocation-id>57</elocation-id>.<pub-id pub-id-type="pmid">20731877</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1186/1471-2318-10-57</pub-id><pub-id pub-id-type="pmcid">PMC2939541</pub-id></mixed-citation></ref><ref id="acel70376-bib-0038"><mixed-citation publication-type="journal" id="acel70376-cit-0038">
+<string-name name-style="western">
+<surname>Rosenberg</surname>, <given-names>A.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Ngandu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Rusanen</surname>
+</string-name>, et al. <year>2018</year>. “<article-title>Multidomain Lifestyle Intervention Benefits a Large Elderly Population at Risk for Cognitive Decline and Dementia Regardless of Baseline Characteristics: The FINGER Trial</article-title>.” <source>Alzheimer's &amp; Dementia</source>
+<volume>14</volume>: <fpage>263</fpage>–<lpage>270</lpage>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.jalz.2017.09.006</pub-id><pub-id pub-id-type="pmid">29055814</pub-id></mixed-citation></ref><ref id="acel70376-bib-0039"><mixed-citation publication-type="journal" id="acel70376-cit-0039">
+<string-name name-style="western">
+<surname>Salas</surname>, <given-names>L. A.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>D. C.</given-names>
+<surname>Koestler</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. A.</given-names>
+<surname>Butler</surname>
+</string-name>, et al. <year>2018</year>. “<article-title>An Optimized Library for Reference‐Based Deconvolution of Whole‐Blood Biospecimens Assayed Using the Illumina HumanMethylationEPIC BeadArray</article-title>.” <source>Genome Biology</source>
+<volume>19</volume>: <elocation-id>64</elocation-id>.<pub-id pub-id-type="pmid">29843789</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1186/s13059-018-1448-7</pub-id><pub-id pub-id-type="pmcid">PMC5975716</pub-id></mixed-citation></ref><ref id="acel70376-bib-0040"><mixed-citation publication-type="journal" id="acel70376-cit-0040">
+<string-name name-style="western">
+<surname>Schoepf</surname>, <given-names>I. C.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Esteban‐Cantos</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C. W.</given-names>
+<surname>Thorball</surname>
+</string-name>, et al. <year>2023</year>. “<article-title>Epigenetic Ageing Accelerates Before Antiretroviral Therapy and Decelerates After Viral Suppression in People With HIV in Switzerland: A Longitudinal Study Over 17 Years</article-title>.” <source>Lancet Healthy Longevity</source>
+<volume>4</volume>: <fpage>e211</fpage>–<lpage>e218</lpage>.<pub-id pub-id-type="pmid">37148893</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/S2666-7568(23)00037-5</pub-id></mixed-citation></ref><ref id="acel70376-bib-0041"><mixed-citation publication-type="journal" id="acel70376-cit-0041">
+<string-name name-style="western">
+<surname>Seale</surname>, <given-names>K.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Horvath</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Teschendorff</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Eynon</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Voisin</surname>
+</string-name>. <year>2022</year>. “<article-title>Making Sense of the Ageing Methylome</article-title>.” <source>Nature Reviews. Genetics</source>
+<volume>23</volume>: <fpage>585</fpage>–<lpage>605</lpage>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s41576-022-00477-6</pub-id><pub-id pub-id-type="pmid">35501397</pub-id></mixed-citation></ref><ref id="acel70376-bib-0042"><mixed-citation publication-type="journal" id="acel70376-cit-0042">
+<string-name name-style="western">
+<surname>Sehl</surname>, <given-names>M. E.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>E. C.</given-names>
+<surname>Breen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Shih</surname>
+</string-name>, et al. <year>2021</year>. “<article-title>Increased Rate of Epigenetic Aging in Men Living With HIV Prior to Treatment</article-title>.” <source>Frontiers in Genetics</source>
+<volume>12</volume>: <elocation-id>796547</elocation-id>.<pub-id pub-id-type="pmid">35295196</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3389/fgene.2021.796547</pub-id><pub-id pub-id-type="pmcid">PMC8919029</pub-id></mixed-citation></ref><ref id="acel70376-bib-0043"><mixed-citation publication-type="journal" id="acel70376-cit-0043">
+<string-name name-style="western">
+<surname>Strandberg</surname>, <given-names>T. E.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Sirola</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K. H.</given-names>
+<surname>Pitkälä</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. S.</given-names>
+<surname>Tilvis</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A. Y.</given-names>
+<surname>Strandberg</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Stenholm</surname>
+</string-name>. <year>2012</year>. “<article-title>Association of Midlife Obesity and Cardiovascular Risk With Old Age Frailty: A 26‐Year Follow‐Up of Initially Healthy Men</article-title>.” <source>International Journal of Obesity</source>
+<volume>36</volume>: <fpage>1153</fpage>–<lpage>1157</lpage>.<pub-id pub-id-type="pmid">22614054</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/ijo.2012.83</pub-id></mixed-citation></ref><ref id="acel70376-bib-0044"><mixed-citation publication-type="journal" id="acel70376-cit-0044">
+<string-name name-style="western">
+<surname>Tarazona‐Santabalbina</surname>, <given-names>F. J.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>M. C.</given-names>
+<surname>Gomez‐Cabrera</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P.</given-names>
+<surname>Perez‐Ros</surname>
+</string-name>, et al. <year>2016</year>. “<article-title>A Multicomponent Exercise Intervention That Reverses Frailty and Improves Cognition, Emotion, and Social Networking in the Community‐Dwelling Frail Elderly: A Randomized Clinical Trial</article-title>.” <source>Journal of the American Medical Directors Association</source>
+<volume>17</volume>: <fpage>426</fpage>–<lpage>433</lpage>.<pub-id pub-id-type="pmid">26947059</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.jamda.2016.01.019</pub-id></mixed-citation></ref><ref id="acel70376-bib-0045"><mixed-citation publication-type="journal" id="acel70376-cit-0045">
+<string-name name-style="western">
+<surname>Tay</surname>, <given-names>J. H.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>Y. E.</given-names>
+<surname>Chew</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W.</given-names>
+<surname>Wang</surname>
+</string-name>, et al. <year>2025</year>. “<article-title>DNAm Age Differences Between Infinium methylationEPICv1 vs EPICv2 in Buffy Coat, PBMC, and Saliva Samples</article-title>.” <source>Communications Biology</source>
+<volume>8</volume>: <elocation-id>654</elocation-id>.<pub-id pub-id-type="pmid">40269264</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s42003-025-08021-y</pub-id><pub-id pub-id-type="pmcid">PMC12019316</pub-id></mixed-citation></ref><ref id="acel70376-bib-0046"><mixed-citation publication-type="journal" id="acel70376-cit-0046">
+<string-name name-style="western">
+<surname>Urdinguio</surname>, <given-names>R. G.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>J. R.</given-names>
+<surname>Tejedor</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Fernández‐Sanjurjo</surname>
+</string-name>, et al. <year>2021</year>. “<article-title>Physical Exercise Shapes the Mouse Brain Epigenome</article-title>.” <source>Molecular Metabolism</source>
+<volume>54</volume>: <elocation-id>101398</elocation-id>.<pub-id pub-id-type="pmid">34801767</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.molmet.2021.101398</pub-id><pub-id pub-id-type="pmcid">PMC8661702</pub-id></mixed-citation></ref><ref id="acel70376-bib-0047"><mixed-citation publication-type="journal" id="acel70376-cit-0047">
+<string-name name-style="western">
+<surname>Waziry</surname>, <given-names>R.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>C. P.</given-names>
+<surname>Ryan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. L.</given-names>
+<surname>Corcoran</surname>
+</string-name>, et al. <year>2023</year>. “<article-title>Effect of Long‐Term Caloric Restriction on DNA Methylation Measures of Biological Aging in Healthy Adults From the CALERIE Trial</article-title>.” <source>Nature Aging</source>
+<volume>3</volume>: <fpage>248</fpage>–<lpage>257</lpage>.<pub-id pub-id-type="pmid">37118425</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s43587-022-00357-y</pub-id><pub-id pub-id-type="pmcid">PMC10148951</pub-id></mixed-citation></ref><ref id="acel70376-bib-0048"><mixed-citation publication-type="book" id="acel70376-cit-0048">
+<collab collab-type="authors">WHO</collab>
+. <year>2020</year>. <source>WHO Guidelines on Physical Activity and Sedentary Behaviour</source>. <publisher-name>WHO</publisher-name>.</mixed-citation></ref><ref id="acel70376-bib-0049"><mixed-citation publication-type="journal" id="acel70376-cit-0049">
+<string-name name-style="western">
+<surname>Zhang</surname>, <given-names>W.</given-names>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Qu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G. H.</given-names>
+<surname>Liu</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>J. C. I.</given-names>
+<surname>Belmonte</surname>
+</string-name>. <year>2020</year>. “<article-title>The Ageing Epigenome and Its Rejuvenation</article-title>.” <source>Nature Reviews. Molecular Cell Biology</source>
+<volume>21</volume>: <fpage>137</fpage>–<lpage>150</lpage>.<pub-id pub-id-type="pmid">32020082</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s41580-019-0204-5</pub-id></mixed-citation></ref></ref-list></back></article>
