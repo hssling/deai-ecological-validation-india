@@ -1,0 +1,2 @@
+study_id,clock,arm,timepoint,value_type,mean,dispersion,dispersion_type,n,source_table_or_section,evidence_snippet,confidence
+LukkahataiN_2023_edac4e,UNSPECIFIED_EPIGENETIC_AGE,intervention,change,change_score,0.83,1.26,sd,,Results (prose),"Participants in the intervention group had a slightly decreased DNA methylation age and age acceleration after completing the exercise program (mean difference = −0.83 ± 1.26), but it was not signi...",medium
