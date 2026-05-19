@@ -79,15 +79,17 @@ Cochrane **RoB 2** for RCTs across the five domains plus overall judgment: rando
 
 ## 3. Statistical Synthesis
 
-All analyses are implemented in **Python only** (statsmodels, scipy, numpy, pandas). R/Rscript is not installed on the host machine, so the original plan's R subprocess calls have been dropped; equivalent Python implementations are specified below. Random seed: **42**.
+All analyses are implemented in **Python primary + R cross-check** (statsmodels, scipy, numpy, pandas for the primary; R `meta` and `bayesmeta` via Rscript subprocess for the cross-check, per the A3 amendment after R/Rscript was confirmed available at `C:/Program Files/R/R-4.5.3/bin/Rscript.exe`). Random seed: **42**.
 
 ### 3.1 Effect measure
-Hedges' *g* standardized mean difference of **change from baseline** (intervention vs control), computed with the Borenstein (2009) formulas including small-sample correction *J*. For post-only studies, post-value SMD is used with a sensitivity check. Median/IQR are converted to mean/SD via Wan et al. (2014).
+**Primary (per A3 amendment, 2026-05-19):** Adjusted between-group **mean difference on the original clock scale** (years for age clocks — Horvath, Hannum, PhenoAge, GrimAge, GrimAge2, PCClock, DNAmTL — and per-year-per-year for DunedinPACE), extracted as a β coefficient with SE or 95% CI from the source full text. CI is converted to SE via `SE = (CI_upper - CI_lower) / (2 * 1.96)`. Pooling is generic-inverse-variance random-effects (see §3.2).
 
-### 3.2 Primary pooling — DerSimonian-Laird random effects
-Per clock with ≥3 studies, a DerSimonian-Laird (DL) random-effects model is fitted using
-`statsmodels.stats.meta_analysis.combine_effects(..., method_re='dl')`,
-returning pooled SMD, 95% CI, τ², I², Cochran's Q. A 95% **prediction interval** is computed from τ² and reported alongside every pooled estimate. One forest plot per clock with ≥3 studies; clocks with <3 studies are reported narratively.
+**Sensitivity:** Hedges' *g* standardized mean difference of **change from baseline** (intervention vs control), computed with the Borenstein (2009) formulas including small-sample correction *J*, for studies that also report arm-stratified means and SDs. For post-only studies, post-value SMD is used. Median/IQR are converted to mean/SD via Wan et al. (2014).
+
+### 3.2 Primary pooling — DerSimonian-Laird random effects (generic inverse variance)
+Per clock with ≥3 study-level effects, a DerSimonian-Laird (DL) random-effects **generic-inverse-variance** model is fitted using
+`statsmodels.stats.meta_analysis.combine_effects(..., method_re='dl')` over (β, SE) pairs on the original clock scale,
+returning pooled MD, 95% CI, τ², I², Cochran's Q. A 95% **prediction interval** is computed from τ² and reported alongside every pooled estimate. An R cross-check is run with `meta::metagen(TE, seTE, sm="MD", method.tau="DL", prediction=TRUE)`. One forest plot per clock with ≥3 studies; clocks with <3 studies are reported narratively.
 
 ### 3.3 Sensitivity pooling — HKSJ
 Hartung–Knapp–Sidik–Jonkman adjustment is applied as a sensitivity pool via
