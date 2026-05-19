@@ -1,0 +1,9 @@
+clock,k,start,rob,inconsistency,indirectness,imprecision,pubbias,downgrades,certainty,status,reason
+DunedinPACE,3,High,Down 1 (RoB dual coding pending; treated as some concerns),Down 1 (I²=79% — high),Down 1 (heterogeneous interventions / adjustment sets pooled),Down 1 (95% CI crosses null with k=3),Not downgraded (k<10; cannot be assessed),4,Very Low,performed,
+GrimAge,2,—,—,—,—,—,—,—,—,gate_failed,k=2<3; no GRADE row
+GrimAge2,1,—,—,—,—,—,—,—,—,gate_failed,k=1<3; no GRADE row
+PhenoAge,1,—,—,—,—,—,—,—,—,gate_failed,k=1<3; no GRADE row
+Horvath,0,—,—,—,—,—,—,—,—,gate_failed,k=0<3; no GRADE row
+Hannum,0,—,—,—,—,—,—,—,—,gate_failed,k=0<3; no GRADE row
+PCClock,1,—,—,—,—,—,—,—,—,gate_failed,k=1<3; no GRADE row
+DNAmTL,0,—,—,—,—,—,—,—,—,gate_failed,k=0<3; no GRADE row

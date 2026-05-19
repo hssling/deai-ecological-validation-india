@@ -1,0 +1,21 @@
+clock,analysis,k,mu,ci_lower,ci_upper,status,reason
+DunedinPACE,publication_bias_egger,3,,,,gate_failed,k=3 < 10; pub-bias test not run
+DunedinPACE,publication_bias_begg,3,,,,gate_failed,k=3 < 10; pub-bias test not run
+DunedinPACE,pet_peese,3,,,,gate_failed,k=3 < 10; pub-bias test not run
+DunedinPACE,leave_one_out:drop=ChapnickM_2025_d1605d,2,0.08301146452136172,-0.28789692649541926,0.4539198555381427,performed,DL refit excluding ChapnickM_2025_d1605d; I2=89.0
+DunedinPACE,leave_one_out:drop=CorleyMJ_2025_ad19fa,2,0.10785712658788005,-0.202725225183984,0.4184394783597441,performed,DL refit excluding CorleyMJ_2025_ad19fa; I2=85.8
+DunedinPACE,leave_one_out:drop=MerrillSM_2024_5ee99d,2,-0.04949873316673611,-0.10457868772222523,0.005581221388753006,performed,DL refit excluding MerrillSM_2024_5ee99d; I2=53.7
+DunedinPACE,restrict_low_rob,3,,,,gate_failed_pending_rob,Dual-coded RoB2 pending; low-RoB-only sensitivity cannot be computed
+DunedinPACE,restrict_duration_ge_12wk,0,,,,gate_failed,duration_weeks not extracted; sensitivity not performed
+GrimAge,publication_bias_egger,2,,,,gate_failed,k=2 < 10; pub-bias test not run
+GrimAge,publication_bias_begg,2,,,,gate_failed,k=2 < 10; pub-bias test not run
+GrimAge,pet_peese,2,,,,gate_failed,k=2 < 10; pub-bias test not run
+GrimAge2,publication_bias_egger,1,,,,gate_failed,k=1 < 10; pub-bias test not run
+GrimAge2,publication_bias_begg,1,,,,gate_failed,k=1 < 10; pub-bias test not run
+GrimAge2,pet_peese,1,,,,gate_failed,k=1 < 10; pub-bias test not run
+PCClock,publication_bias_egger,1,,,,gate_failed,k=1 < 10; pub-bias test not run
+PCClock,publication_bias_begg,1,,,,gate_failed,k=1 < 10; pub-bias test not run
+PCClock,pet_peese,1,,,,gate_failed,k=1 < 10; pub-bias test not run
+PhenoAge,publication_bias_egger,1,,,,gate_failed,k=1 < 10; pub-bias test not run
+PhenoAge,publication_bias_begg,1,,,,gate_failed,k=1 < 10; pub-bias test not run
+PhenoAge,pet_peese,1,,,,gate_failed,k=1 < 10; pub-bias test not run

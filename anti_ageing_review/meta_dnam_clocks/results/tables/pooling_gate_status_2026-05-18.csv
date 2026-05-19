@@ -1,0 +1,9 @@
+clock,calculable_effects,min_required_for_pool,pooling_status,reason
+DNAmTL,0,3,not_poolable,fewer than prespecified minimum real effects
+DunedinPACE,0,3,not_poolable,fewer than prespecified minimum real effects
+GrimAge,0,3,not_poolable,fewer than prespecified minimum real effects
+GrimAge2,0,3,not_poolable,fewer than prespecified minimum real effects
+Hannum,0,3,not_poolable,fewer than prespecified minimum real effects
+Horvath,0,3,not_poolable,fewer than prespecified minimum real effects
+PhenoAge,0,3,not_poolable,fewer than prespecified minimum real effects
+UNSPECIFIED_EPIGENETIC_AGE,1,3,not_poolable,fewer than prespecified minimum real effects

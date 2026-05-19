@@ -1,0 +1,9 @@
+clock,k,mu_dl,ci_lower_dl,ci_upper_dl,pi_lower,pi_upper,tau2,I2,Q,Q_pval,mu_hksj,ci_lower_hksj,ci_upper_hksj,mu_bayes,ci_lower_bayes,ci_upper_bayes,r_mu_dl,r_mu_hksj,r_mu_bayes,python_r_consistent,reason
+DunedinPACE,3,-0.008952506650985622,-0.11236139089840552,0.09445637759643427,-1.1786201041188593,1.160715090816888,0.0056905138265527936,78.99130361216264,9.5198672163108,0.008566178102984545,-0.008952506650985622,-0.3835875603985727,0.3656825470966015,0.01919695474209511,-0.3427462294889762,0.4901223384194379,-0.00895251,-0.00895251,0.01494913,yes,
+GrimAge,2,,,,,,,,,,,,,,,,,,,gate_failed,k<3 (k=2)
+GrimAge2,1,,,,,,,,,,,,,,,,,,,gate_failed,k<3 (k=1)
+PhenoAge,1,,,,,,,,,,,,,,,,,,,gate_failed,k<3 (k=1)
+Horvath,0,,,,,,,,,,,,,,,,,,,gate_failed,k<3 (k=0)
+Hannum,0,,,,,,,,,,,,,,,,,,,gate_failed,k<3 (k=0)
+PCClock,1,,,,,,,,,,,,,,,,,,,gate_failed,k<3 (k=1)
+DNAmTL,0,,,,,,,,,,,,,,,,,,,gate_failed,k<3 (k=0)

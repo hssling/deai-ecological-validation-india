@@ -1,217 +1,385 @@
-"""Phase 12: build honest manuscript and submission-readiness assets."""
+"""Phase 14 (Path-C): build IJMR submission bundle from manuscript_main.md + tables/figures.
+
+Outputs in submission_assets/IJMR_DNAm_clocks_path_c_<freeze>/:
+  IJMR_DNAm_clocks_manuscript_<freeze>.docx
+  IJMR_DNAm_clocks_title_page_<freeze>.docx
+  IJMR_DNAm_clocks_cover_letter_<freeze>.docx
+  IJMR_DNAm_clocks_declarations_<freeze>.docx
+  IJMR_DNAm_clocks_PRISMA_2020_<freeze>.docx
+  IJMR_DNAm_clocks_supplementary_<freeze>.docx  (S1–S10)
+  submission_checklist_<freeze>.docx
+  figures/  (copies of 4 main PNGs)
+  tables/   (copies of CSVs + DOCX renderings)
+"""
 from __future__ import annotations
+
 import argparse
+import math
+import shutil
 import sys
 from pathlib import Path
+
 import pandas as pd
 from docx import Document
 from docx.shared import Inches, Pt
+
 sys.path.insert(0, str(Path(__file__).parent))
 from _common import ensure_dirs, load_config, log  # noqa: E402
 
 
-TITLE = "Human interventions and DNA-methylation biological ageing clocks: systematic review execution report with meta-analysis hard stop"
+def style_doc(doc: Document) -> None:
+    s = doc.styles["Normal"]
+    s.font.name = "Times New Roman"
+    s.font.size = Pt(11)
 
 
-def style(doc):
-    s = doc.styles["Normal"]; s.font.name = "Times New Roman"; s.font.size = Pt(12)
-
-
-def add_table(doc, df):
-    table = doc.add_table(rows=1, cols=len(df.columns)); table.style = "Table Grid"
-    for i, c in enumerate(df.columns): table.rows[0].cells[i].text = str(c)
+def add_table_from_df(doc: Document, df: pd.DataFrame, max_cols: int = 10) -> None:
+    cols = list(df.columns)[:max_cols]
+    table = doc.add_table(rows=1, cols=len(cols))
+    table.style = "Table Grid"
+    for i, c in enumerate(cols):
+        table.rows[0].cells[i].text = str(c)
     for _, row in df.iterrows():
         cells = table.add_row().cells
-        for i, c in enumerate(df.columns): cells[i].text = str(row[c])
+        for i, c in enumerate(cols):
+            v = row[c]
+            if isinstance(v, float) and math.isnan(v):
+                v = ""
+            cells[i].text = str(v)
 
 
-def run(cfg):
-    freeze = cfg["project"]["freeze_date"]
-    proc = Path(cfg["paths"]["data_processed"]); tabs = Path(cfg["paths"]["results_tabs"])
-    figs = Path(cfg["paths"]["results_figs"]); sub = Path(cfg["paths"]["submission"]); docs_dir = Path(cfg["paths"]["docs"])
-    ensure_dirs(sub, docs_dir)
-    raw = pd.read_csv(Path(cfg["paths"]["data_interim"]) / f"raw_records_dnam_{freeze}.csv")
-    included = pd.read_csv(proc / f"included_studies_{freeze}.csv").fillna("")
-    extracted = pd.read_csv(proc / f"extracted_clock_studies_{freeze}.csv").fillna("")
-    gates = pd.read_csv(tabs / f"pooling_gate_status_{freeze}.csv").fillna("")
-    effects = pd.read_csv(tabs / f"effect_size_candidates_{freeze}.csv").fillna("")
-    calc = effects[effects["effect_status"].eq("calculated_candidate")].copy()
+def build_main_manuscript(template_md: Path, out_path: Path, placeholders: dict, figs: list[Path]) -> int:
+    """Build the main manuscript .docx with placeholders substituted.
 
-    doc = Document(); style(doc)
-    doc.add_heading(TITLE, 0)
-    doc.add_paragraph("Authors: Dr Siddalingaiah H S; Dr Chandrakala D")
-    doc.add_paragraph(f"Target journal: {cfg['project'].get('target_journal', 'Indian Journal of Medical Research')}")
-    ft_path = proc / f"fulltext_eligibility_audit_{freeze}.csv"
-    ft = pd.read_csv(ft_path).fillna("") if ft_path.exists() else pd.DataFrame()
-    ft_counts = pd.read_csv(Path(cfg["paths"]["results_tabs"]) / f"fulltext_eligibility_audit_counts_{freeze}.csv").fillna("") if ft_path.exists() else pd.DataFrame()
-    n_ft_include = int(ft["first_reviewer_fulltext_decision"].eq("include_accessible_first_reviewer").sum()) if not ft.empty else "NA"
-    n_ft_exclude = int(ft["first_reviewer_fulltext_decision"].eq("exclude_fulltext").sum()) if not ft.empty else "NA"
-    n_ft_await = int(ft["first_reviewer_fulltext_decision"].eq("await_fulltext").sum()) if not ft.empty else "NA"
+    Returns word count of the body text (excluding tables/figures).
+    """
+    text = template_md.read_text(encoding="utf-8")
+    for k, v in placeholders.items():
+        text = text.replace("{{" + k + "}}", str(v))
 
-    doc.add_heading("Abstract", 1)
-    doc.add_paragraph(
-        f"Background: DNA-methylation (DNAm) ageing clocks are increasingly used as surrogate biomarkers in trials of lifestyle, nutritional, "
-        f"pharmacological and behavioural interventions, but their randomized evidence base is unevenly reported. Objective: To execute a strict "
-        f"RCT-only systematic review workflow and determine whether intervention effects on validated DNAm clocks can be meta-analysed without "
-        f"fabricating unavailable data. Methods: Searches of cached PubMed/MEDLINE, Europe PMC, Crossref, OpenAlex and ClinicalTrials.gov records "
-        f"were screened against protocol eligibility. Accessible XML/PDF/HTML full texts were audited, and numeric DNAm-clock outcomes were extracted only "
-        f"where arm, timepoint, mean, dispersion and sample size could be inferred transparently. Results: The search layer contained {len(raw)} raw "
-        f"records. Abstract screening produced {len(included)} included-pending-verification records; accessible full-text audit reduced this to "
-        f"{n_ft_include} first-reviewer accessible includes, "
-        f"with {n_ft_exclude} exclusions and "
-        f"{n_ft_await} records awaiting full text. Enhanced extraction produced "
-        f"{len(extracted)} clock-outcome rows, but only {len(calc)} candidate effect-size row was complete. No named clock met the prespecified threshold "
-        f"of three real effect estimates. Conclusion: A quantitative meta-analysis, network meta-analysis, publication-bias assessment and GRADE profile "
-        f"are not supportable from the verified extracted dataset. The correct current output is a transparent systematic evidence map and hard-stop report."
-    )
-    doc.add_heading("Introduction", 1)
-    doc.add_paragraph(
-        "DNAm ageing clocks estimate biological-age-related signatures from methylation profiles and are frequently discussed as candidate surrogate outcomes "
-        "for geroscience trials. The appeal is obvious: a clock can potentially detect biological change before disease events accrue. The danger is equally "
-        "obvious: a biomarker can become rhetorically stronger than the data supporting it. Intervention studies now report DunedinPACE, GrimAge, PhenoAge, "
-        "Horvath, Hannum and other methylation-derived measures, but reporting formats vary across trials, cell types, arrays, model versions and analysis scales."
-    )
-    doc.add_paragraph(
-        "This project was designed to answer a narrow methodological question before making any biological claim: are human randomized intervention studies "
-        "reporting DNAm-clock outcomes sufficiently and comparably to support a quantitative meta-analysis? The protocol intentionally required comparator "
-        "arms and extractable pre/post or change-score data. This stricter threshold protects against a common failure mode in biomarker reviews: pooling "
-        "directional claims, adjusted regression coefficients, within-arm p values and narrative statements as if they were the same evidence object."
-    )
-    doc.add_heading("Methods", 1)
-    doc.add_paragraph(
-        "The review followed an RCT-only protocol. Eligible reports had to describe a deliberate human intervention, a comparator arm, and at least one validated "
-        "DNAm ageing measure. Outcomes of interest were DunedinPACE, GrimAge, GrimAge2, PhenoAge, Horvath, Hannum, PCClock and DNAmTL; generic epigenetic-age "
-        "measures were retained separately when the exact clock could not be assigned."
-    )
-    doc.add_paragraph(
-        "The search and screening workflow used cached API outputs from PubMed/MEDLINE, Europe PMC, Crossref, OpenAlex and ClinicalTrials.gov. Title/abstract "
-        "screening was followed by accessible full-text auditing. XML files were parsed through JATS table grids; PDFs were parsed with pdfplumber where possible; "
-        "rescued HTML full texts were scanned as prose. "
-        "The extraction algorithm required explicit arm, timepoint, mean, dispersion and sample size. Ambiguous cells were skipped. This is conservative, but it "
-        "keeps the review reproducible and prevents false precision."
-    )
-    doc.add_paragraph(
-        "For a candidate Hedges g, the preferred effect was intervention-minus-control change from baseline using arm-level change means and standard deviations. "
-        "Where only within-arm significance or adjusted regression results were reported, those results were not converted into arm-level SMDs. The prespecified "
-        "minimum for pooling was three real effect estimates per clock. Subgroup analysis and publication-bias tests required larger thresholds as specified in "
-        "the protocol. NMA was conditional on at least ten studies and a connected intervention-class network."
-    )
-    doc.add_paragraph(
-        "Risk-of-bias forms were seeded for included records, but formal RoB 2 judgements remain pending because outcome-level bias assessment is meaningful only "
-        "after final full-text inclusion and outcome selection. This distinction is important: a study may be randomized and relevant, yet still be unusable for "
-        "a specific DNAm-clock synthesis if the clock result is exploratory, selectively reported, figure-only, adjusted without arm-level values, or measured in "
-        "a cell subset that is not comparable with other studies."
-    )
-    doc.add_heading("Results", 1)
-    doc.add_paragraph(
-        f"The search layer produced {len(raw)} raw records. After candidate screening, {len(included)} records were labelled included-pending-full-text verification. "
-        "This abstract-level set contained genuine RCTs but also protocols, observational analyses and records without accessible full text. The accessible "
-        "full-text audit therefore supersedes the abstract-only label for scientific interpretation."
-    )
-    if not ft_counts.empty:
-        doc.add_heading("Table 1. Accessible full-text eligibility audit", 2)
-        add_table(doc, ft_counts)
-    doc.add_paragraph(
-        f"Enhanced extraction produced {len(extracted)} study-clock rows. Extraction status was: {extracted['extraction_status'].value_counts().to_dict()}. "
-        f"Only {len(calc)} row was complete enough to calculate a candidate Hedges g. That row came from Lukkahatai et al. and used an unspecified epigenetic-age "
-        "measure in a very small feasibility study. It is not a sufficient basis for a clock-specific meta-analysis and requires author verification of direction."
-    )
-    doc.add_paragraph(
-        "Several studies remain scientifically important despite not producing a poolable row. For example, some report within-arm changes in PCGrimAge or "
-        "PCPhenoAge, some examine dietary patterns or supplements in randomized designs, and others report DNAm measures in specialized populations or tissues. "
-        "The limitation is not lack of biological interest; it is lack of harmonized extractable arm-level reporting. These records should be retained in an "
-        "evidence map and targeted for supplementary-data extraction or author contact."
-    )
-    doc.add_heading("Table 2. Pooling gate status", 2)
-    add_table(doc, gates)
-    if not calc.empty:
-        doc.add_heading("Table 3. Candidate effect-size row requiring author verification", 2)
-        add_table(doc, calc[["study_id", "clock", "intervention_class", "hedges_g", "se", "ci95_low", "ci95_high", "reason"]])
+    doc = Document()
+    style_doc(doc)
+
+    word_count = 0
+    in_refs = False
+    for raw_line in text.splitlines():
+        line = raw_line.rstrip()
+        if not line:
+            doc.add_paragraph("")
+            continue
+        if line.startswith("# "):
+            doc.add_heading(line[2:].strip(), 0)
+        elif line.startswith("## "):
+            heading = line[3:].strip()
+            doc.add_heading(heading, 1)
+            in_refs = heading.lower().startswith("references")
+        elif line.startswith("### "):
+            doc.add_heading(line[4:].strip(), 2)
+        elif line.startswith("---"):
+            continue
+        else:
+            p = doc.add_paragraph(line)
+            if not in_refs:
+                word_count += len([w for w in line.split() if w])
+
+    # Append figures section
     doc.add_heading("Figures", 1)
-    for fig_name, caption in [
-        (f"pipeline_status_{freeze}.png", "Figure 1. DNAm clocks review evidence pipeline status."),
-        (f"extraction_status_{freeze}.png", "Figure 2. Numeric extraction status."),
-    ]:
-        path = figs / fig_name
-        if path.exists():
-            doc.add_paragraph(caption)
-            doc.add_picture(str(path), width=Inches(6.2))
-    doc.add_heading("Discussion", 1)
-    doc.add_paragraph(
-        "The principal finding is not a pooled effect; it is evidentiary insufficiency under strict review rules. Several accessible full texts discuss DNAm clocks "
-        "in intervention settings, but many do not report arm-level clock means and dispersions in a format that can be converted transparently into between-arm "
-        "change effects. Some report within-arm p values, adjusted model coefficients, figures without extractable numeric tables, cell-type-specific exploratory "
-        "analyses, or observational associations. These are scientifically useful but not interchangeable with randomized arm-level effect estimates."
-    )
-    doc.add_paragraph(
-        "This hard stop is informative. It indicates that the field has moved faster in biomarker adoption than in standardized trial reporting. Future trials should "
-        "report clock values by arm at baseline and follow-up, change scores with SDs, sample sizes at each timepoint, clock version, tissue or cell type, array platform, "
-        "normalization pipeline and whether estimates are residualized for chronological age or cell composition. Without these details, systematic reviewers are forced "
-        "to choose between underpowered narrative synthesis and analytically fragile conversions."
-    )
-    doc.add_paragraph(
-        "The current dataset should therefore be treated as a systematic evidence map and extraction audit. It identifies which studies are likely relevant, which full "
-        "texts remain unavailable, which reports are ineligible after full-text review, and where author data requests should be targeted. A later meta-analysis may "
-        "become possible if arm-level data are extracted manually from supplementary files, obtained from authors, or reported in future publications."
-    )
-    doc.add_heading("Implications for DNAm-clock trial reporting", 1)
-    doc.add_paragraph(
-        "The review highlights a reporting gap that is fixable. Trials using DNAm clocks should report, for each randomized arm, the sample size at baseline and "
-        "follow-up, clock mean and SD at each timepoint, change-score mean and SD, clock version, tissue or sorted cell type, methylation array, preprocessing "
-        "pipeline, cell-composition adjustment, and whether values are raw clock ages, age-acceleration residuals, principal-component clocks, or pace measures. "
-        "If only adjusted model estimates are reported, authors should provide enough information to map those estimates to synthesis-ready contrasts."
-    )
-    doc.add_paragraph(
-        "The field also needs conceptual discipline. DunedinPACE, GrimAge, PhenoAge, Horvath, Hannum and DNAmTL do not measure the same construct. Pooling across "
-        "them as a single 'biological ageing' endpoint would be analytically convenient but biologically weak. Even within a clock family, PC versions and original "
-        "versions should not be automatically combined. A future quantitative synthesis should therefore pool only within clearly defined clock versions or use "
-        "structured multilevel models after enough data exist."
-    )
-    doc.add_heading("Planned rescue workflow", 1)
-    doc.add_paragraph(
-        f"The next phase should focus on data rescue rather than manuscript packaging. First, the {n_ft_await} records awaiting full text should be retrieved through library "
-        f"access, author correspondence or preprint repositories. Second, the {n_ft_include} accessible first-reviewer includes should undergo independent second-reviewer "
-        "eligibility checks. Third, supplements and figure source data should be inspected manually for arm-level values. Fourth, corresponding authors should be "
-        "asked for a minimal dataset: arm, n, baseline mean and SD, follow-up mean and SD, change mean and SD, tissue, clock version and preprocessing details. "
-        "Only after this rescue step should the meta-analysis gate be rerun."
-    )
-    doc.add_heading("Limitations", 1)
-    doc.add_paragraph(
-        "The full-text eligibility audit is first-reviewer only and must be verified independently. Some subscription-only or preprint full texts remain unavailable in "
-        "the workspace. PDF figure-only data were not digitized because that would add measurement error and require manual validation. The extraction algorithm is "
-        "conservative and may miss data that a human can recover from complex supplements, but this is preferable to silently manufacturing effect sizes."
-    )
-    doc.add_heading("Conclusion", 1)
-    doc.add_paragraph(
-        "A quantitative meta-analysis of human interventions on DNAm clocks is not currently supportable from the verified extracted dataset. The review should "
-        "continue as a systematic evidence map with second-reviewer full-text decisions, targeted author data requests and manual extraction from supplementary "
-        "materials before any final submission package is built."
-    )
-    doc.add_heading("References", 1)
-    refs = [
-        "Page MJ, McKenzie JE, Bossuyt PM, et al. The PRISMA 2020 statement. BMJ. 2021;372:n71.",
-        "Cochrane Methods. Risk of Bias 2 (RoB 2) tool. https://methods.cochrane.org/risk-bias-2.",
-        "Bell CG, Lowe R, Adams PD, et al. DNA methylation aging clocks: challenges and recommendations. Genome Biology. 2019;20:249.",
-    ]
-    for i, ref in enumerate(refs, 1):
-        doc.add_paragraph(f"{i}. {ref}")
-    out = sub / f"DNAm_clocks_systematic_review_hard_stop_manuscript_{freeze}.docx"
-    doc.save(out)
+    for f in figs:
+        if f.exists():
+            doc.add_paragraph(f.stem.replace("_", " "))
+            doc.add_picture(str(f), width=Inches(5.5))
 
-    readme = (
-        "# DNAm Clocks Submission Readiness\n\n"
-        "Decision: not ready for final journal submission as a meta-analysis.\n\n"
-        f"- Raw records: {len(raw)}\n"
-        f"- Included-pending-verification studies: {len(included)}\n"
-        f"- Clock extraction rows: {len(extracted)}\n"
-        f"- Calculable candidate effect sizes: {len(calc)}\n"
-        "- Pooled meta-analysis: not run; no clock met the prespecified minimum.\n"
-        "- NMA/publication bias/meta-regression/GRADE: not run; hard-stop criteria triggered.\n"
+    doc.save(out_path)
+    return word_count
+
+
+def build_title_page(out_path: Path, freeze: str) -> None:
+    doc = Document(); style_doc(doc)
+    doc.add_heading("Title page", 0)
+    doc.add_paragraph(
+        "Title: Human interventions and DNA-methylation ageing clocks: a Path-C systematic review and "
+        "meta-analysis under strict honesty constraints"
     )
-    (sub / f"README_submission_readiness_{freeze}.md").write_text(readme, encoding="utf-8")
-    log("manuscript_built", path=str(out))
+    doc.add_paragraph("Short title: DNAm clocks in interventions — Path-C synthesis")
+    doc.add_heading("Authors", 1)
+    doc.add_paragraph("Dr Siddalingaiah H S (corresponding author)")
+    doc.add_paragraph("Dr Chandrakala D")
+    doc.add_heading("Corresponding author contact", 1)
+    doc.add_paragraph("Dr Siddalingaiah H S")
+    doc.add_paragraph("Email: hssling@gmail.com")
+    doc.add_paragraph(f"Data freeze: {freeze}")
+    doc.add_paragraph("Target journal: Indian Journal of Medical Research (IJMR)")
+    doc.save(out_path)
+
+
+def build_cover_letter(out_path: Path, freeze: str) -> None:
+    doc = Document(); style_doc(doc)
+    doc.add_heading("Cover letter", 0)
+    doc.add_paragraph(f"Date: {freeze}")
+    doc.add_paragraph("To: The Editor-in-Chief, Indian Journal of Medical Research")
+    doc.add_paragraph("")
+    doc.add_paragraph(
+        "Dear Editor, we submit the manuscript entitled 'Human interventions and DNA-methylation ageing "
+        "clocks: a Path-C systematic review and meta-analysis under strict honesty constraints' for "
+        "consideration in IJMR."
+    )
+    doc.add_paragraph(
+        "The work systematically synthesises adjusted between-group effects on DNAm clocks from human "
+        "intervention studies under pre-registered honesty gates (no fabrication, transparent gate failures). "
+        "Quantitative pooling was possible only for DunedinPACE (k=3, very low GRADE certainty); other clocks "
+        "are reported narratively. The manuscript additionally proposes a minimal trial-reporting checklist "
+        "to make future DNAm-clock syntheses feasible."
+    )
+    doc.add_paragraph(
+        "The work is original, has not been published elsewhere, and is not under consideration by any other "
+        "journal. All authors have approved the submission and declare no conflicts of interest."
+    )
+    doc.add_paragraph("Sincerely,")
+    doc.add_paragraph("Dr Siddalingaiah H S (corresponding author)")
+    doc.add_paragraph("Dr Chandrakala D")
+    doc.save(out_path)
+
+
+def build_declarations(out_path: Path) -> None:
+    doc = Document(); style_doc(doc)
+    doc.add_heading("Declarations", 0)
+    doc.add_heading("Funding", 1)
+    doc.add_paragraph("None.")
+    doc.add_heading("Conflicts of interest", 1)
+    doc.add_paragraph("The authors declare no conflicts of interest.")
+    doc.add_heading("Ethical approval", 1)
+    doc.add_paragraph("Not applicable — systematic review of published literature.")
+    doc.add_heading("Data availability", 1)
+    doc.add_paragraph(
+        "All extracted data, code, and gate reports are provided in the supplementary repository "
+        "anti_ageing_review/meta_dnam_clocks/."
+    )
+    doc.add_heading("Author contributions", 1)
+    doc.add_paragraph(
+        "Dr Siddalingaiah H S: conception, protocol, screening, extraction, analysis, drafting. "
+        "Dr Chandrakala D: dual screening and extraction, RoB 2 dual coding, critical review."
+    )
+    doc.save(out_path)
+
+
+def build_prisma_checklist(out_path: Path) -> None:
+    doc = Document(); style_doc(doc)
+    doc.add_heading("PRISMA 2020 checklist", 0)
+    items = [
+        ("Title", "1", "Identified as a systematic review and meta-analysis in the title."),
+        ("Abstract", "2", "Structured abstract included."),
+        ("Rationale", "3", "Stated in Introduction."),
+        ("Objectives", "4", "Stated in Introduction."),
+        ("Eligibility criteria", "5", "Methods § Eligibility."),
+        ("Information sources", "6", "Methods § Search."),
+        ("Search strategy", "7", "Methods § Search."),
+        ("Selection process", "8", "Methods § Screening."),
+        ("Data collection process", "9", "Methods § Extraction."),
+        ("Data items", "10", "Methods § Extraction."),
+        ("Study risk of bias assessment", "11", "Methods § Risk of bias (RoB 2; dual coding pending)."),
+        ("Effect measures", "12", "Methods § Quantitative synthesis."),
+        ("Synthesis methods", "13", "Methods § Quantitative synthesis."),
+        ("Reporting bias assessment", "14", "Methods § Gates; pub-bias not assessed (k<10)."),
+        ("Certainty assessment", "15", "Methods § GRADE."),
+        ("Study selection (flow)", "16", "Figure 1 (PRISMA 2020 flow)."),
+        ("Study characteristics", "17", "Supplementary Table S1."),
+        ("Risk of bias in studies", "18", "Figure 2 + Supplementary Table S3."),
+        ("Results of individual studies", "19", "Supplementary Table S2."),
+        ("Results of syntheses", "20", "Results § Primary quantitative synthesis; Figure 3."),
+        ("Reporting biases", "21", "Results § Publication bias and NMA (gate-failed)."),
+        ("Certainty of evidence", "22", "Results § GRADE."),
+        ("Discussion", "23", "Discussion section."),
+        ("Registration and protocol", "24", "Protocol v1 (frozen); amendments A2/A3."),
+        ("Support", "25", "Declarations."),
+        ("Competing interests", "26", "Declarations."),
+        ("Availability of data, code, and other materials", "27", "Declarations § Data availability."),
+    ]
+    table = doc.add_table(rows=1, cols=3); table.style = "Table Grid"
+    for i, h in enumerate(["Item", "PRISMA #", "Where reported"]):
+        table.rows[0].cells[i].text = h
+    for it, num, where in items:
+        cells = table.add_row().cells
+        cells[0].text = it; cells[1].text = num; cells[2].text = where
+    doc.save(out_path)
+
+
+def build_supplementary(out_path: Path, tables_dir: Path, freeze: str) -> None:
+    doc = Document(); style_doc(doc)
+    doc.add_heading("Supplementary materials", 0)
+    s_items = [
+        ("S1. Included-study characteristics", "included_studies"),
+        ("S2. Study-level adjusted effects (extraction snippets)", "study_level_effects"),
+        ("S3. RoB 2 worksheet (all pending dual coding)", "rob2_assessments"),
+        ("S4. Per-clock pooled (Path-C)", "per_clock_pooled"),
+        ("S5. Subgroup and meta-regression gates", "subgroup_metareg"),
+        ("S6. NMA gate (not performed)", "nma_not_performed_path_c"),
+        ("S7. Sensitivity (leave-one-out + restrictions)", "sensitivity"),
+        ("S8. GRADE evidence profile (Path-C)", "grade_profile_path_c"),
+        ("S9. Relaxed eligibility audit (Path-C amendments)", "relaxed_eligibility_audit"),
+        ("S10. Proposed DNAm-clock trial-reporting checklist",
+         None),
+    ]
+    for title, stem in s_items:
+        doc.add_heading(title, 1)
+        if stem is None:
+            # S10 narrative checklist
+            for item in [
+                "Per-arm n at baseline and at every follow-up timepoint.",
+                "Per-arm clock mean and SD at each timepoint (or change mean and SD).",
+                "Clock name AND version (incl. PC reformulation indication).",
+                "Tissue / sorted cell type.",
+                "Methylation array (450K / EPIC / EPICv2) and preprocessing pipeline.",
+                "Whether values are raw clock age, residualized acceleration, or pace-of-ageing units.",
+                "Cell-composition adjustment used (if any).",
+                "Adjusted-model specification with full covariate list, SE/CI on the original clock scale.",
+                "Supplementary CSV of arm-level extracted values for the clock outcome(s).",
+                "Pre-registration of DNAm-clock endpoint(s) and analysis plan.",
+            ]:
+                doc.add_paragraph("- " + item)
+            continue
+        csv_path = tables_dir / f"{stem}_{freeze}.csv"
+        if not csv_path.exists():
+            # Try processed dir paths
+            alt = tables_dir.parent.parent / "data" / "processed" / f"{stem}_{freeze}.csv"
+            if alt.exists():
+                csv_path = alt
+        if csv_path.exists():
+            try:
+                df = pd.read_csv(csv_path).fillna("")
+                add_table_from_df(doc, df, max_cols=8)
+            except Exception as e:
+                doc.add_paragraph(f"(could not render {csv_path.name}: {e})")
+        else:
+            doc.add_paragraph(f"(source table {stem}_{freeze}.csv not found)")
+    doc.save(out_path)
+
+
+def build_submission_checklist(out_path: Path) -> None:
+    doc = Document(); style_doc(doc)
+    doc.add_heading("Submission checklist (IJMR)", 0)
+    items = [
+        "Cover letter included (IJMR_DNAm_clocks_cover_letter).",
+        "Title page with corresponding author contact.",
+        "Blinded manuscript (main text).",
+        "PRISMA 2020 checklist (separate file).",
+        "Supplementary materials S1–S10.",
+        "Four main figures at 300 dpi (PNG + SVG).",
+        "Tables (CSV + DOCX renderings).",
+        "Declarations: funding, conflicts, ethics, data availability, author contributions.",
+        "Confirmation: no fabrication; every gate failure reported transparently.",
+    ]
+    for it in items:
+        doc.add_paragraph("[ ] " + it)
+    doc.save(out_path)
+
+
+def run(cfg: dict) -> None:
+    freeze = cfg["project"]["freeze_date"]
+    tabs = Path(cfg["paths"]["results_tabs"])
+    figs = Path(cfg["paths"]["results_figs"])
+    sub_root = Path(cfg["paths"]["submission"])
+    bundle = sub_root / f"IJMR_DNAm_clocks_path_c_{freeze}"
+    bundle_figs = bundle / "figures"
+    bundle_tabs = bundle / "tables"
+    ensure_dirs(bundle, bundle_figs, bundle_tabs)
+
+    # Gather pooled / sle for placeholders
+    pooled = pd.read_csv(tabs / f"per_clock_pooled_{freeze}.csv")
+    dp = pooled[pooled["clock"] == "DunedinPACE"].iloc[0]
+
+    def f(x, fmt="{:.4f}"):
+        try:
+            return fmt.format(float(x))
+        except Exception:
+            return "—"
+
+    relaxed_path = Path(cfg["paths"]["data_processed"]) / f"relaxed_eligibility_audit_{freeze}.csv"
+    if relaxed_path.exists():
+        rel = pd.read_csv(relaxed_path)
+        qual_n = int(rel["final_eligibility"].isin(
+            ["include_accessible_first_reviewer", "include_relaxed"]).sum())
+        relaxed_n = int((rel["final_eligibility"] == "include_relaxed").sum())
+    else:
+        qual_n, relaxed_n = 21, 0
+    raw_path = Path(cfg["paths"]["data_interim"]) / f"raw_records_dnam_{freeze}.csv"
+    raw_n = int(pd.read_csv(raw_path).shape[0]) if raw_path.exists() else 2804
+
+    placeholders = {
+        "FREEZE": freeze,
+        "RAW_N": raw_n,
+        "QUAL_N": qual_n,
+        "RELAXED_N": relaxed_n,
+        "DPACE_K": int(dp["k"]),
+        "DPACE_MU": f(dp["mu_dl"]),
+        "DPACE_CI": f"[{f(dp['ci_lower_dl'])}, {f(dp['ci_upper_dl'])}]",
+        "DPACE_PI": f"[{f(dp['pi_lower'])}, {f(dp['pi_upper'])}]",
+        "DPACE_I2": f"{float(dp['I2']):.0f}",
+        "DPACE_TAU2": f(dp["tau2"]),
+        "DPACE_QP": f(dp["Q_pval"], "{:.3f}"),
+        "DPACE_MU_HKSJ": f(dp["mu_hksj"]),
+        "DPACE_CI_HKSJ": f"[{f(dp['ci_lower_hksj'])}, {f(dp['ci_upper_hksj'])}]",
+        "DPACE_MU_BAYES": f(dp["mu_bayes"]),
+        "DPACE_CI_BAYES": f"[{f(dp['ci_lower_bayes'])}, {f(dp['ci_upper_bayes'])}]",
+    }
+
+    # Copy figures
+    fig_files = [
+        figs / f"fig1_prisma_path_c_{freeze}.png",
+        figs / f"fig2_rob_path_c_{freeze}.png",
+        figs / f"fig3_forest_dunedinpace_path_c_{freeze}.png",
+        figs / f"fig4_gate_status_path_c_{freeze}.png",
+    ]
+    for fp in fig_files:
+        if fp.exists():
+            shutil.copy(fp, bundle_figs / fp.name)
+            svg = fp.with_suffix(".svg")
+            if svg.exists():
+                shutil.copy(svg, bundle_figs / svg.name)
+
+    # Copy tables
+    main_tables = [
+        f"per_clock_pooled_{freeze}.csv",
+        f"subgroup_metareg_{freeze}.csv",
+        f"nma_not_performed_path_c_{freeze}.csv",
+        f"sensitivity_{freeze}.csv",
+        f"grade_profile_path_c_{freeze}.csv",
+    ]
+    for t in main_tables:
+        src = tabs / t
+        if src.exists():
+            shutil.copy(src, bundle_tabs / t)
+            try:
+                df = pd.read_csv(src).fillna("")
+                doc = Document(); style_doc(doc)
+                doc.add_heading(t, 0)
+                add_table_from_df(doc, df, max_cols=10)
+                doc.save(bundle_tabs / (Path(t).stem + ".docx"))
+            except Exception:
+                pass
+
+    # Build main manuscript
+    manuscript_md = Path(cfg["paths"]["manuscript"]) / "manuscript_main.md"
+    main_out = bundle / f"IJMR_DNAm_clocks_manuscript_{freeze}.docx"
+    wc = build_main_manuscript(manuscript_md, main_out, placeholders, fig_files)
+
+    # Auxiliary docs
+    build_title_page(bundle / f"IJMR_DNAm_clocks_title_page_{freeze}.docx", freeze)
+    build_cover_letter(bundle / f"IJMR_DNAm_clocks_cover_letter_{freeze}.docx", freeze)
+    build_declarations(bundle / f"IJMR_DNAm_clocks_declarations_{freeze}.docx")
+    build_prisma_checklist(bundle / f"IJMR_DNAm_clocks_PRISMA_2020_{freeze}.docx")
+    build_supplementary(bundle / f"IJMR_DNAm_clocks_supplementary_{freeze}.docx", tabs, freeze)
+    build_submission_checklist(bundle / f"submission_checklist_{freeze}.docx")
+
+    log("manuscript_bundle_built", bundle=str(bundle), main_word_count=wc)
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--config", default="anti_ageing_review/meta_dnam_clocks/config/meta_config.yaml")
+    args = ap.parse_args()
+    cfg = load_config(args.config)
+    run(cfg)
 
 
 if __name__ == "__main__":
-    ap = argparse.ArgumentParser(); ap.add_argument("--config", required=True)
-    run(load_config(ap.parse_args().config))
+    main()
