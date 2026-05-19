@@ -16,7 +16,7 @@
 
 **Results.** {{RAW_N}} raw records, {{QUAL_N}} included in qualitative synthesis. Quantitative pooling was possible only for DunedinPACE (k={{DPACE_K}}): pooled DL μ = {{DPACE_MU}} (95% CI {{DPACE_CI}}; 95% PI {{DPACE_PI}}; I² = {{DPACE_I2}}%; τ² = {{DPACE_TAU2}}). All other clocks had k<3 and were not pooled. Subgroup, meta-regression, NMA and publication-bias analyses were correctly gate-failed. GRADE certainty for DunedinPACE = Very Low (downgrades for RoB-pending, high inconsistency, indirectness, imprecision).
 
-**Conclusions.** Current trial reporting does not yet support a confident pooled estimate of intervention effects on DNAm clocks. We call for standardized arm-level mean ± SD reporting of clock values in trial publications.
+**Conclusions.** Current trial reporting does not yet support a confident pooled estimate of intervention effects on DNAm clocks; although the central pooled estimate is null, the 95% prediction interval is wide enough that no directional clinical decision should be made on these data. DNAm-clock outcomes should be treated as exploratory pharmacodynamic markers, not decision-grade endpoints, pending pre-specified powered harmonised trials. We call for standardized arm-level mean ± SD reporting of clock values in trial publications.
 
 **Keywords:** DNA methylation; epigenetic clock; DunedinPACE; meta-analysis; biomarker; GRADE.
 
@@ -79,7 +79,7 @@ RoB 2 was seeded for all included studies and is being dual-coded by Dr Siddalin
 
 ### Quantitative synthesis
 
-Per-clock random-effects pooling used DerSimonian–Laird (DL) generic inverse-variance with τ² from the Method-of-Moments estimator. We additionally report Hartung–Knapp–Sidik–Jonkman (HKSJ) confidence intervals and a Bayesian normal-normal hierarchical pool with a half-normal(0, 0.5) prior on τ (20 000 MH iterations, 5 000 burn-in, random seed 42), all cross-checked in R using `meta::metagen` + `bayesmeta::bayesmeta`. Agreement is recorded per pool. The 95% prediction interval (Higgins, Thompson, Spiegelhalter 2009) is computed when k ≥ 3.
+Per-clock random-effects pooling used DerSimonian–Laird (DL) generic inverse-variance with τ² from the Method-of-Moments estimator. Because the eligible adjusted effects use different adjustment sets (e.g., difference-in-difference β, ANCOVA-adjusted between-arm mean difference, covariance-adjusted regression β), the resulting pooled estimate is interpreted descriptively — as a summary of three heterogeneous adjusted contrasts — rather than as an estimate of a single common causal effect. We additionally report Hartung–Knapp–Sidik–Jonkman (HKSJ) confidence intervals and a Bayesian normal-normal hierarchical pool with a half-normal(0, 0.5) prior on τ (20 000 MH iterations, 5 000 burn-in, random seed 42), all cross-checked in R using `meta::metagen` + `bayesmeta::bayesmeta`. Agreement is recorded per pool. The 95% prediction interval (Higgins, Thompson, Spiegelhalter 2009) is computed when k ≥ 3.
 
 ### Gates
 
@@ -99,7 +99,7 @@ All code is under `anti_ageing_review/meta_dnam_clocks/src/`. The pipeline is re
 
 ### Flow
 
-The search layer produced {{RAW_N}} raw records across five sources. After deduplication and title/abstract screening, {{QUAL_N}} reports were included in the qualitative synthesis (PRISMA 2020 flow, Figure 1). Path-C relaxed eligibility (A2/A3) promoted {{RELAXED_N}} previously-excluded reports back into the qualitative synthesis on the basis of longitudinal arm-level clock reporting and adjusted-effect availability.
+The search layer produced {{RAW_N}} raw records across five sources. After deduplication and title/abstract screening, {{QUAL_N}} reports were included in the qualitative synthesis (PRISMA 2020 flow, Figure 1). Path-C relaxed eligibility (A2/A3) promoted {{RELAXED_N}} previously-excluded reports back into the qualitative synthesis on the basis of longitudinal arm-level clock reporting and adjusted-effect availability. The binding constraint on this review was extraction yield, not search yield: of the {{QUAL_N}} qualitatively-eligible reports, only k=3 contributed adjusted between-group DunedinPACE effects with extractable SE/CI on the original clock scale, and no other clock crossed the k≥3 pooling gate.
 
 ### Primary quantitative synthesis
 
