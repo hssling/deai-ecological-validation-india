@@ -12,3 +12,55 @@ LukkahataiN_2023_edac4e,UNSPECIFIED_EPIGENETIC_AGE,intervention,baseline,raw_clo
 LukkahataiN_2023_edac4e,UNSPECIFIED_EPIGENETIC_AGE,intervention,post,raw_clock_age,1.27,4.02,sd,6,"XML Table 3 (Table 3 | DNA methylation age, symptoms, and resilience changes.)",row='Age acceleration (years) *' col='Intervention ( n = 6) | T2 (Post)' cell='1.27 ± 4.02',high
 LukkahataiN_2023_edac4e,UNSPECIFIED_EPIGENETIC_AGE,intervention,change,change_score,0.83,1.26,sd,6,"XML Table 3 (Table 3 | DNA methylation age, symptoms, and resilience changes.)",row='Age acceleration (years) *' col='Intervention ( n = 6) | Mean Difference' cell='0.83 ± 1.26',high
 LukkahataiN_2023_edac4e,UNSPECIFIED_EPIGENETIC_AGE,intervention,change,change_score,0.83,1.26,sd,,Results (prose),"Participants in the intervention group had a slightly decreased DNA methylation age and age acceleration after completing the exercise program (mean difference = −0.83 ± 1.26), but it was not significant.",medium
+AlkemaA_2026_773590,Horvath,,,supplement_reference,,,,,HTML supplement reference (Supplementary File ),requires_supplement | enrichment analyses remain explorative. 3.5. Epigenetic clocks All four PC epigenetic age measures demonstrated a robust correlation with age in the study population (R ranging from 0.82 to 0.96; see ,low
+AlkemaA_2026_773590,DunedinPACE,,,supplement_reference,,,,,HTML supplement reference (Supplementary Table S6),"requires_supplement |  effect of SAMe on post-treatment epigenetic age (Horvath β = 0.66, p = 0.56; Hannum β = 1.40, p = 0.32; PhenoAge β = 1.22, p = 0.44; GrimAge β = −0.02, p = 0.97; DunedinPACE β = −0.00, p = 0.91; see ",low
+BozackAK_2025_90311c,GrimAge,,,figure_caption_reference,,,,,XML figure caption,requires_supplement | FIGURE 2 Associations of promoters of one-carbon metabolism (OCM) with epigenetic aging biomarkers. Effect estimates (95% confidence intervals [CIs]) and P values are shown for a doubling in concentration of each compo,low
+BozackAK_2025_90311c,UNSPECIFIED_EPIGENETIC_AGE,,,supplement_reference,,,,,XML supplement reference (Supplemental Figure 1),requires_supplement | ) or with a mismatch between recorded sex and a DNA methylation–based sex estimate ( n = 56). A total of 2346 adults with DNA methylation data and nutritional biomarkers were available for analysis ( ,low
+BozackAK_2025_90311c,PhenoAge,,,supplement_reference,,,,,XML supplement reference (Supplemental Figure 2),"requires_supplement | l first- and second-generation clocks were strongly correlated with chronological age, with Pearson correlation coefficients ranging from r = 0.76 for PhenoAge to r = 0.87 for Horvath2 ( P < 0.001) ( ",low
+BozackAK_2025_90311c,Horvath,,,supplement_reference,,,,,XML supplement reference (Supplemental Table 6),"requires_supplement | etic aging biomarker in the study population overall ( P > 0.05) ( Figure 2 and Supplemental Tables 3 and 4 ). However, there was significant interaction between B12 and CKD status ( p int = 0.040) ( ",low
+BozackA_2025_e4438c,UNSPECIFIED_EPIGENETIC_AGE,,,supplement_reference,,,,,PDF supplement reference (Supplementary Figure 1),"requires_supplement | icipants with epigenetic age estimates, we excluded those with a recorded age
+162 of ≥85 years (n = 130) or with a mismatch between recorded sex and a DNA methylation-based sex
+163 estimate (n = 56) (",low
+BozackA_2025_e4438c,PhenoAge,,,supplement_reference,,,,,PDF supplement reference (Supplemental Figure 2),"requires_supplement | t- and second-generation clocks were strongly correlated with chronological age, with
+243 Pearson correlation coefficients ranging from r = 0.76 for PhenoAge to r = 0.87 for Horvath2 (p < 0.001)
+244 (",low
+BozackA_2025_e4438c,GrimAge,,,supplement_reference,,,,,PDF supplement reference (Supplemental Table 4),"requires_supplement |  with any epigenetic aging biomarker (p > 0.05); however, the third vs. first tertile of serum
+264 folate was positively associated with DNAmTL EAD (B (95% CI) = 0.04 kb (0.01, 0.07); p = 0.043)
+265 (",low
+ChenL_2019_c57fe5,Horvath,,,supplement_reference,,,,,HTML supplement reference (Supplementary Table S2),"requires_supplement | se in Horvath ∆Age, not with Hannum ∆Age. Results from minimally adjusted model that was only adjusted for sex also showed that treatment was associated with decreased Horvath ΔAge (p value = .008) ( ",low
+CorleyMJ_2024_9a5fed,DunedinPACE,,,figure_caption_reference,,,,,XML figure caption,"requires_supplement | FIGURE 1 Epigenetic clock estimates in monocytes (a) Overview of 24 week clinical trial (b, c) Monocyte subsets did not significantly differ in participants in the metformin and observation arms. (d) PCGrimAge was sign",low
+CorleyMJ_2025_ad19fa,DunedinPACE,,,supplement_reference,,,,,PDF supplement reference (Supplemental Figure 1),"requires_supplement |  certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity.
+It is made available under a CC-BY-ND 4.0 International license .
+390
+391
+392 ",low
+CorleyMJ_2025_ad19fa,UNSPECIFIED_EPIGENETIC_AGE,,,supplement_reference,,,,,PDF supplement reference (Supplemental Figure 2),"requires_supplement |  certified by peer review) is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity.
+It is made available under a CC-BY-ND 4.0 International license .
+403
+404
+405 ",low
+NdhlovuLC_2025_a7e788,UNSPECIFIED_EPIGENETIC_AGE,,,supplement_reference,,,,,XML supplement reference (Supplementary Figure 8),"requires_supplement |  the DC versus the non-DC therapy ( Supplementary Figure 9 C and 9 D ). Furthermore, peripheral and rectal HIV DNA levels did not predict or associate with plasma VL set point (per-protocol analysis; ",low
+NdhlovuLC_2025_a7e788,GrimAge,,,supplement_reference,,,,,XML supplement reference (Supplementary Figure 10),requires_supplement | udinal PBMC DNA methylation profiles before and after intervention [ 16 ]. We observed no significant differences between baseline and week 48 time points in epigenetic age estimates (PhenoAge Clock; ,low
+OlasoGonzalezG_2026_88c470,GrimAge,,,figure_caption_reference,,,,,XML figure caption,requires_supplement | FIGURE 4 Effects of the intervention on epigenetic age. (a) Effect of the intervention on epigenetic age calculated using Horvath's clock; (b) Hannum's clock; (c) DNAm PhenoAge clock; (d) DNAm GrimAge2 clock; (e) DNAm ,low
+RobinsonLA_2026_d1a7b4,GrimAge,,,figure_caption_reference,,,,,XML figure caption,"requires_supplement | Figure 3 Epigenetic clock change scores. Data represent change scores in PBMC Horvath ( n = 15, panel a ), PCGrimAge ( n = 15, panel b ), AdaptAge ( n = 15, panel c ), and DamAge ( n = 14, panel d ), over the 30-day su",low
+RobinsonLA_2026_d1a7b4,Horvath,,,figure_caption_reference,,,,,XML figure caption,"requires_supplement | Figure 6 Change score correlations following greens supplementation. Exploratory Spearman correlations among within-subject pre–post change scores across epigenetic clocks, microbiome diversity indices, clinical biomar",low
+RslerW_2026_9ed59d,GrimAge,,,supplement_reference,,,,,PDF supplement reference (Supplementary Table 5),"requires_supplement | 95% CI 0.17
+to 0.85, 6.77 months) clocks compared to those without incident cancer (Table 2). This remained consistent
+in the sensitivity analysis adjusting for cell counts or additional confounders (",low
+RslerW_2026_9ed59d,PhenoAge,,,supplement_reference,,,,,PDF supplement reference (Supplementary Table 7),"requires_supplement | g the change in accelerated biological aging from baseline to year three, we did not document any
+differences in between participants who developed incident cancer versus those who did not (Figure 2,
+",low
+WangS_2025_28ec80,UNSPECIFIED_EPIGENETIC_AGE,,,figure_caption_reference,,,,,XML figure caption,requires_supplement | Figure 2 DNA methylation age and leukocyte telomere length from baseline to 11‐ and 19‐week follow‐up in the NTs and Control groups.,low
+WaziryR_2021_222aa5,DunedinPACE,,,supplement_reference,,,,,PDF supplement reference (Supplemental Table 1),"requires_supplement | , 38, and 45 years, and was named DunedinPACE for “(P)ace of (A)ging
+(C)omputed from the (E)pigenome” 28.
+Additional details about the DNA methylation clock and Pace of Aging measures are reported in
+",low
+WaziryR_2023_29b3ce,DunedinPACE,,,supplement_reference,,,,,PDF supplement reference (Supplementary Table 2),"requires_supplement | up are reported n = 117 CR and n = 68 AL participants.
+in Supplementary Table 1. Intraclass correlation coefficients for tests
+of technical reliability and within-individual stability are reported in
+",low
+WaziryR_2023_29b3ce,GrimAge,,,supplement_reference,,,,,PDF supplement reference (Supplementary Table 5),"requires_supplement | t (‘analysis sample’; N = 197; AL n = 69, CR n = 128). PACE, whereas the CR intervention did not affect the PhenoAge and
+GrimAge DNAm clocks. All three measures have evidence for validity
+reported in ",low
+YaskolkaMeirA_2023_ba151d,Hannum,,,figure_caption_reference,,,,,XML figure caption,"requires_supplement | Fig. 3 Green-MED adherence, components, and the association with mAge change. Left: forest plot of GMD adherence score (lower left) and its components (upper left) following 18 months of dietary intervention across gro",low
+YaskolkaMeirA_2023_ba151d,UNSPECIFIED_EPIGENETIC_AGE,,,supplement_reference,,,,,XML supplement reference (supplementary material ),"requires_supplement | ndicate a potential link between polyphenol intake, urine polyphenols, and biological aging. Trial registration ClinicalTrials.gov, NCT03020186 . Supplementary Information The online version contains ",low

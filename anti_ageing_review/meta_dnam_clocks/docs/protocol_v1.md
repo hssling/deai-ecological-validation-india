@@ -22,10 +22,12 @@ Among human intervention studies, which interventions measurably change validate
 - **Outcomes — primary (O₁):** Change in any validated DNAm ageing clock: DunedinPACE, GrimAge (v1/v2), PhenoAge, Horvath multi-tissue (2013), Hannum blood (2013), PCClocks (Higgins-Chen 2022), DNAmTL.
 - **Outcomes — secondary (O₂):** Age-acceleration residuals; intrinsic epigenetic age acceleration (IEAA); extrinsic epigenetic age acceleration (EEAA).
 
-### 1.3 Design eligibility (strict)
-**Include** parallel-group or crossover RCTs with a defined placebo, usual-care, attention-control, or active comparator arm, reporting pre/post DNAm-clock values (or change scores) with dispersion estimates suitable for SMD calculation.
+### 1.3 Design eligibility (strict, as feasible)
+**Original (registered) inclusion — RCT-only:** parallel-group or crossover RCTs with a defined placebo, usual-care, attention-control, or active comparator arm, reporting pre/post DNAm-clock values (or change scores) with dispersion estimates suitable for SMD calculation.
 
-**Exclude** single-arm trials; non-randomized cohorts; observational studies; animal studies; in-silico simulations; reviews; conference abstracts without extractable numeric data.
+**Amended (Path-C, 2026-05-19; see `docs/amendment_log.md` §A2):** Eligibility is widened to *any human prospective longitudinal study* — RCT (parallel-group or crossover), non-randomized intervention trial, controlled before-after, prospective exposure cohort with pre/post sampling, or single-arm pre/post intervention — reporting arm-level or group-level mean (or median + IQR) and dispersion (SD or SE) for at least one named DNAm clock at ≥2 timepoints (baseline + post; T1 + T2; pre + post; or week-X equivalents). The amendment was triggered because the prespecified pooling gate (k ≥ 3) failed for every named clock under strict RCT-only eligibility.
+
+**Exclude** animal studies; in-silico simulations; reviews; conference abstracts without extractable numeric data; cross-sectional studies without longitudinal pre/post sampling.
 
 ### 1.4 Language and time frame
 English-language reports; database inception through search-execution freeze date (planned freeze: **2026-05-18**).
@@ -70,6 +72,8 @@ Where dispersion is reported as median/IQR, conversion uses Wan et al. (2014). W
 
 ### 2.6 Risk of bias
 Cochrane **RoB 2** for RCTs across the five domains plus overall judgment: randomization process; deviations from intended interventions; missing outcome data; measurement of the outcome; selective reporting. Dual coding with consensus resolution.
+
+**Design-stratified RoB frameworks (Path-C amendment, 2026-05-19):** Under the amended eligibility, RoB 2 continues to apply to the RCT subset. Non-randomized intervention trials and controlled before-after designs are appraised with **ROBINS-I** (Cochrane Risk Of Bias In Non-randomized Studies of Interventions) across its seven domains (confounding; selection; classification of interventions; deviations from intended interventions; missing data; measurement of outcomes; selection of the reported result). Prospective exposure cohorts and single-arm pre/post studies are appraised with a **Newcastle-Ottawa Scale (NOS)-adapted** prospective-cohort RoB framework (selection of cohort, comparability, ascertainment of exposure/outcome, adequacy of follow-up). Bias judgments are recorded per design with dual coding; pooled estimates are reported design-stratified so the RCT-only signal is separable.
 
 ---
 
