@@ -2,7 +2,7 @@
 
 **Protocol date:** 2026-05-18
 **Working title:** *Human interventions and DNA-methylation biological ageing clocks: a conservative systematic review and meta-analysis*
-**Target journal:** *Biogerontology* (Springer; APC-free traditional subscription track)
+**Target journal:** *Indian Journal of Medical Research* (provisional Indian journal target; final submission only after data rescue and second-reviewer verification)
 **Authors:** Dr Siddalingaiah H S (corresponding); Dr Chandrakala D
 **Operating principle:** *"as feasible and robust"* — when a planned analysis cannot execute authentically, drop it transparently rather than synthesize fragile estimates. **No synthetic effect-size data anywhere.** All deviations recorded in `docs/amendment_log.md`.
 
@@ -129,7 +129,7 @@ A transparency log of all author IPD requests, dates, and outcomes is maintained
 
 ## 4. Deliverables Summary
 
-**Manuscript.** Structured abstract (300 w); IMRaD main manuscript (~6,000–7,500 w) comprising Introduction (~700 w), Methods (~2,200 w), Results (~2,000 w), Discussion (~1,500 w), Limitations (~300 w), and Conclusion (~150 w).
+**Manuscript.** Structured abstract and IMRaD main manuscript, with final length reconciled against the selected Indian journal's current author instructions before submission.
 
 **Main figures (4).**
 1. PRISMA 2020 flow diagram.
@@ -144,7 +144,7 @@ A transparency log of all author IPD requests, dates, and outcomes is maintained
 
 **Supplementary materials.** S1 search strings and dates; S2 PRISMA 2020 checklist (this document, completed); S3 excluded full texts with reasons; S4 full extracted dataset; S5 RoB 2 domain judgments with supporting quotations; S6 leave-one-out / low-RoB / ≥12-week sensitivity forests; S7 subgroup forests; S8 meta-regression bubble plots; S9 NMA network diagram + SUCRA (conditional); S10 IPD request transparency log.
 
-**Submission bundle (Biogerontology house style).** Title page; blinded manuscript; cover letter; declarations (funding, COI, ethics waiver, data availability, CRediT contributions); PRISMA 2020 checklist; highlights/bullet summary; 300 dpi PNG plus editable SVG figures; Springer Vancouver reference list; supplementary appendix as a single docx; submission checklist; reproducibility statement with GitHub/Zenodo link.
+**Submission bundle (Indian journal target).** Title page; blinded manuscript; cover letter; declarations (funding, COI, ethics waiver, data availability, CRediT contributions); PRISMA 2020 checklist; highlights/bullet summary; journal-compliant figures; reference list; supplementary appendix as a single docx; submission checklist; reproducibility statement with GitHub/Zenodo link.
 
 ## 4a. Reproducibility and Authorship
 

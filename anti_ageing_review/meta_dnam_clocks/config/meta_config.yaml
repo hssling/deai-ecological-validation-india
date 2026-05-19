@@ -5,7 +5,7 @@ project:
   authors:
     - {name: "Dr Siddalingaiah H S", role: corresponding, orcid: "0000-0000-0000-0000"}
     - {name: "Dr Chandrakala D", role: coauthor, orcid: "0000-0000-0000-0000"}
-  target_journal: "Biogerontology"
+  target_journal: "Indian Journal of Medical Research"
 paths:
   root: "anti_ageing_review/meta_dnam_clocks"
   data_raw: "anti_ageing_review/meta_dnam_clocks/data/raw"

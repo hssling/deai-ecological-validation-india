@@ -10,10 +10,25 @@ import yaml
 
 
 def load_config(path: str | Path) -> dict:
-    with open(path, "r", encoding="utf-8") as f:
+    cfg_path = Path(path).resolve()
+    with open(cfg_path, "r", encoding="utf-8") as f:
         cfg = yaml.safe_load(f)
+    project_root = cfg_path.parents[1]
     for k, v in cfg["paths"].items():
-        cfg["paths"][k] = Path(v)
+        raw = Path(v)
+        if raw.is_absolute():
+            resolved = raw
+        else:
+            parts = raw.parts
+            if project_root.name in parts:
+                idx = parts.index(project_root.name)
+                suffix = Path(*parts[idx + 1:]) if idx + 1 < len(parts) else Path()
+                resolved = project_root / suffix
+            elif raw.exists():
+                resolved = raw
+            else:
+                resolved = project_root / raw
+        cfg["paths"][k] = resolved
     return cfg
 
 

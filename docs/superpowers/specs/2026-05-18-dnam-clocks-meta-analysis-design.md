@@ -2,7 +2,7 @@
 
 **Spec date:** 2026-05-18
 **Authors:** Dr Siddalingaiah H S (corresponding); Dr Chandrakala D
-**Target journal:** *Biogerontology* (Springer) — APC-free under traditional subscription track
+**Target journal:** *Indian Journal of Medical Research* (provisional Indian journal target; final submission only after data rescue and second-reviewer verification)
 **Working title:** *Human interventions and DNA-methylation biological ageing clocks: a conservative systematic review and meta-analysis*
 
 ## 1. Scope, Question, and Eligibility
@@ -67,7 +67,7 @@
 
 ## 4. Manuscript Outputs & Deliverables
 
-**Manuscript (Biogerontology, ~6,000–7,500 words main text).** Structured abstract (300 w); Introduction (~700 w); Methods (~2,200 w); Results (~2,000 w); Discussion (~1,500 w); Limitations (~300 w); Conclusion (~150 w).
+**Manuscript (Indian Journal of Medical Research target, length to be reconciled against current author instructions before submission).** Structured abstract; Introduction; Methods; Results; Discussion; Limitations; Conclusion.
 
 **Main figures (4).**
 1. PRISMA 2020 flow diagram.
@@ -82,7 +82,7 @@
 
 **Supplementary materials.** S1 search strings & dates; S2 PRISMA 2020 checklist; S3 excluded full texts + reasons; S4 full extracted data; S5 RoB 2 domain judgments with quotes; S6 leave-one-out / low-RoB / ≥12-wk sensitivity forests; S7 subgroup forests; S8 meta-regression bubble plots; S9 NMA network + SUCRA (conditional); S10 IPD request transparency log.
 
-**Submission asset bundle (Biogerontology house style).** Title page; blinded manuscript; cover letter; declarations (funding, COI, ethics waiver, data availability, CRediT contributions); PRISMA 2020 checklist; highlights/bullet summary; 300 dpi PNG + editable SVG figures; Springer Vancouver reference list; supplementary appendix as single docx; submission checklist; reproducibility statement + GitHub/Zenodo link.
+**Submission asset bundle (Indian journal target).** Title page; blinded manuscript; cover letter; declarations (funding, COI, ethics waiver, data availability, CRediT contributions); PRISMA 2020 checklist; highlights/bullet summary; 300 dpi figures where required; reference list; supplementary appendix as single docx; submission checklist; reproducibility statement + GitHub/Zenodo link.
 
 ## 5. Repository Architecture & Reproducibility
 
@@ -111,7 +111,7 @@ meta_dnam_clocks/
 │   └── 14_manuscript_build.py
 ├── manuscript/{manuscript_main.md, supplementary.md, templates/}
 ├── results/{figures, tables}/
-├── submission_assets/Biogerontology_DNAmClocks_<freeze>/
+├── submission_assets/IndianJournal_DNAmClocks_<freeze>/
 └── docs/{protocol_v1.md, prisma_2020_checklist.md, decision_log.md, amendment_log.md}
 ```
 
