@@ -1,6 +1,6 @@
 # Tables (main text)
 
-## Table 1. The diagnosis gap: biologically measured vs self-reported disease (weighted %, 95% CI)
+## Table 1. The diagnosis gap: biologically measured vs self-reported disease (weighted %, 95% cluster-bootstrap CI)
 
 | indicator                                | weighted_pct_95CI   |     n |
 |:-----------------------------------------|:--------------------|------:|
@@ -15,7 +15,7 @@
 | Central obesity (IDF Asian)              | 47.3 (46.2–48.3)    | 59789 |
 | High subclinical burden (>=3 systems)    | 23.2 (22.6–23.9)    | 58151 |
 
-## Table 2. Care cascade among all affected (% of affected, weighted, 95% CI)
+## Table 2. Care cascade among all affected (aware -> treated -> controlled; % of affected, weighted, 95% CI)
 
 | condition    | stage      |   pct_of_affected | ci          |
 |:-------------|:-----------|------------------:|:------------|
@@ -26,7 +26,7 @@
 | Hypertension | treated    |              42   | (39.4-45.9) |
 | Hypertension | controlled |              35.8 | (31.3-42.7) |
 
-## Table 3. Socioeconomic inequality: Erreygers concentration indices (wealth-ranked)
+## Table 3. Socioeconomic inequality: Erreygers concentration indices (wealth-ranked; negative = pro-poor)
 
 | indicator                |   erreygers_CI | ci95               | direction                   |
 |:-------------------------|---------------:|:-------------------|:----------------------------|
@@ -39,7 +39,7 @@
 | Low grip strength        |        -0.0668 | (-0.0776, -0.0564) | pro-poor (worse among poor) |
 | High biological burden   |         0.0291 | (0.0179, 0.0414)   | pro-rich (worse among rich) |
 
-## Table 4. Incremental value for predicting past-year hospitalisation (nested models)
+## Table 4. Incremental value for predicting past-year hospitalisation (nested weighted logistic models)
 
 | outcome          | model                                    |     n | AUROC_95CI          |     AIC |
 |:-----------------|:-----------------------------------------|------:|:--------------------|--------:|
