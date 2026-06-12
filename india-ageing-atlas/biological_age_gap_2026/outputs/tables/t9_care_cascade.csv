@@ -1,0 +1,7 @@
+condition,stage,pct_of_affected,ci
+Diabetes,aware,63.4,(60.1-68.3)
+Diabetes,treated,52.0,(49.0-56.1)
+Diabetes,controlled,39.6,(34.8-42.9)
+Hypertension,aware,59.0,(55.9-63.9)
+Hypertension,treated,42.0,(39.4-45.9)
+Hypertension,controlled,35.8,(31.3-42.7)
