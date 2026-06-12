@@ -19,20 +19,28 @@ point-by-point response to all 21 reviewer comments, and
 Linked by `prim_key`. Restricted microdata are not redistributed.
 
 ## Pipeline (run in order, from `analysis/`)
-1. `01_build_dataset.py`     — assemble analytic dataset; included-vs-excluded comparison.
-2. `02_biological_age.py`    — biomarker measures (KDM [retired], Mahalanobis dysregulation, allostatic load).
-3. `03_core_analysis.py`     — diagnosis gap, social patterning, incremental value, burden score.
+1. `01_build_dataset.py`        — assemble analytic dataset; included-vs-excluded comparison.
+2. `02_biological_age.py`       — biomarker measures (KDM [retired], Mahalanobis dysregulation, allostatic load).
+3. `03_core_analysis.py`        — diagnosis gap, social patterning, incremental value, burden score.
 4. `05_dual_burden_exposome.py` — dual-burden axes + per-domain exposome predictors.
-5. `04_geography_figures.py` — state surveillance table + Figures 1-5.
-6. `06_sensitivity_ipw.py`   — availability-weighting sensitivity (Table S2).
+5. `04_geography_figures.py`    — state surveillance + early figures.
+6. `06_sensitivity_ipw.py`      — availability-weighting sensitivity (Table S2).
+7. `07_cascade_equity_maps.py`  — care cascade (aware→treated→controlled), concentration indices, India maps.
+8. `08_equity_fig_robustness.py`— concentration-index forest + cluster-bootstrap regression robustness (Table S3).
+9. `09_build_supplement.py`     — assemble supplementary_material.md.
 Helper: `util_survey.py` (weighted estimates, cluster bootstrap CIs).
 
 ## Key findings
 - 51.3% of biochemical diabetes and 63.8% of measured hypertension undiagnosed in adults 45+.
-- Undiagnosed burden concentrated in rural, less-educated, poorer adults.
-- Dual burden: cardiometabolic excess (urban/affluent) vs deficit/inflammatory ageing (rural/poor).
-- Measured biomarker burden adds little over self-report overall, but carries independent hospitalisation
-  signal among the apparently healthy (OR 1.10, 1.03-1.18).
+- Full care cascade: only ~40% of affected diabetics and ~36% of hypertensives are controlled — the
+  control gap exceeds the diagnosis gap (extends Mohanty 2021 LASI hypertension cascade to diabetes + multi-system).
+- Dual burden quantified with Erreygers concentration indices: undiagnosed/deficit ageing pro-poor
+  (undiagnosed diabetes −0.090, anaemia −0.038, low grip −0.067), cardiometabolic excess pro-rich
+  (central obesity +0.132, dysglycaemia +0.036); all CIs exclude zero.
+- Measured biomarker burden adds little over self-report overall (ΔAUROC 0.001), but carries independent
+  hospitalisation signal among the apparently healthy (OR 1.10, 1.03-1.18).
+- India choropleth maps: undiagnosed burden highest in poorer/remote states; biological burden highest
+  in affluent/urbanised states.
 
 ## Outputs
 - `outputs/tables/` — all result tables (CSV).

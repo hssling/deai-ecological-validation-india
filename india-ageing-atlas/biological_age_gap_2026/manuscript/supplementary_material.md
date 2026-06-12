@@ -1,6 +1,6 @@
 # Supplementary material
 
-## Table S1. Comparison of included (clock-eligible, >=5 biomarkers) vs excluded participants
+## Table S1. Included (clock-eligible, ≥5 biomarkers) vs excluded participants
 
 | variable             |   included_mean |   included_n |   excluded_mean |   excluded_n |    abs_diff |
 |:---------------------|----------------:|-------------:|----------------:|-------------:|------------:|
@@ -14,9 +14,7 @@
 | current_smoking      |        0.137618 |        59556 |        0.122036 |         6326 |  0.0155823  |
 | unclean_cooking_fuel |        0.466547 |        58665 |        0.394874 |         6516 |  0.0716732  |
 
-## Table S2. Inverse-probability-of-availability weighting sensitivity
-
-Headline estimates under person weights vs IPW-adjusted weights (max difference 0.28 pp).
+## Table S2. Inverse-probability-of-availability weighting sensitivity (max diff 0.3 pp)
 
 | indicator                    |   person_weight_% |   IPW_% |   abs_diff |
 |:-----------------------------|------------------:|--------:|-----------:|
@@ -27,7 +25,42 @@ Headline estimates under person weights vs IPW-adjusted weights (max difference 
 | Anaemia (%)                  |              29.9 |    29.9 |      -0.03 |
 | High burden >=3 (%)          |              23.2 |    23.4 |       0.16 |
 
-## Table S3. Domain prevalence by social group (the dual burden)
+## Table S3. Cluster-bootstrap robustness for key regression estimates (SSU resampling)
+
+| quantity                                                          | estimate               |
+|:------------------------------------------------------------------|:-----------------------|
+| Undiagnosed diabetes urban-vs-rural OR (cluster bootstrap)        | 0.65 (0.58-0.74)       |
+| delta-AUROC biomarker burden over self-report (cluster bootstrap) | 0.0011 (0.0000-0.0028) |
+
+## Table S4. Social patterning of undiagnosed disease and high burden (weighted %)
+
+| stratum    | group        |   undx_diabetes_pct |   undx_htn_pct |   high_burden_pct |
+|:-----------|:-------------|--------------------:|---------------:|------------------:|
+| residence  | rural        |                57.8 |           68   |              19.6 |
+| residence  | urban        |                44   |           56.5 |              31.2 |
+| sex        | female       |                51.4 |           58.5 |              27.4 |
+| sex        | male         |                51.2 |           68.6 |              19.5 |
+| edu_grp    | No education |                59.6 |           66.5 |              21.7 |
+| edu_grp    | 1-5 yr       |                49.5 |           62.3 |              23.7 |
+| edu_grp    | 6+ yr        |                44.3 |           60.5 |              25.5 |
+| wealth_grp | Poorest      |                54.8 |           63.5 |              22.9 |
+| wealth_grp | Middle       |                54.7 |           67.3 |              20.9 |
+| wealth_grp | Richest      |                45.4 |           60.6 |              26.3 |
+
+## Table S5. Care cascade by social group (% of affected)
+
+| stratum    | group        |   dm_aware |   dm_treated |   dm_controlled |   htn_aware |   htn_treated |   htn_controlled |
+|:-----------|:-------------|-----------:|-------------:|----------------:|------------:|--------------:|-----------------:|
+| residence  | rural        |       57.8 |         44.3 |            42.4 |        54.9 |          35.4 |             33.7 |
+| residence  | urban        |       69.5 |         60.1 |            36.7 |        65.6 |          52.7 |             39.1 |
+| edu_grp    | No education |       57.2 |         44.3 |            43.9 |        56.8 |          37.8 |             35   |
+| edu_grp    | 1-5 yr       |       64.4 |         52.6 |            39.3 |        60   |          43.9 |             35.7 |
+| edu_grp    | 6+ yr        |       68.8 |         58.8 |            35.8 |        61.8 |          47.3 |             36.9 |
+| wealth_grp | Poorest      |       61.3 |         49.1 |            42   |        59   |          40.3 |             35.5 |
+| wealth_grp | Middle       |       59.9 |         47.8 |            39.6 |        56.1 |          39   |             34.8 |
+| wealth_grp | Richest      |       68.2 |         57.8 |            37.8 |        61.8 |          46.8 |             37   |
+
+## Table S6. Domain prevalence by social group (the dual burden)
 
 | stratum    | group        |     n |   Dysglycaemia |   Hypertension(meas) |   Central obesity |   Anaemia |   Low grip |   Low lung reserve |   Inflammation |
 |:-----------|:-------------|------:|---------------:|---------------------:|------------------:|----------:|-----------:|-------------------:|---------------:|
@@ -40,7 +73,7 @@ Headline estimates under person weights vs IPW-adjusted weights (max difference 
 | wealth_grp | Middle       | 22097 |           13.7 |                 29.3 |              43.3 |      29.7 |       19.3 |               33.9 |            9.4 |
 | wealth_grp | Richest      | 22097 |           18.3 |                 33.4 |              56.8 |      28.1 |       17.4 |               36.1 |            9.7 |
 
-## Table S4. Adjusted predictors of each biological domain (odds ratios)
+## Table S7. Adjusted predictors of each biological domain (odds ratios)
 
 | domain             | predictor                 |    OR |   ci_lo |   ci_hi |           p |
 |:-------------------|:--------------------------|------:|--------:|--------:|------------:|
@@ -94,7 +127,7 @@ Headline estimates under person weights vs IPW-adjusted weights (max difference 
 | Inflammation       | unclean_cooking_fuel      | 0.864 |   0.792 |   0.944 | 0.00114584  |
 | Inflammation       | unimproved_drinking_water | 1.056 |   0.902 |   1.236 | 0.497376    |
 
-## Table S5. State/UT surveillance: burden and undiagnosed fraction
+## Table S8. State/UT surveillance: burden and undiagnosed fraction
 
 | state                  |    n |   mean_burden |   undx_diabetes_pct |   high_burden_pct |
 |:-----------------------|-----:|--------------:|--------------------:|------------------:|
@@ -135,7 +168,7 @@ Headline estimates under person weights vs IPW-adjusted weights (max difference 
 | Madhya Pradesh         | 2446 |         1.308 |                69.2 |              13.3 |
 | Nagaland               | 1117 |         1.297 |                71.8 |              11.5 |
 
-## Table S6. Biomarker-chronological age associations (weighted) — context for retiring the KDM clock
+## Table S9. Biomarker–chronological age associations (weighted) — context for retiring the KDM clock
 
 | biomarker   |   slope_per_yr |            p |          r2 |     n |
 |:------------|---------------:|-------------:|------------:|------:|
@@ -148,17 +181,16 @@ Headline estimates under person weights vs IPW-adjusted weights (max difference 
 | grip        |    -0.281431   | 0            | 0.130105    | 59137 |
 | waist       |    -0.0956902  | 1.28518e-80  | 0.00602934  | 59789 |
 
-## Supplementary note S7. Why a chronological-age-calibrated biological-age clock is not the primary measure
+## Supplementary Note S10. Why a chronological-age-calibrated biological-age clock is not the primary measure
 
 We pre-registered an intention to compute Klemera–Doubal Method (KDM) biological age. On implementation
 (faithful port of the BioAge package, sex-specific, survey-weighted training), the clock proved
 ill-conditioned in these data: the characteristic variance s_BA^2 was negative and the implied biological-
-age acceleration had an implausible standard deviation (~26 years), with biological-age acceleration
-showing *negative* convergent validity against multi-system physiological dysregulation and allostatic
-load. The cause is visible in Table S6: the LASI biomarker panel (which lacks renal, hepatic and lipid
-chemistries) is only weakly correlated with chronological age in this 45+ population (most r^2 < 0.05), and
-the population carries two opposing ageing phenotypes — cardiometabolic excess and frailty/wasting — so a
-single age-anchored latent score is not well defined. We therefore do not report KDM biological age as a
-primary or secondary result, and instead use externally-thresholded abnormalities and their two clinically
-coherent axes. This is a deliberate guard against the over-interpretation of a single composite "ageing
-score," and is reported transparently here rather than omitted.
+age acceleration had an implausible standard deviation (~26 years), with negative convergent validity
+against multi-system physiological dysregulation and allostatic load. The cause is visible in Table S9:
+the LASI biomarker panel (lacking renal, hepatic and lipid chemistries) is only weakly correlated with
+chronological age in this 45+ population (most r^2 < 0.05), and the population carries two opposing ageing
+phenotypes — cardiometabolic excess and frailty/wasting — so a single age-anchored latent score is not
+well defined. We therefore do not report KDM biological age as a primary or secondary result, and instead
+use externally-thresholded abnormalities and their two clinically coherent axes. This is reported
+transparently rather than omitted.
