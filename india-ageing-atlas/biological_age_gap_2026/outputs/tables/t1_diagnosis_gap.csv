@@ -1,0 +1,11 @@
+indicator,weighted_pct_95CI,n
+Self-reported diabetes,12.0 (11.5–12.4),66280
+Biochemical diabetes (HbA1c>=6.5),15.3 (14.7–15.9),58289
+Undiagnosed among biochemically diabetic,51.3 (49.8–52.7),9365
+Self-reported hypertension,26.1 (25.5–26.7),66283
+Measured hypertension (>=140/90 mmHg),31.3 (30.6–31.9),60373
+Undiagnosed among measured-hypertensive,63.8 (62.8–65.0),20554
+Anaemia,29.9 (29.2–30.7),58294
+Elevated CRP (>3 mg/L),9.6 (9.2–9.9),58288
+Central obesity (IDF Asian),47.3 (46.2–48.3),59789
+High subclinical burden (>=3 systems),23.2 (22.6–23.9),58151

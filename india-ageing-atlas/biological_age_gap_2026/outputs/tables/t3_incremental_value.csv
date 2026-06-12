@@ -1,0 +1,5 @@
+outcome,model,n,AUROC_95CI,AIC
+hospitalised_12m,M1 age+sex,38155,0.548 (0.538-0.558),26051.5
+hospitalised_12m,M2 +social/behaviour (simple indicators),38155,0.568 (0.561-0.578),25919.7
+hospitalised_12m,M3 +self-reported disease,38155,0.614 (0.606-0.623),25351.1
+hospitalised_12m,M4 +measured biomarker burden,38155,0.615 (0.607-0.624),25343.1

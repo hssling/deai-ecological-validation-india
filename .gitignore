@@ -18,6 +18,7 @@ data_processed/
 !anti_ageing_review/results/meta_addon/tables/*.csv
 !anti_ageing_review/submission_assets/**/tables/*.csv
 !anti_ageing_review/metadata/*.csv
+!india-ageing-atlas/biological_age_gap_2026/outputs/tables/*.csv
 
 # Large binary open-text cache files (download via pipeline)
 anti_ageing_review/data_processed/
