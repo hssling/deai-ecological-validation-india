@@ -17,6 +17,9 @@ doc += ["## Table S6. Domain prevalence by social group (the dual burden)\n", md
 doc += ["## Table S7. Adjusted predictors of each biological domain (odds ratios)\n", md("t8_domain_predictors.csv"), ""]
 doc += ["## Table S8. State/UT surveillance: burden and undiagnosed fraction\n", md("t6_state_surveillance.csv"), ""]
 doc += ["## Table S9. Biomarker–chronological age associations (weighted) — context for retiring the KDM clock\n", md("t_biomarker_age_assoc.csv"), ""]
+doc += ["## Table S11. Absolute national burden, applying population-expansion weights (millions, adults 45+)\n", md("t12_absolute_burden.csv"), ""]
+doc += ["## Table S12. Threshold sensitivity (alternative clinical cut-offs)\n", md("t13_threshold_sensitivity.csv"), ""]
+doc += ["## Table S13. Diagnosis gap by age group\n", md("t14_age_group_gap.csv"), ""]
 doc += ["""## Supplementary Note S10. Why a chronological-age-calibrated biological-age clock is not the primary measure
 
 We pre-registered an intention to compute Klemera–Doubal Method (KDM) biological age. On implementation

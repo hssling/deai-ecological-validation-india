@@ -181,6 +181,38 @@
 | grip        |    -0.281431   | 0            | 0.130105    | 59137 |
 | waist       |    -0.0956902  | 1.28518e-80  | 0.00602934  | 59789 |
 
+## Table S11. Absolute national burden, applying population-expansion weights (millions, adults 45+)
+
+| indicator                                           |   represented_millions |
+|:----------------------------------------------------|-----------------------:|
+| Undiagnosed diabetes                                |                   18.1 |
+| Undiagnosed hypertension                            |                   46.2 |
+| Uncontrolled diabetes (affected, not at target)     |                   25.4 |
+| Uncontrolled hypertension (affected, not at target) |                   73.2 |
+| Anaemia                                             |                   76   |
+| Elevated CRP (>3 mg/L)                              |                   22.7 |
+| High multi-system burden (>=3 systems)              |                   56.8 |
+| Represented 45+ population (DBS-eligible)           |                  234   |
+
+## Table S12. Threshold sensitivity (alternative clinical cut-offs)
+
+| condition    | threshold   |   prevalence_% |   undiagnosed_% |
+|:-------------|:------------|---------------:|----------------:|
+| Diabetes     | HbA1c>=6.5  |           15.3 |            51.3 |
+| Diabetes     | HbA1c>=7.0  |           11.2 |            43   |
+| Hypertension | >=140/90    |           31.3 |            63.8 |
+| Hypertension | >=130/80    |           62.5 |            69.9 |
+| Inflammation | CRP>3       |            9.6 |           nan   |
+| Inflammation | CRP>10      |            2.6 |           nan   |
+
+## Table S13. Diagnosis gap by age group
+
+| age_group   |   biochem_diabetes_% |   undiagnosed_diabetes_% |   undiagnosed_htn_% |
+|:------------|---------------------:|-------------------------:|--------------------:|
+| 45-59       |                 14.3 |                     54.4 |                68.3 |
+| 60-74       |                 17.1 |                     46.3 |                60   |
+| 75+         |                 15   |                     54.6 |                56.3 |
+
 ## Supplementary Note S10. Why a chronological-age-calibrated biological-age clock is not the primary measure
 
 We pre-registered an intention to compute Klemera–Doubal Method (KDM) biological age. On implementation
