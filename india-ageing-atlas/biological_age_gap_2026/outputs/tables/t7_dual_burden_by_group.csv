@@ -1,0 +1,9 @@
+stratum,group,n,Dysglycaemia,Hypertension(meas),Central obesity,Anaemia,Low grip,Low lung reserve,Inflammation
+residence,rural,43112,11.7,29.0,39.5,31.4,21.2,32.1,8.9
+residence,urban,23358,23.2,36.2,64.5,26.7,18.5,39.9,11.1
+edu_grp,No education,31231,11.6,29.9,41.1,33.7,25.1,32.5,9.8
+edu_grp,1-5 yr,12156,16.8,31.6,46.6,27.8,19.5,35.9,9.9
+edu_grp,6+ yr,23083,20.6,33.4,57.9,24.9,12.9,36.4,9.0
+wealth_grp,Poorest,22097,14.2,31.4,42.7,31.9,24.2,33.4,9.6
+wealth_grp,Middle,22097,13.7,29.3,43.3,29.7,19.3,33.9,9.4
+wealth_grp,Richest,22097,18.3,33.4,56.8,28.1,17.4,36.1,9.7
