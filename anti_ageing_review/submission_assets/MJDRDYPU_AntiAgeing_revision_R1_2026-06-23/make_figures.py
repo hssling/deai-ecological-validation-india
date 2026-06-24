@@ -15,6 +15,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 import pandas as pd
+import textwrap
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -37,23 +38,53 @@ TIER_LABEL = {
     "biomarker_or_indirect_human_signal": "Biomarker / indirect human signal",
     "low_directness_or_speculative": "Low directness / speculative",
 }
+# Display labels — kept identical to main-manuscript Table 1 so figure axis
+# labels match the table exactly. "supplements" and "controversial" are the two
+# grouped search categories given self-explanatory labels in revision R1.
+DISPLAY = {
+    "exercise": "Exercise",
+    "microbiome": "Microbiome",
+    "rapamycin_mtor": "Rapamycin/mTOR",
+    "senolytics": "Senolytics",
+    "caloric_restriction": "Caloric restriction",
+    "lifestyle_bundle": "Lifestyle bundle",
+    "nad_sirtuin": "NAD+/sirtuin",
+    "fasting": "Fasting",
+    "supplements": "Dietary supplements",
+    "metformin": "Metformin",
+    "sleep_circadian": "Sleep/circadian",
+    "controversial": "Plasma/telomerase",
+    "reprogramming": "Reprogramming",
+    "stem_cell": "Stem cell",
+}
 def pretty(name):
-    return name.replace("_", " ").replace("nad ", "NAD+/").replace("mtor", "mTOR").replace("rapamycin/mTOR", "rapamycin/mTOR").title().replace("Nad+/Sirtuin", "NAD+/sirtuin").replace("Mtor", "mTOR")
+    return DISPLAY.get(name, name.replace("_", " ").title())
 
 # ---------------------------------------------------------------- Figure 1: PRISMA
 def fig1_prisma():
-    fig, ax = plt.subplots(figsize=(9.6, 11.2))
-    ax.axis("off"); ax.set_xlim(0, 14); ax.set_ylim(0, 14)
-    main_x, side_x = 5.0, 11.2
-    main_w, side_w = 6.6, 4.6
-    fs = 11
+    FIGW, FIGH, XR = 10.0, 11.0, 14.0
+    fig, ax = plt.subplots(figsize=(FIGW, FIGH))
+    # Pin the axes to a known fraction of the figure so the data-unit -> inch
+    # mapping is deterministic; this lets the wrapper below size text reliably.
+    fig.subplots_adjust(left=0.0, right=1.0, top=0.94, bottom=0.0)
+    ax.axis("off"); ax.set_xlim(0, XR); ax.set_ylim(0, 14)
+    main_x, side_x = 4.6, 11.4
+    main_w, side_w = 8.2, 4.4
+    fs = 10
+    in_per_x = FIGW / XR                 # inches per x data-unit
+    char_in = 0.092                      # ~width of one character at fs=10 (in)
     def box(x, y, w, lines, fc="#eef1fb", ec="#34386e"):
-        # height scales with number of text lines so text never overflows
-        h = 0.62 + 0.42 * len(lines)
+        # Wrap each line to the box's own width so text can never spill past the
+        # box edge, then size the box height to the wrapped line count.
+        max_chars = max(10, int((w * in_per_x - 0.5) / char_in))
+        wrapped = []
+        for ln in lines:
+            wrapped.extend(textwrap.wrap(ln, max_chars) or [""])
+        h = 0.62 + 0.42 * len(wrapped)
         ax.add_patch(FancyBboxPatch((x - w/2, y - h/2), w, h,
                     boxstyle="round,pad=0.10,rounding_size=0.14",
                     fc=fc, ec=ec, lw=1.4))
-        ax.text(x, y, "\n".join(lines), ha="center", va="center", fontsize=fs)
+        ax.text(x, y, "\n".join(wrapped), ha="center", va="center", fontsize=fs)
         return h
     def arrow(x1, y1, x2, y2):
         ax.add_patch(FancyArrowPatch((x1, y1), (x2, y2),
@@ -109,25 +140,43 @@ def fig3_hype():
                    s=sub["n_extracted_records"] * 12 + 30,
                    c=TIER_COLOR[tier], alpha=0.75, edgecolors="white",
                    linewidths=0.8, label=TIER_LABEL[tier])
-    # de-overlapped labels
-    offsets = {"rapamycin_mtor": (0, -0.028), "caloric_restriction": (0, 0.028),
-               "microbiome": (0, 0.030), "senolytics": (0, 0.030),
-               "nad_sirtuin": (0, -0.030), "lifestyle_bundle": (0, -0.030),
-               "supplements": (0, 0.026), "sleep_circadian": (0, -0.028)}
+    # de-overlapped labels: (dx, dy, ha) per class to separate the dense
+    # lower-right cluster (senolytics/microbiome/rapamycin/caloric restriction).
+    offsets = {
+        "exercise":            (0.0,  0.045, "center"),
+        "microbiome":          (0.8,  0.052, "left"),
+        "rapamycin_mtor":      (0.9, -0.052, "left"),
+        "senolytics":          (-0.6, 0.058, "right"),
+        "caloric_restriction": (-0.7, 0.052, "right"),
+        "lifestyle_bundle":    (0.4, -0.052, "left"),
+        "nad_sirtuin":         (-0.6,-0.052, "right"),
+        "fasting":             (0.4,  0.040, "left"),
+        "supplements":         (0.0,  0.042, "center"),
+        "metformin":           (-0.3, 0.045, "right"),
+        "sleep_circadian":     (0.0, -0.050, "center"),
+        "controversial":       (0.5,  0.045, "left"),
+        "reprogramming":       (0.5,  0.042, "left"),
+        "stem_cell":           (0.4,  0.045, "left"),
+    }
     for _, r in df.iterrows():
-        dx, dy = offsets.get(r["intervention_name"], (0, 0.022))
+        dx, dy, ha = offsets.get(r["intervention_name"], (0.0, 0.030, "center"))
         ax.annotate(pretty(r["intervention_name"]),
                     (r["credibility_score"], r["hype_rate"]),
                     xytext=(r["credibility_score"] + dx, r["hype_rate"] + dy),
-                    ha="center", fontsize=8.3)
+                    ha=ha, fontsize=8.3)
     ax.axhline(0.10, ls="--", color="grey", lw=1)
     ax.text(df["credibility_score"].max(), 0.105, "hype-flag threshold 0.10",
             ha="right", va="bottom", fontsize=8, color="grey")
+    ax.set_ylim(-0.06, 0.86)
     ax.set_xlabel("Intervention credibility score")
     ax.set_ylabel("Proportion of records flagged for hype-heavy language")
     ax.set_title("Credibility versus promotional-language burden", fontsize=13)
-    ax.legend(fontsize=8.0, loc="upper right", frameon=True, title="Credibility tier",
-              title_fontsize=8.5)
+    order = ["highest_current_human_healthspan_signal", "human_signal_requires_verification",
+             "biomarker_or_indirect_human_signal", "low_directness_or_speculative"]
+    handles = [plt.Line2D([0], [0], marker="o", ls="", mfc=TIER_COLOR[k],
+               mec="white", ms=9) for k in order]
+    ax.legend(handles, [TIER_LABEL[k] for k in order], fontsize=8.0, loc="upper right",
+              frameon=True, title="Credibility tier", title_fontsize=8.5)
     fig.savefig(OUT / "hype_vs_evidence_map.png"); plt.close(fig)
 
 # ------------------------------------------------- Figure 4: translational readiness
@@ -145,7 +194,12 @@ def fig4_translational():
     ax.set_xlim(0, df["credibility_score"].max() * 1.15)
     ax.set_title("Translational readiness by intervention class\n(marker size ∝ human-study count)",
                  fontsize=12.5)
-    ax.legend(fontsize=8.0, loc="lower right", frameon=True)
+    order = ["highest_current_human_healthspan_signal", "human_signal_requires_verification",
+             "biomarker_or_indirect_human_signal", "low_directness_or_speculative"]
+    handles = [plt.Line2D([0], [0], marker="o", ls="", mfc=TIER_COLOR[k],
+               mec="white", ms=9) for k in order]
+    ax.legend(handles, [TIER_LABEL[k] for k in order], fontsize=8.0, loc="lower right",
+              frameon=True)
     fig.savefig(OUT / "translational_matrix.png"); plt.close(fig)
 
 fig1_prisma(); fig2_ranking(); fig3_hype(); fig4_translational()

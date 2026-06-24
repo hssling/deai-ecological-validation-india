@@ -4,6 +4,9 @@ Article type: Systematic review / evidence map
 
 Running title: Anti-ageing evidence map
 
+[**Marked-changes copy (revision R1, recheck 2026-06-25).** Yellow-highlighted text marks edits made in this recheck: the two relabelled intervention classes in Table 1 (rows 9 and 12), the new Table 1 explanatory note, and the aligned wording in Results and the Figure 3 legend. Content, statistics, and references are otherwise unchanged from the R1 submission.]{.mark}
+
+
 # Abstract
 
 **Background:** Public and clinical discussion of anti-ageing interventions frequently conflates four distinct claims — improvement in healthspan, extension of lifespan, slowing of biological-age markers, and true clinical rejuvenation — creating a risk of therapeutic overclaiming.
@@ -44,7 +47,7 @@ The review was not prospectively registered; this is acknowledged as a limitatio
 
 The search retrieved 1155 raw records and produced 1029 deduplicated records. Title/abstract screening classified 29 records as include, 455 as uncertain, and 545 as exclude. Four hundred and eighty-four records entered full-text eligibility assessment. Priority human verification was completed for 40 records: 19 had open full text available, 16 had PubMed abstract-level verification, and 5 could not be retrieved through the open-source workflow. Quantitative effect information was identified for 28 priority records.
 
-The credibility ranking is shown in Table 1 and Figure 2. Exercise ranked first and was the only intervention domain categorised as the strongest current human healthspan signal (credibility score 31.48; 37 human records; promotional-language rate 0.01). Microbiome (21.50), rapamycin/mTOR (21.24), senolytics (19.94), caloric restriction (19.52), lifestyle bundles (17.00), NAD+/sirtuin interventions (16.64), and fasting (15.10) showed human signals requiring confirmation. Dietary supplements, metformin, sleep/circadian interventions, plasma/telomerase-based ("controversial") rejuvenation, reprogramming, and stem-cell approaches had lower scores or higher promotional-language burden.
+The credibility ranking is shown in Table 1 and Figure 2. Exercise ranked first and was the only intervention domain categorised as the strongest current human healthspan signal (credibility score 31.48; 37 human records; promotional-language rate 0.01). Microbiome (21.50), rapamycin/mTOR (21.24), senolytics (19.94), caloric restriction (19.52), lifestyle bundles (17.00), NAD+/sirtuin interventions (16.64), and fasting (15.10) showed human signals requiring confirmation. [Dietary supplements, metformin, sleep/circadian interventions, plasma/telomerase-based ("controversial") rejuvenation, reprogramming, and stem-cell approaches had lower scores or higher promotional-language burden.]{.mark}
 
 Representative priority human evidence with extracted effect estimates is summarised in Table 2. The records include frailty- and function-oriented exercise and multidomain lifestyle interventions, microbiome modulation with cognitive outcomes, fasting-mimicking diet with biological-age markers, topical and systemic rapamycin records, caloric restriction, a multidomain epigenetic-age intervention, and a senolytic trial-design record.^\[3-14\]^
 
@@ -162,14 +165,14 @@ The credibility-ranking and translational-readiness tables, the figures, and the
 | 6 | Lifestyle bundle | 5 | 3 | 2 | 17.00 | Human signal, requires confirmation |
 | 7 | NAD+/sirtuin | 66 | 8 | 2 | 16.64 | Human signal, requires confirmation |
 | 8 | Fasting | 13 | 5 | 2 | 15.10 | Human signal, requires confirmation |
-| 9 | Dietary supplements | 7 | 6 | 0 | 13.70 | Biomarker / indirect human signal |
+| 9 | [Dietary supplements]{.mark} | 7 | 6 | 0 | 13.70 | Biomarker / indirect human signal |
 | 10 | Metformin | 15 | 1 | 1 | 12.39 | Biomarker / indirect human signal |
 | 11 | Sleep/circadian | 17 | 1 | 1 | 10.45 | Biomarker / indirect human signal |
-| 12 | Plasma/telomerase | 22 | 2 | 0 | 6.88 | Biomarker / indirect human signal |
+| 12 | [Plasma/telomerase]{.mark} | 22 | 2 | 0 | 6.88 | Biomarker / indirect human signal |
 | 13 | Reprogramming | 13 | 0 | 0 | 5.91 | Biomarker / indirect human signal |
 | 14 | Stem cell | 34 | 0 | 0 | 1.68 | Low directness / speculative |
 
-*Note. Intervention classes are grouped search categories (full keyword groupings in Supplementary Table S2). Two labels denote composite categories: "Dietary supplements" comprises resveratrol, curcumin, omega-3 fatty acids, and vitamin D; "Plasma/telomerase" comprises blood- and plasma-based rejuvenation approaches (heterochronic parabiosis, young-plasma transfer, plasma dilution) and telomerase activation. The single verified human record in the plasma/telomerase class is a heterochronic-parabiosis study (ref 40, Supplementary Table S1); the high promotional-language rate (0.41) and absence of human trials underlie its low credibility score.*
+[*Note. Intervention classes are grouped search categories (full keyword groupings in Supplementary Table S2). Two labels denote composite categories: "Dietary supplements" comprises resveratrol, curcumin, omega-3 fatty acids, and vitamin D; "Plasma/telomerase" comprises blood- and plasma-based rejuvenation approaches (heterochronic parabiosis, young-plasma transfer, plasma dilution) and telomerase activation. The single verified human record in the plasma/telomerase class is a heterochronic-parabiosis study (ref 40, Supplementary Table S1); the high promotional-language rate (0.41) and absence of human trials underlie its low credibility score.*]{.mark}
 
 
 
@@ -221,6 +224,6 @@ The credibility-ranking and translational-readiness tables, the figures, and the
 
 **Figure 2. Intervention credibility-score ranking (n=14 classes).** The score integrates human record count, human-trial count, direct ageing/healthspan outcomes, biomarker count, surrogate burden, and a promotional-language penalty. Exercise ranked first (31.48); stem-cell approaches ranked last (1.68). Bar colour denotes the translational category.
 
-**Figure 3. Credibility versus promotional-language burden.** Credibility score (x-axis) plotted against the proportion of extracted records flagged for promotional ("hype-heavy") terminology (y-axis), by intervention domain. Bubble size denotes the number of extracted records. Interventions with high credibility and low promotional burden (exercise, lifestyle bundle) appear lower-right; reprogramming and plasma/telomerase ("controversial") approaches appear upper-left.
+**Figure 3. Credibility versus promotional-language burden.** Credibility score (x-axis) plotted against the proportion of extracted records flagged for promotional ("hype-heavy") terminology (y-axis), by intervention domain. Bubble size denotes the number of extracted records. Interventions with high credibility and low promotional burden (exercise, lifestyle bundle) appear lower-right; reprogramming and [plasma/telomerase ("controversial")]{.mark} approaches appear upper-left.
 
 **Figure 4. Translational-readiness map.** Conservative category assignment for 14 intervention classes: A — healthspan support signal; B — promising, not recommendation-ready; C — biomarker/indirect signal; D — speculative/low directness. Marker size is proportional to the number of human studies.

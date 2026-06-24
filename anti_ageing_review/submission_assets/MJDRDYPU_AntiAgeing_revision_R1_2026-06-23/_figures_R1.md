@@ -24,7 +24,7 @@ Manuscript mjdrdypu_451_26 — Revision R1. Four figures (Figures 1–4), one pe
 
 ![](figures/hype_vs_evidence_map.png){width="6.5in"}
 
-**Figure 3. Credibility versus promotional-language burden.** Credibility score (x-axis) plotted against the proportion of extracted records flagged for promotional ("hype-heavy") terminology (y-axis), by intervention domain. Bubble size denotes the number of extracted records. Interventions with high credibility and low promotional burden (exercise, lifestyle bundle) appear lower-right; reprogramming and controversial approaches appear upper-left.
+**Figure 3. Credibility versus promotional-language burden.** Credibility score (x-axis) plotted against the proportion of extracted records flagged for promotional ("hype-heavy") terminology (y-axis), by intervention domain. Bubble size denotes the number of extracted records. Interventions with high credibility and low promotional burden (exercise, lifestyle bundle) appear lower-right; reprogramming and plasma/telomerase ("controversial") approaches appear upper-left.
 
 ```{=openxml}
 <w:p><w:r><w:br w:type="page"/></w:r></w:p>

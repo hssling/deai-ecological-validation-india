@@ -90,7 +90,15 @@ label, derived from title/abstract metadata.**
 
 *All tables are derived from the reproducible analysis described in the
 Methods. Some column headers retain analysis field names where these are
-self-explanatory.*
+self-explanatory. Two intervention-class labels in these tables denote
+grouped search categories that are given self-explanatory names in the
+main manuscript: "Supplements" (here) corresponds to "Dietary
+supplements" (main text) and comprises resveratrol, curcumin, omega-3,
+and vitamin D; "Controversial" (here) corresponds to "Plasma/telomerase"
+(main text) and comprises blood- and plasma-based rejuvenation
+(heterochronic parabiosis, young-plasma transfer, plasma dilution) and
+telomerase activation. Full keyword groupings for every class are listed
+in the search strategy (Supplementary Table S2).*
 
 ## Supplementary Table S1. Additional Records Identified in the Search (Refs 15--40)
 
