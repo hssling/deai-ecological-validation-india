@@ -43,6 +43,7 @@ Beyond the reviewer comments, I undertook a thorough self-audit and strengthened
 | 12 | Risk-of-bias framing | Table 3 was labelled as non-final "prompts." | Reframed as a structured risk-of-bias appraisal following RoB 2 / ROBINS-I signalling logic, based on available text. |
 | 13 | Declarations / data availability | Referred to "project files," "screening artifacts," and duplicated the Acknowledgements section. | Cleaned to a standard data-availability statement with the public repository link; duplicate sections removed; a stray character after the Conclusion deleted. |
 | 14 | Language and tone | Several informal or workflow-oriented phrasings unsuited to a scientific article. | Revised throughout for formal academic register, grammar, and clarity. |
+| 15 | Table 1 intervention-class labels | Two grouped-category labels — "Supplements" and "Controversial" — were opaque without a definition. | Relabelled for clarity as "Dietary supplements" (resveratrol, curcumin, omega-3, vitamin D) and "Plasma/telomerase" (heterochronic parabiosis, young-plasma transfer, plasma dilution, telomerase activation); a defining Note was added beneath Table 1, the same labels were propagated to Figures 2–4, and a bridging note was added in the supplementary tables. (Table 1; Figures 2–4; Supplementary.) |
 
 I believe these revisions materially strengthen the manuscript and address the scientific principles raised by the reviewer. I am happy to make any further changes the editor or reviewer considers necessary.
 
