@@ -3,7 +3,7 @@
 **Date:** 2026-06-25
 **Target journal:** MJDRDYPU (Medical Journal of Dr. D.Y. Patil University) — full-length original article
 **Data:** Longitudinal Ageing Study in India (LASI) Wave 1, harmonized G2Aging file `H_LASI_a3.sav` (local), survey-weighted
-**Companion paper (already drafted, different journal):** NMJI descriptive household health-economic strain paper — this spec must NOT overlap it.
+**Prior internal draft:** an NMJI-targeted descriptive household health-economic strain paper exists locally but is **not submitted and not planned for submission** (confirmed by author). This paper therefore **supersedes and absorbs** that groundwork rather than working around it — no companion-citation or non-overlap constraint applies.
 
 ---
 
@@ -11,11 +11,11 @@
 
 A single full-length, original health-economics paper on elderly care in India that answers six pressing policy questions and converts them into reproducible, decision-relevant evidence. The contribution is the combination — formal catastrophic-spending and impoverishment measurement, equity decomposition, econometric **and** machine-learning drivers, a monetised informal-care economy, and a policy microsimulation — in one coherent analysis of a nationally representative older population.
 
-### Anti-salami safeguard (hard requirement)
-The NMJI companion is purely descriptive: out-of-pocket (OOP), insurance and pension *gaps*, with **no** capacity-to-pay denominator, **no** catastrophic-expenditure (CHE) thresholds, **no** equity decomposition, and **no** causal or policy modelling (it states these as explicit limitations). This paper occupies exactly that white space. Rules:
-- No reused tables, figures, or sentences from the NMJI manuscript.
-- Different primary outcomes (CHE incidence/intensity, impoverishment, concentration index) vs NMJI's spend/coverage prevalences.
-- NMJI cited once as a companion descriptive profile; this paper is framed as the analytic/economic extension.
+### Relationship to the unsubmitted NMJI draft
+The prior NMJI draft is purely descriptive: out-of-pocket (OOP), insurance and pension *gaps*, with **no** capacity-to-pay denominator, **no** catastrophic-expenditure (CHE) thresholds, **no** equity decomposition, and **no** causal or policy modelling. Because it is not submitted and not planned for submission, this paper **absorbs and supersedes** it:
+- Reuse its validated data-linkage and weighting groundwork freely as a foundation.
+- Go well beyond it: CHE/impoverishment, equity decomposition, econometric + ML drivers, monetised care economy, policy microsimulation.
+- No companion citation or non-overlap constraint. The only originality requirement is external (Section 7).
 
 ---
 
