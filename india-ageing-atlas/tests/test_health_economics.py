@@ -36,5 +36,7 @@ def test_che10_headcount():
 
 def test_impoverishment_counts_newly_poor():
     r = impoverishment(_toy(), line=50.0)
-    assert r["impov_headcount"] >= 0
-    assert r["post_poverty"] >= r["pre_poverty"]
+    assert round(r["pre_poverty"], 1) == 50.0
+    assert round(r["post_poverty"], 1) == 75.0
+    assert round(r["impov_headcount"], 1) == 25.0
+    assert round(r["poverty_gap_increase"], 1) == 25.0
