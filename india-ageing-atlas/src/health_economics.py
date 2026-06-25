@@ -128,3 +128,41 @@ def decompose_concentration(df, outcome, rank_var, regressors, weight=None):
         rows.append({"regressor": k, "elasticity": elasticity, "CI_regressor": ci_x,
                      "contribution": contribution, "pct_of_total": pct})
     return pd.DataFrame(rows)
+
+
+INFORMAL_CARE_COLS = [
+    ("r1rscaredpm_l","r1rscarehr_l"), ("r1rccaredpm_l","r1rccarehr_l"),
+    ("r1rrcaredpm_l","r1rrcarehr_l"), ("r1rfcaredpm_l","r1rfcarehr_l"),
+]
+
+def compute_care_hours_week(df):
+    total = pd.Series(0.0, index=df.index)
+    for dpm, hr in INFORMAL_CARE_COLS:
+        if dpm in df.columns and hr in df.columns:
+            d = pd.to_numeric(df[dpm], errors="coerce").fillna(0).clip(lower=0)
+            h = pd.to_numeric(df[hr], errors="coerce").fillna(0).clip(lower=0)
+            total = total + d * h * 12.0 / 52.0
+    return total
+
+def informal_care_value(df, needs_help_col="r1rcany", hours_week_col="care_hours_week",
+                        wage_hour=0.0, weight="r1wtresp", pop_scale=None, opportunity_wage_hour=None):
+    w = pd.to_numeric(df[weight], errors="coerce").fillna(0)
+    hours = pd.to_numeric(df[hours_week_col], errors="coerce").fillna(0)
+    if needs_help_col in df.columns and pd.to_numeric(df[needs_help_col], errors="coerce").notna().any():
+        rec_mask = pd.to_numeric(df[needs_help_col], errors="coerce").fillna(0) == 1
+    else:
+        rec_mask = hours > 0
+    recipients_pct = float(100 * np.average(rec_mask.astype(float), weights=w)) if w.sum() > 0 else np.nan
+    wr = w[rec_mask]; hr_ = hours[rec_mask]
+    mean_hours_week = float(np.average(hr_, weights=wr)) if wr.sum() > 0 else 0.0
+    annual_value_per_recipient = mean_hours_week * 52 * wage_hour
+    out = {"recipients_pct": recipients_pct, "mean_hours_week": mean_hours_week,
+           "annual_value_per_recipient": annual_value_per_recipient}
+    if pop_scale is not None:
+        out["national_annual_value"] = pop_scale * (recipients_pct / 100) * annual_value_per_recipient
+    if opportunity_wage_hour is not None:
+        opp = mean_hours_week * 52 * opportunity_wage_hour
+        out["opportunity_value_per_recipient"] = opp
+        if pop_scale is not None:
+            out["opportunity_national_annual_value"] = pop_scale * (recipients_pct / 100) * opp
+    return out

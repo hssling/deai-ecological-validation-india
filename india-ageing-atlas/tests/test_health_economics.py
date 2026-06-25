@@ -61,3 +61,22 @@ def test_decomposition_single_regressor_explains_all():
     out = decompose_concentration(df, "y", "x", ["x"], "w")
     row = out[out["regressor"] == "x"].iloc[0]
     assert abs(row["pct_of_total"] - 100.0) < 1.0
+
+
+from src.health_economics import compute_care_hours_week, informal_care_value
+
+def test_compute_care_hours_week():
+    df = pd.DataFrame({"r1rscaredpm_l":[30],"r1rscarehr_l":[2],
+        "r1rccaredpm_l":[0],"r1rccarehr_l":[0],
+        "r1rrcaredpm_l":[0],"r1rrcarehr_l":[0],
+        "r1rfcaredpm_l":[0],"r1rfcarehr_l":[0]})
+    # 30*2=60 hrs/month *12/52 = 13.846 hrs/wk
+    assert abs(compute_care_hours_week(df).iloc[0] - 13.846) < 0.05
+
+def test_informal_care_value_per_recipient():
+    df = pd.DataFrame({"r1rcany":[1,1,0,0], "care_hours_week":[10,10,0,0], "r1wtresp":[1,1,1,1]})
+    r = informal_care_value(df, wage_hour=50.0, pop_scale=1000.0)
+    assert round(r["recipients_pct"],1) == 50.0
+    assert round(r["mean_hours_week"],1) == 10.0
+    assert round(r["annual_value_per_recipient"],0) == 26000.0      # 10*52*50
+    assert round(r["national_annual_value"],0) == 13_000_000.0       # 1000*0.5*26000
