@@ -47,3 +47,39 @@ def load_economics_frame(sav_path: str, processed_csv: str) -> pd.DataFrame:
     keep = ["prim_key", "age_years", "sex", "residence", "state_code", "living_alone",
             "multimorbidity_ge2", "functional_limitation", "education"]
     return df.merge(proc[[c for c in keep if c in proc.columns]], on="prim_key", how="inner")
+
+
+def _wpct(mask, w):
+    w = pd.to_numeric(w, errors="coerce").fillna(0)
+    m = mask.astype(float)
+    return float(100 * np.average(m, weights=w)) if w.sum() > 0 else np.nan
+
+
+def che_indicators(df, oop="oop_total", cons="cons_total", cap="capacity_to_pay", weight="r1wtresp"):
+    d = df.dropna(subset=[oop, cons, cap])
+    share = d[oop] / d[cons].replace(0, np.nan)
+    capsh = d[oop] / d[cap].replace(0, np.nan)
+    w = d[weight]
+    out = {}
+    for tag, s, thr in [("10", share, .10), ("25", share, .25), ("40cap", capsh, .40)]:
+        out[f"che{tag}"] = _wpct(s > thr, w)
+        over = (s - thr).clip(lower=0)
+        out[f"overshoot{tag}"] = float(100 * np.average(over.fillna(0), weights=pd.to_numeric(w, errors="coerce").fillna(0)))
+    return out
+
+
+def impoverishment(df, oop="oop_total", cons_pc="cons_pc", line=None, weight="r1wtresp"):
+    d = df.dropna(subset=[cons_pc, oop])
+    w = pd.to_numeric(d[weight], errors="coerce").fillna(1)
+    pre = d[cons_pc]
+    post = (d[cons_pc] - d[oop]).clip(lower=0)
+    pre_poor = pre < line
+    post_poor = post < line
+    gap_pre = ((line - pre).clip(lower=0) / line)
+    gap_post = ((line - post).clip(lower=0) / line)
+    return {
+        "pre_poverty": _wpct(pre_poor, w),
+        "post_poverty": _wpct(post_poor, w),
+        "impov_headcount": _wpct(post_poor & ~pre_poor, w),
+        "poverty_gap_increase": float(100 * (np.average(gap_post, weights=w) - np.average(gap_pre, weights=w))),
+    }

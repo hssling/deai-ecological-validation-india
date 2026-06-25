@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 
 from src.health_economics import deflate
+from src.health_economics import che_indicators, impoverishment
 
 
 def test_deflate_to_base_year_is_identity_at_base():
@@ -20,3 +21,20 @@ def test_economics_frame_builds():
     assert len(df) > 50000
     assert (df["oop_total"].dropna() >= 0).all()
     assert df["capacity_to_pay"].dropna().ge(0).all()
+
+
+def _toy():
+    return pd.DataFrame({
+        "oop_total":[5,30,0,50], "cons_total":[100,100,100,100],
+        "capacity_to_pay":[50,50,50,50], "cons_pc":[60,60,40,30],
+        "r1wtresp":[1,1,1,1]})
+
+def test_che10_headcount():
+    r = che_indicators(_toy())
+    assert round(r["che10"],1) == 50.0       # shares .05,.30,0,.50 -> >10%: 2 of 4
+    assert round(r["che40cap"],1) == 50.0     # caps .10,.60,0,1.0 -> >40%: 2 of 4
+
+def test_impoverishment_counts_newly_poor():
+    r = impoverishment(_toy(), line=50.0)
+    assert r["impov_headcount"] >= 0
+    assert r["post_poverty"] >= r["pre_poverty"]
