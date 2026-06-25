@@ -3,6 +3,9 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 import pyreadstat
+import statsmodels.api as sm
+
+from .inequality import concentration_index
 
 
 def deflate(series: pd.Series, cpi: dict[int, float], year: int, base: int = 2017) -> pd.Series:
@@ -83,3 +86,45 @@ def impoverishment(df, oop="oop_total", cons_pc="cons_pc", line=None, weight="r1
         "impov_headcount": _wpct(post_poor & ~pre_poor, w),
         "poverty_gap_increase": float(100 * (np.average(gap_post, weights=w) - np.average(gap_pre, weights=w))),
     }
+
+
+def erreygers_index(df, outcome, rank_var, weight=None, b=1.0, a=0.0):
+    ci = concentration_index(df, outcome, rank_var, weight)
+    y = pd.to_numeric(df[outcome], errors="coerce")
+    if weight and weight in df.columns:
+        w = pd.to_numeric(df[weight], errors="coerce").fillna(1)
+        mu = float(np.average(y.fillna(0), weights=w))
+    else:
+        mu = float(y.mean())
+    return float(4 * mu / (b - a) * ci)
+
+
+def decompose_concentration(df, outcome, rank_var, regressors, weight=None):
+    cols = [outcome, rank_var] + list(regressors) + ([weight] if weight and weight in df.columns else [])
+    cols = list(dict.fromkeys(cols))  # de-dupe (rank_var may also appear in regressors)
+    d = df[cols].dropna().copy()
+    y = pd.to_numeric(d[outcome], errors="coerce")
+    X = sm.add_constant(d[list(regressors)].apply(pd.to_numeric, errors="coerce"))
+    if weight and weight in d.columns:
+        w = pd.to_numeric(d[weight], errors="coerce").fillna(1)
+    else:
+        w = pd.Series(1.0, index=d.index)
+    model = sm.WLS(y, X, weights=w).fit()
+    ybar = float(np.average(y, weights=w))
+    ci_y = concentration_index(d, outcome, rank_var, weight)
+    rows = []
+    for k in regressors:
+        beta = float(model.params[k])
+        xbar = float(np.average(pd.to_numeric(d[k], errors="coerce"), weights=w))
+        elasticity = beta * xbar / ybar if ybar != 0 else np.nan
+        if k == rank_var:
+            # concentration_index needs distinct outcome/rank columns; alias when a
+            # regressor is itself the rank variable.
+            ci_x = concentration_index(d.assign(**{f"{k}__self": d[k]}), f"{k}__self", rank_var, weight)
+        else:
+            ci_x = concentration_index(d, k, rank_var, weight)
+        contribution = elasticity * ci_x
+        pct = 100 * contribution / ci_y if ci_y not in (0,) and not pd.isna(ci_y) else np.nan
+        rows.append({"regressor": k, "elasticity": elasticity, "CI_regressor": ci_x,
+                     "contribution": contribution, "pct_of_total": pct})
+    return pd.DataFrame(rows)

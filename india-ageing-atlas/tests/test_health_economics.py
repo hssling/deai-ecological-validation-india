@@ -40,3 +40,24 @@ def test_impoverishment_counts_newly_poor():
     assert round(r["post_poverty"], 1) == 75.0
     assert round(r["impov_headcount"], 1) == 25.0
     assert round(r["poverty_gap_increase"], 1) == 25.0
+
+
+from src.health_economics import erreygers_index, decompose_concentration
+
+
+def test_erreygers_sign_and_zero():
+    base = pd.DataFrame({"rank":[1,2,3,4], "w":[1,1,1,1]})
+    prorich = base.assign(y=[0,0,1,1])   # outcome concentrated among richer -> positive
+    propoor = base.assign(y=[1,1,0,0])   # concentrated among poorer -> negative
+    flat    = base.assign(y=[1,1,1,1])   # no gradient -> 0
+    assert erreygers_index(prorich, "y", "rank", "w") > 0
+    assert erreygers_index(propoor, "y", "rank", "w") < 0
+    assert abs(erreygers_index(flat, "y", "rank", "w")) < 1e-9
+
+def test_decomposition_single_regressor_explains_all():
+    # y = 2*x exactly: the single regressor must explain ~100% of the concentration
+    df = pd.DataFrame({"x":[1.,2.,3.,4.,5.], "w":[1.,1.,1.,1.,1.]})
+    df["y"] = 2 * df["x"]
+    out = decompose_concentration(df, "y", "x", ["x"], "w")
+    row = out[out["regressor"] == "x"].iloc[0]
+    assert abs(row["pct_of_total"] - 100.0) < 1.0
