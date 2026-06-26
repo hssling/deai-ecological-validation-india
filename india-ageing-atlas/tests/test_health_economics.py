@@ -98,3 +98,22 @@ def test_two_part_model_recovers_positive_driver():
     assert set(res["part"]) == {"participation", "amount"}
     row = res[(res["part"] == "participation") & (res["term"] == "x")].iloc[0]
     assert row["coef"] > 0
+
+
+from src.health_economics import add_che_flags, che_ml_drivers
+
+
+def test_add_che_flags():
+    df = pd.DataFrame({"oop_total":[5,30,0,50],"cons_total":[100,100,100,100],"capacity_to_pay":[50,50,50,50]})
+    out = add_che_flags(df)
+    assert out["che40cap_flag"].tolist() == [0,1,0,1]
+
+def test_ml_drivers_finds_signal_and_ranks_feature():
+    rng = np.random.default_rng(1)
+    n = 1000
+    x = rng.normal(size=n)
+    target = (x + 0.3 * rng.normal(size=n) > 0).astype(int)
+    df = pd.DataFrame({"che40cap_flag": target, "x": x, "z": rng.normal(size=n), "r1wtresp": 1.0})
+    out = che_ml_drivers(df, "che40cap_flag", ["x", "z"])
+    assert out["auc"] > 0.7
+    assert out["shap_importance"].iloc[0]["feature"] == "x"

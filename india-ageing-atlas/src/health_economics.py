@@ -4,6 +4,9 @@ import numpy as np
 import pandas as pd
 import pyreadstat
 import statsmodels.api as sm
+from sklearn.ensemble import HistGradientBoostingClassifier
+from sklearn.model_selection import cross_val_score
+import shap
 
 from .inequality import concentration_index
 
@@ -188,3 +191,35 @@ def two_part_model(df, y="oop_total", covars=None, weight="r1wtresp"):
                          "ci_high": float(np.exp(coef + 1.96 * se)),
                          "p": float(res.pvalues[term])})
     return pd.DataFrame(rows)
+
+
+def add_che_flags(df, oop="oop_total", cons="cons_total", cap="capacity_to_pay"):
+    out = df.copy()
+    share = pd.to_numeric(out[oop], errors="coerce") / pd.to_numeric(out[cons], errors="coerce").replace(0, np.nan)
+    capsh = pd.to_numeric(out[oop], errors="coerce") / pd.to_numeric(out[cap], errors="coerce").replace(0, np.nan)
+    out["che10_flag"] = (share > 0.10).fillna(False).astype(int)
+    out["che25_flag"] = (share > 0.25).fillna(False).astype(int)
+    out["che40cap_flag"] = (capsh > 0.40).fillna(False).astype(int)
+    return out
+
+
+def che_ml_drivers(df, target="che40cap_flag", features=None, weight="r1wtresp", cv=5, random_state=0):
+    features = list(features)
+    d = df[[target, weight] + features].dropna()
+    X = d[features].apply(pd.to_numeric, errors="coerce")
+    y = pd.to_numeric(d[target], errors="coerce").astype(int)
+    w = pd.to_numeric(d[weight], errors="coerce").fillna(1.0)
+    model = HistGradientBoostingClassifier(random_state=random_state)
+    auc = float(np.mean(cross_val_score(model, X, y, cv=cv, scoring="roc_auc")))
+    model.fit(X, y, sample_weight=w.values)
+    try:
+        expl = shap.Explainer(model, X)
+        sv = expl(X)
+        vals = np.abs(sv.values).mean(axis=0)
+    except Exception:
+        expl = shap.TreeExplainer(model)
+        sv = expl.shap_values(X)
+        vals = np.abs(sv).mean(axis=0)
+    imp = pd.DataFrame({"feature": features, "mean_abs_shap": vals}).sort_values(
+        "mean_abs_shap", ascending=False).reset_index(drop=True)
+    return {"auc": auc, "model": model, "shap_importance": imp}
