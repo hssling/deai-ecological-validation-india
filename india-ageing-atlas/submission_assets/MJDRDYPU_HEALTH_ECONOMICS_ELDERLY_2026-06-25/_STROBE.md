@@ -1,0 +1,42 @@
+# STROBE Checklist for Cross-Sectional Studies
+
+This manuscript reports a cross-sectional secondary analysis of LASI Wave 1. The table below maps all 22 STROBE items to the section (and, where useful, the paragraph) of `_manuscript.md` where each is addressed.
+
+| # | Item | Section of manuscript | How it is addressed |
+|---|---|---|---|
+| 1a | Title identifies the study design | Title | "Catastrophic spending, impoverishment, and the hidden cost of family care" signals a descriptive, cross-sectional economic analysis; design is named explicitly in the Methods. |
+| 1b | Abstract gives an informative summary | Abstract | States population, design, the three catastrophic-expenditure thresholds, impoverishment, equity decomposition, drivers, caregiving valuation, microsimulation, and headline results. |
+| 2 | Background/rationale | Introduction, paragraphs 1-3 | Sets out the PM-JAY inpatient-cover assumption, the routine/outpatient nature of late-life illness cost, and India's ageing trajectory. |
+| 3 | Objectives | Introduction, final paragraph | States the six linked research questions (catastrophic burden, impoverishment, distributional fairness, drivers, value of unpaid care, and which reform buys most protection). |
+| 4 | Study design | Methods, "Data and population" | Identifies LASI Wave 1 as a cross-sectional, nationally representative survey (2017-18) and the secondary, observational nature of the analysis. |
+| 5 | Setting | Methods, "Data and population" | India; LASI Wave 1, 2017-18, accessed via the Gateway to Global Aging harmonised file. |
+| 6a | Eligibility criteria, participants | Methods, "Data and population" | Adults aged 60 and over (n=31,766) as the primary analytic sample; the full sample aged 45 and over reported as a sensitivity check. |
+| 6b | Matching criteria (if applicable) | Not applicable | No matched-groups design is used; noted here for completeness. |
+| 7 | Variables (outcomes, exposures, predictors, confounders) | Methods, "Spending and capacity to pay" and "Outcomes" | Defines out-of-pocket spending, capacity to pay (non-food consumption), the three CHE thresholds, impoverishment, and the predictor set used in the equity decomposition and driver models (rural residence, multimorbidity, functional limitation, age, sex, education, pension). |
+| 8 | Data sources/measurement | Methods, "Spending and capacity to pay" | Describes household-level annualised inpatient (previous year) and outpatient (previous month, scaled) spending, and deflation to constant 2017 rupees using the survey's consumer price indices. |
+| 9 | Bias | Discussion, "Limitations" | Discusses self-report and recall bias, under-capture of standalone pharmacy purchases, and states why this makes the central comparison conservative rather than overstated. |
+| 10 | Study size | Methods, "Data and population" | States n=31,766 for the 60+ analytic sample; the manuscript text does not give a separate numeric n for the 45+ sensitivity frame (see Supplementary S2, flagged as a gap to fill before submission). |
+| 11 | Quantitative variables | Methods, "Outcomes" and "Drivers and valuation" | Explains the three CHE thresholds, the poverty-line comparison for impoverishment, and how continuous predictors (age, education) and binary predictors (rural, multimorbidity, functional limitation, pension) enter the models. |
+| 12a | Statistical methods, all | Methods, "Outcomes" and "Drivers and valuation" | Describes the concentration index, the Erreygers correction, the two-part model (logistic, then gamma with log link), and the gradient-boosting/SHAP approach. |
+| 12b | Methods for subgroups/interactions | Results, "A burden that is common, and largely outpatient" and "Spending that pushes families into poverty" | Reports estimates by age band (60+, 70+), sex, rural/urban residence, and multimorbidity status. |
+| 12c | Missing data | Methods, "Data and population" | The manuscript does not include an explicit missing-data statement; survey person-level weights are applied throughout, which is the only missing-data-adjacent detail given. Recommend the author add one sentence on how missing values in spending, consumption or covariates were handled before final submission. |
+| 12d | Sampling strategy (if applicable) | Methods, "Data and population" | LASI Wave 1's nationally representative sampling design and person-level weights are used for all estimates. |
+| 12e | Sensitivity analyses | Methods, "Data and population"; Discussion, "Limitations" | The 45+ sensitivity sample is specified in Methods; the conservative direction of the outpatient under-capture is discussed as a sensitivity consideration in Limitations. |
+| 13a | Participants — numbers at each stage | Methods, "Data and population" | States the LASI Wave 1 sampling frame and the 60+ analytic subset (n=31,766); no further exclusion stages apply to this secondary analysis. |
+| 13b | Reasons for non-participation | Not applicable in this secondary analysis | Original-survey non-response is governed by the LASI study design, cited via reference 4; not re-derived here. |
+| 13c | Flow diagram (if applicable) | Not applicable | A participant flow diagram is not required for this single-stage secondary analysis of an existing survey sample. |
+| 14a | Descriptive data | Results, "A burden that is common, and largely outpatient" (Table 1) | Reports sample characteristics: sex, rural residence, multimorbidity, functional limitation, living alone, pension receipt, and out-of-pocket spending distribution. |
+| 14b | Outcome data | Results (Tables 2-3; Figures 1, 3) | Reports CHE prevalence at three thresholds and pre/post-payment poverty. |
+| 14c | Summary of follow-up time | Not applicable | Cross-sectional design; no follow-up period to report. |
+| 15 | Outcome/exposure numbers or summary measures | Results, all subsections (Tables 2-6; Figures 1-6) | Gives weighted percentages, overshoot amounts, the concentration and Erreygers indices, model coefficients/odds ratios, SHAP importances, caregiving values and microsimulation deltas. |
+| 16a | Unadjusted and adjusted estimates with precision | Results, "What drives catastrophic spending" (Table 5) | Reports two-part model odds ratios and exponentiated coefficients with 95% confidence intervals and p-values for each predictor. |
+| 16b | Category boundaries for continuous variables | Methods, "Outcomes" | States the 10%, 25% and 40% thresholds explicitly; multimorbidity is defined as two or more chronic conditions. |
+| 16c | Translation of relative risk to absolute risk (if relevant) | Results, "What reform would buy" | Reports microsimulation impacts as percentage-point changes alongside fiscal cost, allowing direct absolute comparison across scenarios. |
+| 17 | Other analyses (subgroup, sensitivity, interaction) | Results, "Who carries the burden"; Discussion | Reports the concentration-index decomposition (Table 4) and the rural/multimorbidity subgroup findings as planned secondary analyses. |
+| 18 | Key results | Discussion, paragraph 1 | Summarises the central finding: inpatient cover removes a fraction of the catastrophic spending that outpatient/medicine cover would remove. |
+| 19 | Limitations | Discussion, "Limitations" | Addresses cross-sectional design, self-report, outpatient under-capture, the non-causal nature of the machine-learning results, the static and full-uptake assumptions of the microsimulation, and the assumed care-worker wage. |
+| 20 | Interpretation | Discussion, paragraphs 1-3 | Interprets the inpatient/outpatient gap, the rural equity pattern, the scale of unpaid care, and the complementary roles of pensions and service cover. |
+| 21 | Generalisability | Discussion, paragraph 1; Methods, "Data and population" | LASI Wave 1's nationally representative design supports generalisation to older Indians as a whole; the manuscript reports rural/urban heterogeneity explicitly but does not discuss state-level generalisability, which is a gap for the author to consider addressing. |
+| 22 | Funding | Declarations (`_declarations.md`) | States that no external funding was received for this work. |
+
+*Note.* Item 6b (matching criteria) and item 13c (flow diagram) are marked "not applicable" because this is a non-matched, single-stage secondary analysis of an existing cross-sectional survey rather than a study with its own recruitment and exclusion pipeline.

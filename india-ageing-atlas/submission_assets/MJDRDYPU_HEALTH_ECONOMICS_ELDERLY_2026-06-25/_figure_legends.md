@@ -1,0 +1,15 @@
+# Figure Legends
+
+**Figure 1. Catastrophic health spending among older Indians, by threshold and age group.** Weighted percentage of households aged 60 and over exceeding three catastrophic-expenditure thresholds — more than 10% and more than 25% of total household consumption, and more than 40% of capacity to pay (non-food consumption) — compared with the subgroup aged 70 and over. All values are survey-weighted.
+
+**Figure 2. Concentration curve for catastrophic health expenditure.** The cumulative weighted share of households with catastrophic spending (CHE40cap, y-axis) plotted against the cumulative weighted population share (x-axis), households ranked from poorest to richest by per-capita consumption. The dashed line marks perfect equality; the curve lying below it corresponds to the positive concentration index (+0.090) reported in Table 4, indicating that catastrophic spending is, in aggregate, mildly concentrated among better-off households. Values are survey-weighted.
+
+**Figure 3. Medical spending pushes older people below the poverty line.** Weighted percentage of older adults below the poverty line before and after subtracting out-of-pocket health spending, for the full sample and by sex and residence. Bars are annotated with the impoverishment headcount (the post-minus-pre percentage-point increase), which is largest in rural households (+6.8 pp) and smallest in urban households (+3.4 pp). Values are survey-weighted.
+
+**Figure 4. What predicts catastrophic spending: SHAP importance from the gradient-boosting model.** Mean absolute SHAP (SHapley Additive exPlanations) value for each predictor of catastrophic health expenditure (CHE40cap). Rural residence ranks first, ahead of multimorbidity and functional limitation; age, education, sex and pension status contribute markedly less. SHAP values describe predictive contribution, not causal effect.
+
+**Figure 5. Financial-protection impact of four financing scenarios.** Percentage-point change in catastrophic health expenditure (CHE40cap and CHE10) under each microsimulation scenario, with fiscal cost (Rs crore) annotated below each bar: full inpatient cover for those aged 70 and over (S1, approximating the PM-JAY expansion); full outpatient and medicine cover for all those aged 60 and over (S2); a Rs 500 monthly pension top-up (S3); and the three combined (S4). All scenarios assume full coverage and complete reimbursement and represent upper-bound ceilings rather than realistic programme costings.
+
+**Figure 6. The hidden economy of unpaid elder care.** Left bar: the national annual replacement-cost value of unpaid family caregiving for older adults (Rs 1,29,117 crore), based on 12.2% of older adults receiving a mean of 13.9 hours of informal care per week, valued at Rs 71,000 per recipient per year. Right bar, shown for scale: the fiscal cost of the combined financing scenario (S4) from Figure 5 (Rs 4,35,527 crore).
+
+*All figures were generated at 600 dpi from the survey-weighted analysis described in the Methods; all reported values are survey-weighted unless stated otherwise.*
