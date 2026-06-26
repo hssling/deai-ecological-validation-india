@@ -117,3 +117,20 @@ def test_ml_drivers_finds_signal_and_ranks_feature():
     out = che_ml_drivers(df, "che40cap_flag", ["x", "z"])
     assert out["auc"] > 0.7
     assert out["shap_importance"].iloc[0]["feature"] == "x"
+
+
+from src.health_economics import simulate_policy
+
+
+def test_simulate_full_inpatient_cover_reduces_che_and_costs():
+    df = pd.DataFrame({
+        "oop_hosp":[60,0,0,0], "oop_med":[0,0,0,0], "oop_out":[0,0,0,0], "oop_total":[60,0,0,0],
+        "cons_total":[100,100,100,100], "cons_nonfood":[50,50,50,50],
+        "capacity_to_pay":[50,50,50,50], "cons_pc":[60,60,40,30],
+        "age_years":[70,70,70,70], "r1wtresp":[1,1,1,1]})
+    base = che_indicators(df)            # che40cap = 25% (one of four: 60/50=1.2>0.4)
+    r = simulate_policy(df, {"inpatient_cover_frac":1.0, "age_min":0}, line=50.0)
+    assert r["che40cap"] <= base["che40cap"]
+    assert r["che40cap"] == 0.0          # hospital OOP fully removed -> no CHE
+    assert r["che40cap_delta"] <= 0
+    assert r["fiscal_cost"] == 60.0      # absorbed 60 * weight 1

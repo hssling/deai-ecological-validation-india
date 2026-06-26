@@ -223,3 +223,43 @@ def che_ml_drivers(df, target="che40cap_flag", features=None, weight="r1wtresp",
     imp = pd.DataFrame({"feature": features, "mean_abs_shap": vals}).sort_values(
         "mean_abs_shap", ascending=False).reset_index(drop=True)
     return {"auc": auc, "model": model, "shap_importance": imp}
+
+
+def simulate_policy(df, scenario, weight="r1wtresp", line=None, pop_scale=None):
+    inp = float(scenario.get("inpatient_cover_frac", 0) or 0)
+    drug = float(scenario.get("drug_cover_frac", 0) or 0)
+    topup = float(scenario.get("pension_topup_annual", 0) or 0)
+    age_min = float(scenario.get("age_min", 0) or 0)
+    d = df.copy()
+    w = pd.to_numeric(d[weight], errors="coerce").fillna(0)
+    elig = (pd.to_numeric(d["age_years"], errors="coerce") >= age_min).astype(float)
+    hosp = pd.to_numeric(d["oop_hosp"], errors="coerce").fillna(0)
+    med = pd.to_numeric(d["oop_med"], errors="coerce").fillna(0)
+    out = pd.to_numeric(d["oop_out"], errors="coerce").fillna(0)
+    absorbed = elig * (inp * hosp + drug * med)
+    new_oop_total = (hosp - inp * hosp * elig) + (med - drug * med * elig) + out
+    new_cons_total = pd.to_numeric(d["cons_total"], errors="coerce") + topup * elig
+    new_cons_pc = pd.to_numeric(d["cons_pc"], errors="coerce") + topup * elig
+    nonfood = pd.to_numeric(d["cons_nonfood"], errors="coerce")
+    new_cap = (new_cons_total - nonfood).where(new_cons_total > nonfood, nonfood)
+    cf = pd.DataFrame({"oop_total": new_oop_total, "cons_total": new_cons_total,
+                       "capacity_to_pay": new_cap, "cons_pc": new_cons_pc, weight: w})
+    base = che_indicators(df)
+    new = che_indicators(cf)
+    res = {k: new[k] for k in ("che10", "che25", "che40cap")}
+    for k in ("che10", "che25", "che40cap"):
+        res[f"{k}_delta"] = new[k] - base[k]
+    if line is not None:
+        base_imp = impoverishment(df, line=line)
+        new_imp = impoverishment(cf, line=line)
+        res["post_poverty"] = new_imp["post_poverty"]
+        res["post_poverty_delta"] = new_imp["post_poverty"] - base_imp["post_poverty"]
+    else:
+        res["post_poverty"] = np.nan
+        res["post_poverty_delta"] = np.nan
+    cost = absorbed + topup * elig
+    if pop_scale is not None:
+        res["fiscal_cost"] = float(np.average(cost, weights=w)) * pop_scale if w.sum() > 0 else np.nan
+    else:
+        res["fiscal_cost"] = float((w * cost).sum())
+    return res
