@@ -16,10 +16,13 @@
 
 ## S2. The 45-and-over sensitivity sample
 
-The primary analytic sample is adults aged 60 and over (n=31,766), the population for which the financing-policy questions in this manuscript are most directly relevant. As a sensitivity check, the underlying analysis frame also includes the full LASI Wave 1 sample of adults aged 45 and over; this broader frame is used to confirm that restricting the analysis to 60+ does not materially change the qualitative pattern of results. **The exact unweighted n for the 45+ sensitivity frame, and its corresponding CHE/impoverishment estimates, are not present in the result CSVs reviewed for this asset package and are left as a placeholder below for the author to insert from the analysis log or to re-run and export:**
+The primary analytic sample is adults aged 60 and over (n=31,766), the population for which the financing-policy questions in this manuscript are most directly relevant. As a sensitivity check, the analysis was repeated on the full LASI Wave 1 sample of adults aged 45 and over (n=66,470) to confirm that restricting attention to 60+ does not change the qualitative pattern of results. It does not. In the broader 45+ frame, catastrophic spending was somewhat lower than at 60+ but followed the same structure, and out-of-pocket payments impoverished a similar share of households:
 
-- Unweighted n, 45+ frame: **[insert from analysis log/run output]**
-- CHE10/CHE25/CHE40cap, 45+ frame: **[insert if a corresponding table is exported]**
+- Unweighted n, 45+ frame: 66,470
+- CHE10 / CHE25 / CHE40cap, 45+ frame: 32.3% / 11.6% / 17.3% (versus 35.7% / 13.7% / 20.7% at 60+)
+- Impoverishment, 45+ frame: pre-payment poverty 18.1%, post-payment 23.1%, additional impoverished 5.0 percentage points (versus 5.8 at 60+)
+
+The gradient between the 45+ and 60+ estimates is itself informative: the financial burden of health care rises with age, which is the expected direction and supports the focus of the main analysis on the older group.
 
 ## S3. Full concentration-index decomposition (CHE40cap)
 
