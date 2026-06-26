@@ -45,13 +45,11 @@ def params():
 
 def weighted_quintiles(values, w, q=5):
     v = pd.to_numeric(values, errors="coerce")
-    wn = pd.to_numeric(w, errors="coerce").fillna(0)
-    order = np.argsort(v.values)
-    vv, ww = v.values[order], wn.values[order]
+    wn = pd.to_numeric(w, errors="coerce")
+    mask = v.notna() & wn.notna()          # exclude missing rows from the cut-point computation
+    order = np.argsort(v[mask].values)
+    vv, ww = v[mask].values[order], wn[mask].values[order]
     cw = np.cumsum(ww) / ww.sum()
-    edges = np.searchsorted(cw, np.linspace(1/q, 1, q, endpoint=True))
-    grp = np.empty(len(v), dtype=float); grp[:] = np.nan
-    bins = np.zeros(len(vv), dtype=int)
     cuts = [np.interp(k/q, cw, vv) for k in range(1, q)]
     return pd.cut(v, [-np.inf] + cuts + [np.inf], labels=list(range(1, q+1)))
 
@@ -67,13 +65,15 @@ def main():
     s = df[pd.to_numeric(df["age_years"], errors="coerce") >= 60].copy()
     P = params()
 
-    # --- 1. State/UT CHE ranking (n >= 150) ---
+    # --- 1. State/UT CHE ranking (analytic n >= 150) ---
+    che_cols = ["oop_total", "cons_total", "capacity_to_pay"]
     rows = []
     for code, sub in s.groupby("state_code"):
-        if len(sub) >= 150:
-            r = che_indicators(sub)
+        sub_n = sub.dropna(subset=che_cols)          # analytic n actually used by che_indicators
+        if len(sub_n) >= 150:
+            r = che_indicators(sub_n)
             rows.append({"state": STATE_NAMES.get(int(code), f"code{int(code)}"),
-                         "n": len(sub), "che40cap": round(r["che40cap"], 1),
+                         "n": len(sub_n), "che40cap": round(r["che40cap"], 1),
                          "che10": round(r["che10"], 1)})
     state = pd.DataFrame(rows).sort_values("che40cap", ascending=False).reset_index(drop=True)
     state.to_csv(OUT / "table_state_che.csv", index=False)
@@ -93,11 +93,11 @@ def main():
     print("Most cost-effective (CHE40 pp / lakh-cr): %s = %.1f" % (
         ce.iloc[0]["scenario"][:30], ce.iloc[0]["che40_pp_per_lakh_cr"]))
 
-    # --- 3. CHE by per-capita-consumption quintile ---
-    s = s.dropna(subset=["cons_pc", "r1wtresp"]).copy()
-    s["pc_quintile"] = weighted_quintiles(s["cons_pc"], s["r1wtresp"])
+    # --- 3. CHE by per-capita-consumption quintile (on a copy; do not narrow s) ---
+    sq = s.dropna(subset=["cons_pc", "r1wtresp"]).copy()
+    sq["pc_quintile"] = weighted_quintiles(sq["cons_pc"], sq["r1wtresp"])
     qrows = []
-    for qv, sub in s.groupby("pc_quintile", observed=True):
+    for qv, sub in sq.groupby("pc_quintile", observed=True):
         r = che_indicators(sub)
         qrows.append({"consumption_quintile": int(qv), "n": len(sub),
                       "che40cap": round(r["che40cap"], 1), "che10": round(r["che10"], 1)})
