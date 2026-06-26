@@ -16,42 +16,43 @@ def deflate(series: pd.Series, cpi: dict[int, float], year: int, base: int = 201
     return pd.to_numeric(series, errors="coerce") / factor
 
 
-ECON_VARS = [
-    "prim_key", "hhid", "r1wtresp", "r1agey", "ragender", "hh1rural", "hh1state",
-    "r1oophos1y", "r1oopdoc1y", "r1oopsupl1y", "hh1cohc1m", "hh1cihc1y",
-    "hh1ctot", "hh1cnf1y", "hh1cperc", "hh1poverty", "hh1ipubpen", "hh1ipena",
-    "c2018cpindex", "c2017cpindex",
-]
-
+ECON_VARS = ["prim_key","hhid","r1wtresp","r1agey","ragender","hh1rural","hh1state",
+    "hh1cohc1m","hh1cihc1y","hh1ctot","hh1cfood1w","hh1cperc","hh1hhres","hh1poverty",
+    "hh1ipubpen","hh1ipena","c2018cpindex","c2017cpindex"]
 
 def load_economics_frame(sav_path: str, processed_csv: str) -> pd.DataFrame:
     raw, _ = pyreadstat.read_sav(sav_path, usecols=ECON_VARS)
     raw["prim_key"] = pd.to_numeric(raw["prim_key"], errors="coerce").astype("Int64")
     cpi = {2017: float(raw["c2017cpindex"].dropna().iloc[0]),
            2018: float(raw["c2018cpindex"].dropna().iloc[0])}
-    for col in ["r1oophos1y", "r1oopdoc1y", "r1oopsupl1y", "hh1ctot", "hh1cnf1y", "hh1cperc", "hh1ipubpen", "hh1ipena"]:
+    for col in ["hh1cohc1m","hh1cihc1y","hh1ctot","hh1cfood1w","hh1cperc","hh1ipubpen","hh1ipena"]:
         raw[col] = deflate(raw[col], cpi, year=2018, base=2017)
+    hosp = pd.to_numeric(raw["hh1cihc1y"], errors="coerce").clip(lower=0)            # household inpatient, annual
+    out  = pd.to_numeric(raw["hh1cohc1m"], errors="coerce").clip(lower=0) * 12.0     # household outpatient, annualised
+    cons = pd.to_numeric(raw["hh1ctot"], errors="coerce").clip(lower=0)
+    food = pd.to_numeric(raw["hh1cfood1w"], errors="coerce").clip(lower=0) * 52.0    # annual food
+    hhsize = pd.to_numeric(raw["hh1hhres"], errors="coerce")
     df = pd.DataFrame({
         "prim_key": raw["prim_key"],
         "r1wtresp": pd.to_numeric(raw["r1wtresp"], errors="coerce"),
-        "oop_hosp": raw["r1oophos1y"].clip(lower=0),
-        "oop_out": raw["r1oopdoc1y"].clip(lower=0),
-        "oop_med": raw["r1oopsupl1y"].clip(lower=0),
-        "cons_total": raw["hh1ctot"].clip(lower=0),
-        "cons_nonfood": raw["hh1cnf1y"].clip(lower=0),
-        "cons_pc": raw["hh1cperc"].clip(lower=0),
+        "oop_hosp": hosp, "oop_out": out, "oop_med": 0.0,
+        "cons_total": cons,
+        "cons_pc": pd.to_numeric(raw["hh1cperc"], errors="coerce").clip(lower=0),
+        "hhsize": hhsize,
         "poverty_intl": pd.to_numeric(raw["hh1poverty"], errors="coerce"),
-        "pub_pension": raw["hh1ipubpen"].clip(lower=0),
-        "priv_pension": raw["hh1ipena"].clip(lower=0),
+        "pub_pension": pd.to_numeric(raw["hh1ipubpen"], errors="coerce").clip(lower=0),
+        "priv_pension": pd.to_numeric(raw["hh1ipena"], errors="coerce").clip(lower=0),
     })
-    df["oop_total"] = df[["oop_hosp", "oop_out", "oop_med"]].sum(axis=1, min_count=1)
-    df["capacity_to_pay"] = (df["cons_total"] - df["cons_nonfood"]).where(
-        df["cons_total"] > df["cons_nonfood"], df["cons_nonfood"])
+    df["oop_total"] = df["oop_hosp"] + df["oop_out"] + df["oop_med"]
+    df["oop_pc"] = df["oop_total"] / df["hhsize"].replace(0, np.nan)
+    cap = cons - food                                   # WHO capacity-to-pay = non-food consumption
+    df["cons_nonfood"] = cap.clip(lower=0)
+    df["capacity_to_pay"] = cap.where(cap > 0, np.nan)
     df["any_pension"] = ((df["pub_pension"] > 0) | (df["priv_pension"] > 0)).astype(int)
     proc = pd.read_csv(processed_csv)
     proc["prim_key"] = pd.to_numeric(proc["prim_key"], errors="coerce").astype("Int64")
-    keep = ["prim_key", "age_years", "sex", "residence", "state_code", "living_alone",
-            "multimorbidity_ge2", "functional_limitation", "education"]
+    keep = ["prim_key","age_years","sex","residence","state_code","living_alone",
+            "multimorbidity_ge2","functional_limitation","education"]
     return df.merge(proc[[c for c in keep if c in proc.columns]], on="prim_key", how="inner")
 
 
