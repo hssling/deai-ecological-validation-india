@@ -80,3 +80,21 @@ def test_informal_care_value_per_recipient():
     assert round(r["mean_hours_week"],1) == 10.0
     assert round(r["annual_value_per_recipient"],0) == 26000.0      # 10*52*50
     assert round(r["national_annual_value"],0) == 13_000_000.0       # 1000*0.5*26000
+
+
+from src.health_economics import two_part_model
+
+
+def test_two_part_model_recovers_positive_driver():
+    rng = np.random.default_rng(0)
+    n = 800
+    x = rng.normal(0, 1, n); z = rng.normal(0, 1, n)
+    p = 1 / (1 + np.exp(-(0.5 + 1.2 * x)))
+    pos = rng.binomial(1, p)
+    amount = np.exp(6 + 0.8 * x + rng.normal(0, 0.3, n))
+    y = pos * amount
+    df = pd.DataFrame({"oop_total": y, "x": x, "z": z, "r1wtresp": 1.0})
+    res = two_part_model(df, "oop_total", ["x", "z"])
+    assert set(res["part"]) == {"participation", "amount"}
+    row = res[(res["part"] == "participation") & (res["term"] == "x")].iloc[0]
+    assert row["coef"] > 0

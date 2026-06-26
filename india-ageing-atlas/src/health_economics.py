@@ -166,3 +166,25 @@ def informal_care_value(df, needs_help_col="r1rcany", hours_week_col="care_hours
         if pop_scale is not None:
             out["opportunity_national_annual_value"] = pop_scale * (recipients_pct / 100) * opp
     return out
+
+
+def two_part_model(df, y="oop_total", covars=None, weight="r1wtresp"):
+    covars = list(covars)
+    d = df[[y, weight] + covars].dropna()
+    w = pd.to_numeric(d[weight], errors="coerce").fillna(1.0)
+    X = sm.add_constant(d[covars].apply(pd.to_numeric, errors="coerce"))
+    yv = pd.to_numeric(d[y], errors="coerce")
+    rows = []
+    p1 = sm.GLM((yv > 0).astype(float), X, family=sm.families.Binomial(), freq_weights=w).fit()
+    pos = yv > 0
+    p2 = sm.GLM(yv[pos], X[pos.values], family=sm.families.Gamma(sm.families.links.Log()),
+                freq_weights=w[pos.values]).fit()
+    for part, res in [("participation", p1), ("amount", p2)]:
+        for term in res.params.index:
+            coef = float(res.params[term]); se = float(res.bse[term])
+            rows.append({"term": term, "part": part, "coef": coef,
+                         "ratio": float(np.exp(coef)),
+                         "ci_low": float(np.exp(coef - 1.96 * se)),
+                         "ci_high": float(np.exp(coef + 1.96 * se)),
+                         "p": float(res.pvalues[term])})
+    return pd.DataFrame(rows)
