@@ -21,7 +21,9 @@ ORCID: 0000-0002-4771-8285
 **Conflicts of interest:** None declared.
 **Financial support:** None.
 **Ethics:** This is a secondary analysis of fully de-identified, publicly available LASI Wave 1 data; no fresh ethics approval was required. The original LASI was approved by the Indian Council of Medical Research and the institutional review board of the International Institute for Population Sciences.
+**Informed consent:** Written informed consent was obtained from all participants by the parent survey; no identifiable individual data are reported.
 **Data availability:** LASI data are available from the International Institute for Population Sciences and the Gateway to Global Aging Data on application. The full analysis code is available from the author on reasonable request.
+**Use of artificial intelligence:** Computational and language-editing tools were used to assist data analysis and manuscript preparation. The author reviewed and verified all content and takes full responsibility for the integrity and accuracy of the work.
 
 ---
 
