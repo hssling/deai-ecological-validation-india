@@ -229,6 +229,7 @@ def che_ml_drivers(df, target="che40cap_flag", features=None, weight="r1wtresp",
 def simulate_policy(df, scenario, weight="r1wtresp", line=None, pop_scale=None):
     inp = float(scenario.get("inpatient_cover_frac", 0) or 0)
     drug = float(scenario.get("drug_cover_frac", 0) or 0)
+    outp = float(scenario.get("outpatient_cover_frac", 0) or 0)
     topup = float(scenario.get("pension_topup_annual", 0) or 0)
     age_min = float(scenario.get("age_min", 0) or 0)
     d = df.copy()
@@ -237,8 +238,8 @@ def simulate_policy(df, scenario, weight="r1wtresp", line=None, pop_scale=None):
     hosp = pd.to_numeric(d["oop_hosp"], errors="coerce").fillna(0)
     med = pd.to_numeric(d["oop_med"], errors="coerce").fillna(0)
     out = pd.to_numeric(d["oop_out"], errors="coerce").fillna(0)
-    absorbed = elig * (inp * hosp + drug * med)
-    new_oop_total = (hosp - inp * hosp * elig) + (med - drug * med * elig) + out
+    absorbed = elig * (inp * hosp + drug * med + outp * out)
+    new_oop_total = (hosp - inp * hosp * elig) + (med - drug * med * elig) + (out - outp * out * elig)
     new_cons_total = pd.to_numeric(d["cons_total"], errors="coerce") + topup * elig
     new_cons_pc = pd.to_numeric(d["cons_pc"], errors="coerce") + topup * elig
     nonfood = pd.to_numeric(d["cons_nonfood"], errors="coerce")

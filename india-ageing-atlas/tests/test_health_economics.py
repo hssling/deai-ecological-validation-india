@@ -134,3 +134,14 @@ def test_simulate_full_inpatient_cover_reduces_che_and_costs():
     assert r["che40cap"] == 0.0          # hospital OOP fully removed -> no CHE
     assert r["che40cap_delta"] <= 0
     assert r["fiscal_cost"] == 60.0      # absorbed 60 * weight 1
+
+
+def test_simulate_outpatient_cover():
+    df = pd.DataFrame({
+        "oop_hosp":[0,0], "oop_med":[0,0], "oop_out":[100,0], "oop_total":[100,0],
+        "cons_total":[200,200], "cons_nonfood":[120,120],
+        "capacity_to_pay":[120,120], "cons_pc":[100,100],
+        "age_years":[65,65], "r1wtresp":[1,1]})
+    r = simulate_policy(df, {"outpatient_cover_frac":1.0, "age_min":60})
+    assert r["fiscal_cost"] == 100.0          # absorbed all outpatient
+    assert r["che40cap_delta"] <= 0
