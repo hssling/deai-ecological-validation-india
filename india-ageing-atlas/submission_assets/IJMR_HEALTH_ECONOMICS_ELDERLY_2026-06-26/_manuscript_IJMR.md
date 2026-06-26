@@ -34,21 +34,21 @@ Earlier Indian work has tended to describe spending or coverage gaps without put
 
 ## Results
 
-*Sample and burden (Table I, Table II, Figure 1).* Among 31,766 older adults (50.8 per cent women, 69.3 per cent rural), out-of-pocket spending was nearly universal (77.3 per cent), with a median household amount of about Rs 7,200 a year. CHE exceeded 40 per cent of capacity to pay in 20.7 per cent of households, a quarter of consumption in 13.7 per cent and a tenth in 35.7 per cent. The burden rose with concurrent illness (26.7 per cent among those with two or more chronic conditions) and was higher in rural than urban areas (22.9 vs 15.9 per cent).
+*Sample and burden (Table 1, Table 2, Figure 1).* Among 31,766 older adults (50.8 per cent women, 69.3 per cent rural), out-of-pocket spending was nearly universal (77.3 per cent), with a median household amount of about Rs 7,200 a year. CHE exceeded 40 per cent of capacity to pay in 20.7 per cent of households, a quarter of consumption in 13.7 per cent and a tenth in 35.7 per cent. The burden rose with concurrent illness (26.7 per cent among those with two or more chronic conditions) and was higher in rural than urban areas (22.9 vs 15.9 per cent).
 
-*Impoverishment (Table II, Figure 2).* Before accounting for medical bills, 19.6 per cent of older adults lived below the poverty line; afterwards, 25.4 per cent did. Out-of-pocket payments alone therefore impoverished a further 5.8 per cent. Rural elders were affected almost twice as often as urban ones (6.8 vs 3.4 percentage points).
+*Impoverishment (Table 2, Figure 2).* Before accounting for medical bills, 19.6 per cent of older adults lived below the poverty line; afterwards, 25.4 per cent did. Out-of-pocket payments alone therefore impoverished a further 5.8 per cent. Rural elders were affected almost twice as often as urban ones (6.8 vs 3.4 percentage points).
 
 *Inequality.* The concentration index for catastrophic spending was mildly positive (+0.090; Erreygers +0.075), and CHE rose monotonically across consumption quintiles (17.0 per cent in the poorest to 26.1 per cent in the richest). This counterintuitive pattern reflects the capacity-to-pay measure: wealthier households spend more on private care and so cross the relative threshold more often. The decomposition tempered this reading — multimorbidity pulled the burden towards the better-off, but rural residence pulled strongly in the pro-poor direction, contributing about a quarter of the index. The impoverishment results show that, in absolute terms, it is poorer and rural households that are pushed below the poverty line.
 
-*Drivers (Table III, Figure 3).* Both models agreed. In the gradient-boosting model, rural residence was the single strongest predictor of catastrophic spending, ahead of multimorbidity and functional limitation. The two-part model concurred: multimorbidity raised the odds of any spending by about 70 per cent and functional limitation by about 60 per cent, and rural residence by a third.
+*Drivers (Table 3, Figure 3).* Both models agreed. In the gradient-boosting model, rural residence was the single strongest predictor of catastrophic spending, ahead of multimorbidity and functional limitation. The two-part model concurred: multimorbidity raised the odds of any spending by about 70 per cent and functional limitation by about 60 per cent, and rural residence by a third.
 
 *The unpaid-care economy.* About 12.2 per cent of older adults received regular help with daily activities, averaging 13.9 h a week, almost all from spouses and children. Valued at a care-worker wage, this unpaid care was worth roughly Rs 71,000 per recipient a year and about Rs 1.3 lakh crore nationally — more than four times the cost of insuring every older person's inpatient care. Across plausible wage assumptions the national value ranged from Rs 0.66 to 2.64 lakh crore.
 
-*What reform would buy (Table IV, Figure 4).* Fully covering inpatient care for those aged 70 yr and over — the design of the current PM-JAY expansion — reduced catastrophic spending by only 2.0 percentage points, at about Rs 31,700 crore. Covering outpatient and medicine costs for all older adults reduced it by 17.8 percentage points, almost nine times as much, for about Rs 2.6 lakh crore. A pension top-up cut impoverishment sharply (by 16 percentage points) but moved catastrophic spending less. Combining all three almost eliminated catastrophic spending, but this combined figure assumes full reimbursement of every cost and should be read as a ceiling. Ranked by cost-effectiveness, outpatient and medicine cover was not only the highest-impact lever but also the most efficient (6.7 percentage points of CHE reduction per Rs lakh crore, against 6.2 for inpatient cover).
+*What reform would buy (Table 4, Figure 4).* Fully covering inpatient care for those aged 70 yr and over — the design of the current PM-JAY expansion — reduced catastrophic spending by only 2.0 percentage points, at about Rs 31,700 crore. Covering outpatient and medicine costs for all older adults reduced it by 17.8 percentage points, almost nine times as much, for about Rs 2.6 lakh crore. A pension top-up cut impoverishment sharply (by 16 percentage points) but moved catastrophic spending less. Combining all three almost eliminated catastrophic spending, but this combined figure assumes full reimbursement of every cost and should be read as a ceiling. Ranked by cost-effectiveness, outpatient and medicine cover was not only the highest-impact lever but also the most efficient (6.7 percentage points of CHE reduction per Rs lakh crore, against 6.2 for inpatient cover).
 
 *Geography (Figure 5).* Catastrophic spending varied more than six-fold across States and union territories, from 28.5 per cent in Bihar, 27.6 per cent in Jammu & Kashmir, 27.4 per cent in West Bengal, 27.0 per cent in Uttar Pradesh and 25.9 per cent in Kerala, down to about 4 per cent in the smallest island territories.
 
-*Projection (Table V, Figure 6).* Holding the 2017–18 catastrophic-spending rate constant, demographic ageing alone would raise the number of older adults living in catastrophic-spending households from about 31 million in 2022 to 47 million in 2036 and 72 million in 2050, and the annual cost of universal outpatient and medicine cover for older adults from about Rs 2.65 to 6.17 lakh crore over the same period.
+*Projection (Table 5, Figure 6).* Holding the 2017–18 catastrophic-spending rate constant, demographic ageing alone would raise the number of older adults living in catastrophic-spending households from about 31 million in 2022 to 47 million in 2036 and 72 million in 2050, and the annual cost of universal outpatient and medicine cover for older adults from about Rs 2.65 to 6.17 lakh crore over the same period.
 
 ## Discussion
 
@@ -66,9 +66,19 @@ The policy implication is specific. The most valuable addition to India's financ
 
 For older Indians, catastrophic health spending begins outside the hospital and ends, too often, in poverty, borne most heavily by rural families. Hospital insurance is necessary but not sufficient. The clearest route to protecting older people financially is to cover the everyday costs of chronic care — outpatient visits and medicines — alongside the pensions that keep a small bill from becoming a crisis, and the case for acting strengthens every year that the older population grows.
 
-## Acknowledgments
+## Declarations
 
-The author thanks the LASI investigators, the International Institute for Population Sciences and the survey respondents whose participation made this analysis possible.
+*Ethics approval:* This study is a secondary analysis of fully de-identified, publicly available LASI Wave 1 data and did not require fresh ethics approval. The parent survey was approved by the Indian Council of Medical Research and the institutional review board of the International Institute for Population Sciences, and was conducted in accordance with the Declaration of Helsinki.
+
+*Informed consent:* Written informed consent was obtained from all participants by the parent survey. No identifiable individual data are reported here.
+
+*Data availability:* The LASI Wave 1 data are available from the International Institute for Population Sciences and the Gateway to Global Aging Data on application. The full analysis code that reproduces every table and figure is available from the author on reasonable request.
+
+*Author contributions:* The sole author conceived and designed the study, curated and analysed the data, prepared all tables and figures, drafted and revised the manuscript, and approved the final version.
+
+*Use of artificial intelligence:* Computational and language-editing tools were used to assist data analysis and manuscript preparation. The author reviewed and verified all content and takes full responsibility for the integrity and accuracy of the work.
+
+*Acknowledgments:* The author thanks the LASI investigators, the International Institute for Population Sciences and the survey respondents whose participation made this analysis possible.
 
 *Financial support & sponsorship:* None.
 
@@ -97,7 +107,7 @@ The author thanks the LASI investigators, the International Institute for Popula
 
 ## Tables
 
-### Table I. Characteristics of the study sample (adults aged 60 yr and older, LASI Wave 1)
+### Table 1. Characteristics of the study sample (adults aged 60 yr and older, LASI Wave 1)
 
 | Characteristic | Value |
 |:---|:---|
@@ -114,7 +124,7 @@ The author thanks the LASI investigators, the International Institute for Popula
 
 *All percentages and monetary values are survey-weighted; monetary values in constant 2017 rupees.*
 
-### Table II. Catastrophic health expenditure and impoverishment, overall and by subgroup
+### Table 2. Catastrophic health expenditure and impoverishment, overall and by subgroup
 
 | Group | n | CHE >10% consumption, % | CHE >25% consumption, % | CHE >40% capacity, % | Out-of-pocket impoverishment, pp |
 |:---|---:|---:|---:|---:|---:|
@@ -128,7 +138,7 @@ The author thanks the LASI investigators, the International Institute for Popula
 
 *CHE, catastrophic health expenditure; capacity, capacity to pay (non-food consumption); pp, percentage-point rise in the share below the poverty line after out-of-pocket payment.*
 
-### Table III. Predictors of catastrophic health spending and income-related inequality
+### Table 3. Predictors of catastrophic health spending and income-related inequality
 
 | Predictor | Two-part model: odds of any spending, OR (95% CI) | Gradient-boosting SHAP rank |
 |:---|:---|:---|
@@ -142,7 +152,7 @@ The author thanks the LASI investigators, the International Institute for Popula
 
 *OR, odds ratio from the participation part of the two-part model; SHAP rank from the gradient-boosting classifier of catastrophic spending (predictive, not causal). The positive concentration index indicates catastrophic spending is marginally concentrated among better-off households on the relative measure; the decomposition (Supplementary) shows rural residence contributing in the pro-poor direction.*
 
-### Table IV. Microsimulation of financing-reform scenarios and cost-effectiveness
+### Table 4. Microsimulation of financing-reform scenarios and cost-effectiveness
 
 | Scenario | CHE >40% capacity, % (Δ pp) | Out-of-pocket impoverishment, Δ pp | Fiscal cost, Rs crore | CHE40 reduction per Rs lakh crore, pp |
 |:---|:---|---:|---:|---:|
@@ -153,7 +163,7 @@ The author thanks the LASI investigators, the International Institute for Popula
 
 *All scenarios are applied to the adults-aged-60+ sample and compared with the common baseline (CHE40 20.7%, impoverishment 25.4% below the poverty line). Δ pp, percentage-point change; negative denotes improvement. All scenarios assume full coverage and full reimbursement and are upper-bound ceilings, particularly the combined scenario. Fiscal costs in Rs crore (1 crore = 10 million), scaled to the national older-population count.*
 
-### Table V. Projected catastrophic-spending burden and cost of action, 2022-2050
+### Table 5. Projected catastrophic-spending burden and cost of action, 2022-2050
 
 | Year | Population aged 60+, million | Older adults in catastrophic-spending households, million | Annual cost of outpatient and medicine cover, Rs lakh crore |
 |---:|---:|---:|---:|

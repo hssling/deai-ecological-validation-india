@@ -112,8 +112,12 @@ The analysis was repeated on the full LASI Wave 1 sample of adults aged 45 yr an
 
 *Part 1, logistic regression of reporting any out-of-pocket spending; Part 2, gamma regression with a log link for the amount among those who spent. Multimorbidity raises both the likelihood and the size of spending.*
 
-## Supplementary figure legends
+## Supplementary figures
 
-Supplementary Figure S1. Concentration curve for catastrophic spending (>40% of capacity to pay) against cumulative population ranked by per-capita consumption. The curve lies below the line of equality, indicating mild concentration among better-off households (concentration index +0.090).
+**Supplementary Figure S1.** Concentration curve for catastrophic spending (>40% of capacity to pay) against cumulative population ranked by per-capita consumption. The curve lies below the line of equality, indicating mild concentration among better-off households (concentration index +0.090).
 
-Supplementary Figure S2. The economic value of unpaid family caregiving for older adults: percentage receiving care, mean weekly hours, value per recipient and national annual value (replacement-cost method, base-case wage).
+![Supplementary Figure S1](figures/Figure_S1.png)
+
+**Supplementary Figure S2.** The economic value of unpaid family caregiving for older adults: percentage receiving care, mean weekly hours, value per recipient and national annual value (replacement-cost method, base-case wage).
+
+![Supplementary Figure S2](figures/Figure_S2.png)

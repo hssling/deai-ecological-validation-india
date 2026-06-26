@@ -12,17 +12,17 @@ Generated 2026-06-26. Target journal: **Indian Journal of Medical Research (IJMR
 |---|---|
 | `title_page_and_cover_letter_IJMR.docx` | Title page + cover letter combined in one file (author-identifying) |
 | `manuscript_IJMR.docx` | Blinded manuscript — declarations before references; tables and figure legends after references; references as sequential superscript numbers |
-| `figures_IJMR.docx` | Figure document with all six main and two supplementary figures embedded, with legends |
-| `figures/` | Figures for upload (Figure_1–6, Figure_S1–S2), 600 dpi PNG |
+| `figures_IJMR.docx` | Figure document with the six main figures embedded, with legends |
+| `figures/` | Figures for upload (Figure_1–6 main; Figure_S1–S2 supplementary), 600 dpi PNG |
 | `figures_high_quality/` | Duplicate high-resolution copies |
-| `supplementary_IJMR.docx` | Supplementary material (variable definitions, 45+ sensitivity, full State ranking, quintiles, wage sensitivity, full decomposition and two-part model) |
+| `supplementary_IJMR.docx` | Supplementary material (variable definitions, 45+ sensitivity, full State ranking, quintiles, wage sensitivity, full decomposition and two-part model, and Supplementary Figures S1–S2) |
 | `STROBE_checklist_IJMR.docx` | Reporting-guidelines file (STROBE, cross-sectional) |
 
 Markdown sources (`_*.md`) are retained alongside each DOCX.
 
 ## IJMR formatting confirmed
 - References: sequential superscript numbers, no brackets, no orphan references (18/18 cited in order); every table (I–V) and figure (1–6) cited in sequence.
-- Order: Title, Abstract (Background & objectives / Methods / Results / Interpretation & conclusions / Keywords), Introduction, Materials & Methods, Results, Discussion, Conclusions, Acknowledgments + Financial support + Conflicts of interest, References, Tables, Legends to Figures.
+- Order: Title, Abstract (Background & objectives / Methods / Results / Interpretation & conclusions / Keywords), Introduction, Materials & Methods, Results, Discussion, Conclusions, Declarations (ethics, consent, data availability, author contributions, AI use, acknowledgments, financial support, conflicts of interest), References, Tables (Arabic numerals), Legends to Figures.
 - Indian English; abstract ~244 content words; main text ~2000 words; 5 tables; 6 figures.
 
 ## What is new versus the MJDRDYPU version

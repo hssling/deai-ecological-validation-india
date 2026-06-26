@@ -26,12 +26,4 @@ All figures are survey-weighted and supplied at 600 dpi in the figures folder.
 
 ![Figure 6](figures/Figure_6.png)
 
----
-
-**Supplementary Figure S1.** Concentration curve for catastrophic spending against cumulative population ranked by per-capita consumption.
-
-![Supplementary Figure S1](figures/Figure_S1.png)
-
-**Supplementary Figure S2.** The economic value of unpaid family caregiving for older adults.
-
-![Supplementary Figure S2](figures/Figure_S2.png)
+*Supplementary Figures S1 and S2 are provided in the supplementary file.*
