@@ -24,8 +24,8 @@ Every headline statistic in the abstract and results was checked programmaticall
 | CHE40cap, 60+ | 20.7% | table2_che.csv | ✓ |
 | CHE10, 60+ | 35.7% | table2_che.csv | ✓ |
 | Impoverishment headcount | 5.8 pp | table3_impoverishment.csv | ✓ |
-| Inpatient cover effect | −1.8 pp | table6_microsim.csv (S1) | ✓ |
-| Outpatient cover effect | −16.1 pp | table6_microsim.csv (S2) | ✓ |
+| Inpatient cover effect | −2.0 pp | table6_microsim.csv (S1) | ✓ |
+| Outpatient cover effect | −17.8 pp | table6_microsim.csv (S2) | ✓ |
 | National caregiving value | ~Rs 1.3 lakh crore | table_caregiving.csv | ✓ |
 
 ## 5. Abstract length

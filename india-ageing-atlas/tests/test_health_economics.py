@@ -145,3 +145,17 @@ def test_simulate_outpatient_cover():
     r = simulate_policy(df, {"outpatient_cover_frac":1.0, "age_min":60})
     assert r["fiscal_cost"] == 100.0          # absorbed all outpatient
     assert r["che40cap_delta"] <= 0
+
+
+def test_simulate_partial_cover_uses_nonfood_capacity():
+    # Counterfactual capacity-to-pay must be non-food consumption (here 130), not food (70).
+    # After 50% inpatient cover, OOP=50: 50/130=0.38 < 0.40 (no CHE). The old food-denominator
+    # bug would give 50/70=0.71 > 0.40 and wrongly keep the household catastrophic.
+    df = pd.DataFrame({
+        "oop_hosp":[100,0], "oop_med":[0,0], "oop_out":[0,0], "oop_total":[100,0],
+        "cons_total":[200,200], "cons_nonfood":[130,130],
+        "capacity_to_pay":[130,130], "cons_pc":[100,100],
+        "age_years":[70,70], "r1wtresp":[1,1]})
+    r = simulate_policy(df, {"inpatient_cover_frac":0.5, "age_min":0})
+    assert round(r["che40cap"], 1) == 0.0
+    assert round(r["che40cap_delta"], 1) == -50.0

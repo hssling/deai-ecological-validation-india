@@ -242,18 +242,25 @@ def simulate_policy(df, scenario, weight="r1wtresp", line=None, pop_scale=None):
     new_oop_total = (hosp - inp * hosp * elig) + (med - drug * med * elig) + (out - outp * out * elig)
     new_cons_total = pd.to_numeric(d["cons_total"], errors="coerce") + topup * elig
     new_cons_pc = pd.to_numeric(d["cons_pc"], errors="coerce") + topup * elig
-    nonfood = pd.to_numeric(d["cons_nonfood"], errors="coerce")
-    new_cap = (new_cons_total - nonfood).where(new_cons_total > nonfood, nonfood)
+    # capacity-to-pay = non-food consumption (cons_total - food); cons_nonfood already equals
+    # baseline capacity, so food = cons_total - cons_nonfood. A pension top-up raises capacity.
+    food = pd.to_numeric(d["cons_total"], errors="coerce") - pd.to_numeric(d["cons_nonfood"], errors="coerce")
+    new_cap = new_cons_total - food
+    new_cap = new_cap.where(new_cap > 0, np.nan)
+    # per-capita OOP for impoverishment, consistent with the orchestrator's Table 3
+    hhs = pd.to_numeric(d["hhsize"], errors="coerce").replace(0, np.nan) if "hhsize" in d.columns else pd.Series(1.0, index=d.index)
     cf = pd.DataFrame({"oop_total": new_oop_total, "cons_total": new_cons_total,
-                       "capacity_to_pay": new_cap, "cons_pc": new_cons_pc, weight: w})
+                       "capacity_to_pay": new_cap, "cons_pc": new_cons_pc,
+                       "oop_pc": new_oop_total / hhs, weight: w})
     base = che_indicators(df)
     new = che_indicators(cf)
     res = {k: new[k] for k in ("che10", "che25", "che40cap")}
     for k in ("che10", "che25", "che40cap"):
         res[f"{k}_delta"] = new[k] - base[k]
     if line is not None:
-        base_imp = impoverishment(df, line=line)
-        new_imp = impoverishment(cf, line=line)
+        base_frame = d.assign(oop_pc=pd.to_numeric(d["oop_total"], errors="coerce") / hhs)
+        base_imp = impoverishment(base_frame, oop="oop_pc", line=line)
+        new_imp = impoverishment(cf, oop="oop_pc", line=line)
         res["post_poverty"] = new_imp["post_poverty"]
         res["post_poverty_delta"] = new_imp["post_poverty"] - base_imp["post_poverty"]
     else:

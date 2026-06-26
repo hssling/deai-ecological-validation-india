@@ -103,12 +103,12 @@
 
 | Scenario | Coverage | CHE10, % (Δ pp) | CHE25, % (Δ pp) | CHE40cap, % (Δ pp) | Post-payment poverty, % (Δ pp) | Fiscal cost, Rs crore |
 |---|---|---|---|---|---|---|
-| S1: PM-JAY 70+ full inpatient cover | Full inpatient, age 70+ | 33.2 (-2.5) | 12.1 (-1.6) | 18.9 (-1.8) | 48.1 (-2.0) | 31,654 |
-| S2: Outpatient and medicines cover, all 60+ | Full outpatient/medicine, age 60+ | 6.7 (-29.0) | 2.5 (-11.2) | 4.7 (-16.1) | 25.9 (-24.2) | 264,825 |
-| S3: Pension top-up (+Rs 500/month), all 60+ | Income support, age 60+ | 34.2 (-1.5) | 12.6 (-1.1) | 18.8 (-1.9) | 35.9 (-14.2) | 89,400 |
-| S4: Combined S1+S2+S3 | Full inpatient + outpatient + pension top-up | 0.0 (-35.7) | 0.0 (-13.7) | 0.0 (-20.7) | 6.5 (-43.6) | 435,527 |
+| S1: PM-JAY 70+ full inpatient cover | Full inpatient, age 70+ | 33.2 (-2.5) | 12.1 (-1.6) | 18.8 (-2.0) | 24.8 (-0.5) | 31,654 |
+| S2: Outpatient and medicines cover, all 60+ | Full outpatient/medicine, age 60+ | 6.8 (-29.0) | 2.5 (-11.2) | 2.9 (-17.8) | 20.3 (-5.0) | 264,825 |
+| S3: Pension top-up (+Rs 500/month), all 60+ | Income support, age 60+ | 34.2 (-1.5) | 12.6 (-1.1) | 16.6 (-4.2) | 9.1 (-16.3) | 89,400 |
+| S4: Combined S1+S2+S3 | Full inpatient + outpatient + pension top-up | 0.0 (-35.7) | 0.0 (-13.7) | 0.0 (-20.7) | 6.5 (-18.9) | 435,527 |
 
-*Note.* Δ pp is the change from each scenario's own pre-simulation baseline (the age group it applies to: 70+ for S1; 60+ for S2-S4), in percentage points; negative values denote a reduction. Because S1 is restricted to age 70+, its baseline CHE and post-payment poverty levels differ from the All-60+ figures in Tables 2 and 3 and are not directly comparable in absolute level, only in the size of the reduction each scenario achieves. All scenarios assume full coverage of the modelled cost (complete uptake and full reimbursement) and should be read as upper-bound ceilings rather than realistic programme costings, particularly the combined scenario S4. Fiscal costs are reported in Rs crore (1 crore = 10 million rupees) and are scaled using the national older-population count and benchmark unit costs; they are not a substitute for a costed budget line.
+*Note.* All scenarios are applied to the same adults-aged-60-and-over sample, so every Δ pp is measured against the common 60+ baseline (CHE10 35.7%, CHE25 13.7%, CHE40cap 20.7%, post-payment poverty 25.4%); negative values denote a reduction. S1 only covers those aged 70 and over within that sample, which is why its reduction is modest at the population level. All scenarios assume full coverage of the modelled cost (complete uptake and full reimbursement) and should be read as upper-bound ceilings rather than realistic programme costings, particularly the combined scenario S4. Fiscal costs are in Rs crore (1 crore = 10 million rupees), scaled using the national older-population count and benchmark unit costs; they are not a substitute for a costed budget line.
 
 ## Table 7. The economic value of unpaid family caregiving
 
