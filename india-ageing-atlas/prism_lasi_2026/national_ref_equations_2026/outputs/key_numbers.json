@@ -1,0 +1,85 @@
+{
+  "n_analytic": 30995,
+  "n_healthy": 24300,
+  "ref_height_M": 162.5,
+  "ref_height_F": 150.6,
+  "n_healthy_M": 10241,
+  "n_healthy_F": 14059,
+  "burden": {
+    "PRISm_LASI_fixed": [
+      11.9,
+      11.3,
+      12.5
+    ],
+    "PRISm_LASI_LLN": [
+      5.1,
+      4.7,
+      5.5
+    ],
+    "RSP_LASI_fixed": [
+      12.9,
+      12.3,
+      13.6
+    ],
+    "RSP_LASI_LLN": [
+      6.0,
+      5.6,
+      6.4
+    ],
+    "Obstruction_LASI_LLN": [
+      8.6,
+      8.2,
+      9.2
+    ]
+  },
+  "validation_overall": [
+    {
+      "sex": "M",
+      "param": "FEV1",
+      "band": "ALL",
+      "n": 2049,
+      "mean_z": -0.034,
+      "sd_z": 1.049
+    },
+    {
+      "sex": "M",
+      "param": "FVC",
+      "band": "ALL",
+      "n": 2049,
+      "mean_z": -0.052,
+      "sd_z": 1.052
+    },
+    {
+      "sex": "M",
+      "param": "FEV1FVC",
+      "band": "ALL",
+      "n": 2049,
+      "mean_z": 0.004,
+      "sd_z": 1.074
+    },
+    {
+      "sex": "F",
+      "param": "FEV1",
+      "band": "ALL",
+      "n": 2812,
+      "mean_z": -0.02,
+      "sd_z": 1.016
+    },
+    {
+      "sex": "F",
+      "param": "FVC",
+      "band": "ALL",
+      "n": 2812,
+      "mean_z": -0.027,
+      "sd_z": 1.024
+    },
+    {
+      "sex": "F",
+      "param": "FEV1FVC",
+      "band": "ALL",
+      "n": 2812,
+      "mean_z": 0.012,
+      "sd_z": 1.035
+    }
+  ]
+}
