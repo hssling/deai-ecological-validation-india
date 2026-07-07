@@ -54,24 +54,38 @@ healthy = analytic[(analytic["r1smokev"] != 1) &
 PARAMS = {"FEV1": ("fev1", "log"), "FVC": ("fvc", "log"), "FEV1FVC": ("fev1fvc", "lin")}
 
 
+def _prep(d):
+    d = d.copy()
+    d["age_c"] = (d["r1agey"] - 60) / 10.0        # decades, centred at 60
+    d["age_c2"] = d["age_c"] ** 2
+    d["lnht"] = np.log(d["height_cm"])
+    return d
+
+
 def fit_sex_param(train, col, scale):
-    """Return dict with mean-model, scatter-model for one sex/parameter."""
-    d = train.copy()
+    """Return dict with identifiable mean- and scatter-models (clean coefficients).
+
+    Mean: quadratic in centred age (decades) + ln(height) for volumes; age-only
+    for the ratio. Scatter: linear in centred age. This parameterization is
+    numerically stable and yields directly reportable coefficients.
+    """
+    d = _prep(train)
     if scale == "log":
         d["yv"] = np.log(d[col])
-        mform = "yv ~ np.log(height_cm) + cr(r1agey, df=3)"
+        mform = "yv ~ lnht + age_c + age_c2"
     else:
         d["yv"] = d[col]
-        mform = "yv ~ cr(r1agey, df=3)"          # ratio ~ age only
+        mform = "yv ~ age_c + age_c2"             # ratio ~ age only
     mM = smf.ols(mform, data=d).fit()
     d["resid"] = d["yv"] - mM.predict(d)
     d["absr"] = d["resid"].abs()
-    mS = smf.ols("absr ~ cr(r1agey, df=3)", data=d).fit()
+    mS = smf.ols("absr ~ age_c", data=d).fit()
     return dict(mM=mM, mS=mS, scale=scale, col=col)
 
 
 def predict_M_S(fit, data):
     """Return median M (natural scale) and sigma (on modelling scale)."""
+    data = _prep(data)
     mu = fit["mM"].predict(data)
     sigma = (fit["mS"].predict(data) / SQRT_2_PI).clip(lower=1e-6)
     if fit["scale"] == "log":
@@ -192,6 +206,21 @@ for sex in (1, 0):
                                   ref_height=round(ref_ht[sex], 1), age=int(age),
                                   median=round(float(m), 3), lln=round(float(l), 3)))
 pd.DataFrame(grid_rows).to_csv(os.path.join(OUTT, "centile_grid.csv"), index=False)
+
+# ---- practical lookup table: predicted median + LLN by age x height (FEV1, FVC) ----
+lut_rows = []
+lut_heights = {1: [155, 160, 165, 170, 175], 0: [145, 150, 155, 160, 165]}
+for sex in (1, 0):
+    for ht in lut_heights[sex]:
+        for age in [50, 60, 70, 80]:
+            gg = pd.DataFrame({"r1agey": [age], "height_cm": [ht]})
+            row = dict(sex="M" if sex else "F", age=age, height_cm=ht)
+            for pname in ("FEV1", "FVC"):
+                mu, M, sigma = predict_M_S(fits[(sex, pname)], gg)
+                row[f"{pname}_median"] = round(float(M.iloc[0]), 2)
+                row[f"{pname}_LLN"] = round(float(np.exp(mu.iloc[0] - 1.645 * sigma.iloc[0])), 2)
+            lut_rows.append(row)
+pd.DataFrame(lut_rows).to_csv(os.path.join(OUTT, "lookup_table.csv"), index=False)
 
 key = dict(
     n_analytic=int(len(a)), n_healthy=int(len(healthy)),
