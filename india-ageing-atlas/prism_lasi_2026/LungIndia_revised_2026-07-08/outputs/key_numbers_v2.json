@@ -1,0 +1,103 @@
+{
+  "n_lasi_45": 66470,
+  "n_attempted": 50256,
+  "n_not_attempted": 16214,
+  "n_unacceptable": 19166,
+  "n_acceptable": 31090,
+  "n_val_drop": 0,
+  "n_ht_drop": 94,
+  "n_analytic": 30996,
+  "median_age": 56.0,
+  "pct_women": 49.0,
+  "qc": {
+    "attempted": 50256,
+    "acceptable": 31090,
+    "unacceptable": 19166,
+    "repeatable": 30175,
+    "not_repeatable": 915,
+    "acceptable_and_repeatable": 30175
+  },
+  "reference_comparison": [
+    {
+      "scheme": "GLI-2012 fixed",
+      "PRISm": "40.6 (39.7-41.5)",
+      "PRISm_pct": 40.6,
+      "RSP": "37.8 (37.0-38.7)",
+      "RSP_pct": 37.8,
+      "Obstruction": "13.3 (12.7-13.9)",
+      "Obstruction_pct": 13.3
+    },
+    {
+      "scheme": "GLI-2012 LLN",
+      "PRISm": "27.6 (26.8-28.4)",
+      "PRISm_pct": 27.6,
+      "RSP": "27.5 (26.7-28.3)",
+      "RSP_pct": 27.5,
+      "Obstruction": "15.4 (14.7-16.0)",
+      "Obstruction_pct": 15.4
+    },
+    {
+      "scheme": "Chhabra-2014 fixed",
+      "PRISm": "18.6 (17.9-19.3)",
+      "PRISm_pct": 18.6,
+      "RSP": "32.9 (32.0-33.7)",
+      "RSP_pct": 32.9,
+      "Obstruction": "13.3 (12.7-13.9)",
+      "Obstruction_pct": 13.3
+    },
+    {
+      "scheme": "Chhabra-2014 LLN",
+      "PRISm": "10.8 (10.3-11.4)",
+      "PRISm_pct": 10.8,
+      "RSP": "26.6 (25.9-27.4)",
+      "RSP_pct": 26.6,
+      "Obstruction": "13.3 (12.7-13.9)",
+      "Obstruction_pct": 13.3
+    },
+    {
+      "scheme": "GLI-Global 2022 (race-neutral) fixed",
+      "PRISm": "46.3 (45.4-47.2)",
+      "PRISm_pct": 46.3,
+      "RSP": "46.7 (45.8-47.6)",
+      "RSP_pct": 46.7,
+      "Obstruction": "",
+      "Obstruction_pct": NaN
+    },
+    {
+      "scheme": "GLI-Global 2022 (race-neutral) LLN",
+      "PRISm": "32.5 (31.7-33.4)",
+      "PRISm_pct": 32.5,
+      "RSP": "33.7 (32.8-34.5)",
+      "RSP_pct": 33.7,
+      "Obstruction": "",
+      "Obstruction_pct": NaN
+    },
+    {
+      "scheme": "Agarwal-2020 (India) fixed",
+      "PRISm": "22.1 (21.3-22.8)",
+      "PRISm_pct": 22.1,
+      "RSP": "27.5 (26.7-28.3)",
+      "RSP_pct": 27.5,
+      "Obstruction": "",
+      "Obstruction_pct": NaN
+    },
+    {
+      "scheme": "Agarwal-2020 (India) LLN",
+      "PRISm": "11.8 (11.2-12.4)",
+      "PRISm_pct": 11.8,
+      "RSP": "18.8 (18.1-19.5)",
+      "RSP_pct": 18.8,
+      "Obstruction": "",
+      "Obstruction_pct": NaN
+    }
+  ],
+  "internal_reference": {
+    "scheme": "Internal healthy-subset LLN",
+    "n_healthy": 12824,
+    "PRISm": "3.9 (3.6-4.3)",
+    "RSP": "4.9 (4.6-5.3)"
+  },
+  "prism_rsp_overlap_pct": 84.3,
+  "median_fvc_z": -1.12,
+  "n_model": 30996
+}
