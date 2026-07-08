@@ -1,0 +1,30 @@
+{
+  "n_analytic": 30996,
+  "prism_range": {
+    "low": 3.9,
+    "high": 46.3,
+    "fold": 11.9,
+    "abs_range": 42.4
+  },
+  "rsp_range": {
+    "low": 4.9,
+    "high": 46.7,
+    "fold": 9.5,
+    "abs_range": 41.8
+  },
+  "families": {
+    "Global/foreign": {
+      "min": 27.6,
+      "max": 46.3
+    },
+    "National Indian": {
+      "min": 3.9,
+      "max": 11.9
+    },
+    "Regional Indian": {
+      "min": 10.8,
+      "max": 22.1
+    }
+  },
+  "n_scenarios": 11
+}
