@@ -1,0 +1,39 @@
+{
+  "n": 30996,
+  "coverage": {
+    "GLI-PRISm (fixed)": 40.6,
+    "GLI-RSP (fixed)": 37.8,
+    "National low-FVC (LLN)": 7.4,
+    "National low-FVC (fixed)": 16.0
+  },
+  "summary": [
+    {
+      "flag": "GLI-PRISm (fixed)",
+      "coverage": 40.6,
+      "mean_adjOR": 1.18,
+      "mean_risk_flagged": 37.12,
+      "mean_ppv": 34.0
+    },
+    {
+      "flag": "GLI-RSP (fixed)",
+      "coverage": 37.8,
+      "mean_adjOR": 1.16,
+      "mean_risk_flagged": 37.6,
+      "mean_ppv": 34.26
+    },
+    {
+      "flag": "National low-FVC (LLN)",
+      "coverage": 7.4,
+      "mean_adjOR": 1.3,
+      "mean_risk_flagged": 40.84,
+      "mean_ppv": 38.46
+    },
+    {
+      "flag": "National low-FVC (fixed)",
+      "coverage": 16.0,
+      "mean_adjOR": 1.27,
+      "mean_risk_flagged": 42.62,
+      "mean_ppv": 38.46
+    }
+  ]
+}
