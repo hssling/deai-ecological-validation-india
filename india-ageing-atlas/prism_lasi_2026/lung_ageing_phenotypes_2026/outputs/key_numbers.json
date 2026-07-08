@@ -1,0 +1,24 @@
+{
+  "n_clustered": 29828,
+  "features": [
+    "FVC_z",
+    "FEV1FVC_z",
+    "bmi",
+    "hba1c",
+    "log_crp",
+    "hb",
+    "r1gripsum"
+  ],
+  "silhouette": {
+    "2": 0.1626,
+    "3": 0.1397,
+    "4": 0.1525,
+    "5": 0.1517,
+    "6": 0.15
+  },
+  "best_k": 2,
+  "weighted_share": {
+    "0": 0.378,
+    "1": 0.622
+  }
+}
