@@ -2,24 +2,15 @@
 
 **Nationally Representative Spirometry Reference Equations for Middle-Aged and Older Indians (LASI Wave 1).**
 
-## Supplementary Methods — how to apply the equations
+## Supplementary Methods — how to apply the equations (GAMLSS / LMS)
 
-Age is centred and expressed in decades: **age_c = (age in years − 60) / 10**. Height is in cm.
+The reference is a GAMLSS Box-Cox Cole-Green (BCCG) / LMS model. For each sex and parameter it provides three age-specific values: **L** (Box-Cox skewness), **M** (median), and **S** (coefficient of variation), tabulated in Supplementary Table S2. For the volumes (FEV1, FVC), the median depends on height multiplicatively through a fitted exponent *b*:
 
-**Volumes (FEV1, FVC), log-normal:**
-- ln(median) µ = Intercept + b·ln(height) + c₁·age_c + c₂·age_c²
-- σ (log scale) = [Intercept_S + b_S·age_c] / √(2/π), where √(2/π) = 0.7979
-- Median M = exp(µ);  LLN = exp(µ − 1.645·σ);  z = (ln(observed) − µ) / σ
+- **M(age, height) = M_ref(age) × (height / reference height)^b**, where M_ref(age) is the tabulated median at the sex-specific reference height (men 162.5 cm, women 150.6 cm) and *b* is the height exponent (Table S2). For the FEV1/FVC ratio there is no height term.
+- **z-score** = [ (observed / M)^L − 1 ] / (L × S)   (for L ≠ 0)
+- **LLN (5th centile)** = M × (1 + L × S × (−1.645))^(1/L)
 
-**Ratio (FEV1/FVC), natural scale:**
-- median M = Intercept + c₁·age_c + c₂·age_c²
-- σ = [Intercept_S + b_S·age_c] / √(2/π)
-- LLN = M − 1.645·σ;  z = (observed − M) / σ
-
-**Worked example (man, 60 years, 165 cm, FEV1):**
-µ = −8.5450 + 1.8207·ln(165) + (−0.1051)·0 + (−0.0058)·0² = −8.5450 + 9.298 = 0.753.
-σ = (0.1848 + 0.0144·0)/0.7979 = 0.2316. Median = e^0.753 = **2.12 L**;
-LLN = e^(0.753 − 1.645·0.2316) = **1.45 L** (cf. lookup Table, matches).
+**Worked example (man, 60 years, 165 cm, FVC):** from Table S2, L = 1.017, M_ref = 2.696 L (at 162.5 cm), S = 0.208, b = 2.038. Median at 165 cm = 2.696 × (165/162.5)^2.038 = **2.78 L**. LLN = 2.78 × (1 + 1.017×0.208×(−1.645))^(1/1.017) = **1.83 L** (matches Supplementary Table S3).
 
 ## Supplementary Table S1. Reference (healthy) population by sex and age band — median lung volumes
 
@@ -36,83 +27,86 @@ LLN = e^(0.753 − 1.645·0.2316) = **1.45 L** (cf. lookup Table, matches).
 
 Values are medians. Numbers thin beyond age 75, where equation confidence is correspondingly lower.
 
-## Supplementary Table S2. Internal validation — held-out z-scores by age band
+## Supplementary Table S2. GAMLSS reference values (L, M, S) by age at the sex-specific reference height
 
-| Sex | Parameter | Age band | n | Mean z | SD z |
+Reference height: men 162.5 cm, women 150.6 cm. Height exponent *b* (for M scaling): FVC 2.038 (men) / 2.014 (women); FEV1 1.816 (men) / 1.920 (women); ratio has no height term. M for FEV1/FVC is in per-cent.
+
+| Parameter | Sex | Age | L | M | S |
 |---|---|---|---|---|---|
-| Men | FEV1 | 45–54 | 838 | −0.03 | 1.08 |
-| Men | FEV1 | 55–64 | 626 | −0.03 | 1.05 |
-| Men | FEV1 | 65–74 | 436 | −0.05 | 1.01 |
-| Men | FEV1 | ≥75 | 149 | −0.04 | 0.96 |
-| Men | FVC | 45–54 | 838 | −0.04 | 1.07 |
-| Men | FVC | 55–64 | 626 | −0.04 | 1.05 |
-| Men | FVC | 65–74 | 436 | −0.08 | 1.04 |
-| Men | FVC | ≥75 | 149 | −0.06 | 0.98 |
-| Women | FEV1 | 45–54 | 1,313 | −0.04 | 1.03 |
-| Women | FEV1 | 55–64 | 926 | 0.04 | 1.01 |
-| Women | FEV1 | 65–74 | 448 | −0.10 | 1.03 |
-| Women | FEV1 | ≥75 | 125 | 0.02 | 0.88 |
-| Women | FVC | 45–54 | 1,313 | −0.04 | 1.04 |
-| Women | FVC | 55–64 | 926 | 0.02 | 1.02 |
-| Women | FVC | 65–74 | 448 | −0.08 | 1.00 |
-| Women | FVC | ≥75 | 125 | −0.05 | 0.93 |
+| FVC | Men | 50 | 1.084 | 2.911 | 0.201 |
+| FVC | Men | 60 | 1.017 | 2.696 | 0.208 |
+| FVC | Men | 70 | 0.950 | 2.460 | 0.219 |
+| FVC | Men | 80 | 0.884 | 2.237 | 0.232 |
+| FVC | Women | 50 | 0.766 | 2.096 | 0.206 |
+| FVC | Women | 60 | 0.921 | 1.970 | 0.209 |
+| FVC | Women | 70 | 1.075 | 1.797 | 0.217 |
+| FVC | Women | 80 | 1.229 | 1.616 | 0.224 |
+| FEV1 | Men | 50 | 1.182 | 2.341 | 0.206 |
+| FEV1 | Men | 60 | 1.113 | 2.128 | 0.221 |
+| FEV1 | Men | 70 | 1.044 | 1.900 | 0.237 |
+| FEV1 | Men | 80 | 0.974 | 1.695 | 0.253 |
+| FEV1 | Women | 50 | 0.800 | 1.702 | 0.220 |
+| FEV1 | Women | 60 | 0.971 | 1.578 | 0.228 |
+| FEV1 | Women | 70 | 1.142 | 1.423 | 0.235 |
+| FEV1 | Women | 80 | 1.313 | 1.279 | 0.243 |
+| FEV1/FVC | Men | 50 | 2.675 | 80.95 | 0.087 |
+| FEV1/FVC | Men | 60 | 2.592 | 79.52 | 0.098 |
+| FEV1/FVC | Men | 70 | 2.509 | 78.16 | 0.110 |
+| FEV1/FVC | Men | 80 | 2.426 | 76.91 | 0.124 |
+| FEV1/FVC | Women | 50 | 2.344 | 81.62 | 0.087 |
+| FEV1/FVC | Women | 60 | 2.244 | 80.57 | 0.094 |
+| FEV1/FVC | Women | 70 | 2.144 | 79.66 | 0.104 |
+| FEV1/FVC | Women | 80 | 2.043 | 79.73 | 0.115 |
 
-## Supplementary Table S3. Reference equation coefficients
+Full single-year L, M, S curves (ages 45–90) accompany the analysis code.
 
-Median model: µ = Intercept + b_lnht·ln(height) + c₁·age_c + c₂·age_c² (age_c in decades, centred at 60). Scatter model: |residual| = Intercept_S + b_S·age_c; σ = fitted/0.7979.
-
-| Sex | Parameter | Scale | Intercept | ln(height) | age_c | age_c² | Scatter Int | Scatter age_c |
-|---|---|---|---|---|---|---|---|---|
-| Men | FEV1 | log | −8.5450 | 1.8207 | −0.1051 | −0.0058 | 0.1848 | 0.0144 |
-| Men | FVC | log | −9.2434 | 2.0059 | −0.0834 | −0.0064 | 0.1738 | 0.0081 |
-| Men | FEV1/FVC | linear | 78.8086 | — | −1.5054 | 0.0844 | 6.1925 | 0.7545 |
-| Women | FEV1 | log | −9.0624 | 1.8921 | −0.0963 | −0.0083 | 0.1906 | 0.0126 |
-| Women | FVC | log | −9.2585 | 1.9767 | −0.0828 | −0.0108 | 0.1750 | 0.0085 |
-| Women | FEV1/FVC | linear | 80.0212 | — | −0.9569 | 0.2190 | 5.9803 | 0.5299 |
-
-## Supplementary Table S4. Full lookup table — predicted median and LLN (litres) by age and height
+## Supplementary Table S3. Full lookup table — predicted median and LLN (litres) by age and height (GAMLSS reference)
 
 | Sex | Age | Height (cm) | FEV1 median | FEV1 LLN | FVC median | FVC LLN |
 |---|---|---|---|---|---|---|
-| Men | 50 | 155 | 2.09 | 1.47 | 2.58 | 1.83 |
-| Men | 60 | 155 | 1.89 | 1.29 | 2.39 | 1.68 |
-| Men | 70 | 155 | 1.69 | 1.12 | 2.19 | 1.51 |
-| Men | 80 | 155 | 1.50 | 0.95 | 1.98 | 1.31 |
-| Men | 50 | 160 | 2.21 | 1.55 | 2.75 | 1.95 |
-| Men | 60 | 160 | 2.00 | 1.37 | 2.55 | 1.79 |
-| Men | 70 | 160 | 1.80 | 1.19 | 2.33 | 1.61 |
-| Men | 80 | 160 | 1.59 | 1.01 | 2.11 | 1.40 |
-| Men | 50 | 165 | 2.34 | 1.64 | 2.93 | 2.07 |
-| Men | 60 | 165 | 2.12 | 1.45 | 2.71 | 1.90 |
-| Men | 70 | 165 | 1.90 | 1.26 | 2.48 | 1.71 |
-| Men | 80 | 165 | 1.68 | 1.07 | 2.24 | 1.49 |
-| Men | 50 | 170 | 2.47 | 1.73 | 3.11 | 2.20 |
-| Men | 60 | 170 | 2.24 | 1.53 | 2.88 | 2.02 |
-| Men | 70 | 170 | 2.01 | 1.33 | 2.64 | 1.82 |
-| Men | 80 | 170 | 1.77 | 1.13 | 2.38 | 1.58 |
-| Men | 50 | 175 | 2.61 | 1.83 | 3.30 | 2.33 |
-| Men | 60 | 175 | 2.36 | 1.61 | 3.05 | 2.14 |
-| Men | 70 | 175 | 2.11 | 1.40 | 2.79 | 1.92 |
-| Men | 80 | 175 | 1.87 | 1.19 | 2.52 | 1.68 |
-| Women | 50 | 145 | 1.55 | 1.07 | 1.91 | 1.35 |
-| Women | 60 | 145 | 1.42 | 0.96 | 1.78 | 1.25 |
-| Women | 70 | 145 | 1.28 | 0.85 | 1.63 | 1.11 |
-| Women | 80 | 145 | 1.13 | 0.72 | 1.44 | 0.95 |
-| Women | 50 | 150 | 1.66 | 1.14 | 2.05 | 1.44 |
-| Women | 60 | 150 | 1.52 | 1.03 | 1.91 | 1.33 |
-| Women | 70 | 150 | 1.37 | 0.90 | 1.74 | 1.19 |
-| Women | 80 | 150 | 1.21 | 0.77 | 1.54 | 1.01 |
-| Women | 50 | 155 | 1.76 | 1.22 | 2.18 | 1.54 |
-| Women | 60 | 155 | 1.62 | 1.09 | 2.04 | 1.42 |
-| Women | 70 | 155 | 1.46 | 0.96 | 1.86 | 1.27 |
-| Women | 80 | 155 | 1.29 | 0.82 | 1.65 | 1.08 |
-| Women | 50 | 160 | 1.87 | 1.29 | 2.33 | 1.64 |
-| Women | 60 | 160 | 1.72 | 1.16 | 2.17 | 1.51 |
-| Women | 70 | 160 | 1.55 | 1.02 | 1.98 | 1.35 |
-| Women | 80 | 160 | 1.37 | 0.87 | 1.75 | 1.15 |
-| Women | 50 | 165 | 1.98 | 1.37 | 2.47 | 1.74 |
-| Women | 60 | 165 | 1.82 | 1.23 | 2.30 | 1.61 |
-| Women | 70 | 165 | 1.64 | 1.08 | 2.10 | 1.44 |
-| Women | 80 | 165 | 1.45 | 0.92 | 1.86 | 1.23 |
+| Men | 50 | 155 | 2.15 | 1.39 | 2.64 | 1.76 |
+| Men | 60 | 155 | 1.95 | 1.23 | 2.45 | 1.61 |
+| Men | 70 | 155 | 1.74 | 1.06 | 2.23 | 1.44 |
+| Men | 80 | 155 | 1.56 | 0.91 | 2.03 | 1.28 |
+| Men | 50 | 160 | 2.28 | 1.48 | 2.82 | 1.87 |
+| Men | 60 | 160 | 2.07 | 1.30 | 2.61 | 1.71 |
+| Men | 70 | 160 | 1.85 | 1.12 | 2.38 | 1.53 |
+| Men | 80 | 160 | 1.65 | 0.97 | 2.17 | 1.36 |
+| Men | 50 | 165 | 2.41 | 1.56 | 3.00 | 2.00 |
+| Men | 60 | 165 | 2.19 | 1.37 | 2.78 | 1.83 |
+| Men | 70 | 165 | 1.95 | 1.19 | 2.54 | 1.63 |
+| Men | 80 | 165 | 1.74 | 1.02 | 2.31 | 1.45 |
+| Men | 50 | 170 | 2.54 | 1.65 | 3.19 | 2.12 |
+| Men | 60 | 170 | 2.31 | 1.45 | 2.96 | 1.94 |
+| Men | 70 | 170 | 2.06 | 1.25 | 2.70 | 1.73 |
+| Men | 80 | 170 | 1.84 | 1.08 | 2.45 | 1.54 |
+| Men | 50 | 175 | 2.68 | 1.74 | 3.39 | 2.25 |
+| Men | 60 | 175 | 2.44 | 1.53 | 3.14 | 2.06 |
+| Men | 70 | 175 | 2.17 | 1.32 | 2.86 | 1.84 |
+| Men | 80 | 175 | 1.94 | 1.14 | 2.60 | 1.64 |
+| Women | 50 | 145 | 1.58 | 1.03 | 1.94 | 1.31 |
+| Women | 60 | 145 | 1.47 | 0.92 | 1.82 | 1.21 |
+| Women | 70 | 145 | 1.32 | 0.79 | 1.66 | 1.06 |
+| Women | 80 | 145 | 1.19 | 0.67 | 1.50 | 0.92 |
+| Women | 50 | 150 | 1.69 | 1.10 | 2.08 | 1.40 |
+| Women | 60 | 150 | 1.57 | 0.98 | 1.95 | 1.29 |
+| Women | 70 | 150 | 1.41 | 0.85 | 1.78 | 1.14 |
+| Women | 80 | 150 | 1.27 | 0.72 | 1.60 | 0.98 |
+| Women | 50 | 155 | 1.80 | 1.17 | 2.22 | 1.50 |
+| Women | 60 | 155 | 1.67 | 1.05 | 2.09 | 1.38 |
+| Women | 70 | 155 | 1.50 | 0.90 | 1.90 | 1.21 |
+| Women | 80 | 155 | 1.35 | 0.77 | 1.71 | 1.05 |
+| Women | 50 | 160 | 1.91 | 1.25 | 2.37 | 1.60 |
+| Women | 60 | 160 | 1.77 | 1.11 | 2.23 | 1.47 |
+| Women | 70 | 160 | 1.60 | 0.96 | 2.03 | 1.29 |
+| Women | 80 | 160 | 1.44 | 0.81 | 1.83 | 1.12 |
+| Women | 50 | 165 | 2.03 | 1.32 | 2.52 | 1.70 |
+| Women | 60 | 165 | 1.88 | 1.18 | 2.37 | 1.57 |
+| Women | 70 | 165 | 1.70 | 1.02 | 2.16 | 1.38 |
+| Women | 80 | 165 | 1.52 | 0.86 | 1.94 | 1.19 |
 
-Intermediate ages/heights are obtained from the equations (Supplementary Table S3).
+Intermediate ages and heights are obtained from the L, M, S values (Supplementary Table S2) via the formulae above.
+
+## Supplementary Note — method and validation
+
+Models were fitted in R (`gamlss`, BCCGo family) with penalized B-splines `pb()` for the L, M, and S curves in age, and log-height as a linear term in the median for volumes. A simpler quadratic-in-age, log-normal (L fixed) parameterization implemented in Python gave concordant estimates (PRISm 11.9% fixed / 5.3% LLN versus the GAMLSS 13.8% / 4.0%), confirming the burden re-estimation is not an artefact of the modelling choice. Held-out validation (main Table 3) gave z-score means within ±0.05 and standard deviations 0.98–1.01 for all six sex × parameter combinations.

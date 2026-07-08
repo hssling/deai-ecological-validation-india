@@ -14,7 +14,7 @@ Manuscript: *Nationally Representative Spirometry Reference Equations for Middle
 | Data sources/measurement 8 | Sources and assessment | Methods — field spirometry, measured height, `pyspiro` cross-validation |
 | Bias 9 | Efforts to address bias | Methods — respiratory-healthy definition; internal validation; multi-reference comparison |
 | Study size 10 | How arrived at | Methods/Results — n=24,300 healthy; n=30,995 analytic |
-| Quantitative variables 11 | Handling | Methods — LMS-style (log volumes, quadratic age, ln height); fixed and LLN thresholds |
+| Quantitative variables 11 | Handling | Methods — GAMLSS/LMS (BCCG: L, M, S penalized splines in age; ln-height for volumes); fixed and LLN thresholds |
 | Statistical methods 12 | Methods; validation; sensitivity | Methods — Derivation, Validation (held-out 20%), Comparison and burden |
 | Participants 13 | Numbers at each stage | Results — Reference population; Methods — analytic sample |
 | Descriptive data 14 | Characteristics | Table 1; Supplementary Table S1 |

@@ -21,10 +21,10 @@ Phone: +91 8941087719
 
 - Abstract: ~250 words (structured)
 - Main text: ~2,700 words (Introduction–Conclusions)
-- References: 13
+- References: 14
 - Tables: 4
 - Figures: 3
-- Supplementary: 4 tables (including full coefficients and lookup grid)
+- Supplementary: 3 tables (including the GAMLSS L/M/S reference values and the full lookup grid)
 
 ## Declarations
 
