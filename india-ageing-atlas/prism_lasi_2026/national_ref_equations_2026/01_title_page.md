@@ -1,8 +1,8 @@
 # Title Page
 
-**Title:** Nationally Representative Spirometry Reference Equations for Middle-Aged and Older Indians: Derivation and Validation from the Longitudinal Ageing Study in India, and the Re-estimated Burden of Restrictive and Preserved-Ratio Impairment
+**Title:** Nationally Representative Spirometry Reference Equations for Middle-Aged and Older Indians: A Cross-sectional Derivation and Validation Study from the Longitudinal Ageing Study in India, and Re-estimated Burden of Restrictive and Preserved-Ratio Impairment
 
-**Running title:** National spirometry reference equations for older Indians
+**Running title:** Indian spirometry reference equations
 
 **Article type:** Original Article
 
@@ -19,12 +19,12 @@ Phone: +91 8941087719
 
 ## Manuscript metrics
 
-- Abstract: ~250 words (structured)
-- Main text: ~2,700 words (Introduction–Conclusions)
+- Abstract: ~280 words (structured, including clinical significance)
+- Main text: ~3,100 words (Introduction–Clinical Significance)
 - References: 14
-- Tables: 4
+- Tables: 2
 - Figures: 3
-- Supplementary: 3 tables (including the GAMLSS L/M/S reference values and the full lookup grid)
+- Supplementary: 4 tables (including the GAMLSS L/M/S reference values, lookup grid, and validation statistics)
 
 ## Declarations
 
@@ -34,7 +34,7 @@ Phone: +91 8941087719
 
 **Acknowledgements:** This study used public-use data from the Longitudinal Ageing Study in India (LASI) Wave 1, conducted by the International Institute for Population Sciences (IIPS) with the Harvard T.H. Chan School of Public Health and the University of Southern California, supported by the Ministry of Health and Family Welfare, Government of India. Reference-equation cross-validation used the open-source `pyspiro` library. The author thanks the LASI investigators and participants.
 
-**Data availability:** LASI Wave 1 data are available through the Gateway to Global Aging Data (g2aging.org) and IIPS. Full derivation code, coefficient tables, and lookup grid are available from the author on reasonable request.
+**Data availability:** LASI Wave 1 data are available through the Gateway to Global Aging Data (g2aging.org) and IIPS. The reference-equation code package and bundled LMS table are available in the project repository subfolder `reference_package/`; the Python package is published on PyPI as `lasi-spirometry-reference`.
 
 **Author contributions (single author):** Dr Siddalingaiah H S conceived and designed the study, performed the analysis, interpreted the results, drafted and revised the manuscript, and approved the final version.
 

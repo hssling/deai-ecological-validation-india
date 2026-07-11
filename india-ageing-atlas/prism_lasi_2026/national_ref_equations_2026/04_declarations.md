@@ -12,9 +12,13 @@ Secondary analysis of de-identified, publicly available data from the Longitudin
 
 Not applicable. The manuscript contains no individually identifiable data.
 
+## Animal studies
+
+Not applicable. This study did not involve animals.
+
 ## Availability of data and material
 
-LASI Wave 1 data are available to bona fide researchers through the Gateway to Global Aging Data (g2aging.org) and IIPS. The full derivation and validation code, the complete coefficient tables, and the lookup grid are available from the author on reasonable request.
+LASI Wave 1 data are available to bona fide researchers through the Gateway to Global Aging Data (g2aging.org) and IIPS. The reference-equation code package, bundled GAMLSS/LMS table, lookup examples, and tests are available in the project repository subfolder `reference_package/`; the Python package is published on PyPI as `lasi-spirometry-reference` version 0.1.0.
 
 ## Competing interests
 
@@ -23,6 +27,14 @@ The author declares no competing interests.
 ## Funding
 
 None.
+
+## Clinical trial registry number
+
+Not applicable. This was a secondary analysis of an observational public-use survey dataset and was not a clinical trial.
+
+## PROSPERO registry number
+
+Not applicable. This was not a systematic review.
 
 ## Authors' contributions
 
@@ -34,7 +46,7 @@ The author thanks the LASI investigators, IIPS, the Harvard T.H. Chan School of 
 
 ## Declaration of generative AI and AI-assisted technologies
 
-During preparation the author used a generative AI assistant for language editing and to help organise tables and figure/analysis code. All study conception, derivation, analysis, interpretation, and scientific claims are the author's own. The author reviewed and edited all output, independently verified every numerical result against the analysis, and verified each reference against its primary source. The author takes full responsibility for the content.
+During preparation the author used a generative AI assistant (OpenAI ChatGPT/Codex) for language editing and to help organise tables and figure/analysis code. All study conception, derivation, analysis, interpretation, and scientific claims are the author's own. The author reviewed and edited all output, independently verified every numerical result against the analysis, and verified each reference against its primary source. The author takes full responsibility for the content.
 
 ## Prior presentation
 

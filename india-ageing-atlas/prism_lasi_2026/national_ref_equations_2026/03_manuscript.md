@@ -1,6 +1,6 @@
-Nationally Representative Spirometry Reference Equations for Middle-Aged and Older Indians: Derivation and Validation from the Longitudinal Ageing Study in India, and the Re-estimated Burden of Restrictive and Preserved-Ratio Impairment
+Nationally Representative Spirometry Reference Equations for Middle-Aged and Older Indians: A Cross-sectional Derivation and Validation Study from the Longitudinal Ageing Study in India, and Re-estimated Burden of Restrictive and Preserved-Ratio Impairment
 
-Running title: National spirometry reference equations for older Indians
+Running title: Indian spirometry reference equations
 
 Article type: Original Article
 
@@ -14,6 +14,8 @@ Article type: Original Article
 
 **Conclusions:** A large part of India's apparent restrictive and preserved-ratio "epidemic" is an artefact of non-representative reference equations. These first nationally representative equations for older Indians provide a validated, freely usable basis for interpreting spirometry in this population.
 
+**Clinical significance:** For respiratory clinicians and public-health programmes in India, using a national age-, sex-, and height-matched reference can reduce systematic over-diagnosis of restrictive and preserved-ratio impairment in adults aged 45 years and older while preserving LLN-based identification of genuinely abnormal spirometry.
+
 **Keywords:** spirometry; reference equations; lower limit of normal; preserved ratio impaired spirometry; India; ageing
 
 ## Introduction
@@ -22,9 +24,9 @@ The interpretation of spirometry rests entirely on the reference equation used t
 
 India illustrates the problem acutely. The Global Lung Function Initiative (GLI) 2012 equations^(1)^ contain no South Asian module, and South Asians have smaller lung volumes at a given age and height than the populations from which GLI was built.^(3)^ The recently recommended race-neutral GLI-Global equations^(4)^ replace ethnic categories with a single global average, but that average still exceeds South Asian volumes. The Indian equations that exist—most prominently Chhabra-2014 from northern India^(5)^ and Agarwal-2020 from western India^(6)^—are valuable but were derived from small regional convenience samples (n = 685 and 1,258) and were never intended as a national standard. India therefore lacks a nationally representative spirometry reference, a gap repeatedly noted but not filled.
 
-The Longitudinal Ageing Study in India (LASI) changes what is possible. It is the first nationally representative survey to perform spirometry in Indian adults aged 45 years and older,^(7,8)^ providing—within its healthy participants—the raw material for a national reference for the ageing population, precisely the group in whom restrictive and preserved-ratio patterns matter most. We had two aims: to derive and validate nationally representative reference equations for FEV1, FVC, and FEV1/FVC in middle-aged and older Indians, and to use them to re-estimate the national burden of PRISm and the restrictive spirometric pattern (RSP), quantities we and others have shown to be highly sensitive to reference choice.
+The Longitudinal Ageing Study in India (LASI) changes what is possible. It is the first nationally representative survey to perform spirometry in Indian adults aged 45 years and older,^(7,8)^ providing—within its healthy participants—the raw material for a national reference for the ageing population, precisely the group in whom restrictive and preserved-ratio patterns matter most. This is also the age range in which spirometry is most likely to influence respiratory-care decisions: referral for suspected chronic lung disease, interpretation of dyspnoea and exercise limitation, pulmonary rehabilitation eligibility, perioperative risk assessment, and public-health estimates of chronic respiratory morbidity. If the reference equation systematically overestimates expected lung volume, these downstream decisions inherit the bias. We had two aims: to derive and validate nationally representative reference equations for FEV1, FVC, and FEV1/FVC in middle-aged and older Indians, and to use them to re-estimate the national burden of PRISm and the restrictive spirometric pattern (RSP), quantities we and others have shown to be highly sensitive to reference choice.
 
-## Methods
+## Materials and Methods
 
 ### Data source and sampling
 
@@ -46,9 +48,17 @@ Within the reference population we held out a random 20% (stratified by sex) and
 
 For every participant in the full analytic sample (adults ≥45 years with acceptable spirometry, plausible values, and measured height; n = 30,995) we computed predicted values, z-scores, and LLN under the new LASI reference and, for comparison, under GLI-2012 (South-East Asian module, identified as the equation embedded in the released LASI data), GLI-Global 2022, Chhabra-2014, and Agarwal-2020, using the validated `pyspiro` implementation. Airflow obstruction was defined by the FEV1/FVC ratio below its LLN; among those with a preserved ratio, PRISm by a low FEV1 and RSP by a low FVC, applied both as a fixed threshold (<80% of predicted) and as the LLN. Prevalence is survey-weighted (LASI spirometry weight) with 95% confidence intervals from the Kish effective sample size (Wilson method). Analyses used Python (pandas, statsmodels, patsy, pyspiro).
 
+### Implementation and reproducibility
+
+To make the equations directly usable, we exported the age-specific L, M, and S values and the height exponents rather than only fitted model objects. For FEV1 and FVC, the tabulated median at the sex-specific reference height is scaled by height as M(age, height) = M_ref(age) × (height/reference height)^b. The z-score is then calculated as [(observed/M)^L − 1]/(L × S), and the LLN is the 5th centile of the same BCCG distribution. For FEV1/FVC, M is expressed as a percentage and no height term is used. The lookup table gives selected clinically common ages and heights, while the full single-year LMS table supports implementation over the complete 45–90-year range. Non-integer ages can be handled by linear interpolation between adjacent tabulated LMS rows; extrapolation outside the fitted age range is not recommended. A small open-source Python package (`lasi-spirometry-reference`) was prepared with the bundled LMS table, prediction functions, z-score calculation, LLN calculation, and PRISm/RSP classification helpers so that laboratories and researchers can reproduce the calculations without refitting GAMLSS models.
+
 ### Ethics
 
 LASI obtained approval from the Indian Council of Medical Research and written informed consent from all participants. This secondary analysis of de-identified public data required no further approval.
+
+### Reporting and AI-assisted editing
+
+Reporting follows the STROBE statement. A generative AI assistant (OpenAI ChatGPT/Codex) was used only for language editing and to help organise tables and figure/analysis code. The tool was not used to collect data, derive the equations, run the statistical models, select results, or make scientific interpretations; every numerical value reported here was verified against the analysis outputs.
 
 ## Results
 
@@ -58,47 +68,51 @@ The 24,300 respiratory-healthy adults (median age 55 years) had the expected sex
 
 ### Derived equations and centile curves
 
-The fitted equations produced smooth, physiologically appropriate reference curves: median FEV1 and FVC declined monotonically with age and were higher in men, with the LLN tracking below the median (Figure 1). The estimated skewness (L) departed from unity and varied with age, confirming the value of modelling it rather than assuming log-normality. A worked lookup table of predicted median and LLN by age and height for both sexes is provided (Table 2; full grid in Supplementary Table S4) so that the equations can be applied without specialist software; the age-specific L, M, and S values are in Supplementary Table S3.
+The fitted equations produced smooth, physiologically appropriate reference curves: median FEV1 and FVC declined monotonically with age and were higher in men, with the LLN tracking below the median (Figure 1). The estimated skewness (L) departed from unity and varied with age, confirming the value of modelling it rather than assuming log-normality. A worked lookup table of predicted median and LLN by age and height for both sexes is provided in Supplementary Table S3 so that the equations can be applied without specialist software; the age-specific L, M, and S values are in Supplementary Table S2.
 
 ### Validation
 
-In the held-out 20% sample the equations were well calibrated: z-scores had a mean between −0.05 and +0.03 and a standard deviation between 0.98 and 1.01 for all three parameters in both sexes (Table 3; Figure 2). This meets the standard adequacy criterion for a reference equation, and the standard deviations closer to unity than a simpler quadratic parameterization reflect the explicit modelling of scatter and skewness.
+In the held-out 20% sample the equations were well calibrated: z-scores had a mean between −0.05 and +0.03 and a standard deviation between 0.98 and 1.01 for all three parameters in both sexes (Figure 2; Supplementary Table S4). This meets the standard adequacy criterion for a reference equation, and the standard deviations closer to unity than a simpler quadratic parameterization reflect the explicit modelling of scatter and skewness.
 
 ### Comparison with existing references
 
-The choice of reference dominated the apparent prevalence of impairment. Weighted PRISm prevalence in the identical sample was 40.6% under GLI-2012 and 46.3% under GLI-Global 2022, fell to 18.6% (Chhabra) and 22.1% (Agarwal) under the regional Indian equations, and was 13.8% under the new national LASI reference (fixed threshold); the LLN moved every estimate lower still (Figure 3; Table 4). Against GLI the Indian median FEV1 and FVC lay about one standard deviation below the reference mean, whereas the national reference recentred the population (median FVC z −0.01), confirming the mismatch that drives over-calling. Notably, the race-neutral GLI-Global equations produced the *highest* prevalence, because a single global average overshoots South Asian volumes by more than the South-East Asian module does.
+The choice of reference dominated the apparent prevalence of impairment. Weighted PRISm prevalence in the identical sample was 40.6% under GLI-2012 and 46.3% under GLI-Global 2022, fell to 18.6% (Chhabra) and 22.1% (Agarwal) under the regional Indian equations, and was 13.8% under the new national LASI reference (fixed threshold); the LLN moved every estimate lower still (Figure 3; Table 2). Against GLI the Indian median FEV1 and FVC lay about one standard deviation below the reference mean, whereas the national reference recentred the population (median FVC z −0.01), confirming the mismatch that drives over-calling. Notably, the race-neutral GLI-Global equations produced the *highest* prevalence, because a single global average overshoots South Asian volumes by more than the South-East Asian module does.
 
 ### Re-estimated national burden
 
-Under the nationally representative LASI reference, PRISm affected 13.8% (95% CI 13.2–14.4) of middle-aged and older Indians by the fixed threshold and 4.0% (3.7–4.4) by the LLN; the restrictive pattern affected 14.4% (13.8–15.1) and 4.8% (4.4–5.2) respectively; airflow obstruction affected 6.6% (6.2–7.1) by the LLN (Table 4). These are the first estimates of these quantities against a home-grown national standard, and they place the true burden of restrictive and preserved-ratio impairment at roughly one in seven older adults by a fixed threshold and about one in twenty-five by the LLN—substantial and worth attention, but far from the two-in-five figure that a transplanted reference implies.
+Under the nationally representative LASI reference, PRISm affected 13.8% (95% CI 13.2–14.4) of middle-aged and older Indians by the fixed threshold and 4.0% (3.7–4.4) by the LLN; the restrictive pattern affected 14.4% (13.8–15.1) and 4.8% (4.4–5.2) respectively; airflow obstruction affected 6.6% (6.2–7.1) by the LLN (Table 2). These are the first estimates of these quantities against a home-grown national standard, and they place the true burden of restrictive and preserved-ratio impairment at roughly one in seven older adults by a fixed threshold and about one in twenty-five by the LLN—substantial and worth attention, but far from the two-in-five figure that a transplanted reference implies.
 
 ## Discussion
 
-Using the first nationally representative spirometry sample of older Indians, we derived and validated national reference equations and showed that much of India's apparent restrictive and preserved-ratio "epidemic" is a property of the reference equation rather than of the lungs. The same participants were labelled with PRISm prevalence of 46% under a race-neutral global reference, 41% under the GLI South-East Asian module actually embedded in LASI, and 12% under a reference built from healthy Indians themselves. The national equations are well calibrated on held-out data and are provided in a directly usable form.
+Using the first nationally representative spirometry sample of older Indians, we derived and validated national reference equations and showed that much of India's apparent restrictive and preserved-ratio "epidemic" is a property of the reference equation rather than of the lungs. The same participants were labelled with PRISm prevalence of 46.3% under a race-neutral global reference, 40.6% under the GLI South-East Asian module actually embedded in LASI, and 13.8% under a reference built from healthy Indians themselves. The national equations are well calibrated on held-out data and are provided in a directly usable form.
+
+The novelty is therefore practical as well as statistical. Prior Indian equations established that regional Indian populations differ from GLI norms, but they were not built from a national sampling frame and could not quantify the national reclassification effect in the same individuals. LASI makes both steps possible: derivation of an Indian ageing-population reference and direct re-estimation of burden under competing references. The resulting message is actionable for respiratory care, because a laboratory or programme using GLI defaults in older Indians will not merely shift a z-score distribution; it will change who is labelled abnormal, who is sent for further work-up, and how national prevalence is described.
+
+Several choices were made to favour robustness over a visually smooth curve alone. We used a respiratory-healthy subset with acceptable spirometry, separated derivation by sex, modelled the median, variation, and skewness rather than only the mean, and validated calibration in a held-out sample before refitting the release equation on all eligible healthy participants. We also compared the new reference with two GLI standards and two Indian regional equations in the identical analytic sample. The direction of change was coherent across fixed and LLN thresholds and across PRISm and RSP: global references over-called impairment most, regional Indian equations moved estimates downward, and the national LASI equations recentred the population. This pattern would be unlikely if the result were driven only by model choice.
 
 Three points follow. First, the direction and size of the reference effect are exactly what a population with intrinsically smaller lung volumes predicts: the Indian median sits about one standard deviation below the GLI mean, so a fixed percent-predicted or a foreign LLN classifies a large, spurious fraction as impaired. Second, the race-neutral GLI-Global equations, although an advance for equity in mixed populations, do not solve the problem for South Asians and in our data made it worse, because averaging across the world's populations still overshoots South Asian volumes; a race-neutral global reference is not the same as a locally representative one. Third, the regional Indian equations (Chhabra, Agarwal) bracket our national estimate, which is the behaviour expected if all three approximate the same underlying Indian physiology while our sample is uniquely national in scope.
 
 The clinical and public-health implication is not that restrictive and preserved-ratio patterns are unimportant in India—at roughly one in eight older adults by a national reference they remain common, and they carry recognised associations with frailty, disability, and mortality—but that their magnitude and the individuals they identify depend on using an appropriate reference. Reporting spirometry in older Indians against these national equations, rather than against GLI defaults, would reduce systematic over-diagnosis of restriction and provide a fairer denominator for burden estimates and programme planning.
 
+Implementation is a key part of that implication. A reference equation that remains only a printed table is unlikely to change practice, particularly when most spirometry software defaults to GLI. For this reason the release is deliberately redundant: the manuscript provides the formulae and selected lookup values, the supplement provides the tabulated LMS values, and the accompanying software package applies the same formulae programmatically. This allows a clinician or analyst to verify a single patient manually, a laboratory to embed the calculations in a reporting workflow, and a researcher to re-score an epidemiological dataset. The package also makes the age boundary explicit and refuses extrapolation beyond 45–90 years by default, which is important because an apparently convenient national equation could otherwise be misapplied to young adults and children.
+
+The results should be interpreted as a first national standard for older Indians, not as the final word on Indian lung-function prediction. The proper next step is not to discard GLI in all settings but to test the LASI equations prospectively and externally: in hospital pulmonary-function laboratories, community screening programmes, occupational cohorts, and future LASI waves. Agreement with regional Indian equations provides reassurance about direction, but external validation should examine calibration by region, rural/urban residence, height extremes, age above 80 years, and histories such as prior tuberculosis or biomass exposure. If such validation confirms the current calibration, the equations could support a pragmatic Indian reporting pathway in which older adults are interpreted against a national reference, while younger ages await a deliberately sampled all-age Indian reference.
+
+Adoption should also preserve interpretive discipline. The equations do not replace clinical assessment, imaging, bronchodilator testing, or full lung-volume measurement when those are indicated. Their purpose is narrower but important: to provide a population-appropriate predicted value, z-score, and LLN for the first step of spirometric interpretation in older Indians, so that subsequent clinical decisions begin from a fair reference.
+
 **Strengths and limitations.** The principal strength is the source: a large, nationally representative sample enabling the first national reference for older Indians, with internal validation. Limitations are real and stated plainly. LASI spirometry was performed in the field with a handheld device; without released calibration logs and individual flow–volume traces, the measurement floor is that of a large field survey rather than a research laboratory, and our equations should be regarded as population-representative rather than laboratory-gold-standard. The reference is confined to ages ≥45 years, so these are explicitly equations for the ageing population and must not be extrapolated to younger adults. "Healthy" was defined from self-reported never-smoking and absence of lung disease, without a respiratory-symptom questionnaire or prior-tuberculosis detail, so some misclassification is inevitable. Spirometry was pre-bronchodilator, and the analysis is cross-sectional. The equations are first-generation: although fitted by the full GAMLSS/LMS method, extension to LASI Wave 2, external validation in independent Indian cohorts, and the addition of younger adults are the natural next steps toward a definitive national standard.
 
-## Conclusions
+## Conclusion
 
 India has lacked a nationally representative spirometry reference, and the resulting reliance on foreign or regional equations has substantially overstated the burden of restrictive and preserved-ratio impairment in older adults. We provide GAMLSS/LMS-based national reference equations derived from healthy participants in the Longitudinal Ageing Study in India, together with a usable lookup table, and show that the true burden—about one in seven older adults for PRISm and the restrictive pattern by a fixed threshold—is far lower than global equations imply. We recommend their use for interpreting spirometry in middle-aged and older Indians, and their extension to future waves and external validation toward a definitive national standard.
 
-## Declarations
+## Clinical Significance
 
-**Ethics:** Secondary analysis of de-identified, publicly available LASI Wave 1 data (ICMR approval and written informed consent obtained by LASI). No additional approval required.
+These equations give respiratory clinicians a nationally representative reference for interpreting spirometry in Indians aged 45 years and older. Their use can reduce systematic over-diagnosis of restrictive and preserved-ratio impairment caused by applying GLI equations to a population with lower expected lung volumes. For respiratory-care programmes, the re-estimated prevalence provides a more credible denominator for planning, referral, and surveillance. The equations should be used within their intended age range and strengthened through external validation and future LASI waves.
 
-**Funding:** None.
+## List of Abbreviations
 
-**Conflicts of interest:** None declared.
-
-**Data availability:** LASI Wave 1 data are available through the Gateway to Global Aging Data (g2aging.org) and IIPS. Full derivation code, coefficient tables, and the lookup grid are available from the author on reasonable request.
-
-**Author contributions:** The single author conceived and designed the study, performed the analysis, interpreted the findings, drafted and revised the manuscript, and approved the final version.
-
-**Declaration of generative AI:** The author used a generative AI assistant for language editing and to help organise tables and figure code. All study conception, analysis, interpretation, and scientific claims are the author's own; every numerical result was verified against the analysis and every reference against its primary source. The author takes full responsibility for the content.
+ATS, American Thoracic Society; BCCG, Box-Cox Cole-Green; CI, confidence interval; ERS, European Respiratory Society; FEV1, forced expiratory volume in 1 second; FVC, forced vital capacity; GAMLSS, generalized additive models for location, scale and shape; GLI, Global Lung Function Initiative; LASI, Longitudinal Ageing Study in India; LLN, lower limit of normal; LMS, lambda-mu-sigma; PRISm, preserved ratio impaired spirometry; RSP, restrictive spirometric pattern; STROBE, Strengthening the Reporting of Observational Studies in Epidemiology.
 
 ## References
 
@@ -130,35 +144,7 @@ India has lacked a nationally representative spirometry reference, and the resul
 
 Descriptive medians by age band are given in Supplementary Table S1.
 
-**Table 2. Predicted median and lower limit of normal (LLN), selected age–height combinations (national LASI reference).**
-
-| Sex | Age | Height (cm) | FEV1 median (L) | FEV1 LLN (L) | FVC median (L) | FVC LLN (L) |
-|---|---|---|---|---|---|---|
-| Men | 50 | 165 | 2.41 | 1.56 | 3.00 | 2.00 |
-| Men | 60 | 165 | 2.19 | 1.37 | 2.78 | 1.83 |
-| Men | 70 | 165 | 1.95 | 1.19 | 2.54 | 1.63 |
-| Men | 80 | 165 | 1.74 | 1.02 | 2.31 | 1.45 |
-| Women | 50 | 150 | 1.69 | 1.10 | 2.08 | 1.40 |
-| Women | 60 | 150 | 1.57 | 0.98 | 1.95 | 1.29 |
-| Women | 70 | 150 | 1.41 | 0.85 | 1.78 | 1.14 |
-| Women | 80 | 150 | 1.27 | 0.72 | 1.60 | 0.98 |
-
-Full lookup grid (heights 145–175 cm) in Supplementary Table S4.
-
-**Table 3. Internal validation: held-out z-scores (overall).**
-
-| Sex | Parameter | n | Mean z | SD z |
-|---|---|---|---|---|
-| Men | FVC | 2,049 | −0.05 | 1.01 |
-| Women | FVC | 2,812 | −0.03 | 1.00 |
-| Men | FEV1 | 2,049 | −0.03 | 1.01 |
-| Women | FEV1 | 2,812 | −0.02 | 0.98 |
-| Men | FEV1/FVC | 2,049 | 0.03 | 1.00 |
-| Women | FEV1/FVC | 2,812 | 0.01 | 0.98 |
-
-A well-calibrated reference yields mean z ≈ 0 and SD ≈ 1.
-
-**Table 4. PRISm and RSP prevalence by reference equation, and the re-estimated national burden.**
+**Table 2. PRISm and RSP prevalence by reference equation, and the re-estimated national burden.**
 
 | Reference | PRISm fixed, % (95% CI) | PRISm LLN, % | RSP fixed, % | RSP LLN, % |
 |---|---|---|---|---|

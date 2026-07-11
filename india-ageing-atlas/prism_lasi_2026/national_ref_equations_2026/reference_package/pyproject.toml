@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lasi-spirometry-reference"
+version = "0.1.0"
+description = "National LASI GAMLSS/LMS spirometry reference equations for Indian adults aged 45 years and older."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "Siddalingaiah H S" }
+]
+keywords = ["spirometry", "LASI", "GAMLSS", "LMS", "India", "respiratory"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Medical Science Apps."
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+lasi_spirometry_reference = ["data/*.csv"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

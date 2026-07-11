@@ -60,7 +60,7 @@ Reference height: men 162.5 cm, women 150.6 cm. Height exponent *b* (for M scali
 
 Full single-year L, M, S curves (ages 45–90) accompany the analysis code.
 
-## Supplementary Table S3. Full lookup table — predicted median and LLN (litres) by age and height (GAMLSS reference)
+## Supplementary Table S3. Lookup table — predicted median and LLN (litres) by age and height (GAMLSS reference)
 
 | Sex | Age | Height (cm) | FEV1 median | FEV1 LLN | FVC median | FVC LLN |
 |---|---|---|---|---|---|---|
@@ -107,6 +107,19 @@ Full single-year L, M, S curves (ages 45–90) accompany the analysis code.
 
 Intermediate ages and heights are obtained from the L, M, S values (Supplementary Table S2) via the formulae above.
 
+## Supplementary Table S4. Internal validation: held-out z-scores (overall)
+
+| Sex | Parameter | n | Mean z | SD z |
+|---|---|---|---|---|
+| Men | FVC | 2,049 | −0.05 | 1.01 |
+| Women | FVC | 2,812 | −0.03 | 1.00 |
+| Men | FEV1 | 2,049 | −0.03 | 1.01 |
+| Women | FEV1 | 2,812 | −0.02 | 0.98 |
+| Men | FEV1/FVC | 2,049 | 0.03 | 1.00 |
+| Women | FEV1/FVC | 2,812 | 0.01 | 0.98 |
+
+A well-calibrated reference yields mean z ≈ 0 and SD ≈ 1.
+
 ## Supplementary Note — method and validation
 
-Models were fitted in R (`gamlss`, BCCGo family) with penalized B-splines `pb()` for the L, M, and S curves in age, and log-height as a linear term in the median for volumes. A simpler quadratic-in-age, log-normal (L fixed) parameterization implemented in Python gave concordant estimates (PRISm 11.9% fixed / 5.3% LLN versus the GAMLSS 13.8% / 4.0%), confirming the burden re-estimation is not an artefact of the modelling choice. Held-out validation (main Table 3) gave z-score means within ±0.05 and standard deviations 0.98–1.01 for all six sex × parameter combinations.
+Models were fitted in R (`gamlss`, BCCGo family) with penalized B-splines `pb()` for the L, M, and S curves in age, and log-height as a linear term in the median for volumes. A simpler quadratic-in-age, log-normal (L fixed) parameterization implemented in Python gave concordant estimates (PRISm 11.9% fixed / 5.3% LLN versus the GAMLSS 13.8% / 4.0%), confirming the burden re-estimation is not an artefact of the modelling choice. Held-out validation (Supplementary Table S4) gave z-score means within ±0.05 and standard deviations 0.98–1.01 for all six sex × parameter combinations.
