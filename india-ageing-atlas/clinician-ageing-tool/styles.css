@@ -43,6 +43,13 @@ body {
   line-height: 1.5;
 }
 
+body,
+button,
+input,
+select {
+  overflow-wrap: anywhere;
+}
+
 .skip-link {
   position: fixed;
   top: 10px;
@@ -424,6 +431,13 @@ select {
   letter-spacing: 0;
 }
 
+.panel-intro {
+  max-width: 720px;
+  margin: 8px 0 0;
+  color: #4e6173;
+  font-size: 0.96rem;
+}
+
 .output-heading {
   display: flex;
   align-items: flex-start;
@@ -500,7 +514,7 @@ a:focus-visible {
 
 .load-gauge {
   display: grid;
-  grid-template-columns: 1fr 58px;
+  grid-template-columns: minmax(0, 1fr) 58px;
   align-items: center;
   gap: 12px;
   border: 1px solid #d9e5eb;
@@ -511,6 +525,7 @@ a:focus-visible {
 
 .load-gauge span,
 .load-gauge strong,
+.load-gauge small,
 .priority-stack span,
 .priority-stack strong {
   display: block;
@@ -528,7 +543,17 @@ a:focus-visible {
   font-size: 1.4rem;
 }
 
+.load-gauge small {
+  grid-column: 1;
+  margin-top: -8px;
+  color: #617386;
+  font-size: 0.76rem;
+  line-height: 1.25;
+}
+
 .load-gauge i {
+  grid-column: 2;
+  grid-row: 1 / span 3;
   display: block;
   width: 52px;
   height: 52px;
@@ -581,14 +606,19 @@ a:focus-visible {
 
 .summary-strip {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
   margin-bottom: 18px;
 }
 
 .metric {
+  display: grid;
+  align-content: start;
+  min-height: 142px;
   border-top: 4px solid var(--teal);
-  background: linear-gradient(180deg, #fff, #fbfdff);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(247, 252, 255, 0.97)),
+    linear-gradient(135deg, rgba(8, 127, 122, 0.08), rgba(14, 143, 176, 0.08));
 }
 
 .metric:nth-child(2) {
@@ -627,8 +657,19 @@ a:focus-visible {
 }
 
 .metric strong {
-  margin-top: 4px;
-  font-size: 1.44rem;
+  margin-top: 6px;
+  font-size: clamp(1.08rem, 1.8vw, 1.42rem);
+  line-height: 1.16;
+  overflow-wrap: anywhere;
+}
+
+.metric em {
+  display: block;
+  margin-top: 8px;
+  color: #4f6171;
+  font-size: 0.84rem;
+  font-style: normal;
+  line-height: 1.38;
 }
 
 .result-grid {
@@ -647,7 +688,9 @@ a:focus-visible {
 .result-card strong {
   display: block;
   margin: 4px 0 8px;
-  font-size: 1.7rem;
+  font-size: clamp(1.24rem, 2vw, 1.7rem);
+  line-height: 1.15;
+  overflow-wrap: anywhere;
 }
 
 .bar {
@@ -1074,15 +1117,36 @@ a:focus-visible {
 }
 
 .site-footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 22px clamp(18px, 5vw, 72px);
-  border-top: 1px solid var(--line);
-  background: #fff;
-  color: var(--muted);
-  font-size: 0.88rem;
+  display: grid;
+  grid-template-columns: minmax(180px, 0.7fr) minmax(260px, 1.45fr) minmax(180px, 0.85fr);
+  gap: 16px;
+  padding: 26px clamp(18px, 5vw, 72px);
+  border-top: 1px solid rgba(14, 143, 176, 0.24);
+  background:
+    linear-gradient(135deg, rgba(22, 33, 46, 0.97), rgba(17, 80, 101, 0.96) 54%, rgba(8, 98, 90, 0.96)),
+    var(--ink);
+  color: #dcebf2;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.site-footer span {
+  min-width: 0;
+}
+
+.site-footer span:first-child {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.site-footer span:nth-child(2) {
+  color: #eaf6f4;
+}
+
+.site-footer span:last-child {
+  color: #ffd992;
+  font-weight: 800;
 }
 
 .mobile-tabbar {
@@ -1145,6 +1209,10 @@ a:focus-visible {
 
   .care-map-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1220,6 +1288,14 @@ a:focus-visible {
   .output-meta {
     display: inline-flex;
     margin-top: 10px;
+  }
+
+  .results-panel {
+    padding: 18px 14px;
+  }
+
+  .metric {
+    min-height: auto;
   }
 
   .brand small {

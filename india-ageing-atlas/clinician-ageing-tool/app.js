@@ -467,16 +467,21 @@ function renderSummary(patient, respiratory, actions) {
   const high = actions.filter((item) => item.priority === "High").length;
   const moderate = actions.filter((item) => item.priority === "Moderate").length;
   const bmiLabel = patient.bmi === null ? "Not entered" : patient.bmi.toFixed(1);
-  const lungPattern = patternLabel(respiratory.classification);
+  const lungPattern = patternShortLabel(respiratory.classification);
+  const ratioStatus = respiratory.classification.obstructionLln ? "Below LASI LLN" : "At or above LASI LLN";
+  const fev1Status = respiratory.fev1.observed < respiratory.fev1.lln ? "below LLN" : "at or above LLN";
+  const fvcStatus = respiratory.fvc.observed < respiratory.fvc.lln ? "below LLN" : "at or above LLN";
+  const priorityText = high > 0 ? "Prompt review" : moderate > 1 ? "Structured review" : "Routine review";
+  const metabolicText = metabolicSummary(patient);
   summaryStrip.innerHTML = [
-    metric("Pattern", lungPattern),
-    metric("FEV1", `${respiratory.fev1.percentPredicted.toFixed(0)}% predicted`),
-    metric("FVC", `${respiratory.fvc.percentPredicted.toFixed(0)}% predicted`),
-    metric("BMI", bmiLabel),
-    metric("High priority", String(high)),
-    metric("Moderate", String(moderate)),
-    metric("Ratio", `${respiratory.ratio.observed.toFixed(1)}%`),
-    metric("Age range", "LASI 45-90"),
+    metric("Overall lung pattern", lungPattern, "Screening flag from FEV1, FVC, and FEV1/FVC against LASI LLN."),
+    metric("FEV1 vs reference", `${respiratory.fev1.percentPredicted.toFixed(0)}% predicted`, `Observed ${respiratory.fev1.observed.toFixed(2)} L; ${fev1Status}.`),
+    metric("FVC vs reference", `${respiratory.fvc.percentPredicted.toFixed(0)}% predicted`, `Observed ${respiratory.fvc.observed.toFixed(2)} L; ${fvcStatus}.`),
+    metric("FEV1/FVC ratio", `${respiratory.ratio.observed.toFixed(1)}%`, ratioStatus),
+    metric("Clinical review priority", priorityText, `${high} high-priority and ${moderate} moderate-priority prompts generated.`),
+    metric("Metabolic snapshot", metabolicText, "BMI, blood pressure, and HbA1c entered for this visit."),
+    metric("BMI", bmiLabel, patient.bmi === null ? "Weight or height not entered." : "Use with age, function, nutrition, and comorbidity context."),
+    metric("Reference range", "LASI 45-90 years", `Current entry: ${patient.age.toFixed(1)} years, ${patient.height.toFixed(1)} cm.`),
   ].join("");
 }
 
@@ -489,9 +494,9 @@ function renderReviewLoad(actions) {
   loadGauge.style.setProperty("--load", `${score}%`);
   loadGauge.querySelector("strong").textContent = label;
   priorityStack.innerHTML = `
-    <div><span>High</span><strong>${high}</strong></div>
-    <div><span>Moderate</span><strong>${moderate}</strong></div>
-    <div><span>Routine</span><strong>${actions.filter((item) => item.priority === "Routine").length}</strong></div>
+    <div><span>High-priority prompts</span><strong>${high}</strong></div>
+    <div><span>Moderate prompts</span><strong>${moderate}</strong></div>
+    <div><span>Routine prompts</span><strong>${actions.filter((item) => item.priority === "Routine").length}</strong></div>
   `;
 }
 
@@ -585,8 +590,14 @@ function renderError(message) {
   setOutputMeta("Check inputs");
 }
 
-function metric(label, value) {
-  return `<div class="metric"><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong></div>`;
+function metric(label, value, detail) {
+  return `
+    <div class="metric">
+      <span>${escapeHtml(label)}</span>
+      <strong>${escapeHtml(value)}</strong>
+      <em>${escapeHtml(detail)}</em>
+    </div>
+  `;
 }
 
 function card(label, score, unit) {
@@ -624,6 +635,17 @@ function patternLabel(c) {
   if (c.prismFixed) return "PRISm flag by fixed 80% threshold";
   if (c.rspFixed) return "Restrictive spirometric pattern flag by fixed 80% threshold";
   return "No LASI LLN impairment flag";
+}
+
+function patternShortLabel(c) {
+  if (c.obstructionLln) return "Obstruction flag";
+  if (c.prismLln && c.rspLln) return "Low FEV1 + low FVC";
+  if (c.prismLln) return "PRISm flag";
+  if (c.rspLln) return "Restrictive pattern flag";
+  if (c.prismFixed && c.rspFixed) return "Low FEV1 + low FVC";
+  if (c.prismFixed) return "PRISm flag";
+  if (c.rspFixed) return "Restrictive pattern flag";
+  return "No LLN impairment flag";
 }
 
 function buildReportText(patient, respiratory, actions, domains, patientCards, followUp) {

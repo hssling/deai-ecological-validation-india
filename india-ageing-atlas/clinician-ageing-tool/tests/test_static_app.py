@@ -91,6 +91,17 @@ def test_app_includes_required_credits_and_acknowledgements():
     assert "University of Southern California" in text
 
 
+def test_assessment_summary_explains_outputs():
+    html = (ROOT / "index.html").read_text(encoding="utf-8")
+    js = (ROOT / "app.js").read_text(encoding="utf-8")
+    assert "Snapshot of the current patient entry" in html
+    assert "Based on generated prompts" in html
+    assert "Overall lung pattern" in js
+    assert "FEV1 vs reference" in js
+    assert "Clinical review priority" in js
+    assert "High-priority prompts" in js
+
+
 def test_static_references_resolve():
     html = (ROOT / "index.html").read_text(encoding="utf-8")
     for path in re.findall(r'(?:src|href)="([^"]+)"', html):
