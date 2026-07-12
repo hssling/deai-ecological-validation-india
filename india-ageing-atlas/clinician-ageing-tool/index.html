@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Open-access clinical decision support for healthy ageing and Indian spirometry interpretation using LASI national reference equations.">
+    <title>India Healthy Ageing Clinical Support</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <nav class="topbar" aria-label="Primary">
+        <a class="brand" href="#top" aria-label="India Healthy Ageing Clinical Support home">
+          <span class="brand-mark" aria-hidden="true">IA</span>
+          <span>
+            <strong>India Healthy Ageing Clinical Support</strong>
+            <small>LASI spirometry reference + pragmatic ageing review</small>
+          </span>
+        </a>
+        <div class="nav-actions">
+          <a href="#calculator">Calculator</a>
+          <a href="#evidence">Evidence</a>
+          <button class="ghost-button" type="button" id="printReport">Print</button>
+        </div>
+      </nav>
+
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">Open access clinical decision support</p>
+          <h1>Patient-level ageing and lung-function review for Indian adults aged 45-90 years.</h1>
+          <p class="lede">
+            Enter routine clinical data once to generate LASI-based spirometry predictions,
+            PRISm/RSP/obstruction flags, and structured healthy-ageing prompts for clinician review.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#calculator">Start assessment</a>
+            <a class="secondary-button" href="#scope">Review scope</a>
+          </div>
+        </div>
+        <figure class="hero-figure">
+          <img src="assets/lasi-centile-curves.png" alt="LASI national reference centile curves for FEV1 and FVC by age and sex.">
+          <figcaption>Reference curves bundled from the LASI national GAMLSS/LMS equation package.</figcaption>
+        </figure>
+      </section>
+    </header>
+
+    <main>
+      <section class="notice-band" id="scope">
+        <div>
+          <strong>Clinical boundary:</strong>
+          This tool supports clinician judgement. It is not a diagnosis, prescription engine, emergency triage system,
+          or substitute for local guidelines, examination, spirometry quality review, or specialist referral.
+        </div>
+        <div>
+          <strong>Privacy:</strong>
+          Calculations run in the browser. Do not enter directly identifying patient information.
+        </div>
+      </section>
+
+      <section class="workspace" id="calculator">
+        <form class="input-panel" id="patientForm">
+          <div class="panel-heading">
+            <p class="eyebrow">Patient inputs</p>
+            <h2>Clinical data</h2>
+          </div>
+
+          <div class="field-grid two">
+            <label>
+              <span>Sex recorded for reference equation</span>
+              <select id="sex" required>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+              </select>
+            </label>
+            <label>
+              <span>Age, years</span>
+              <input id="age" type="number" min="45" max="90" step="0.1" value="60" required>
+            </label>
+            <label>
+              <span>Height, cm</span>
+              <input id="height" type="number" min="120" max="210" step="0.1" value="165" required>
+            </label>
+            <label>
+              <span>Weight, kg</span>
+              <input id="weight" type="number" min="25" max="180" step="0.1" value="68">
+            </label>
+          </div>
+
+          <div class="subsection">
+            <h3>Spirometry</h3>
+            <div class="field-grid two">
+              <label>
+                <span>FEV1, L</span>
+                <input id="fev1" type="number" min="0.2" max="7" step="0.01" value="2.10" required>
+              </label>
+              <label>
+                <span>FVC, L</span>
+                <input id="fvc" type="number" min="0.3" max="8" step="0.01" value="2.60" required>
+              </label>
+              <label>
+                <span>Smoking or tobacco exposure</span>
+                <select id="tobacco">
+                  <option value="never">Never or none current</option>
+                  <option value="former">Former</option>
+                  <option value="current">Current</option>
+                  <option value="biomass">Biomass/occupational exposure</option>
+                </select>
+              </label>
+              <label>
+                <span>Dyspnoea, cough, wheeze, or exercise limitation</span>
+                <select id="respSymptoms">
+                  <option value="no">No prominent symptoms</option>
+                  <option value="yes">Present</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h3>Healthy ageing screen</h3>
+            <div class="field-grid two">
+              <label>
+                <span>Systolic BP, mm Hg</span>
+                <input id="sbp" type="number" min="70" max="260" step="1" value="132">
+              </label>
+              <label>
+                <span>Diastolic BP, mm Hg</span>
+                <input id="dbp" type="number" min="40" max="150" step="1" value="82">
+              </label>
+              <label>
+                <span>HbA1c, %</span>
+                <input id="hba1c" type="number" min="3.5" max="16" step="0.1" value="6.1">
+              </label>
+              <label>
+                <span>Falls in past 12 months</span>
+                <input id="falls" type="number" min="0" max="20" step="1" value="0">
+              </label>
+              <label>
+                <span>Unintentional weight loss, exhaustion, or weak grip/gait</span>
+                <select id="frailtySignal">
+                  <option value="no">Not reported</option>
+                  <option value="yes">Reported</option>
+                </select>
+              </label>
+              <label>
+                <span>ADL/IADL difficulty</span>
+                <select id="functionSignal">
+                  <option value="no">None reported</option>
+                  <option value="yes">Reported</option>
+                </select>
+              </label>
+              <label>
+                <span>Memory concern, delirium risk, or cognitive decline</span>
+                <select id="cognitionSignal">
+                  <option value="no">Not reported</option>
+                  <option value="yes">Reported</option>
+                </select>
+              </label>
+              <label>
+                <span>Low mood, anhedonia, anxiety, or sleep concern</span>
+                <select id="moodSignal">
+                  <option value="no">Not reported</option>
+                  <option value="yes">Reported</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="primary-button" type="submit">Update assessment</button>
+            <button class="secondary-button" type="reset">Reset example</button>
+          </div>
+        </form>
+
+        <section class="results-panel" aria-live="polite">
+          <div class="panel-heading">
+            <p class="eyebrow">Decision support output</p>
+            <h2>Assessment summary</h2>
+          </div>
+
+          <div class="summary-strip" id="summaryStrip"></div>
+
+          <div class="result-grid" id="spirometryCards"></div>
+
+          <section class="interpretation">
+            <h3>Respiratory interpretation</h3>
+            <div id="respInterpretation"></div>
+          </section>
+
+          <section class="interpretation">
+            <h3>Healthy ageing actions</h3>
+            <div id="ageingActions"></div>
+          </section>
+        </section>
+      </section>
+
+      <section class="evidence-band" id="evidence">
+        <div class="evidence-copy">
+          <p class="eyebrow">Source and acknowledgements</p>
+          <h2>Built on LASI national GAMLSS/LMS equations</h2>
+          <p>
+            The respiratory module reads the bundled LASI LMS table for FEV1, FVC, and FEV1/FVC,
+            interpolates non-integer ages, applies height scaling for lung volumes, and computes
+            z-scores, lower limits of normal, and percent predicted values.
+          </p>
+          <p>
+            LASI acknowledgement: this tool uses reference equations derived from public-use
+            Longitudinal Ageing Study in India Wave 1 data, conducted by the International Institute
+            for Population Sciences with the Harvard T.H. Chan School of Public Health and the
+            University of Southern California, supported by the Ministry of Health and Family Welfare,
+            Government of India. We thank the LASI investigators and participants.
+          </p>
+          <p>
+            Concept, design, and creation: <strong>Dr Siddalingaiah H S, MD</strong>,
+            Professor, Department of Community Medicine, Shridevi Institute of Medical Sciences
+            and Research Hospital, Tumkur, Karnataka, India. ORCID: 0000-0002-4771-8285.
+          </p>
+        </div>
+        <div class="method-list">
+          <div>
+            <strong>Intended age range</strong>
+            <span>45-90 years; younger adults are not scored.</span>
+          </div>
+          <div>
+            <strong>Current validation</strong>
+            <span>Internally validated on held-out LASI data; external clinical validation remains needed.</span>
+          </div>
+          <div>
+            <strong>Patient privacy</strong>
+            <span>Client-side calculation only; no database or analytics endpoint is used.</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>India Healthy Ageing Clinical Support</span>
+      <span>Concept, design, and creation: Dr Siddalingaiah H S, MD, Professor, Department of Community Medicine, Shridevi Institute of Medical Sciences and Research Hospital, Tumkur, Karnataka, India. ORCID: 0000-0002-4771-8285.</span>
+      <span>LASI Wave 1 reference equations for Indian adults aged 45-90 years</span>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

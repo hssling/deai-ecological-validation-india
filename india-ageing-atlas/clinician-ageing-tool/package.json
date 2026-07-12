@@ -1,0 +1,17 @@
+{
+  "name": "india-healthy-ageing-clinical-support",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Open-access browser clinical decision support using LASI national spirometry reference equations.",
+  "scripts": {
+    "test": "python3 tests/test_static_app.py"
+  },
+  "keywords": [
+    "LASI",
+    "spirometry",
+    "healthy-ageing",
+    "clinical-decision-support",
+    "India"
+  ],
+  "license": "MIT"
+}
