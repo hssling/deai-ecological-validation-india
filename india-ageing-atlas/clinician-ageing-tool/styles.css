@@ -78,8 +78,7 @@ select {
 }
 
 .topbar {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 20;
   display: flex;
   align-items: center;
@@ -89,6 +88,14 @@ select {
   border-bottom: 1px solid rgba(216, 224, 232, 0.92);
   background: rgba(251, 252, 253, 0.94);
   backdrop-filter: blur(14px);
+}
+
+#calculator,
+#care-map,
+#patient-plan,
+#portal,
+#evidence {
+  scroll-margin-top: 72px;
 }
 
 .brand {
@@ -342,8 +349,8 @@ select {
 
 .journey-nav {
   position: sticky;
-  top: 71px;
-  z-index: 15;
+  top: 0;
+  z-index: 35;
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 8px;
@@ -1158,7 +1165,7 @@ a:focus-visible {
   }
 
   .journey-nav {
-    top: 107px;
+    top: 0;
     grid-template-columns: repeat(5, max-content);
     justify-content: start;
     overflow-x: auto;
