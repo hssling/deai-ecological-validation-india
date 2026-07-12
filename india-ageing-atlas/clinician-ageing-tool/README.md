@@ -22,6 +22,15 @@ This static release can be extended into a complete portal in staged modules:
 - Evidence library: LASI provenance, validation notes, guideline links, module status, and change logs.
 - Governance layer: consent language, data minimisation, audit trails, role-based access if accounts are added, and expert clinical review before higher-risk recommendations.
 
+## TODO
+
+- Add longitudinal visit tracking for spirometry, symptoms, falls, BP, HbA1c, function, vaccination status, and patient goals.
+- Build a more complete patient printable report with plain-language interpretation, warning symptoms, follow-up questions, and caregiver notes.
+- Expand frailty, function, cognition, mood, nutrition, falls, medication review, and vaccination modules with validated screening fields.
+- Add clinician dashboard views for domain priorities, follow-up timing, referral prompts, and documentation-ready summaries.
+- Link each module to source notes, LASI provenance, validation status, guideline references, and change logs.
+- Explore optional account-based portal features only after privacy, consent, audit trail, and governance requirements are defined.
+
 ## Clinical Boundary
 
 This is clinical decision support, not a diagnostic or prescribing system. It should be used with spirometry quality review, clinical examination, local guidelines, and appropriate referral pathways. LASI reference equations apply to Indian adults aged 45-90 years and should not be extrapolated to younger adults.
