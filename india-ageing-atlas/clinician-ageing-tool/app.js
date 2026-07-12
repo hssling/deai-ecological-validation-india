@@ -17,10 +17,12 @@ const priorityStack = document.getElementById("priorityStack");
 const copyReport = document.getElementById("copyReport");
 const downloadReport = document.getElementById("downloadReport");
 const printReport = document.getElementById("printReport");
+const backToTop = document.getElementById("backToTop");
 let lastReportText = "";
 let lastReportJson = null;
 
 init();
+initNavigation();
 
 async function init() {
   try {
@@ -60,6 +62,10 @@ form.addEventListener("reset", () => {
 
 printReport.addEventListener("click", () => {
   window.print();
+});
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 copyReport.addEventListener("click", async () => {
@@ -693,6 +699,47 @@ function roundedScore(score) {
 
 function setOutputMeta(text) {
   if (outputMeta) outputMeta.textContent = text;
+}
+
+function initNavigation() {
+  const sectionIds = ["calculator", "care-map", "patient-plan", "portal", "evidence"];
+  const navLinks = Array.from(document.querySelectorAll("[data-nav-link]"));
+  const sectionMap = new Map(
+    sectionIds
+      .map((id) => [id, document.getElementById(id)])
+      .filter(([, element]) => Boolean(element))
+  );
+
+  function setActive(id) {
+    navLinks.forEach((link) => {
+      const active = link.dataset.navLink === id;
+      link.classList.toggle("is-active", active);
+      if (active) {
+        link.setAttribute("aria-current", "true");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) setActive(visible.target.id);
+    }, {
+      rootMargin: "-24% 0px -58% 0px",
+      threshold: [0.08, 0.18, 0.32],
+    });
+    sectionMap.forEach((element) => observer.observe(element));
+  }
+
+  window.addEventListener("scroll", () => {
+    backToTop.classList.toggle("is-visible", window.scrollY > 620);
+  }, { passive: true });
+
+  setActive("calculator");
 }
 
 function numberFrom(id, optional = false) {

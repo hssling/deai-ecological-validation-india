@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <a class="skip-link" href="#calculator">Skip to calculator</a>
     <header class="app-header">
       <nav class="topbar" aria-label="Primary">
         <a class="brand" href="#top" aria-label="India Healthy Ageing Clinical Support home">
@@ -18,11 +19,11 @@
           </span>
         </a>
         <div class="nav-actions">
-          <a href="#calculator">Calculator</a>
-          <a href="#care-map">Care map</a>
-          <a href="#patient-plan">Patient plan</a>
-          <a href="#portal">Portal</a>
-          <a href="#evidence">Evidence</a>
+          <a href="#calculator" data-nav-link="calculator">Calculator</a>
+          <a href="#care-map" data-nav-link="care-map">Care map</a>
+          <a href="#patient-plan" data-nav-link="patient-plan">Patient plan</a>
+          <a href="#portal" data-nav-link="portal">Portal</a>
+          <a href="#evidence" data-nav-link="evidence">Evidence</a>
           <button class="ghost-button" type="button" id="copyReport">Copy</button>
           <button class="ghost-button" type="button" id="downloadReport">JSON</button>
           <button class="ghost-button" type="button" id="printReport">Print</button>
@@ -88,6 +89,14 @@
           Use the output as a structured review checklist after confirming spirometry quality and clinical context.
         </div>
       </section>
+
+      <nav class="journey-nav" aria-label="Assessment sections">
+        <a href="#calculator" data-nav-link="calculator"><span>01</span> Calculator</a>
+        <a href="#care-map" data-nav-link="care-map"><span>02</span> Care map</a>
+        <a href="#patient-plan" data-nav-link="patient-plan"><span>03</span> Patient plan</a>
+        <a href="#portal" data-nav-link="portal"><span>04</span> Portal</a>
+        <a href="#evidence" data-nav-link="evidence"><span>05</span> Evidence</a>
+      </nav>
 
       <section class="workspace" id="calculator">
         <form class="input-panel" id="patientForm">
@@ -395,6 +404,15 @@
       <span>Concept, design, and creation: Dr Siddalingaiah H S, MD, Professor, Department of Community Medicine, Shridevi Institute of Medical Sciences and Research Hospital, Tumkur, Karnataka, India. ORCID: 0000-0002-4771-8285.</span>
       <span>LASI Wave 1 reference equations for Indian adults aged 45-90 years</span>
     </footer>
+
+    <nav class="mobile-tabbar" aria-label="Mobile section navigation">
+      <a href="#calculator" data-nav-link="calculator"><span>Calc</span></a>
+      <a href="#care-map" data-nav-link="care-map"><span>Care</span></a>
+      <a href="#patient-plan" data-nav-link="patient-plan"><span>Plan</span></a>
+      <a href="#portal" data-nav-link="portal"><span>Portal</span></a>
+      <a href="#evidence" data-nav-link="evidence"><span>Info</span></a>
+    </nav>
+    <button class="back-to-top" type="button" id="backToTop" aria-label="Back to top">Top</button>
 
     <script src="app.js"></script>
   </body>

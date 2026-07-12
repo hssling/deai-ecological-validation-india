@@ -10,6 +10,7 @@ The first release provides:
 - Client-side calculation only; no patient database and no server-side clinical data handling.
 - A visible roadmap for expanding into a full clinician and patient healthy ageing portal.
 - A patient companion plan, follow-up planner, and local JSON export for documentation workflows.
+- Mobile-friendly navigation with section highlighting, a bottom tab bar, skip link, and back-to-top control.
 
 ## Portal Expansion Path
 
