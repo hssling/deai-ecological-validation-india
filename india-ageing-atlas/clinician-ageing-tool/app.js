@@ -8,7 +8,13 @@ const summaryStrip = document.getElementById("summaryStrip");
 const spirometryCards = document.getElementById("spirometryCards");
 const respInterpretation = document.getElementById("respInterpretation");
 const ageingActions = document.getElementById("ageingActions");
+const careMap = document.getElementById("careMap");
+const outputMeta = document.getElementById("outputMeta");
+const loadGauge = document.getElementById("loadGauge");
+const priorityStack = document.getElementById("priorityStack");
+const copyReport = document.getElementById("copyReport");
 const printReport = document.getElementById("printReport");
+let lastReportText = "";
 
 init();
 
@@ -52,6 +58,16 @@ printReport.addEventListener("click", () => {
   window.print();
 });
 
+copyReport.addEventListener("click", async () => {
+  if (!lastReportText) return;
+  try {
+    await navigator.clipboard.writeText(lastReportText);
+    setOutputMeta("Summary copied");
+  } catch {
+    setOutputMeta("Copy unavailable");
+  }
+});
+
 function updateAssessment() {
   if (!state.lmsRows.length) return;
 
@@ -59,10 +75,15 @@ function updateAssessment() {
     const patient = readPatient();
     const respiratory = scoreSpirometry(patient);
     const actions = buildAgeingActions(patient, respiratory);
+    const domainScores = buildDomainScores(patient, respiratory, actions);
     renderSummary(patient, respiratory, actions);
+    renderReviewLoad(actions);
     renderSpirometryCards(respiratory);
+    renderCareMap(domainScores);
     renderRespiratoryInterpretation(patient, respiratory);
     renderAgeingActions(actions);
+    lastReportText = buildReportText(patient, respiratory, actions, domainScores);
+    setOutputMeta("Updated " + new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }));
   } catch (error) {
     renderError(error.message);
   }
@@ -275,6 +296,53 @@ function action(domain, priority, text) {
   return { domain, priority, text };
 }
 
+function buildDomainScores(patient, respiratory, actions) {
+  const c = respiratory.classification;
+  const respiratoryLevel = c.obstructionLln || patient.respSymptoms === "yes"
+    ? "High"
+    : c.prismLln || c.rspLln || c.prismFixed || c.rspFixed || patient.tobacco !== "never"
+      ? "Moderate"
+      : "Routine";
+  return [
+    domain("Respiratory", respiratoryLevel, respiratorySummary(patient, respiratory), "--lung"),
+    domain("Metabolic", metabolicLevel(patient), metabolicSummary(patient), "--metabolic"),
+    domain("Frailty", patient.frailtySignal === "yes" ? "High" : "Routine", patient.frailtySignal === "yes" ? "Frailty signal reported" : "No frailty signal entered", "--frailty"),
+    domain("Function", patient.functionSignal === "yes" ? "High" : "Routine", patient.functionSignal === "yes" ? "ADL/IADL difficulty reported" : "No functional difficulty entered", "--function"),
+    domain("Falls", patient.falls > 1 ? "High" : patient.falls === 1 ? "Moderate" : "Routine", patient.falls > 0 ? `${patient.falls} fall(s) in 12 months` : "No falls entered", "--falls"),
+    domain("Cognition", patient.cognitionSignal === "yes" ? "Moderate" : "Routine", patient.cognitionSignal === "yes" ? "Cognitive concern reported" : "No cognitive concern entered", "--cognition"),
+    domain("Mood and sleep", patient.moodSignal === "yes" ? "Moderate" : "Routine", patient.moodSignal === "yes" ? "Mood, anxiety, or sleep concern reported" : "No mood/sleep concern entered", "--mood"),
+    domain("Prevention", "Routine", "Vaccination, medications, nutrition, activity, vision/hearing, and social support review", "--prevention"),
+  ];
+}
+
+function domain(label, priority, summary, colorVar) {
+  return { label, priority, summary, colorVar };
+}
+
+function respiratorySummary(patient, respiratory) {
+  const pattern = patternLabel(respiratory.classification);
+  const symptom = patient.respSymptoms === "yes" ? "symptoms present" : "no prominent symptoms entered";
+  return `${pattern}; ${symptom}`;
+}
+
+function metabolicLevel(patient) {
+  if (patient.sbp >= 160 || patient.dbp >= 100 || patient.hba1c >= 6.5 || (patient.bmi !== null && (patient.bmi < 18.5 || patient.bmi >= 30))) {
+    return "Moderate";
+  }
+  if (patient.sbp >= 140 || patient.dbp >= 90 || patient.hba1c >= 5.7 || (patient.bmi !== null && patient.bmi >= 25)) {
+    return "Routine";
+  }
+  return "Routine";
+}
+
+function metabolicSummary(patient) {
+  const bits = [];
+  if (patient.bmi !== null) bits.push(`BMI ${patient.bmi.toFixed(1)}`);
+  if (patient.sbp !== null && patient.dbp !== null) bits.push(`BP ${patient.sbp}/${patient.dbp}`);
+  if (patient.hba1c !== null) bits.push(`HbA1c ${patient.hba1c.toFixed(1)}%`);
+  return bits.length ? bits.join("; ") : "Metabolic values not fully entered";
+}
+
 function renderSummary(patient, respiratory, actions) {
   const high = actions.filter((item) => item.priority === "High").length;
   const moderate = actions.filter((item) => item.priority === "Moderate").length;
@@ -292,6 +360,21 @@ function renderSummary(patient, respiratory, actions) {
   ].join("");
 }
 
+function renderReviewLoad(actions) {
+  const high = actions.filter((item) => item.priority === "High").length;
+  const moderate = actions.filter((item) => item.priority === "Moderate").length;
+  const score = Math.min(100, high * 32 + moderate * 16 + 10);
+  const label = high > 0 ? "High" : moderate > 1 ? "Moderate" : "Routine";
+  loadGauge.className = `load-gauge ${label.toLowerCase()}`;
+  loadGauge.style.setProperty("--load", `${score}%`);
+  loadGauge.querySelector("strong").textContent = label;
+  priorityStack.innerHTML = `
+    <div><span>High</span><strong>${high}</strong></div>
+    <div><span>Moderate</span><strong>${moderate}</strong></div>
+    <div><span>Routine</span><strong>${actions.filter((item) => item.priority === "Routine").length}</strong></div>
+  `;
+}
+
 function renderSpirometryCards(respiratory) {
   const cards = [
     card("FEV1", respiratory.fev1, "L"),
@@ -299,6 +382,19 @@ function renderSpirometryCards(respiratory) {
     card("FEV1/FVC", respiratory.ratio, "%"),
   ];
   spirometryCards.innerHTML = cards.join("");
+}
+
+function renderCareMap(domains) {
+  careMap.innerHTML = domains.map((item) => `
+    <article class="care-domain ${priorityClass(item.priority)}" style="--domain-color: var(${item.colorVar})">
+      <div class="domain-icon" aria-hidden="true"></div>
+      <div>
+        <span>${escapeHtml(item.priority)}</span>
+        <strong>${escapeHtml(item.label)}</strong>
+        <p>${escapeHtml(item.summary)}</p>
+      </div>
+    </article>
+  `).join("");
 }
 
 function renderRespiratoryInterpretation(patient, respiratory) {
@@ -321,7 +417,7 @@ function renderRespiratoryInterpretation(patient, respiratory) {
 
 function renderAgeingActions(actions) {
   ageingActions.innerHTML = `<div class="action-list">${actions.map((item) => `
-    <div class="action-item">
+    <div class="action-item ${priorityClass(item.priority)}">
       <strong>${escapeHtml(item.domain)}<br>${escapeHtml(item.priority)}</strong>
       <p>${escapeHtml(item.text)}</p>
     </div>
@@ -331,8 +427,17 @@ function renderAgeingActions(actions) {
 function renderError(message) {
   summaryStrip.innerHTML = `<div class="error-state">${escapeHtml(message)}</div>`;
   spirometryCards.innerHTML = "";
+  careMap.innerHTML = "";
   respInterpretation.innerHTML = "";
   ageingActions.innerHTML = "";
+  if (loadGauge) {
+    loadGauge.className = "load-gauge";
+    loadGauge.style.setProperty("--load", "0%");
+    loadGauge.querySelector("strong").textContent = "--";
+  }
+  if (priorityStack) priorityStack.innerHTML = "";
+  lastReportText = "";
+  setOutputMeta("Check inputs");
 }
 
 function metric(label, value) {
@@ -361,6 +466,10 @@ function tag(text, level) {
   return `<div class="tag ${level || ""}">${escapeHtml(text)}</div>`;
 }
 
+function priorityClass(priority) {
+  return String(priority).toLowerCase().replaceAll(" ", "-");
+}
+
 function patternLabel(c) {
   if (c.obstructionLln) return "Airflow obstruction flag by LASI LLN";
   if (c.prismLln && c.rspLln) return "Preserved ratio with low FEV1 and low FVC by LLN";
@@ -370,6 +479,35 @@ function patternLabel(c) {
   if (c.prismFixed) return "PRISm flag by fixed 80% threshold";
   if (c.rspFixed) return "Restrictive spirometric pattern flag by fixed 80% threshold";
   return "No LASI LLN impairment flag";
+}
+
+function buildReportText(patient, respiratory, actions, domains) {
+  const lines = [
+    "India Healthy Ageing Clinical Support",
+    "Clinical decision support summary - not a diagnosis",
+    "",
+    `Age: ${patient.age} years; sex for reference equation: ${patient.sex}; height: ${patient.height} cm`,
+    `BMI: ${patient.bmi === null ? "not entered" : patient.bmi.toFixed(1)}`,
+    "",
+    "Spirometry against LASI national reference:",
+    `FEV1 ${patient.fev1.toFixed(2)} L; predicted ${respiratory.fev1.predicted.toFixed(2)} L; LLN ${respiratory.fev1.lln.toFixed(2)} L; z ${respiratory.fev1.z.toFixed(2)}; ${respiratory.fev1.percentPredicted.toFixed(0)}% predicted`,
+    `FVC ${patient.fvc.toFixed(2)} L; predicted ${respiratory.fvc.predicted.toFixed(2)} L; LLN ${respiratory.fvc.lln.toFixed(2)} L; z ${respiratory.fvc.z.toFixed(2)}; ${respiratory.fvc.percentPredicted.toFixed(0)}% predicted`,
+    `FEV1/FVC ${respiratory.ratio.observed.toFixed(1)}%; predicted ${respiratory.ratio.predicted.toFixed(1)}%; LLN ${respiratory.ratio.lln.toFixed(1)}%; z ${respiratory.ratio.z.toFixed(2)}`,
+    `Pattern: ${patternLabel(respiratory.classification)}`,
+    "",
+    "Care map:",
+    ...domains.map((item) => `- ${item.label}: ${item.priority} - ${item.summary}`),
+    "",
+    "Suggested clinical review prompts:",
+    ...actions.map((item) => `- ${item.domain} (${item.priority}): ${item.text}`),
+    "",
+    "Source: LASI national GAMLSS/LMS spirometry reference equations for Indian adults aged 45-90 years.",
+  ];
+  return lines.join("\n");
+}
+
+function setOutputMeta(text) {
+  if (outputMeta) outputMeta.textContent = text;
 }
 
 function numberFrom(id, optional = false) {

@@ -19,7 +19,10 @@
         </a>
         <div class="nav-actions">
           <a href="#calculator">Calculator</a>
+          <a href="#care-map">Care map</a>
+          <a href="#portal">Portal</a>
           <a href="#evidence">Evidence</a>
+          <button class="ghost-button" type="button" id="copyReport">Copy</button>
           <button class="ghost-button" type="button" id="printReport">Print</button>
         </div>
       </nav>
@@ -36,8 +39,31 @@
             <a class="primary-button" href="#calculator">Start assessment</a>
             <a class="secondary-button" href="#scope">Review scope</a>
           </div>
+          <div class="hero-stats" aria-label="Tool highlights">
+            <div>
+              <strong>45-90</strong>
+              <span>LASI age range</span>
+            </div>
+            <div>
+              <strong>3</strong>
+              <span>Spirometry indices</span>
+            </div>
+            <div>
+              <strong>8</strong>
+              <span>Ageing domains</span>
+            </div>
+            <div>
+              <strong>0</strong>
+              <span>Server-side patient records</span>
+            </div>
+          </div>
         </div>
         <figure class="hero-figure">
+          <div class="figure-ribbon">
+            <span>Respiratory reference</span>
+            <span>Ageing review</span>
+            <span>Clinical prompts</span>
+          </div>
           <img src="assets/lasi-centile-curves.png" alt="LASI national reference centile curves for FEV1 and FVC by age and sex.">
           <figcaption>Reference curves bundled from the LASI national GAMLSS/LMS equation package.</figcaption>
         </figure>
@@ -54,6 +80,10 @@
         <div>
           <strong>Privacy:</strong>
           Calculations run in the browser. Do not enter directly identifying patient information.
+        </div>
+        <div>
+          <strong>Best use:</strong>
+          Use the output as a structured review checklist after confirming spirometry quality and clinical context.
         </div>
       </section>
 
@@ -173,14 +203,31 @@
         </form>
 
         <section class="results-panel" aria-live="polite">
-          <div class="panel-heading">
-            <p class="eyebrow">Decision support output</p>
-            <h2>Assessment summary</h2>
+          <div class="panel-heading output-heading">
+            <div>
+              <p class="eyebrow">Decision support output</p>
+              <h2>Assessment summary</h2>
+            </div>
+            <div class="output-meta" id="outputMeta">Ready</div>
+          </div>
+
+          <div class="insight-board">
+            <div class="load-gauge" id="loadGauge" aria-label="Clinical review load">
+              <span>Review load</span>
+              <strong>--</strong>
+              <i aria-hidden="true"></i>
+            </div>
+            <div class="priority-stack" id="priorityStack"></div>
           </div>
 
           <div class="summary-strip" id="summaryStrip"></div>
 
           <div class="result-grid" id="spirometryCards"></div>
+
+          <section class="interpretation" id="care-map">
+            <h3>Clinical care map</h3>
+            <div class="care-map-grid" id="careMap"></div>
+          </section>
 
           <section class="interpretation">
             <h3>Respiratory interpretation</h3>
@@ -192,6 +239,68 @@
             <div id="ageingActions"></div>
           </section>
         </section>
+      </section>
+
+      <section class="pathway-band" aria-label="Clinical workflow">
+        <div class="pathway-heading">
+          <p class="eyebrow">Clinician workflow</p>
+          <h2>From patient data to focused next steps</h2>
+        </div>
+        <div class="pathway-grid">
+          <div>
+            <span>01</span>
+            <strong>Enter routine data</strong>
+            <p>Age, sex, height, spirometry, symptoms, exposure, and ageing-screen signals.</p>
+          </div>
+          <div>
+            <span>02</span>
+            <strong>Score against LASI</strong>
+            <p>FEV1, FVC, ratio, z-scores, LLN, percent predicted, and pattern flags.</p>
+          </div>
+          <div>
+            <span>03</span>
+            <strong>Review domains</strong>
+            <p>Respiratory, metabolic, frailty, function, cognition, mood, falls, and prevention.</p>
+          </div>
+          <div>
+            <span>04</span>
+            <strong>Act clinically</strong>
+            <p>Confirm quality, contextualise symptoms, document risks, and plan guideline-based follow-up.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="portal-band" id="portal" aria-label="Healthy ageing portal roadmap">
+        <div class="portal-heading">
+          <p class="eyebrow">Portal roadmap</p>
+          <h2>Expandable into a complete healthy ageing support portal</h2>
+          <p>
+            The current release can become a broader clinician-and-patient platform by adding modules in staged,
+            clinically governed increments while preserving privacy, explainability, and evidence provenance.
+          </p>
+        </div>
+        <div class="portal-grid">
+          <article>
+            <span>Clinician workspace</span>
+            <strong>Structured assessment and decision support</strong>
+            <p>Respiratory interpretation, frailty, falls, cognition, mood, multimorbidity, medication review, nutrition, vaccination, function, referral prompts, and printable summaries.</p>
+          </article>
+          <article>
+            <span>Patient companion</span>
+            <strong>Plain-language goals and follow-up</strong>
+            <p>Patient-friendly reports, self-monitoring checklists, exercise and nutrition goals, warning symptoms, appointment preparation, and caregiver-facing guidance.</p>
+          </article>
+          <article>
+            <span>Evidence library</span>
+            <strong>Transparent sources and model limits</strong>
+            <p>LASI reference provenance, validation notes, guideline links, version history, change logs, and external validation status by module.</p>
+          </article>
+          <article>
+            <span>Governance layer</span>
+            <strong>Safe clinical deployment</strong>
+            <p>Role-based access if accounts are added, consent language, data minimisation, audit trails, expert review, clinical disclaimers, and local guideline adaptation.</p>
+          </article>
+        </div>
       </section>
 
       <section class="evidence-band" id="evidence">
@@ -229,6 +338,21 @@
             <strong>Patient privacy</strong>
             <span>Client-side calculation only; no database or analytics endpoint is used.</span>
           </div>
+        </div>
+      </section>
+
+      <section class="feature-band" aria-label="Technical safeguards">
+        <div>
+          <strong>Browser-only computation</strong>
+          <span>No patient identifiers, accounts, cookies, databases, or analytics endpoints are required.</span>
+        </div>
+        <div>
+          <strong>Equation provenance</strong>
+          <span>The bundled LMS table is tested against the known reference-package examples before deployment.</span>
+        </div>
+        <div>
+          <strong>Portable clinical output</strong>
+          <span>Use Print or Copy to move the summary into local clinical documentation after review.</span>
         </div>
       </section>
     </main>
