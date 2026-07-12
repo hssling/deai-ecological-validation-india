@@ -602,7 +602,8 @@ a:focus-visible {
 }
 
 .tag-list,
-.action-list {
+.action-list,
+.patient-plan-grid {
   display: grid;
   gap: 10px;
 }
@@ -735,6 +736,80 @@ a:focus-visible {
   margin: 0;
 }
 
+.patient-plan-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.patient-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(253, 250, 244, 0.96)),
+    linear-gradient(135deg, rgba(246, 162, 26, 0.12), rgba(14, 143, 176, 0.08));
+  padding: 16px;
+}
+
+.patient-card span,
+.patient-card strong,
+.patient-card p {
+  display: block;
+}
+
+.patient-card span {
+  color: var(--rose);
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.patient-card strong {
+  margin-top: 4px;
+}
+
+.patient-card p {
+  margin: 7px 0 0;
+  color: #4e5e70;
+}
+
+.followup-panel {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+  gap: 12px;
+}
+
+.followup-summary,
+.followup-checklist div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 14px;
+}
+
+.followup-summary {
+  border-top: 5px solid var(--violet);
+  background: linear-gradient(180deg, #fff, #f8f6ff);
+}
+
+.followup-summary strong,
+.followup-summary p {
+  display: block;
+}
+
+.followup-summary p {
+  color: var(--muted);
+  margin: 7px 0 0;
+}
+
+.followup-checklist {
+  display: grid;
+  gap: 8px;
+}
+
+.followup-checklist div {
+  border-left: 5px solid var(--teal);
+  color: #33475b;
+}
+
 .pathway-band {
   display: grid;
   grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
@@ -779,7 +854,7 @@ a:focus-visible {
 
 .portal-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -791,10 +866,15 @@ a:focus-visible {
 }
 
 .portal-grid article {
+  grid-column: span 3;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.92);
   border-top: 5px solid var(--blue);
+}
+
+.portal-grid article:last-child {
+  grid-column: 2 / span 4;
 }
 
 .portal-grid article:nth-child(2) {
@@ -802,10 +882,14 @@ a:focus-visible {
 }
 
 .portal-grid article:nth-child(3) {
-  border-top-color: var(--violet);
+  border-top-color: var(--saffron);
 }
 
 .portal-grid article:nth-child(4) {
+  border-top-color: var(--violet);
+}
+
+.portal-grid article:nth-child(5) {
   border-top-color: var(--rose);
 }
 
@@ -1002,6 +1086,16 @@ a:focus-visible {
 
   .action-item {
     grid-template-columns: 1fr;
+  }
+
+  .patient-plan-grid,
+  .followup-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .portal-grid article,
+  .portal-grid article:last-child {
+    grid-column: auto;
   }
 
   .output-heading {

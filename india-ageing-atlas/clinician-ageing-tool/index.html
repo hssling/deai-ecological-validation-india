@@ -20,9 +20,11 @@
         <div class="nav-actions">
           <a href="#calculator">Calculator</a>
           <a href="#care-map">Care map</a>
+          <a href="#patient-plan">Patient plan</a>
           <a href="#portal">Portal</a>
           <a href="#evidence">Evidence</a>
           <button class="ghost-button" type="button" id="copyReport">Copy</button>
+          <button class="ghost-button" type="button" id="downloadReport">JSON</button>
           <button class="ghost-button" type="button" id="printReport">Print</button>
         </div>
       </nav>
@@ -193,6 +195,22 @@
                   <option value="yes">Reported</option>
                 </select>
               </label>
+              <label>
+                <span>Care priority for this visit</span>
+                <select id="visitGoal">
+                  <option value="respiratory">Breathing or exercise capacity</option>
+                  <option value="function">Mobility, falls, or daily function</option>
+                  <option value="metabolic">BP, diabetes, weight, or prevention</option>
+                  <option value="memory">Memory, mood, sleep, or caregiver concern</option>
+                </select>
+              </label>
+              <label>
+                <span>Preferred patient plan style</span>
+                <select id="planStyle">
+                  <option value="plain">Plain language</option>
+                  <option value="brief">Brief checklist</option>
+                </select>
+              </label>
             </div>
           </div>
 
@@ -237,6 +255,16 @@
           <section class="interpretation">
             <h3>Healthy ageing actions</h3>
             <div id="ageingActions"></div>
+          </section>
+
+          <section class="interpretation" id="patient-plan">
+            <h3>Patient companion plan</h3>
+            <div class="patient-plan-grid" id="patientPlan"></div>
+          </section>
+
+          <section class="interpretation">
+            <h3>Follow-up planner</h3>
+            <div class="followup-panel" id="followUpPlan"></div>
           </section>
         </section>
       </section>
@@ -289,6 +317,11 @@
             <span>Patient companion</span>
             <strong>Plain-language goals and follow-up</strong>
             <p>Patient-friendly reports, self-monitoring checklists, exercise and nutrition goals, warning symptoms, appointment preparation, and caregiver-facing guidance.</p>
+          </article>
+          <article>
+            <span>Longitudinal tracker</span>
+            <strong>Trend function, symptoms, and goals</strong>
+            <p>Future releases can track repeated spirometry, falls, BP, HbA1c, walking ability, vaccinations, and patient goals across visits.</p>
           </article>
           <article>
             <span>Evidence library</span>

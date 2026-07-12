@@ -9,6 +9,7 @@ The first release provides:
 - Structured healthy-ageing prompts covering respiratory symptoms, exposures, BMI, BP, glycaemia, falls, frailty, function, cognition, mood, prevention, and referral review.
 - Client-side calculation only; no patient database and no server-side clinical data handling.
 - A visible roadmap for expanding into a full clinician and patient healthy ageing portal.
+- A patient companion plan, follow-up planner, and local JSON export for documentation workflows.
 
 ## Portal Expansion Path
 
@@ -16,6 +17,7 @@ This static release can be extended into a complete portal in staged modules:
 
 - Clinician workspace: structured assessment, care maps, referral prompts, printable documentation, and versioned evidence.
 - Patient companion: plain-language reports, goals, warning symptoms, follow-up checklists, and caregiver guidance.
+- Longitudinal tracker: repeated spirometry, symptoms, falls, BP, HbA1c, function, vaccination status, and patient goals across visits.
 - Evidence library: LASI provenance, validation notes, guideline links, module status, and change logs.
 - Governance layer: consent language, data minimisation, audit trails, role-based access if accounts are added, and expert clinical review before higher-risk recommendations.
 

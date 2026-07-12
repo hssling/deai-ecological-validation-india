@@ -9,12 +9,16 @@ const spirometryCards = document.getElementById("spirometryCards");
 const respInterpretation = document.getElementById("respInterpretation");
 const ageingActions = document.getElementById("ageingActions");
 const careMap = document.getElementById("careMap");
+const patientPlan = document.getElementById("patientPlan");
+const followUpPlan = document.getElementById("followUpPlan");
 const outputMeta = document.getElementById("outputMeta");
 const loadGauge = document.getElementById("loadGauge");
 const priorityStack = document.getElementById("priorityStack");
 const copyReport = document.getElementById("copyReport");
+const downloadReport = document.getElementById("downloadReport");
 const printReport = document.getElementById("printReport");
 let lastReportText = "";
+let lastReportJson = null;
 
 init();
 
@@ -68,6 +72,21 @@ copyReport.addEventListener("click", async () => {
   }
 });
 
+downloadReport.addEventListener("click", () => {
+  if (!lastReportJson) return;
+  const payload = JSON.stringify(lastReportJson, null, 2);
+  const blob = new Blob([payload], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const anchor = document.createElement("a");
+  anchor.href = url;
+  anchor.download = `healthy-ageing-summary-${new Date().toISOString().slice(0, 10)}.json`;
+  document.body.append(anchor);
+  anchor.click();
+  anchor.remove();
+  URL.revokeObjectURL(url);
+  setOutputMeta("JSON downloaded");
+});
+
 function updateAssessment() {
   if (!state.lmsRows.length) return;
 
@@ -76,13 +95,18 @@ function updateAssessment() {
     const respiratory = scoreSpirometry(patient);
     const actions = buildAgeingActions(patient, respiratory);
     const domainScores = buildDomainScores(patient, respiratory, actions);
+    const patientCards = buildPatientPlan(patient, respiratory, actions, domainScores);
+    const followUp = buildFollowUpPlan(patient, respiratory, actions);
     renderSummary(patient, respiratory, actions);
     renderReviewLoad(actions);
     renderSpirometryCards(respiratory);
     renderCareMap(domainScores);
     renderRespiratoryInterpretation(patient, respiratory);
     renderAgeingActions(actions);
-    lastReportText = buildReportText(patient, respiratory, actions, domainScores);
+    renderPatientPlan(patientCards);
+    renderFollowUpPlan(followUp);
+    lastReportText = buildReportText(patient, respiratory, actions, domainScores, patientCards, followUp);
+    lastReportJson = buildReportJson(patient, respiratory, actions, domainScores, patientCards, followUp);
     setOutputMeta("Updated " + new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }));
   } catch (error) {
     renderError(error.message);
@@ -120,6 +144,8 @@ function readPatient() {
     functionSignal: document.getElementById("functionSignal").value,
     cognitionSignal: document.getElementById("cognitionSignal").value,
     moodSignal: document.getElementById("moodSignal").value,
+    visitGoal: document.getElementById("visitGoal").value,
+    planStyle: document.getElementById("planStyle").value,
   };
 }
 
@@ -296,6 +322,94 @@ function action(domain, priority, text) {
   return { domain, priority, text };
 }
 
+function buildPatientPlan(patient, respiratory, actions, domains) {
+  const urgent = [
+    "Severe or worsening breathlessness at rest",
+    "Chest pain, fainting, blue lips, confusion, or very low oxygen saturation if measured",
+    "Coughing blood, new one-sided weakness, or sudden severe illness",
+  ];
+  const topDomains = domains
+    .filter((item) => item.priority !== "Routine")
+    .slice(0, 3)
+    .map((item) => item.label.toLowerCase());
+  const focus = visitGoalText(patient.visitGoal);
+  const pattern = patternLabel(respiratory.classification);
+  const resultText = respiratory.classification.obstructionLln || respiratory.classification.prismLln || respiratory.classification.rspLln
+    ? "Some breathing test values are below the lower range expected for similar older Indian adults. This should be reviewed with test quality, symptoms, and examination."
+    : "The breathing test is not below LASI lower-limit thresholds, but symptoms and clinical examination still matter.";
+  const goalText = patient.planStyle === "brief"
+    ? `Focus today: ${focus}. Review ${topDomains.length ? topDomains.join(", ") : "prevention and routine follow-up"}.`
+    : `For this visit, the main focus is ${focus}. The clinical review should connect the test result with symptoms, activity, medicines, nutrition, falls, and support at home.`;
+
+  return [
+    patientCard("What the result means", resultText, "Result"),
+    patientCard("Main goal", goalText, "Goal"),
+    patientCard("What to do next", patientNextSteps(actions), "Next"),
+    patientCard("Seek urgent care if", urgent.join("; "), "Safety"),
+    patientCard("Questions for the visit", patientQuestions(patient, pattern).join("; "), "Questions"),
+  ];
+}
+
+function patientCard(title, text, label) {
+  return { title, text, label };
+}
+
+function visitGoalText(goal) {
+  const labels = {
+    respiratory: "breathing, cough, wheeze, and exercise capacity",
+    function: "mobility, falls prevention, strength, and daily function",
+    metabolic: "blood pressure, diabetes risk, weight, medicines, and prevention",
+    memory: "memory, mood, sleep, caregiver support, and daily safety",
+  };
+  return labels[goal] || labels.respiratory;
+}
+
+function patientNextSteps(actions) {
+  const highOrModerate = actions.filter((item) => item.priority !== "Routine").slice(0, 3);
+  if (!highOrModerate.length) {
+    return "Continue routine prevention review, physical activity, nutrition, vaccination checks, and follow-up as advised locally.";
+  }
+  return highOrModerate.map((item) => `${item.domain}: ${item.text}`).join(" ");
+}
+
+function patientQuestions(patient, pattern) {
+  const questions = [
+    `Do my breathing test results fit my symptoms and activity level?`,
+    `Was the spirometry quality acceptable, and do I need repeat or post-bronchodilator testing?`,
+  ];
+  if (patient.tobacco !== "never") questions.push("What is my plan to reduce tobacco, biomass, or occupational exposure?");
+  if (patient.falls > 0 || patient.frailtySignal === "yes") questions.push("What strength, balance, nutrition, or rehabilitation plan is appropriate?");
+  if (patient.cognitionSignal === "yes" || patient.moodSignal === "yes") questions.push("Should we screen memory, mood, sleep, medicines, or caregiver needs?");
+  questions.push(`What follow-up timing is appropriate for: ${pattern}?`);
+  return questions;
+}
+
+function buildFollowUpPlan(patient, respiratory, actions) {
+  const high = actions.filter((item) => item.priority === "High");
+  const moderate = actions.filter((item) => item.priority === "Moderate");
+  let timing = "Routine follow-up interval";
+  let rationale = "No high-priority flags were generated from the entered data.";
+  if (high.length) {
+    timing = "Prompt clinical review";
+    rationale = "One or more high-priority domains were flagged. Timing should be based on symptom severity, examination, local pathways, and clinician judgement.";
+  } else if (moderate.length >= 2) {
+    timing = "Planned follow-up after initial optimisation";
+    rationale = "Multiple moderate-priority domains were flagged, so a structured follow-up visit is useful after initial review.";
+  } else if (moderate.length === 1) {
+    timing = "Targeted follow-up";
+    rationale = "One moderate-priority domain was flagged and should be reviewed after initial management.";
+  }
+  const checklist = [
+    "Confirm spirometry quality, contraindications, and whether bronchodilator testing is relevant.",
+    "Review current medicines, adherence, side effects, and potentially inappropriate medicines.",
+    "Document patient goals, caregiver concerns, and agreed next step.",
+  ];
+  if (patient.respSymptoms === "yes") checklist.push("Record symptom trajectory, oxygen saturation if available, examination, and referral threshold.");
+  if (respiratory.classification.obstructionLln || respiratory.classification.prismLln || respiratory.classification.rspLln) checklist.push("Consider repeat spirometry, imaging/laboratory work-up, pulmonary rehabilitation, or specialist referral according to local guidance.");
+  if (patient.falls > 0 || patient.frailtySignal === "yes") checklist.push("Add gait, orthostatic BP, vision, footwear, home safety, protein intake, and strength/balance exercise review.");
+  return { timing, rationale, checklist };
+}
+
 function buildDomainScores(patient, respiratory, actions) {
   const c = respiratory.classification;
   const respiratoryLevel = c.obstructionLln || patient.respSymptoms === "yes"
@@ -424,12 +538,36 @@ function renderAgeingActions(actions) {
   `).join("")}</div>`;
 }
 
+function renderPatientPlan(cards) {
+  patientPlan.innerHTML = cards.map((item) => `
+    <article class="patient-card">
+      <span>${escapeHtml(item.label)}</span>
+      <strong>${escapeHtml(item.title)}</strong>
+      <p>${escapeHtml(item.text)}</p>
+    </article>
+  `).join("");
+}
+
+function renderFollowUpPlan(plan) {
+  followUpPlan.innerHTML = `
+    <div class="followup-summary">
+      <strong>${escapeHtml(plan.timing)}</strong>
+      <p>${escapeHtml(plan.rationale)}</p>
+    </div>
+    <div class="followup-checklist">
+      ${plan.checklist.map((item) => `<div>${escapeHtml(item)}</div>`).join("")}
+    </div>
+  `;
+}
+
 function renderError(message) {
   summaryStrip.innerHTML = `<div class="error-state">${escapeHtml(message)}</div>`;
   spirometryCards.innerHTML = "";
   careMap.innerHTML = "";
   respInterpretation.innerHTML = "";
   ageingActions.innerHTML = "";
+  if (patientPlan) patientPlan.innerHTML = "";
+  if (followUpPlan) followUpPlan.innerHTML = "";
   if (loadGauge) {
     loadGauge.className = "load-gauge";
     loadGauge.style.setProperty("--load", "0%");
@@ -437,6 +575,7 @@ function renderError(message) {
   }
   if (priorityStack) priorityStack.innerHTML = "";
   lastReportText = "";
+  lastReportJson = null;
   setOutputMeta("Check inputs");
 }
 
@@ -481,7 +620,7 @@ function patternLabel(c) {
   return "No LASI LLN impairment flag";
 }
 
-function buildReportText(patient, respiratory, actions, domains) {
+function buildReportText(patient, respiratory, actions, domains, patientCards, followUp) {
   const lines = [
     "India Healthy Ageing Clinical Support",
     "Clinical decision support summary - not a diagnosis",
@@ -501,9 +640,55 @@ function buildReportText(patient, respiratory, actions, domains) {
     "Suggested clinical review prompts:",
     ...actions.map((item) => `- ${item.domain} (${item.priority}): ${item.text}`),
     "",
+    "Patient companion plan:",
+    ...patientCards.map((item) => `- ${item.title}: ${item.text}`),
+    "",
+    `Follow-up planner: ${followUp.timing}`,
+    followUp.rationale,
+    ...followUp.checklist.map((item) => `- ${item}`),
+    "",
     "Source: LASI national GAMLSS/LMS spirometry reference equations for Indian adults aged 45-90 years.",
   ];
   return lines.join("\n");
+}
+
+function buildReportJson(patient, respiratory, actions, domains, patientCards, followUp) {
+  return {
+    generatedAt: new Date().toISOString(),
+    source: "LASI national GAMLSS/LMS spirometry reference equations for Indian adults aged 45-90 years",
+    clinicalBoundary: "Clinical decision support only; not a diagnosis or prescribing system.",
+    patientInputs: {
+      sexForReference: patient.sex,
+      ageYears: patient.age,
+      heightCm: patient.height,
+      weightKg: patient.weight,
+      bmi: patient.bmi === null ? null : Number(patient.bmi.toFixed(1)),
+      tobacco: patient.tobacco,
+      respiratorySymptoms: patient.respSymptoms,
+      visitGoal: patient.visitGoal,
+    },
+    spirometry: {
+      fev1: roundedScore(respiratory.fev1),
+      fvc: roundedScore(respiratory.fvc),
+      fev1fvc: roundedScore(respiratory.ratio),
+      pattern: patternLabel(respiratory.classification),
+      classification: respiratory.classification,
+    },
+    careMap: domains,
+    clinicianActions: actions,
+    patientCompanionPlan: patientCards,
+    followUpPlan: followUp,
+  };
+}
+
+function roundedScore(score) {
+  return {
+    observed: Number(score.observed.toFixed(3)),
+    predicted: Number(score.predicted.toFixed(3)),
+    lln: Number(score.lln.toFixed(3)),
+    z: Number(score.z.toFixed(3)),
+    percentPredicted: Number(score.percentPredicted.toFixed(1)),
+  };
 }
 
 function setOutputMeta(text) {
