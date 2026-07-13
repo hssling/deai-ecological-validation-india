@@ -280,7 +280,8 @@ async function initPortal() {
   const config = await loadRuntimeConfig();
   if (window.supabase?.createClient && config.supabaseUrl && config.supabaseAnonKey) {
     state.supabaseClient = window.supabase.createClient(config.supabaseUrl, config.supabaseAnonKey);
-    portalStatus.textContent = "Supabase connected";
+    portalStatus.textContent = "Supabase configured";
+    checkSupabaseConnection(config);
     state.supabaseClient.auth.getSession().then(({ data }) => {
       if (data?.session?.user) {
         state.portalSession = {
@@ -299,6 +300,17 @@ async function initPortal() {
   }
   renderLanguageSupport();
   renderPortalShell();
+}
+
+async function checkSupabaseConnection(config) {
+  try {
+    const response = await fetch(`${config.supabaseUrl}/auth/v1/settings`, {
+      headers: { apikey: config.supabaseAnonKey },
+    });
+    portalStatus.textContent = response.ok ? "Supabase connected" : "Supabase configured; check project settings";
+  } catch {
+    portalStatus.textContent = "Supabase configured; connection unavailable";
+  }
 }
 
 async function loadRuntimeConfig() {

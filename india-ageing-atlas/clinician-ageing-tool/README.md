@@ -55,7 +55,12 @@ The calculator remains usable without Supabase. Authenticated portal persistence
 }
 ```
 
-Create `config.json` from `config.example.json` and provide the public Supabase URL and anon key. Do not commit real project keys. If `config.json` is absent, the app stays in demo mode.
+For local testing, create `config.json` from `config.example.json` and provide the public Supabase URL and anon key. Do not commit real project keys. If `config.json` is absent, the app stays in demo mode.
+
+For Vercel, set these environment variables. The build script generates `config.json` during deployment:
+
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 
 The Supabase scaffold is in `supabase/`:
 

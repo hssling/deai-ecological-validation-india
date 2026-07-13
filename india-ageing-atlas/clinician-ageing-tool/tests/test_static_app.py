@@ -133,6 +133,19 @@ def test_supabase_schema_scaffold_exists():
     assert "active education modules are public" in sql
 
 
+def test_supabase_runtime_config_is_generated_at_build_time():
+    package = (ROOT / "package.json").read_text(encoding="utf-8")
+    vercel = (ROOT / "vercel.json").read_text(encoding="utf-8")
+    script = (ROOT / "scripts" / "build-config.js")
+    assert script.exists()
+    text = script.read_text(encoding="utf-8")
+    assert "NEXT_PUBLIC_SUPABASE_URL" in text
+    assert "NEXT_PUBLIC_SUPABASE_ANON_KEY" in text
+    assert "YOUR_PUBLIC_ANON_KEY" not in text
+    assert '"build": "node scripts/build-config.js"' in package
+    assert '"buildCommand": "npm run build"' in vercel
+
+
 def test_static_references_resolve():
     html = (ROOT / "index.html").read_text(encoding="utf-8")
     for path in re.findall(r'(?:src|href)="([^"]+)"', html):

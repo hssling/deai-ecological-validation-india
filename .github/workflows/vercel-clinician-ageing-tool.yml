@@ -24,8 +24,65 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
       - name: Run static app regression tests
         run: python3 tests/test_static_app.py
+      - name: Check JavaScript syntax
+        run: |
+          node --check app.js
+          node --check scripts/build-config.js
+      - name: Verify build-time Supabase config generation
+        run: |
+          npm run build
+          test ! -f config.json
+          NEXT_PUBLIC_SUPABASE_URL="https://example.supabase.co" NEXT_PUBLIC_SUPABASE_ANON_KEY="anon-test" npm run build
+          test -f config.json
+          rm -f config.json
+
+  supabase-migrate:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    needs: test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: india-ageing-atlas/clinician-ageing-tool
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check Supabase database host
+        id: supabase_dns
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          node <<'NODE'
+          const dns = require("dns").promises;
+          const url = process.env.SUPABASE_DB_URL || "";
+          if (!url) {
+            console.log("reachable=false");
+            require("fs").appendFileSync(process.env.GITHUB_OUTPUT, "reachable=false\n");
+            process.exit(0);
+          }
+          const host = new URL(url).hostname;
+          dns.lookup(host).then(() => {
+            require("fs").appendFileSync(process.env.GITHUB_OUTPUT, "reachable=true\n");
+          }).catch((error) => {
+            console.log(`Supabase host ${host} is not resolvable yet: ${error.code || error.message}`);
+            require("fs").appendFileSync(process.env.GITHUB_OUTPUT, "reachable=false\n");
+          });
+          NODE
+      - name: Apply Supabase migrations
+        if: steps.supabase_dns.outputs.reachable == 'true'
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: npx --yes supabase db push --db-url "$SUPABASE_DB_URL" --include-all
+      - name: Skip Supabase migrations when host is unavailable
+        if: steps.supabase_dns.outputs.reachable != 'true'
+        run: |
+          echo "::warning::Supabase database host is not reachable or SUPABASE_DB_URL is unset; migrations were not applied."
 
   deploy-preview:
     if: github.event_name == 'pull_request'
@@ -59,7 +116,9 @@ jobs:
 
   deploy-production:
     if: github.event_name == 'push'
-    needs: test
+    needs:
+      - test
+      - supabase-migrate
     runs-on: ubuntu-latest
     defaults:
       run:

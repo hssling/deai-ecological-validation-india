@@ -4,6 +4,7 @@
   "private": true,
   "description": "Open-access browser clinical decision support using LASI national spirometry reference equations.",
   "scripts": {
+    "build": "node scripts/build-config.js",
     "test": "python3 tests/test_static_app.py"
   },
   "keywords": [
