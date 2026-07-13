@@ -62,6 +62,11 @@ For Vercel, set these environment variables. The build script generates `config.
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 
+For GitHub Actions Supabase migrations, set:
+
+- `SUPABASE_DB_URL`: direct database URL, percent-encoded.
+- `SUPABASE_POOLER_DB_URL`: recommended for CI; copy the IPv4 transaction pooler connection string from Supabase Dashboard > Connect > Transaction pooler. GitHub runners often cannot reach Supabase direct IPv6-only database hosts.
+
 The Supabase scaffold is in `supabase/`:
 
 - `supabase/config.toml`

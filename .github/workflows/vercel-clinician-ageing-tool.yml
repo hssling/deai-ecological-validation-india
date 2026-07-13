@@ -53,36 +53,45 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - name: Check Supabase database host
+      - name: Resolve Supabase migration connection
         id: supabase_dns
         env:
           SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+          SUPABASE_POOLER_DB_URL: ${{ secrets.SUPABASE_POOLER_DB_URL }}
         run: |
           node <<'NODE'
           const dns = require("dns").promises;
-          const url = process.env.SUPABASE_DB_URL || "";
+          const fs = require("fs");
+          const poolerUrl = process.env.SUPABASE_POOLER_DB_URL || "";
+          const directUrl = process.env.SUPABASE_DB_URL || "";
+          const url = poolerUrl || directUrl;
           if (!url) {
             console.log("reachable=false");
-            require("fs").appendFileSync(process.env.GITHUB_OUTPUT, "reachable=false\n");
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, "reachable=false\n");
             process.exit(0);
           }
           const host = new URL(url).hostname;
-          dns.lookup(host).then(() => {
-            require("fs").appendFileSync(process.env.GITHUB_OUTPUT, "reachable=true\n");
+          dns.lookup(host, { all: true }).then((addresses) => {
+            const hasIpv4 = addresses.some((address) => address.family === 4);
+            if (!poolerUrl && !hasIpv4) {
+              console.log(`Supabase direct host ${host} is IPv6-only for this runner. Add SUPABASE_POOLER_DB_URL from Supabase Connect > Transaction pooler.`);
+              fs.appendFileSync(process.env.GITHUB_OUTPUT, "reachable=false\n");
+              return;
+            }
+            fs.appendFileSync(process.env.GITHUB_ENV, `SUPABASE_MIGRATION_DB_URL=${url}\n`);
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, "reachable=true\n");
           }).catch((error) => {
             console.log(`Supabase host ${host} is not resolvable yet: ${error.code || error.message}`);
-            require("fs").appendFileSync(process.env.GITHUB_OUTPUT, "reachable=false\n");
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, "reachable=false\n");
           });
           NODE
       - name: Apply Supabase migrations
         if: steps.supabase_dns.outputs.reachable == 'true'
-        env:
-          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
-        run: npx --yes supabase db push --db-url "$SUPABASE_DB_URL" --include-all
+        run: npx --yes supabase db push --db-url "$SUPABASE_MIGRATION_DB_URL" --include-all
       - name: Skip Supabase migrations when host is unavailable
         if: steps.supabase_dns.outputs.reachable != 'true'
         run: |
-          echo "::warning::Supabase database host is not reachable or SUPABASE_DB_URL is unset; migrations were not applied."
+          echo "::warning::Supabase migrations were not applied. Add SUPABASE_POOLER_DB_URL when the direct database host is IPv6-only in CI."
 
   deploy-preview:
     if: github.event_name == 'pull_request'
