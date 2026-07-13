@@ -202,6 +202,40 @@ const PORTAL_MODULES = {
     },
   ],
 };
+const PORTAL_LAUNCHES = {
+  clinician: [
+    ["Clinical assessment", "Open the LASI spirometry and healthy-ageing calculator.", "#calculator", "Assessment"],
+    ["Respiratory review", "Review z-scores, LLN, pattern flags, symptoms, and test-quality prompts.", "#care-map", "Respiratory"],
+    ["Care map", "Prioritise respiratory, metabolic, falls, frailty, cognition, mood, and prevention domains.", "#care-map", "Decision support"],
+    ["Patient plan", "Generate language-ready education, visit preparation, and safety messages.", "#patient-plan", "Education"],
+    ["Saved timeline", "Store and review visit snapshots with Supabase row-level security or demo storage.", "#portal-workflows", "Follow-up"],
+    ["Evidence base", "Review LASI source, limits, acknowledgement, and implementation safeguards.", "#evidence", "Governance"],
+  ],
+  patient: [
+    ["My result", "Read the patient-facing result explanation and agreed care plan.", "#patient-plan", "Understand"],
+    ["Prepare visit", "Collect medicines, reports, symptoms, falls, vaccines, and questions.", "#language-support", "Preparation"],
+    ["Warning symptoms", "Review when to seek urgent clinical help.", "#language-support", "Safety"],
+    ["Follow-up plan", "Check the recommended review timing and practical next steps.", "#portal-workflows", "Follow-up"],
+    ["Language support", "Switch patient education across supported Indian languages.", "#language-support", "Languages"],
+    ["Shared summary", "Use saved snapshots or copied summaries for clinician discussion.", "#portal-workflows", "Records"],
+  ],
+  caregiver: [
+    ["Home observation", "Track breathing, function, falls, medicines, mood, memory, sleep, and appetite.", "#patient-plan", "Observe"],
+    ["Appointment support", "Prepare reports, medicines, caregiver concerns, and patient goals.", "#language-support", "Coordinate"],
+    ["Escalation guide", "Review warning symptoms and timing for urgent or planned review.", "#language-support", "Safety"],
+    ["Care timeline", "Keep saved visit snapshots and follow-up tasks visible.", "#portal-workflows", "Follow-up"],
+    ["Education pack", "Use plain-language multilingual support for shared decisions.", "#language-support", "Education"],
+    ["Clinician summary", "Open the structured assessment output for discussion.", "#calculator", "Assessment"],
+  ],
+  researcher: [
+    ["Equation provenance", "Inspect LASI equation source, scope, and current validation limits.", "#evidence", "Provenance"],
+    ["Model output", "Review generated z-scores, LLN, classifications, and domain prompts.", "#calculator", "Methods"],
+    ["Governance", "Check consent, privacy, row-level security, and safe-use boundaries.", "#portal-workflows", "Governance"],
+    ["Module library", "Review clinical and public workflow modules for maturity and next validation.", "#portal-workflows", "Modules"],
+    ["Language content", "Inspect multilingual education coverage and communication scope.", "#language-support", "Equity"],
+    ["Implementation notes", "Review deployment, source acknowledgement, and safeguards.", "#evidence", "Audit"],
+  ],
+};
 const state = {
   lmsRows: [],
   language: "en",
@@ -230,11 +264,14 @@ const languageTitle = document.getElementById("languageTitle");
 const languageIntro = document.getElementById("languageIntro");
 const languageCards = document.getElementById("languageCards");
 const portalStatus = document.getElementById("portalStatus");
+const portalLanding = document.querySelector(".portal-landing");
+const portalLaunchGrid = document.getElementById("portalLaunchGrid");
 const sessionStatus = document.getElementById("sessionStatus");
 const authForm = document.getElementById("authForm");
 const authEmail = document.getElementById("authEmail");
 const authPassword = document.getElementById("authPassword");
 const authRole = document.getElementById("authRole");
+const authStatus = document.getElementById("authStatus");
 const consentAgreement = document.getElementById("consentAgreement");
 const registerAccount = document.getElementById("registerAccount");
 const signOut = document.getElementById("signOut");
@@ -338,41 +375,41 @@ async function signInPortal(register = false) {
   const password = authPassword.value;
   const role = authRole.value;
   if (!hasConsentAgreement()) {
-    setOutputMeta("Accept consent terms first");
+    setAuthMessage("Accept consent terms first");
     return;
   }
   if (!email || !password) {
-    setOutputMeta("Enter email and password");
+    setAuthMessage("Enter email and password");
     return;
   }
 
   if (state.supabaseClient && !email.endsWith("@ihacs.local")) {
-    setOutputMeta(register ? "Creating account..." : "Signing in...");
+    setAuthMessage(register ? "Creating account..." : "Signing in...");
     let response;
     try {
       response = register
         ? await state.supabaseClient.auth.signUp({ email, password, options: { data: { role } } })
         : await state.supabaseClient.auth.signInWithPassword({ email, password });
     } catch (error) {
-      setOutputMeta(friendlyAuthMessage(error.message, register));
+      setAuthMessage(friendlyAuthMessage(error.message, register));
       return;
     }
     if (response.error) {
-      setOutputMeta(friendlyAuthMessage(response.error.message, register));
+      setAuthMessage(friendlyAuthMessage(response.error.message, register));
       if (sessionStatus) sessionStatus.textContent = "Authentication needs attention";
       return;
     }
     if (register && !response.data.session) {
       state.portalSession = null;
       if (sessionStatus) sessionStatus.textContent = "Confirm email to finish registration";
-      setOutputMeta("Registration created. Check the confirmation email, then return here to sign in.");
+      setAuthMessage("Registration created. Check the confirmation email, then return here to sign in.");
       renderPortalShell();
       return;
     }
     const user = response.data.session?.user || response.data.user;
     if (!user?.id) {
       state.portalSession = null;
-      setOutputMeta(register
+      setAuthMessage(register
         ? "Registration did not return an active session. Try signing in after confirming email."
         : "Sign-in did not return an active portal session. Please try again.");
       renderPortalShell();
@@ -386,7 +423,7 @@ async function signInPortal(register = false) {
       userId: user?.id || null,
     };
     const consentError = await recordConsentEvent();
-    setOutputMeta(consentError
+    setAuthMessage(consentError
       ? `${register ? "Registered and signed in" : "Signed in"}; consent audit could not be saved`
       : register ? "Registered and signed in" : "Signed in");
     renderPortalShell();
@@ -396,7 +433,7 @@ async function signInPortal(register = false) {
 
   const demo = Object.values(DEMO_ACCOUNTS).find((account) => account.email === email);
   if (!demo || demo.password !== password) {
-    setOutputMeta("Use a listed demo account, or configure Supabase for real accounts");
+    setAuthMessage("Use a listed demo account, or configure Supabase for real accounts");
     return;
   }
   state.portalSession = {
@@ -407,7 +444,7 @@ async function signInPortal(register = false) {
     userId: demo.email,
   };
   authRole.value = demo.role;
-  setOutputMeta(register ? "Demo accounts are already registered; demo sign-in active" : "Demo sign-in active");
+  setAuthMessage(register ? "Demo accounts are already registered; demo sign-in active" : "Demo sign-in active");
   renderPortalShell();
 }
 
@@ -458,6 +495,7 @@ function friendlyAuthMessage(message = "", register = false) {
 function renderPortalShell() {
   const role = state.portalSession?.role || authRole?.value || "clinician";
   const workflow = ROLE_WORKFLOWS[role] || ROLE_WORKFLOWS.clinician;
+  portalLanding?.classList.toggle("is-signed-in", Boolean(state.portalSession));
   if (roleTitle) roleTitle.textContent = workflow.title;
   if (roleIntro) roleIntro.textContent = workflow.intro;
   if (sessionStatus) {
@@ -474,8 +512,26 @@ function renderPortalShell() {
       </article>
     `).join("");
   }
+  renderPortalLaunches(role);
   renderModuleLibrary();
   renderTimeline();
+}
+
+function renderPortalLaunches(role) {
+  if (!portalLaunchGrid) return;
+  const signedIn = Boolean(state.portalSession);
+  const launches = PORTAL_LAUNCHES[role] || PORTAL_LAUNCHES.clinician;
+  portalLaunchGrid.innerHTML = launches.map((launch) => {
+    const [title, description, href, tag] = launch;
+    return `
+      <a class="portal-launch ${signedIn ? "is-ready" : "is-locked"}" href="${signedIn ? href : "#portal"}">
+        <span>${escapeHtml(tag)}</span>
+        <strong>${escapeHtml(title)}</strong>
+        <p>${escapeHtml(description)}</p>
+        <em>${signedIn ? "Open module" : "Sign in to open"}</em>
+      </a>
+    `;
+  }).join("");
 }
 
 function renderModuleLibrary() {
@@ -522,12 +578,12 @@ async function saveCurrentAssessment() {
     return;
   }
   if (!state.portalSession) {
-    setOutputMeta("Sign in to save");
+    setAuthMessage("Sign in to save");
     document.getElementById("portal")?.scrollIntoView({ behavior: "smooth" });
     return;
   }
   if (!hasConsentAgreement()) {
-    setOutputMeta("Accept consent terms first");
+    setAuthMessage("Accept consent terms first");
     document.getElementById("portal")?.scrollIntoView({ behavior: "smooth" });
     return;
   }
@@ -678,7 +734,7 @@ if (signOut) {
     }
     state.portalSession = null;
     renderPortalShell();
-    setOutputMeta("Signed out");
+    setAuthMessage("Signed out");
   });
 }
 
@@ -1361,6 +1417,11 @@ function roundedScore(score) {
 
 function setOutputMeta(text) {
   if (outputMeta) outputMeta.textContent = text;
+}
+
+function setAuthMessage(text) {
+  if (authStatus) authStatus.textContent = text;
+  setOutputMeta(text);
 }
 
 function initNavigation() {

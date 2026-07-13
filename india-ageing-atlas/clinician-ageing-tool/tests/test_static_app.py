@@ -105,6 +105,11 @@ def test_assessment_summary_explains_outputs():
 def test_portal_language_consent_and_demo_accounts_exist():
     html = (ROOT / "index.html").read_text(encoding="utf-8")
     js = (ROOT / "app.js").read_text(encoding="utf-8")
+    assert 'class="hero portal-landing" id="portal"' in html
+    assert 'id="authStatus"' in html
+    assert 'id="portalLaunchGrid"' in html
+    assert "Sign in to healthy-ageing workflows" in html
+    assert "Module library, saved timeline, and follow-up" in html
     assert "हिन्दी" in html
     assert "ಕನ್ನಡ" in html
     assert "தமிழ்" in html
@@ -118,6 +123,8 @@ def test_portal_language_consent_and_demo_accounts_exist():
     assert "consentAgreement" in js
     assert "LANGUAGE_CONTENT" in js
     assert "ROLE_WORKFLOWS" in js
+    assert "PORTAL_LAUNCHES" in js
+    assert "renderPortalLaunches" in js
 
 
 def test_supabase_schema_scaffold_exists():
