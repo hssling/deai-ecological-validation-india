@@ -347,14 +347,37 @@ async function signInPortal(register = false) {
   }
 
   if (state.supabaseClient && !email.endsWith("@ihacs.local")) {
-    const response = register
-      ? await state.supabaseClient.auth.signUp({ email, password, options: { data: { role } } })
-      : await state.supabaseClient.auth.signInWithPassword({ email, password });
-    if (response.error) {
-      setOutputMeta(response.error.message);
+    setOutputMeta(register ? "Creating account..." : "Signing in...");
+    let response;
+    try {
+      response = register
+        ? await state.supabaseClient.auth.signUp({ email, password, options: { data: { role } } })
+        : await state.supabaseClient.auth.signInWithPassword({ email, password });
+    } catch (error) {
+      setOutputMeta(friendlyAuthMessage(error.message, register));
       return;
     }
-    const user = response.data.user || response.data.session?.user;
+    if (response.error) {
+      setOutputMeta(friendlyAuthMessage(response.error.message, register));
+      if (sessionStatus) sessionStatus.textContent = "Authentication needs attention";
+      return;
+    }
+    if (register && !response.data.session) {
+      state.portalSession = null;
+      if (sessionStatus) sessionStatus.textContent = "Confirm email to finish registration";
+      setOutputMeta("Registration created. Check the confirmation email, then return here to sign in.");
+      renderPortalShell();
+      return;
+    }
+    const user = response.data.session?.user || response.data.user;
+    if (!user?.id) {
+      state.portalSession = null;
+      setOutputMeta(register
+        ? "Registration did not return an active session. Try signing in after confirming email."
+        : "Sign-in did not return an active portal session. Please try again.");
+      renderPortalShell();
+      return;
+    }
     state.portalSession = {
       mode: "supabase",
       email,
@@ -362,8 +385,10 @@ async function signInPortal(register = false) {
       name: user?.email || email,
       userId: user?.id || null,
     };
-    await recordConsentEvent();
-    setOutputMeta(register ? "Registration started" : "Signed in");
+    const consentError = await recordConsentEvent();
+    setOutputMeta(consentError
+      ? `${register ? "Registered and signed in" : "Signed in"}; consent audit could not be saved`
+      : register ? "Registered and signed in" : "Signed in");
     renderPortalShell();
     await loadSupabaseAssessments();
     return;
@@ -382,20 +407,52 @@ async function signInPortal(register = false) {
     userId: demo.email,
   };
   authRole.value = demo.role;
-  setOutputMeta(register ? "Demo account selected" : "Demo sign-in active");
+  setOutputMeta(register ? "Demo accounts are already registered; demo sign-in active" : "Demo sign-in active");
   renderPortalShell();
 }
 
 async function recordConsentEvent() {
-  if (!state.supabaseClient || !state.portalSession?.userId || !hasConsentAgreement()) return;
-  await state.supabaseClient.from("consent_events").insert({
-    user_id: state.portalSession.userId,
-    consent_version: "dpdp-clinical-support-v1",
-    accepted: true,
-    purpose: "clinical decision support, education, documentation, and follow-up planning",
-    language_code: state.language,
-    user_agent: navigator.userAgent,
-  });
+  if (!state.supabaseClient || !state.portalSession?.userId || !hasConsentAgreement()) return null;
+  try {
+    const { error } = await state.supabaseClient.from("consent_events").insert({
+      user_id: state.portalSession.userId,
+      consent_version: "dpdp-clinical-support-v1",
+      accepted: true,
+      purpose: "clinical decision support, education, documentation, and follow-up planning",
+      language_code: state.language,
+      user_agent: navigator.userAgent,
+    });
+    return error || null;
+  } catch (error) {
+    return error;
+  }
+}
+
+function friendlyAuthMessage(message = "", register = false) {
+  const text = String(message || "").trim();
+  const lower = text.toLowerCase();
+  if (lower.includes("email not confirmed")) {
+    return "Email is not confirmed yet. Open the confirmation email, then sign in again.";
+  }
+  if (lower.includes("invalid login credentials")) {
+    return "Email or password is incorrect. Use a listed demo account or register a new real email.";
+  }
+  if (lower.includes("email_address_invalid") || lower.includes("invalid email")) {
+    return "Use a real email address for registration. Demo accounts use the listed ihacs.local emails.";
+  }
+  if (lower.includes("password") && lower.includes("characters")) {
+    return "Password is too short. Use at least 6 characters; a stronger password is recommended.";
+  }
+  if (lower.includes("user already registered") || lower.includes("already registered")) {
+    return "This email is already registered. Use Sign in instead of Register.";
+  }
+  if (lower.includes("signup") && lower.includes("disabled")) {
+    return "Registration is disabled in Supabase settings. Use demo sign-in or enable signups.";
+  }
+  if (lower.includes("failed to fetch") || lower.includes("network")) {
+    return "Could not reach the portal database. Check network access and try again.";
+  }
+  return text || (register ? "Registration could not be completed." : "Sign-in could not be completed.");
 }
 
 function renderPortalShell() {
@@ -626,12 +683,14 @@ if (signOut) {
 }
 
 document.querySelectorAll("[data-demo-account]").forEach((button) => {
-  button.addEventListener("click", () => {
+  button.addEventListener("click", async () => {
     const account = DEMO_ACCOUNTS[button.dataset.demoAccount];
     if (!account) return;
     authEmail.value = account.email;
     authPassword.value = account.password;
     authRole.value = account.role;
+    if (consentAgreement) consentAgreement.checked = true;
+    await signInPortal(false);
   });
 });
 
