@@ -143,30 +143,55 @@ const PORTAL_MODULES = {
       flow: "Input spirometry -> compare with LASI LLN/z-score -> classify pattern -> confirm quality -> plan repeat testing/referral.",
       evidence: ["lasi"],
       status: "Active calculator module",
+      details: [
+        "Confirm test acceptability, repeatability, bronchodilator context, and symptom quality before acting.",
+        "Use LASI z-scores and LLN as population reference, then integrate examination, exposure history, and prior reports.",
+        "Document whether the result suggests restriction signal, obstruction signal, PRISm/RSP pattern, or repeat-test need.",
+      ],
     },
     {
       title: "Intrinsic-capacity review",
       flow: "Screen mobility, cognition, mood, nutrition, sensory concerns, function, and social support -> prioritise care plan.",
       evidence: ["whoIcope", "whoAgeing"],
       status: "Structured prompt module",
+      details: [
+        "Map concerns across mobility, cognition, vitality/nutrition, mood, vision, hearing, function, and support needs.",
+        "Separate reversible contributors such as medicines, delirium triggers, pain, sleep, oral health, and sensory impairment.",
+        "Convert flagged domains into a personalised plan with patient goals and caregiver/social support needs.",
+      ],
     },
     {
       title: "Falls and frailty pathway",
       flow: "Falls history -> gait/orthostatic/vision/medicine/home-safety review -> strength, balance, referral, and follow-up tasks.",
       evidence: ["cdcSteadi", "whoIcope"],
       status: "Prompt module; validated scales can be added next",
+      details: [
+        "Ask about falls, near-falls, fear of falling, gait/balance difficulty, syncope, footwear, and environmental hazards.",
+        "Review orthostatic BP, vision, feet, high-risk medicines, alcohol/sedatives, strength, and assistive-device needs.",
+        "Plan strength/balance exercise, home safety action, nutrition support, and referral when risk is high.",
+      ],
     },
     {
       title: "Prevention and activity plan",
       flow: "Review activity, sedentary time, resistance/balance exercise, vaccination, tobacco exposure, nutrition, and medicines.",
       evidence: ["whoActivity", "whoAgeing"],
       status: "Education and documentation module",
+      details: [
+        "Translate activity advice into safe, locally feasible aerobic, muscle-strengthening, and balance goals.",
+        "Review vaccination, tobacco/biomass exposure, oral health, sleep, medicines, nutrition, and social participation.",
+        "Use shared goals and follow-up timing instead of one-off lifestyle advice.",
+      ],
     },
     {
       title: "Longitudinal monitoring",
       flow: "Save visit snapshots -> trend lung function, symptoms, BP, HbA1c, falls, function, and goals -> schedule follow-up.",
       evidence: ["whoIcope"],
       status: "Supabase-ready schema",
+      details: [
+        "Save concise visit snapshots with consent context and role-specific care plan.",
+        "Track repeated lung function, symptoms, falls, BP, HbA1c, function, mood/cognition signals, and patient goals.",
+        "Next build step: task assignment, due dates, completion status, and clinician/patient comment threads.",
+      ],
     },
   ],
   public: [
@@ -175,33 +200,156 @@ const PORTAL_MODULES = {
       flow: "Plain-language explanation -> selected Indian language -> key questions for clinician -> no self-diagnosis wording.",
       evidence: ["lasi", "whoAgeing"],
       status: "Multilingual education module",
+      details: [
+        "Explain that the breathing result is compared with Indian reference values and must be reviewed with symptoms.",
+        "Avoid diagnosis or prescribing language; prompt the user to discuss quality, symptoms, exposures, and next steps.",
+        "Offer language-specific wording for visit discussion and shared decision-making.",
+      ],
     },
     {
       title: "Prepare for my visit",
       flow: "Medicine list, reports, symptoms, exposures, falls, vaccinations, caregiver concerns, and goals before appointment.",
       evidence: ["whoIcope"],
       status: "Patient companion module",
+      details: [
+        "Bring medicine list, previous reports, symptom timeline, tobacco/biomass/occupation exposure notes, and vaccines.",
+        "List falls, dizziness, memory or mood concerns, sleep problems, appetite/weight change, and daily activity limits.",
+        "Write the top two patient goals and caregiver concerns before the clinician visit.",
+      ],
     },
     {
       title: "Act on agreed goals",
       flow: "Clinician-approved activity, nutrition, exposure reduction, medicine adherence, home safety, and follow-up reminders.",
       evidence: ["whoActivity", "cdcSteadi"],
       status: "Support and follow-up module",
+      details: [
+        "Turn the clinician plan into small weekly actions for activity, strength, nutrition, medicines, and exposure reduction.",
+        "Use caregiver support for home safety, appointment attendance, reminders, and symptom observation.",
+        "Track whether the agreed action was done, difficult, or needs review.",
+      ],
     },
     {
       title: "Know warning symptoms",
       flow: "Clear urgent-care prompts for severe breathlessness, chest pain, fainting, confusion, blue lips, coughing blood, or sudden weakness.",
       evidence: ["whoIcope"],
       status: "Safety education module",
+      details: [
+        "Show urgent-care warnings prominently in every supported language.",
+        "Distinguish planned follow-up from emergency symptoms that need immediate local care.",
+        "Encourage patients and caregivers to keep emergency contacts and prior reports accessible.",
+      ],
     },
     {
       title: "Caregiver coordination",
       flow: "Observe function and symptoms -> support medicines and appointments -> share concerns -> escalate when warning symptoms occur.",
       evidence: ["whoAgeing", "whoIcope"],
       status: "Caregiver workflow module",
+      details: [
+        "Observe breathlessness, cough, walking distance, appetite, sleep, mood, memory, falls, medicines, and daily function.",
+        "Prepare practical concerns for the clinician: safety, adherence, finances, transport, social support, and goals.",
+        "Escalate urgent symptoms and document what changed since the last visit.",
+      ],
     },
   ],
 };
+const CONTENT_ROADMAP = [
+  {
+    title: "Validated scale pack",
+    priority: "Next",
+    body: "Add structured fields for gait speed or chair rise, PHQ-style mood screen, cognition screen, nutrition risk, ADL/IADL, and falls-risk questions with clear validation notes.",
+  },
+  {
+    title: "Follow-up task engine",
+    priority: "Next",
+    body: "Convert generated plans into due dates, ownership, status, reminders, and visit-to-visit completion tracking.",
+  },
+  {
+    title: "Patient education library",
+    priority: "High",
+    body: "Expand multilingual content into result meaning, warning symptoms, medicines, exercise, nutrition, home safety, exposure reduction, and visit preparation.",
+  },
+  {
+    title: "Caregiver action sheet",
+    priority: "High",
+    body: "Create printable and mobile-friendly caregiver checklists for observation, escalation, medicines, home safety, appointments, and patient goals.",
+  },
+  {
+    title: "Clinical governance notes",
+    priority: "High",
+    body: "Add module versioning, equation provenance, clinical limitations, intended-use statements, local guideline fields, and audit-ready consent text.",
+  },
+  {
+    title: "Validation dashboard",
+    priority: "Later",
+    body: "Track usability testing, missing-data patterns, calibration checks, equity review, and external clinical validation before high-stakes expansion.",
+  },
+];
+const EVIDENCE_RESOURCE_LIBRARY = [
+  {
+    title: "LASI project hub",
+    source: "IIPS, Ministry of Health and Family Welfare",
+    href: "https://www.iipsindia.ac.in/lasi",
+    audience: ["clinician", "patient", "caregiver", "researcher"],
+    area: "Indian ageing evidence",
+    note: "Use this to understand LASI's design, scope, collaborating institutions, public reports, and Indian ageing-data provenance.",
+  },
+  {
+    title: "LASI Wave 1 India Report",
+    source: "IIPS LASI Wave 1 report",
+    href: "https://www.iipsindia.ac.in/sites/default/files/LASI_India_Report_2020_compressed.pdf",
+    audience: ["clinician", "researcher"],
+    area: "Reference population",
+    note: "Background report for the national ageing dataset behind the respiratory reference-equation work and related Indian ageing context.",
+  },
+  {
+    title: "WHO ICOPE integrated care",
+    source: "World Health Organization",
+    href: "https://www.who.int/teams/maternal-newborn-child-adolescent-health-and-ageing/ageing-and-health/integrated-care-for-older-people-icope",
+    audience: ["clinician", "patient", "caregiver", "researcher"],
+    area: "Person-centred care",
+    note: "Framework for intrinsic capacity, functional ability, social-support needs, and personalised care planning in primary and community care.",
+  },
+  {
+    title: "Healthy ageing and functional ability",
+    source: "World Health Organization",
+    href: "https://www.who.int/news-room/questions-and-answers/item/healthy-ageing-and-functional-ability",
+    audience: ["patient", "caregiver", "clinician", "researcher"],
+    area: "Plain-language concept",
+    note: "Explains healthy ageing as maintaining the abilities people value, including mobility, relationships, decisions, and participation.",
+  },
+  {
+    title: "Physical activity guidance",
+    source: "World Health Organization",
+    href: "https://www.who.int/news-room/fact-sheets/detail/physical-activity",
+    audience: ["patient", "caregiver", "clinician"],
+    area: "Prevention and function",
+    note: "Use for clinician-approved activity conversations covering aerobic activity, strengthening, balance, and reduced sedentary time.",
+  },
+  {
+    title: "STEADI falls prevention",
+    source: "CDC",
+    href: "https://www.cdc.gov/steadi/index.html",
+    audience: ["clinician", "caregiver", "patient"],
+    area: "Falls safety",
+    note: "Practical screen-assess-intervene approach for older adults with falls, fear of falling, gait concerns, or medication-related risk.",
+  },
+  {
+    title: "National Programme for Health Care of the Elderly",
+    source: "Directorate General of Health Services, Government of India",
+    href: "https://dghs.mohfw.gov.in/national-programme-for-the-health-care-of-the-elderly.php",
+    audience: ["clinician", "patient", "caregiver", "researcher"],
+    area: "Indian service context",
+    note: "Indian public-health programme context for preventive, curative, rehabilitative, home-based, primary-care, and tertiary geriatric services.",
+  },
+  {
+    title: "Digital Personal Data Protection Act",
+    source: "MeitY, Government of India",
+    href: "https://www.meity.gov.in/content/digital-personal-data-protection-act-2023",
+    audience: ["patient", "caregiver", "clinician", "researcher"],
+    area: "Consent and privacy",
+    note: "Reference for privacy, consent, correction, erasure, grievance, and responsible processing expectations for digital personal data.",
+  },
+];
 const PORTAL_LAUNCHES = {
   clinician: [
     ["Clinical assessment", "Open the LASI spirometry and healthy-ageing calculator.", "#calculator", "Assessment"],
@@ -291,6 +439,8 @@ const roleIntro = document.getElementById("roleIntro");
 const workflowGrid = document.getElementById("workflowGrid");
 const clinicianModules = document.getElementById("clinicianModules");
 const publicModules = document.getElementById("publicModules");
+const contentRoadmapGrid = document.getElementById("contentRoadmapGrid");
+const evidenceResourceGrid = document.getElementById("evidenceResourceGrid");
 const timelineList = document.getElementById("timelineList");
 const timelineIntro = document.getElementById("timelineIntro");
 const saveAssessment = document.getElementById("saveAssessment");
@@ -535,6 +685,8 @@ function renderPortalShell() {
   renderSessionOverview(role, workflow);
   renderPortalLaunches(role);
   renderModuleLibrary();
+  renderContentRoadmap();
+  renderEvidenceResourceLibrary(role);
   renderTimeline();
 }
 
@@ -638,14 +790,53 @@ function renderModuleLibrary() {
 }
 
 function moduleCard(item) {
+  const detailList = item.details?.length
+    ? `<ul>${item.details.map((detail) => `<li>${escapeHtml(detail)}</li>`).join("")}</ul>`
+    : "";
   return `
     <article>
       <span>${escapeHtml(item.status)}</span>
       <strong>${escapeHtml(item.title)}</strong>
       <p>${escapeHtml(item.flow)}</p>
+      ${detailList}
       <em>${item.evidence.map((key) => escapeHtml(EVIDENCE_SOURCES[key])).join(" · ")}</em>
     </article>
   `;
+}
+
+function renderContentRoadmap() {
+  if (!contentRoadmapGrid) return;
+  contentRoadmapGrid.innerHTML = CONTENT_ROADMAP.map((item) => `
+    <article>
+      <span>${escapeHtml(item.priority)}</span>
+      <strong>${escapeHtml(item.title)}</strong>
+      <p>${escapeHtml(item.body)}</p>
+    </article>
+  `).join("");
+}
+
+function renderEvidenceResourceLibrary(role) {
+  if (!evidenceResourceGrid) return;
+  const sortedResources = [...EVIDENCE_RESOURCE_LIBRARY].sort((a, b) => {
+    const aMatch = a.audience.includes(role) ? 0 : 1;
+    const bMatch = b.audience.includes(role) ? 0 : 1;
+    return aMatch - bMatch || a.title.localeCompare(b.title);
+  });
+  evidenceResourceGrid.innerHTML = sortedResources.map((item) => {
+    const bestFor = item.audience.includes(role) ? "Recommended for this role" : "Useful reference";
+    return `
+      <article class="resource-card">
+        <span>${escapeHtml(bestFor)}</span>
+        <strong>${escapeHtml(item.title)}</strong>
+        <p>${escapeHtml(item.note)}</p>
+        <div>
+          <em>${escapeHtml(item.area)}</em>
+          <small>${escapeHtml(item.source)}</small>
+        </div>
+        <a href="${escapeHtml(item.href)}" target="_blank" rel="noopener noreferrer">Open resource</a>
+      </article>
+    `;
+  }).join("");
 }
 
 function renderLanguageSupport() {

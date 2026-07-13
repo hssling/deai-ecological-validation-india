@@ -139,6 +139,35 @@ def test_portal_language_consent_and_demo_accounts_exist():
     assert "signOutPortal" in js
 
 
+def test_content_enrichment_and_evidence_resources_exist():
+    html = (ROOT / "index.html").read_text(encoding="utf-8")
+    js = (ROOT / "app.js").read_text(encoding="utf-8")
+    css = (ROOT / "styles.css").read_text(encoding="utf-8")
+    assert 'id="contentRoadmapGrid"' in html
+    assert 'id="evidenceResourceGrid"' in html
+    assert 'id="evidence-resources"' in html
+    assert "Content enrichment roadmap" in html
+    assert "Useful links for clinicians, patients, caregivers, and researchers" in html
+    assert "CONTENT_ROADMAP" in js
+    assert "EVIDENCE_RESOURCE_LIBRARY" in js
+    assert "renderContentRoadmap" in js
+    assert "renderEvidenceResourceLibrary" in js
+    assert "Validated scale pack" in js
+    assert "Intrinsic-capacity review" in js
+    assert "Falls and frailty pathway" in js
+    assert "LASI project hub" in js
+    assert "WHO ICOPE integrated care" in js
+    assert "STEADI falls prevention" in js
+    assert "National Programme for Health Care of the Elderly" in js
+    assert "Digital Personal Data Protection Act" in js
+    assert "https://www.iipsindia.ac.in/lasi" in js
+    assert "https://www.who.int/teams/maternal-newborn-child-adolescent-health-and-ageing/ageing-and-health/integrated-care-for-older-people-icope" in js
+    assert "https://www.cdc.gov/steadi/index.html" in js
+    assert "https://dghs.mohfw.gov.in/national-programme-for-the-health-care-of-the-elderly.php" in js
+    assert ".evidence-resource-grid" in css
+    assert ".resource-card" in css
+
+
 def test_supabase_schema_scaffold_exists():
     migration = ROOT / "supabase" / "migrations" / "202607130001_portal_foundation.sql"
     seed = ROOT / "supabase" / "migrations" / "202607130002_seed_education_modules.sql"
