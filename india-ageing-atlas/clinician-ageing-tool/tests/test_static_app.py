@@ -123,14 +123,19 @@ def test_portal_language_consent_and_demo_accounts_exist():
 def test_supabase_schema_scaffold_exists():
     migration = ROOT / "supabase" / "migrations" / "202607130001_portal_foundation.sql"
     seed = ROOT / "supabase" / "migrations" / "202607130002_seed_education_modules.sql"
+    more_seed = ROOT / "supabase" / "migrations" / "202607130003_seed_more_language_modules.sql"
     config = ROOT / "supabase" / "config.toml"
-    for path in (migration, seed, config, ROOT / "config.example.json"):
+    for path in (migration, seed, more_seed, config, ROOT / "config.example.json"):
         assert path.exists(), path
     sql = migration.read_text(encoding="utf-8")
     assert "create table public.assessments" in sql
     assert "create table public.consent_events" in sql
     assert "enable row level security" in sql
     assert "active education modules are public" in sql
+    more_seed_text = more_seed.read_text(encoding="utf-8")
+    assert "'ta'" in more_seed_text
+    assert "'te'" in more_seed_text
+    assert "'mr'" in more_seed_text
 
 
 def test_supabase_runtime_config_is_generated_at_build_time():
