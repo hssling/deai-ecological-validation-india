@@ -242,6 +242,7 @@ const state = {
   portalSession: null,
   supabaseClient: null,
   savedAssessments: [],
+  authMode: "signin",
 };
 
 const form = document.getElementById("patientForm");
@@ -266,6 +267,7 @@ const languageCards = document.getElementById("languageCards");
 const portalStatus = document.getElementById("portalStatus");
 const portalLanding = document.querySelector(".portal-landing");
 const portalLaunchGrid = document.getElementById("portalLaunchGrid");
+const sessionOverviewGrid = document.getElementById("sessionOverviewGrid");
 const authModal = document.getElementById("authModal");
 const openSignIn = document.getElementById("openSignIn");
 const openRegister = document.getElementById("openRegister");
@@ -277,6 +279,7 @@ const authForm = document.getElementById("authForm");
 const authEmail = document.getElementById("authEmail");
 const authPassword = document.getElementById("authPassword");
 const authRole = document.getElementById("authRole");
+const authSubmit = document.getElementById("authSubmit");
 const authStatus = document.getElementById("authStatus");
 const landingAuthStatus = document.getElementById("landingAuthStatus");
 const consentAgreement = document.getElementById("consentAgreement");
@@ -382,6 +385,8 @@ async function signInPortal(register = false) {
   const email = authEmail.value.trim().toLowerCase();
   const password = authPassword.value;
   const role = authRole.value;
+  setAuthBusy(true);
+  try {
   if (!hasConsentAgreement()) {
     setAuthMessage("Accept consent terms first");
     return;
@@ -456,6 +461,9 @@ async function signInPortal(register = false) {
   setAuthMessage(register ? "Demo accounts are already registered; demo sign-in active" : "Demo sign-in active");
   closeAuthDialog();
   renderPortalShell();
+  } finally {
+    setAuthBusy(false);
+  }
 }
 
 async function recordConsentEvent() {
@@ -524,23 +532,64 @@ function renderPortalShell() {
       </article>
     `).join("");
   }
+  renderSessionOverview(role, workflow);
   renderPortalLaunches(role);
   renderModuleLibrary();
   renderTimeline();
 }
 
+function renderSessionOverview(role, workflow) {
+  if (!sessionOverviewGrid) return;
+  const language = LANGUAGE_CONTENT[state.language]?.name || "English";
+  const signedIn = Boolean(state.portalSession);
+  const storage = state.portalSession?.mode === "supabase"
+    ? "Supabase RLS"
+    : state.portalSession?.mode === "demo" ? "Browser demo" : "Locked";
+  const rows = [
+    ["Signed-in user", signedIn ? state.portalSession.name : "Not signed in"],
+    ["Active role", workflow.title],
+    ["Record storage", storage],
+    ["Language", language],
+    ["Workspace", signedIn ? "Modules ready" : "Sign-in required"],
+  ];
+  sessionOverviewGrid.innerHTML = rows.map(([label, value]) => `
+    <div>
+      <span>${escapeHtml(label)}</span>
+      <strong>${escapeHtml(value)}</strong>
+    </div>
+  `).join("");
+}
+
 function openAuthModalWithMode(mode = "signin") {
   if (!authModal) return;
-  const isRegister = mode === "register";
-  if (authModeTitle) authModeTitle.textContent = isRegister ? "Create account" : "Sign in";
-  if (authModeIntro) {
-    authModeIntro.textContent = isRegister
-      ? "Create a Supabase-backed account. If email auto-confirm is enabled, registration signs you in immediately."
-      : "Enter a registered account, or use the demo accounts listed on the landing screen.";
-  }
+  setAuthMode(mode);
   authModal.hidden = false;
   authModal.classList.add("is-open");
   window.setTimeout(() => authEmail?.focus(), 0);
+}
+
+function setAuthMode(mode = "signin") {
+  state.authMode = mode === "register" ? "register" : "signin";
+  const isRegister = state.authMode === "register";
+  if (authModeTitle) authModeTitle.textContent = isRegister ? "Create account" : "Sign in";
+  if (authModeIntro) {
+    authModeIntro.textContent = isRegister
+      ? "Create a Supabase-backed account. Use a real email address and a strong password."
+      : "Enter a registered account, or use one of the demo accounts on the landing screen.";
+  }
+  if (authSubmit) authSubmit.textContent = isRegister ? "Create account" : "Sign in";
+  if (registerAccount) registerAccount.textContent = isRegister ? "Use sign in instead" : "Create account instead";
+  if (authStatus) {
+    authStatus.textContent = isRegister
+      ? "Registration will create and sign in a Supabase-backed account when the email is accepted."
+      : "Complete the form and accept consent terms.";
+  }
+}
+
+function setAuthBusy(isBusy) {
+  [authSubmit, registerAccount, signOut, topSignOut, openSignIn, openRegister].forEach((button) => {
+    if (button) button.disabled = Boolean(isBusy);
+  });
 }
 
 function closeAuthDialog() {
@@ -554,6 +603,8 @@ async function signOutPortal() {
     await state.supabaseClient.auth.signOut();
   }
   state.portalSession = null;
+  if (consentAgreement) consentAgreement.checked = false;
+  setAuthMode("signin");
   closeAuthDialog();
   renderPortalShell();
   setAuthMessage("Signed out");
@@ -754,7 +805,7 @@ if (languageSelect) {
 if (authForm) {
   authForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-    await signInPortal(false);
+    await signInPortal(state.authMode === "register");
   });
 }
 
@@ -789,8 +840,8 @@ document.addEventListener("keydown", (event) => {
 });
 
 if (registerAccount) {
-  registerAccount.addEventListener("click", async () => {
-    await signInPortal(true);
+  registerAccount.addEventListener("click", () => {
+    setAuthMode(state.authMode === "register" ? "signin" : "register");
   });
 }
 

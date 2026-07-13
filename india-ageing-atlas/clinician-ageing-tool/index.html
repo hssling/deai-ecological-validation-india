@@ -90,6 +90,7 @@
             </div>
             <div class="output-meta" id="sessionStatus">Not signed in</div>
           </div>
+          <div class="session-overview-grid" id="sessionOverviewGrid" aria-label="Current portal session"></div>
           <div class="portal-launch-grid" id="portalLaunchGrid" aria-label="Module launcher"></div>
           <div class="workflow-grid" id="workflowGrid"></div>
           <figure class="landing-reference">
@@ -151,8 +152,8 @@
             </label>
           </div>
           <div class="form-actions compact-actions">
-            <button class="primary-button" type="submit">Sign in</button>
-            <button class="secondary-button" type="button" id="registerAccount">Register</button>
+            <button class="primary-button" type="submit" id="authSubmit">Sign in</button>
+            <button class="secondary-button" type="button" id="registerAccount">Create account instead</button>
             <button class="ghost-button" type="button" id="signOut">Sign out</button>
           </div>
         </form>

@@ -110,10 +110,12 @@ def test_portal_language_consent_and_demo_accounts_exist():
     assert 'id="authModal"' in html
     assert 'id="openSignIn"' in html
     assert 'id="openRegister"' in html
+    assert 'id="authSubmit"' in html
     assert 'id="topSignOut"' in html
     assert 'id="authStatus"' in html
     assert 'id="landingAuthStatus"' in html
     assert 'id="portalLaunchGrid"' in html
+    assert 'id="sessionOverviewGrid"' in html
     assert "Sign in to healthy-ageing workflows" in html
     assert "Module library, saved timeline, and follow-up" in html
     assert "हिन्दी" in html
@@ -132,6 +134,8 @@ def test_portal_language_consent_and_demo_accounts_exist():
     assert "PORTAL_LAUNCHES" in js
     assert "renderPortalLaunches" in js
     assert "openAuthModalWithMode" in js
+    assert "setAuthMode" in js
+    assert "renderSessionOverview" in js
     assert "signOutPortal" in js
 
 

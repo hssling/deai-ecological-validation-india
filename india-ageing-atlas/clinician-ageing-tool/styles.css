@@ -110,6 +110,11 @@ button {
   font: inherit;
 }
 
+button:disabled {
+  cursor: wait;
+  opacity: 0.62;
+}
+
 .app-header {
   background:
     linear-gradient(135deg, rgba(246, 162, 26, 0.18), rgba(14, 143, 176, 0.14) 38%, rgba(217, 78, 122, 0.12) 72%, rgba(39, 131, 93, 0.12)),
@@ -448,6 +453,39 @@ button {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
+}
+
+.session-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.session-overview-grid div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(241, 251, 245, 0.92)),
+    #ffffff;
+  padding: 12px;
+}
+
+.session-overview-grid span,
+.session-overview-grid strong {
+  display: block;
+}
+
+.session-overview-grid span {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.session-overview-grid strong {
+  margin-top: 5px;
+  color: #263b51;
+  font-size: 0.9rem;
 }
 
 .portal-launch {
@@ -1905,6 +1943,7 @@ a:focus-visible {
   .pathway-grid,
   .portal-grid,
   .portal-launch-grid,
+  .session-overview-grid,
   .auth-assurance-grid,
   .workflow-grid,
   .module-lanes,
