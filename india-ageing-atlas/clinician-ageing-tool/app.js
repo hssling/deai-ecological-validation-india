@@ -916,7 +916,7 @@ async function saveCurrentAssessment() {
   };
 
   if (state.supabaseClient && state.portalSession.mode === "supabase") {
-    const { error } = await state.supabaseClient.from("assessments").insert({
+    const { data, error } = await state.supabaseClient.from("assessments").insert({
       owner_id: state.portalSession.userId,
       role_context: state.portalSession.role,
       language_code: state.language,
@@ -928,9 +928,15 @@ async function saveCurrentAssessment() {
       follow_up_plan: lastReportJson.followUpPlan,
       report_text: lastReportText,
       consent_context: consentMetadata(),
-    });
+    }).select("id").single();
     if (error) {
       setOutputMeta(error.message);
+      return;
+    }
+    const taskError = await saveFollowUpTasks(data?.id, lastReportJson.followUpTasks || []);
+    if (taskError) {
+      setOutputMeta(`Assessment saved; task save needs review: ${taskError.message || taskError}`);
+      await loadSupabaseAssessments();
       return;
     }
     await loadSupabaseAssessments();
@@ -946,6 +952,29 @@ async function saveCurrentAssessment() {
 
 function hasConsentAgreement() {
   return Boolean(consentAgreement?.checked);
+}
+
+async function saveFollowUpTasks(assessmentId, tasks) {
+  if (!state.supabaseClient || !state.portalSession?.userId || !assessmentId || !tasks.length) return null;
+  try {
+    const rows = tasks.map((task) => ({
+      assessment_id: assessmentId,
+      owner_id: state.portalSession.userId,
+      title: task.title,
+      details: task.details,
+      due_date: task.dueDate,
+      status: task.status || "planned",
+      assigned_role: task.assignedRole || "clinician",
+      domain: task.domain || "Follow-up",
+      priority: task.priority || "Routine",
+      due_window: task.dueWindow || "As clinically appropriate",
+      source: task.source || "generated-follow-up-plan",
+    }));
+    const { error } = await state.supabaseClient.from("follow_up_tasks").insert(rows);
+    return error || null;
+  } catch (error) {
+    return error;
+  }
 }
 
 function consentMetadata() {
@@ -969,6 +998,35 @@ async function loadSupabaseAssessments() {
     setOutputMeta(error.message);
     return;
   }
+  const assessmentIds = (data || []).map((row) => row.id);
+  let tasksByAssessment = {};
+  if (assessmentIds.length) {
+    const { data: taskRows, error: taskError } = await state.supabaseClient
+      .from("follow_up_tasks")
+      .select("id, assessment_id, title, details, due_date, status, assigned_role, domain, priority, due_window")
+      .in("assessment_id", assessmentIds)
+      .order("due_date", { ascending: true });
+    if (taskError) {
+      setOutputMeta(taskError.message);
+    } else {
+      tasksByAssessment = (taskRows || []).reduce((acc, task) => {
+        const list = acc[task.assessment_id] || [];
+        list.push({
+          id: task.id,
+          title: task.title,
+          details: task.details,
+          dueDate: task.due_date,
+          status: task.status,
+          assignedRole: task.assigned_role,
+          domain: task.domain,
+          priority: task.priority,
+          dueWindow: task.due_window,
+        });
+        acc[task.assessment_id] = list;
+        return acc;
+      }, {});
+    }
+  }
   state.savedAssessments = (data || []).map((row) => ({
     id: row.id,
     savedAt: row.created_at,
@@ -977,6 +1035,7 @@ async function loadSupabaseAssessments() {
     summary: {
       spirometry: row.spirometry_result,
       followUpPlan: row.follow_up_plan,
+      followUpTasks: tasksByAssessment[row.id] || row.follow_up_plan?.tasks || [],
     },
   }));
   renderTimeline();
@@ -994,11 +1053,14 @@ function renderTimeline() {
   timelineList.innerHTML = state.savedAssessments.map((record) => {
     const pattern = record.summary?.spirometry?.pattern || record.summary?.spirometry?.classification ? "Saved spirometry result" : "Assessment saved";
     const followUp = record.summary?.followUpPlan?.timing || "Follow-up plan available";
+    const tasks = record.summary?.followUpTasks || record.summary?.followUpPlan?.tasks || [];
+    const done = tasks.filter((task) => task.status === "done").length;
+    const taskSummary = tasks.length ? `${done}/${tasks.length} tasks done` : "No structured tasks";
     return `
       <article>
         <span>${escapeHtml(new Date(record.savedAt).toLocaleString())}</span>
         <strong>${escapeHtml(pattern)}</strong>
-        <p>${escapeHtml(followUp)} · ${escapeHtml(record.role)} · ${escapeHtml(record.language)}</p>
+        <p>${escapeHtml(followUp)} · ${escapeHtml(taskSummary)} · ${escapeHtml(record.role)} · ${escapeHtml(record.language)}</p>
       </article>
     `;
   }).join("");
@@ -1452,7 +1514,80 @@ function buildFollowUpPlan(patient, respiratory, actions) {
   if (patient.respSymptoms === "yes") checklist.push("Record symptom trajectory, oxygen saturation if available, examination, and referral threshold.");
   if (respiratory.classification.obstructionLln || respiratory.classification.prismLln || respiratory.classification.rspLln) checklist.push("Consider repeat spirometry, imaging/laboratory work-up, pulmonary rehabilitation, or specialist referral according to local guidance.");
   if (patient.falls > 0 || patient.frailtySignal === "yes") checklist.push("Add gait, orthostatic BP, vision, footwear, home safety, protein intake, and strength/balance exercise review.");
-  return { timing, rationale, checklist };
+  const tasks = buildFollowUpTasks(patient, respiratory, actions, timing, checklist);
+  return { timing, rationale, checklist, tasks };
+}
+
+function buildFollowUpTasks(patient, respiratory, actions, timing, checklist) {
+  const baseDueDays = timing === "Prompt clinical review" ? 7 : timing === "Routine follow-up interval" ? 90 : 30;
+  const tasks = [
+    followUpTask({
+      title: "Confirm spirometry quality and context",
+      details: checklist[0],
+      assignedRole: "clinician",
+      domain: "Respiratory",
+      priority: respiratory.classification.obstructionLln || patient.respSymptoms === "yes" ? "High" : "Routine",
+      dueDays: baseDueDays,
+    }),
+    followUpTask({
+      title: "Review medicines and reversible contributors",
+      details: checklist[1],
+      assignedRole: "clinician",
+      domain: "Medicines",
+      priority: actions.some((item) => item.priority === "High") ? "High" : "Moderate",
+      dueDays: baseDueDays,
+    }),
+    followUpTask({
+      title: "Agree patient and caregiver goals",
+      details: checklist[2],
+      assignedRole: patient.cognitionSignal === "yes" || patient.functionSignal === "yes" ? "caregiver" : "patient",
+      domain: "Shared goals",
+      priority: "Routine",
+      dueDays: baseDueDays,
+    }),
+  ];
+
+  actions
+    .filter((item) => item.priority !== "Routine")
+    .slice(0, 5)
+    .forEach((item) => {
+      tasks.push(followUpTask({
+        title: `${item.domain} follow-up`,
+        details: item.text,
+        assignedRole: item.domain === "Falls" || item.domain === "Function" || item.domain === "Cognition" ? "caregiver" : "clinician",
+        domain: item.domain,
+        priority: item.priority,
+        dueDays: item.priority === "High" ? 7 : 30,
+      }));
+    });
+
+  return dedupeTasks(tasks).slice(0, 8);
+}
+
+function followUpTask({ title, details, assignedRole, domain, priority, dueDays }) {
+  const dueDate = new Date();
+  dueDate.setDate(dueDate.getDate() + dueDays);
+  return {
+    title,
+    details,
+    assignedRole,
+    domain,
+    priority,
+    status: "planned",
+    dueDate: dueDate.toISOString().slice(0, 10),
+    dueWindow: dueDays <= 7 ? "Within 1 week" : dueDays <= 30 ? "Within 1 month" : "Within 3 months",
+    source: "generated-follow-up-plan",
+  };
+}
+
+function dedupeTasks(tasks) {
+  const seen = new Set();
+  return tasks.filter((task) => {
+    const key = `${task.title}|${task.domain}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 function buildDomainScores(patient, respiratory, actions) {
@@ -1604,8 +1739,19 @@ function renderFollowUpPlan(plan) {
       <strong>${escapeHtml(plan.timing)}</strong>
       <p>${escapeHtml(plan.rationale)}</p>
     </div>
-    <div class="followup-checklist">
-      ${plan.checklist.map((item) => `<div>${escapeHtml(item)}</div>`).join("")}
+    <div class="followup-detail-stack">
+      <div class="followup-checklist">
+        ${plan.checklist.map((item) => `<div>${escapeHtml(item)}</div>`).join("")}
+      </div>
+      <div class="followup-task-list" aria-label="Generated follow-up tracking tasks">
+        ${plan.tasks.map((task) => `
+          <article>
+            <span>${escapeHtml(task.priority)} · ${escapeHtml(task.assignedRole)} · ${escapeHtml(task.dueWindow)}</span>
+            <strong>${escapeHtml(task.title)}</strong>
+            <p>${escapeHtml(task.details)}</p>
+          </article>
+        `).join("")}
+      </div>
     </div>
   `;
 }
@@ -1714,6 +1860,9 @@ function buildReportText(patient, respiratory, actions, domains, patientCards, f
     followUp.rationale,
     ...followUp.checklist.map((item) => `- ${item}`),
     "",
+    "Follow-up tracking tasks:",
+    ...followUp.tasks.map((item) => `- ${item.title} [${item.priority}; ${item.assignedRole}; ${item.dueWindow}]: ${item.details}`),
+    "",
     "Source: LASI national GAMLSS/LMS spirometry reference equations for Indian adults aged 45-90 years.",
   ];
   return lines.join("\n");
@@ -1732,7 +1881,16 @@ function buildReportJson(patient, respiratory, actions, domains, patientCards, f
       bmi: patient.bmi === null ? null : Number(patient.bmi.toFixed(1)),
       tobacco: patient.tobacco,
       respiratorySymptoms: patient.respSymptoms,
+      systolicBp: patient.sbp,
+      diastolicBp: patient.dbp,
+      hba1c: patient.hba1c,
+      fallsPast12Months: patient.falls,
+      frailtySignal: patient.frailtySignal,
+      functionSignal: patient.functionSignal,
+      cognitionSignal: patient.cognitionSignal,
+      moodSignal: patient.moodSignal,
       visitGoal: patient.visitGoal,
+      planStyle: patient.planStyle,
     },
     spirometry: {
       fev1: roundedScore(respiratory.fev1),
@@ -1745,6 +1903,7 @@ function buildReportJson(patient, respiratory, actions, domains, patientCards, f
     clinicianActions: actions,
     patientCompanionPlan: patientCards,
     followUpPlan: followUp,
+    followUpTasks: followUp.tasks,
   };
 }
 

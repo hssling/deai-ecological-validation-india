@@ -1254,7 +1254,8 @@ a:focus-visible {
 }
 
 .followup-summary,
-.followup-checklist div {
+.followup-checklist div,
+.followup-task-list article {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #fff;
@@ -1281,9 +1282,48 @@ a:focus-visible {
   gap: 8px;
 }
 
+.followup-detail-stack {
+  display: grid;
+  gap: 10px;
+}
+
 .followup-checklist div {
   border-left: 5px solid var(--teal);
   color: #33475b;
+}
+
+.followup-task-list {
+  display: grid;
+  gap: 8px;
+}
+
+.followup-task-list article {
+  border-left: 5px solid var(--violet);
+  background: linear-gradient(180deg, #fff, #fbfaff);
+}
+
+.followup-task-list span,
+.followup-task-list strong,
+.followup-task-list p {
+  display: block;
+}
+
+.followup-task-list span {
+  color: var(--blue);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.followup-task-list strong {
+  margin-top: 5px;
+  color: #263b51;
+}
+
+.followup-task-list p {
+  margin: 6px 0 0;
+  color: #4d6070;
+  font-size: 0.84rem;
 }
 
 .pathway-band {

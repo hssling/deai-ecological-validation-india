@@ -183,18 +183,46 @@ def test_supabase_schema_scaffold_exists():
     migration = ROOT / "supabase" / "migrations" / "202607130001_portal_foundation.sql"
     seed = ROOT / "supabase" / "migrations" / "202607130002_seed_education_modules.sql"
     more_seed = ROOT / "supabase" / "migrations" / "202607130003_seed_more_language_modules.sql"
+    task_tracking = ROOT / "supabase" / "migrations" / "202607130004_follow_up_task_tracking.sql"
     config = ROOT / "supabase" / "config.toml"
-    for path in (migration, seed, more_seed, config, ROOT / "config.example.json"):
+    for path in (migration, seed, more_seed, task_tracking, config, ROOT / "config.example.json"):
         assert path.exists(), path
     sql = migration.read_text(encoding="utf-8")
     assert "create table public.assessments" in sql
     assert "create table public.consent_events" in sql
+    assert "create table public.follow_up_tasks" in sql
+    assert "follow_up_plan jsonb" in sql
     assert "enable row level security" in sql
     assert "active education modules are public" in sql
+    task_sql = task_tracking.read_text(encoding="utf-8")
+    assert "assigned_role public.portal_role" in task_sql
+    assert "due_window text" in task_sql
+    assert "follow_up_assessment_idx" in task_sql
     more_seed_text = more_seed.read_text(encoding="utf-8")
     assert "'ta'" in more_seed_text
     assert "'te'" in more_seed_text
     assert "'mr'" in more_seed_text
+
+
+def test_follow_up_task_data_flow_is_wired():
+    js = (ROOT / "app.js").read_text(encoding="utf-8")
+    css = (ROOT / "styles.css").read_text(encoding="utf-8")
+    assert "buildFollowUpTasks" in js
+    assert "saveFollowUpTasks" in js
+    assert "followUpTasks: followUp.tasks" in js
+    assert "fallsPast12Months: patient.falls" in js
+    assert "frailtySignal: patient.frailtySignal" in js
+    assert "functionSignal: patient.functionSignal" in js
+    assert "cognitionSignal: patient.cognitionSignal" in js
+    assert "moodSignal: patient.moodSignal" in js
+    assert 'state.supabaseClient.from("follow_up_tasks").insert' in js
+    assert '.from("follow_up_tasks")' in js
+    assert "tasksByAssessment" in js
+    assert "assigned_role" in js
+    assert "due_window" in js
+    assert "taskSummary" in js
+    assert "Generated follow-up tracking tasks" in js
+    assert ".followup-task-list" in css
 
 
 def test_supabase_runtime_config_is_generated_at_build_time():
