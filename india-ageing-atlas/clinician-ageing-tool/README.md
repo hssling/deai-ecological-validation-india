@@ -11,6 +11,9 @@ The first release provides:
 - A visible roadmap for expanding into a full clinician and patient healthy ageing portal.
 - A patient companion plan, follow-up planner, and local JSON export for documentation workflows.
 - Mobile-friendly navigation with section highlighting, a bottom tab bar, skip link, and back-to-top control.
+- Indian language patient-education support for English, Hindi, Kannada, Tamil, Telugu, and Marathi.
+- Demo clinician, patient, and caregiver portal workflows with DPDP-style consent gating.
+- Optional Supabase schema for authenticated profiles, assessments, follow-up tasks, consent events, and education modules.
 
 ## Portal Expansion Path
 
@@ -31,6 +34,55 @@ This static release can be extended into a complete portal in staged modules:
 - Link each module to source notes, LASI provenance, validation status, guideline references, and change logs.
 - Explore optional account-based portal features only after privacy, consent, audit trail, and governance requirements are defined.
 
+## Demo Portal Accounts
+
+The sign-in/register panel lists these demo accounts:
+
+- Clinician: `clinician.demo@ihacs.local` / `DemoClinician#2026`
+- Patient: `patient.demo@ihacs.local` / `DemoPatient#2026`
+- Caregiver: `care.demo@ihacs.local` / `DemoCare#2026`
+
+Demo accounts are for training and UI review only. Do not enter real patient identifiers in demo mode.
+
+## Supabase Portal Backend
+
+The calculator remains usable without Supabase. Authenticated portal persistence activates only when a runtime config is provided:
+
+```json
+{
+  "supabaseUrl": "https://YOUR_PROJECT.supabase.co",
+  "supabaseAnonKey": "YOUR_PUBLIC_ANON_KEY"
+}
+```
+
+Create `config.json` from `config.example.json` and provide the public Supabase URL and anon key. Do not commit real project keys. If `config.json` is absent, the app stays in demo mode.
+
+The Supabase scaffold is in `supabase/`:
+
+- `supabase/config.toml`
+- `supabase/migrations/202607130001_portal_foundation.sql`
+- `supabase/migrations/202607130002_seed_education_modules.sql`
+
+When the Supabase CLI is available, apply locally with:
+
+```bash
+supabase start
+supabase db reset
+```
+
+For a hosted Supabase project, link the project and push migrations:
+
+```bash
+supabase link --project-ref YOUR_PROJECT_REF
+supabase db push
+```
+
+The schema enables row-level security for profiles, assessments, follow-up tasks, and consent events. Education modules are readable when active.
+
+## Consent and Data Protection
+
+The portal sign-in/register form requires consent acceptance for each session. The consent language covers clinical-use limits, minimum necessary data, patient notice/consent, withdrawal options, demo-account restrictions, and the need for organisational safeguards under applicable Indian data protection requirements including the Digital Personal Data Protection Act.
+
 ## Clinical Boundary
 
 This is clinical decision support, not a diagnostic or prescribing system. It should be used with spirometry quality review, clinical examination, local guidelines, and appropriate referral pathways. LASI reference equations apply to Indian adults aged 45-90 years and should not be extrapolated to younger adults.
@@ -44,6 +96,18 @@ The respiratory calculator uses the bundled LASI GAMLSS/LMS table from:
 Citation text from the source package:
 
 Siddalingaiah HS. Nationally Representative Spirometry Reference Equations for Middle-Aged and Older Indians: A Cross-sectional Derivation and Validation Study from the Longitudinal Ageing Study in India, and Re-estimated Burden of Restrictive and Preserved-Ratio Impairment.
+
+## Evidence Backbone
+
+Current portal modules are organised around these source families:
+
+- LASI national GAMLSS/LMS spirometry equations for Indian adults aged 45-90 years.
+- WHO Integrated Care for Older People (ICOPE): person-centred assessment and pathways in primary/community care.
+- WHO Decade of Healthy Ageing: intrinsic capacity, functional ability, environments, and person-centred goals.
+- WHO physical activity and sedentary behaviour guidance for adults, older adults, and people with chronic conditions or disability.
+- Falls-prevention logic consistent with structured falls-risk review frameworks such as CDC STEADI.
+
+The app currently provides education, structured prompts, documentation support, and follow-up planning. It does not provide diagnosis, prescribing, automated emergency triage, or externally validated prognostic risk prediction.
 
 ## Acknowledgements
 

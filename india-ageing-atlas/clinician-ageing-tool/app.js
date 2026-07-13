@@ -1,6 +1,213 @@
 const LMS_Z = -1.6448536269514722;
+const DEMO_ACCOUNTS = {
+  clinician: {
+    email: "clinician.demo@ihacs.local",
+    password: "DemoClinician#2026",
+    role: "clinician",
+    name: "Demo clinician",
+  },
+  patient: {
+    email: "patient.demo@ihacs.local",
+    password: "DemoPatient#2026",
+    role: "patient",
+    name: "Demo patient",
+  },
+  caregiver: {
+    email: "care.demo@ihacs.local",
+    password: "DemoCare#2026",
+    role: "caregiver",
+    name: "Demo caregiver",
+  },
+};
+const LANGUAGE_CONTENT = {
+  en: {
+    name: "English",
+    title: "Patient education in Indian languages",
+    intro: "Choose a language to adapt the patient-facing education, visit preparation, warning symptoms, and follow-up support content. Clinical calculations remain unchanged.",
+    cards: [
+      ["Result meaning", "Your breathing test is compared with Indian reference values for similar age, sex, and height. The result should be reviewed with symptoms, examination, and test quality."],
+      ["Healthy ageing focus", "Discuss strength, nutrition, medicines, falls, memory, mood, sleep, vaccination, tobacco exposure, and daily function during follow-up."],
+      ["Seek urgent care", "Get urgent help for severe breathlessness, chest pain, fainting, confusion, blue lips, coughing blood, or sudden weakness."],
+      ["Visit preparation", "Bring current medicines, previous reports, vaccination history, symptom notes, fall history, and questions for the clinician."],
+    ],
+  },
+  hi: {
+    name: "हिन्दी",
+    title: "भारतीय भाषाओं में रोगी शिक्षा",
+    intro: "भाषा चुनने पर रोगी के लिए शिक्षा, चेतावनी लक्षण, फॉलो-अप और मुलाकात की तैयारी की सामग्री बदलती है। गणना वही रहती है।",
+    cards: [
+      ["परिणाम का अर्थ", "आपकी सांस की जांच की तुलना समान उम्र, लिंग और ऊंचाई वाले भारतीय संदर्भ मानों से की जाती है। लक्षण, जांच और स्पाइरोमेट्री गुणवत्ता के साथ समीक्षा जरूरी है।"],
+      ["स्वस्थ ageing focus", "ताकत, पोषण, दवाएं, गिरना, याददाश्त, मनोदशा, नींद, टीकाकरण, तंबाकू/धुएं का संपर्क और दैनिक कार्य पर चर्चा करें।"],
+      ["तुरंत सहायता लें", "बहुत अधिक सांस फूलना, सीने में दर्द, बेहोशी, भ्रम, होंठ नीले पड़ना, खून वाली खांसी या अचानक कमजोरी हो तो तुरंत मदद लें।"],
+      ["मुलाकात की तैयारी", "दवाएं, पुराने रिपोर्ट, टीकाकरण जानकारी, लक्षण नोट्स, गिरने का इतिहास और अपने सवाल साथ लाएं।"],
+    ],
+  },
+  kn: {
+    name: "ಕನ್ನಡ",
+    title: "ಭಾರತೀಯ ಭಾಷೆಗಳಲ್ಲಿ ರೋಗಿ ಶಿಕ್ಷಣ",
+    intro: "ಭಾಷೆಯನ್ನು ಆಯ್ಕೆ ಮಾಡಿದರೆ ರೋಗಿಗೆ ಶಿಕ್ಷಣ, ಎಚ್ಚರಿಕೆ ಲಕ್ಷಣಗಳು, ಫಾಲೋ-ಅಪ್ ಮತ್ತು ಭೇಟಿ ಸಿದ್ಧತೆ ವಿಷಯ ಬದಲಾಗುತ್ತದೆ. ವೈದ್ಯಕೀಯ ಗಣನೆಗಳು ಬದಲಾಗುವುದಿಲ್ಲ.",
+    cards: [
+      ["ಫಲಿತಾಂಶದ ಅರ್ಥ", "ನಿಮ್ಮ ಉಸಿರಾಟ ಪರೀಕ್ಷೆಯನ್ನು ಸಮಾನ ವಯಸ್ಸು, ಲಿಂಗ ಮತ್ತು ಎತ್ತರದ ಭಾರತೀಯ ಉಲ್ಲೇಖ ಮೌಲ್ಯಗಳೊಂದಿಗೆ ಹೋಲಿಸಲಾಗುತ್ತದೆ. ಲಕ್ಷಣಗಳು, ಪರೀಕ್ಷೆ ಮತ್ತು ಸ್ಪೈರೊಮೆಟ್ರಿ ಗುಣಮಟ್ಟದೊಂದಿಗೆ ಪರಿಶೀಲಿಸಬೇಕು."],
+      ["ಆರೋಗ್ಯಕರ ವಯೋವೃದ್ಧಿ", "ಶಕ್ತಿ, ಪೌಷ್ಟಿಕತೆ, ಔಷಧಿಗಳು, ಬೀಳುವಿಕೆ, ನೆನಪು, ಮನಸ್ಥಿತಿ, ನಿದ್ರೆ, ಲಸಿಕೆ, ತಂಬಾಕು/ಧೂಮ ಸಂಪರ್ಕ ಮತ್ತು ದಿನನಿತ್ಯದ ಕಾರ್ಯಗಳ ಬಗ್ಗೆ ಚರ್ಚಿಸಿ."],
+      ["ತುರ್ತು ಸಹಾಯ ಪಡೆಯಿರಿ", "ತೀವ್ರ ಉಸಿರಾಟ ತೊಂದರೆ, ಎದೆ ನೋವು, ಮೂರ್ಛೆ, ಗೊಂದಲ, ನೀಲಿ ತುಟಿ, ರಕ್ತದ ಕೆಮ್ಮು ಅಥವಾ ಅಕಸ್ಮಾತ್ ದೌರ್ಬಲ್ಯ ಇದ್ದರೆ ತಕ್ಷಣ ಸಹಾಯ ಪಡೆಯಿರಿ."],
+      ["ಭೇಟಿಗೆ ಸಿದ್ಧತೆ", "ಪ್ರಸ್ತುತ ಔಷಧಿಗಳು, ಹಿಂದಿನ ವರದಿಗಳು, ಲಸಿಕೆ ಇತಿಹಾಸ, ಲಕ್ಷಣಗಳ ಟಿಪ್ಪಣಿ, ಬೀಳುವಿಕೆ ಇತಿಹಾಸ ಮತ್ತು ಪ್ರಶ್ನೆಗಳನ್ನು ತಂದುಕೊಳ್ಳಿ."],
+    ],
+  },
+  ta: {
+    name: "தமிழ்",
+    title: "இந்திய மொழிகளில் நோயாளர் கல்வி",
+    intro: "மொழியைத் தேர்ந்தெடுத்தால் நோயாளருக்கான கல்வி, எச்சரிக்கை அறிகுறிகள், பின்தொடர்பு மற்றும் வருகைத் தயாரிப்பு உள்ளடக்கம் மாறும். மருத்துவ கணக்கீடுகள் மாறாது.",
+    cards: [
+      ["முடிவின் பொருள்", "உங்கள் மூச்சுப் பரிசோதனை ஒரே வயது, பாலினம், உயரம் கொண்ட இந்திய குறிப்புமதிப்புகளுடன் ஒப்பிடப்படுகிறது. அறிகுறிகள், பரிசோதனை மற்றும் ஸ்பைரோமெட்ரி தரத்துடன் மதிப்பிட வேண்டும்."],
+      ["ஆரோக்கியமான முதுமை", "வலிமை, ஊட்டச்சத்து, மருந்துகள், விழுதல், நினைவு, மனநிலை, தூக்கம், தடுப்பூசி, புகை/தூசி வெளிப்பாடு மற்றும் தினசரி செயல்பாடு குறித்து பேசுங்கள்."],
+      ["அவசர உதவி தேவை", "கடுமையான மூச்சுத்திணறல், நெஞ்சு வலி, மயக்கம், குழப்பம், நீல உதடு, இரத்தக் காசல் அல்லது திடீர் பலவீனம் இருந்தால் உடனடி உதவி பெறுங்கள்."],
+      ["வருகைக்கு தயாராக", "தற்போதைய மருந்துகள், பழைய அறிக்கைகள், தடுப்பூசி வரலாறு, அறிகுறி குறிப்புகள், விழுதல் வரலாறு மற்றும் கேள்விகளை கொண்டு வாருங்கள்."],
+    ],
+  },
+  te: {
+    name: "తెలుగు",
+    title: "భారతీయ భాషల్లో రోగి విద్య",
+    intro: "భాషను ఎంచుకుంటే రోగి విద్య, హెచ్చరిక లక్షణాలు, ఫాలో-అప్ మరియు సందర్శన సిద్ధత మారుతుంది. క్లినికల్ లెక్కలు మారవు.",
+    cards: [
+      ["ఫలిత అర్థం", "మీ శ్వాస పరీక్షను అదే వయస్సు, లింగం, ఎత్తు ఉన్న భారతీయ సూచిక విలువలతో పోలుస్తారు. లక్షణాలు, పరీక్ష మరియు స్పైరోమెట్రీ నాణ్యతతో కలిసి సమీక్షించాలి."],
+      ["ఆరోగ్యకర వృద్ధాప్యం", "బలం, పోషణ, మందులు, పడిపోవడం, జ్ఞాపకం, మూడ్, నిద్ర, టీకాలు, పొగాకు/పొగ పరిచయం మరియు రోజువారీ పనుల గురించి మాట్లాడండి."],
+      ["అత్యవసర సహాయం", "తీవ్ర శ్వాస ఇబ్బంది, ఛాతి నొప్పి, మూర్ఛ, గందరగోళం, నీలి పెదవులు, రక్తంతో దగ్గు లేదా అకస్మాత్తు బలహీనత ఉంటే వెంటనే సహాయం పొందండి."],
+      ["సందర్శన సిద్ధత", "ప్రస్తుత మందులు, పాత నివేదికలు, టీకా చరిత్ర, లక్షణాల గమనికలు, పడిపోవడం చరిత్ర మరియు ప్రశ్నలు తీసుకురండి."],
+    ],
+  },
+  mr: {
+    name: "मराठी",
+    title: "भारतीय भाषांमध्ये रुग्ण शिक्षण",
+    intro: "भाषा निवडल्यावर रुग्ण शिक्षण, इशारा लक्षणे, फॉलो-अप आणि भेटीची तयारी यातील मजकूर बदलतो. वैद्यकीय गणना बदलत नाहीत.",
+    cards: [
+      ["निकालाचा अर्थ", "आपली श्वसन चाचणी समान वय, लिंग आणि उंची असलेल्या भारतीय संदर्भ मूल्यांशी तुलना केली जाते. लक्षणे, तपासणी आणि स्पायरोमेट्री गुणवत्तेसह आढावा आवश्यक आहे."],
+      ["आरोग्यदायी वृद्धत्व", "शक्ती, पोषण, औषधे, पडणे, स्मरणशक्ती, मनःस्थिती, झोप, लसीकरण, तंबाखू/धूर संपर्क आणि दैनंदिन कार्य यावर चर्चा करा."],
+      ["तातडीची मदत घ्या", "तीव्र श्वास लागणे, छातीत दुखणे, बेशुद्ध पडणे, गोंधळ, ओठ निळे होणे, रक्ताची खोकला किंवा अचानक अशक्तपणा असल्यास तातडीची मदत घ्या."],
+      ["भेटीची तयारी", "सध्याची औषधे, जुने अहवाल, लसीकरण इतिहास, लक्षणांच्या नोंदी, पडण्याचा इतिहास आणि प्रश्न सोबत आणा."],
+    ],
+  },
+};
+const ROLE_WORKFLOWS = {
+  clinician: {
+    title: "Clinician workspace",
+    intro: "Structured assessment, documentation, education, referral review, and follow-up planning.",
+    steps: [
+      ["Assess", "Run LASI spirometry scoring, review frailty/function/cognition/mood/falls/metabolic signals, and confirm test quality."],
+      ["Decide", "Use priority prompts to plan repeat testing, guideline-based management, referral, rehabilitation, medication review, and prevention."],
+      ["Document", "Copy or save a concise summary with inputs, LASI comparison, domain priorities, and follow-up rationale."],
+      ["Follow up", "Track longitudinal changes in lung function, symptoms, falls, BP, HbA1c, function, vaccinations, and patient goals."],
+    ],
+  },
+  patient: {
+    title: "Patient companion",
+    intro: "Plain-language understanding, goals, warning symptoms, visit preparation, and follow-up support.",
+    steps: [
+      ["Understand", "Read patient-friendly result meaning in the selected language."],
+      ["Prepare", "List medicines, prior reports, symptoms, falls, vaccination history, and questions before the visit."],
+      ["Act", "Follow clinician-agreed goals for activity, breathing symptoms, nutrition, medicines, safety, and exposure reduction."],
+      ["Return", "Use warning symptoms and follow-up timing to know when to seek help or attend planned review."],
+    ],
+  },
+  caregiver: {
+    title: "Caregiver support",
+    intro: "Home safety, medicine support, symptom observation, appointment preparation, and escalation prompts.",
+    steps: [
+      ["Observe", "Track breathlessness, cough, activity tolerance, appetite, sleep, mood, memory, falls, and medicine adherence."],
+      ["Support", "Help with appointments, reports, medicines, home safety, nutrition, exercise, and exposure reduction."],
+      ["Escalate", "Recognise urgent warning symptoms and arrange timely clinical review."],
+      ["Coordinate", "Share practical goals and concerns with the clinician and patient."],
+    ],
+  },
+  researcher: {
+    title: "Public health and research view",
+    intro: "Evidence provenance, model limits, validation status, governance, and population-health learning needs.",
+    steps: [
+      ["Provenance", "Track LASI equation source, version, derivation population, age range, and validation status."],
+      ["Governance", "Separate open education from patient-level records, maintain consent, audit trails, and role-based access."],
+      ["Quality", "Monitor missing data, implausible inputs, repeated measures, and module versioning."],
+      ["Evaluation", "Plan external validation, usability testing, calibration checks, and equity audits before high-stakes use."],
+    ],
+  },
+};
+const EVIDENCE_SOURCES = {
+  lasi: "LASI national GAMLSS/LMS spirometry reference equations",
+  whoIcope: "WHO ICOPE person-centred integrated care for older people",
+  whoAgeing: "WHO Decade of Healthy Ageing: intrinsic capacity, functional ability, and environments",
+  whoActivity: "WHO physical activity and sedentary behaviour guidance",
+  cdcSteadi: "CDC STEADI falls prevention framework",
+};
+const PORTAL_MODULES = {
+  clinician: [
+    {
+      title: "Respiratory decision support",
+      flow: "Input spirometry -> compare with LASI LLN/z-score -> classify pattern -> confirm quality -> plan repeat testing/referral.",
+      evidence: ["lasi"],
+      status: "Active calculator module",
+    },
+    {
+      title: "Intrinsic-capacity review",
+      flow: "Screen mobility, cognition, mood, nutrition, sensory concerns, function, and social support -> prioritise care plan.",
+      evidence: ["whoIcope", "whoAgeing"],
+      status: "Structured prompt module",
+    },
+    {
+      title: "Falls and frailty pathway",
+      flow: "Falls history -> gait/orthostatic/vision/medicine/home-safety review -> strength, balance, referral, and follow-up tasks.",
+      evidence: ["cdcSteadi", "whoIcope"],
+      status: "Prompt module; validated scales can be added next",
+    },
+    {
+      title: "Prevention and activity plan",
+      flow: "Review activity, sedentary time, resistance/balance exercise, vaccination, tobacco exposure, nutrition, and medicines.",
+      evidence: ["whoActivity", "whoAgeing"],
+      status: "Education and documentation module",
+    },
+    {
+      title: "Longitudinal monitoring",
+      flow: "Save visit snapshots -> trend lung function, symptoms, BP, HbA1c, falls, function, and goals -> schedule follow-up.",
+      evidence: ["whoIcope"],
+      status: "Supabase-ready schema",
+    },
+  ],
+  public: [
+    {
+      title: "Understand my result",
+      flow: "Plain-language explanation -> selected Indian language -> key questions for clinician -> no self-diagnosis wording.",
+      evidence: ["lasi", "whoAgeing"],
+      status: "Multilingual education module",
+    },
+    {
+      title: "Prepare for my visit",
+      flow: "Medicine list, reports, symptoms, exposures, falls, vaccinations, caregiver concerns, and goals before appointment.",
+      evidence: ["whoIcope"],
+      status: "Patient companion module",
+    },
+    {
+      title: "Act on agreed goals",
+      flow: "Clinician-approved activity, nutrition, exposure reduction, medicine adherence, home safety, and follow-up reminders.",
+      evidence: ["whoActivity", "cdcSteadi"],
+      status: "Support and follow-up module",
+    },
+    {
+      title: "Know warning symptoms",
+      flow: "Clear urgent-care prompts for severe breathlessness, chest pain, fainting, confusion, blue lips, coughing blood, or sudden weakness.",
+      evidence: ["whoIcope"],
+      status: "Safety education module",
+    },
+    {
+      title: "Caregiver coordination",
+      flow: "Observe function and symptoms -> support medicines and appointments -> share concerns -> escalate when warning symptoms occur.",
+      evidence: ["whoAgeing", "whoIcope"],
+      status: "Caregiver workflow module",
+    },
+  ],
+};
 const state = {
   lmsRows: [],
+  language: "en",
+  portalSession: null,
+  supabaseClient: null,
+  savedAssessments: [],
 };
 
 const form = document.getElementById("patientForm");
@@ -18,11 +225,33 @@ const copyReport = document.getElementById("copyReport");
 const downloadReport = document.getElementById("downloadReport");
 const printReport = document.getElementById("printReport");
 const backToTop = document.getElementById("backToTop");
+const languageSelect = document.getElementById("languageSelect");
+const languageTitle = document.getElementById("languageTitle");
+const languageIntro = document.getElementById("languageIntro");
+const languageCards = document.getElementById("languageCards");
+const portalStatus = document.getElementById("portalStatus");
+const sessionStatus = document.getElementById("sessionStatus");
+const authForm = document.getElementById("authForm");
+const authEmail = document.getElementById("authEmail");
+const authPassword = document.getElementById("authPassword");
+const authRole = document.getElementById("authRole");
+const consentAgreement = document.getElementById("consentAgreement");
+const registerAccount = document.getElementById("registerAccount");
+const signOut = document.getElementById("signOut");
+const roleTitle = document.getElementById("roleTitle");
+const roleIntro = document.getElementById("roleIntro");
+const workflowGrid = document.getElementById("workflowGrid");
+const clinicianModules = document.getElementById("clinicianModules");
+const publicModules = document.getElementById("publicModules");
+const timelineList = document.getElementById("timelineList");
+const timelineIntro = document.getElementById("timelineIntro");
+const saveAssessment = document.getElementById("saveAssessment");
 let lastReportText = "";
 let lastReportJson = null;
 
 init();
 initNavigation();
+initPortal();
 
 async function init() {
   try {
@@ -47,6 +276,286 @@ async function init() {
   }
 }
 
+async function initPortal() {
+  const config = await loadRuntimeConfig();
+  if (window.supabase?.createClient && config.supabaseUrl && config.supabaseAnonKey) {
+    state.supabaseClient = window.supabase.createClient(config.supabaseUrl, config.supabaseAnonKey);
+    portalStatus.textContent = "Supabase connected";
+    state.supabaseClient.auth.getSession().then(({ data }) => {
+      if (data?.session?.user) {
+        state.portalSession = {
+          mode: "supabase",
+          email: data.session.user.email,
+          role: data.session.user.user_metadata?.role || "clinician",
+          name: data.session.user.user_metadata?.name || data.session.user.email,
+          userId: data.session.user.id,
+        };
+        renderPortalShell();
+        loadSupabaseAssessments();
+      }
+    });
+  } else {
+    portalStatus.textContent = "Demo mode active";
+  }
+  renderLanguageSupport();
+  renderPortalShell();
+}
+
+async function loadRuntimeConfig() {
+  const inlineConfig = window.IHACS_CONFIG || {};
+  if (inlineConfig.supabaseUrl && inlineConfig.supabaseAnonKey) {
+    return inlineConfig;
+  }
+  try {
+    const response = await fetch("config.json", { cache: "no-store" });
+    if (!response.ok) return inlineConfig;
+    const fileConfig = await response.json();
+    return { ...inlineConfig, ...fileConfig };
+  } catch {
+    return inlineConfig;
+  }
+}
+
+async function signInPortal(register = false) {
+  const email = authEmail.value.trim().toLowerCase();
+  const password = authPassword.value;
+  const role = authRole.value;
+  if (!hasConsentAgreement()) {
+    setOutputMeta("Accept consent terms first");
+    return;
+  }
+  if (!email || !password) {
+    setOutputMeta("Enter email and password");
+    return;
+  }
+
+  if (state.supabaseClient && !email.endsWith("@ihacs.local")) {
+    const response = register
+      ? await state.supabaseClient.auth.signUp({ email, password, options: { data: { role } } })
+      : await state.supabaseClient.auth.signInWithPassword({ email, password });
+    if (response.error) {
+      setOutputMeta(response.error.message);
+      return;
+    }
+    const user = response.data.user || response.data.session?.user;
+    state.portalSession = {
+      mode: "supabase",
+      email,
+      role: user?.user_metadata?.role || role,
+      name: user?.email || email,
+      userId: user?.id || null,
+    };
+    await recordConsentEvent();
+    setOutputMeta(register ? "Registration started" : "Signed in");
+    renderPortalShell();
+    await loadSupabaseAssessments();
+    return;
+  }
+
+  const demo = Object.values(DEMO_ACCOUNTS).find((account) => account.email === email);
+  if (!demo || demo.password !== password) {
+    setOutputMeta("Use a listed demo account, or configure Supabase for real accounts");
+    return;
+  }
+  state.portalSession = {
+    mode: "demo",
+    email: demo.email,
+    role: demo.role,
+    name: demo.name,
+    userId: demo.email,
+  };
+  authRole.value = demo.role;
+  setOutputMeta(register ? "Demo account selected" : "Demo sign-in active");
+  renderPortalShell();
+}
+
+async function recordConsentEvent() {
+  if (!state.supabaseClient || !state.portalSession?.userId || !hasConsentAgreement()) return;
+  await state.supabaseClient.from("consent_events").insert({
+    user_id: state.portalSession.userId,
+    consent_version: "dpdp-clinical-support-v1",
+    accepted: true,
+    purpose: "clinical decision support, education, documentation, and follow-up planning",
+    language_code: state.language,
+    user_agent: navigator.userAgent,
+  });
+}
+
+function renderPortalShell() {
+  const role = state.portalSession?.role || authRole?.value || "clinician";
+  const workflow = ROLE_WORKFLOWS[role] || ROLE_WORKFLOWS.clinician;
+  if (roleTitle) roleTitle.textContent = workflow.title;
+  if (roleIntro) roleIntro.textContent = workflow.intro;
+  if (sessionStatus) {
+    sessionStatus.textContent = state.portalSession
+      ? `${state.portalSession.name} (${state.portalSession.mode})`
+      : "Not signed in";
+  }
+  if (workflowGrid) {
+    workflowGrid.innerHTML = workflow.steps.map((step, index) => `
+      <article>
+        <span>${String(index + 1).padStart(2, "0")}</span>
+        <strong>${escapeHtml(step[0])}</strong>
+        <p>${escapeHtml(step[1])}</p>
+      </article>
+    `).join("");
+  }
+  renderModuleLibrary();
+  renderTimeline();
+}
+
+function renderModuleLibrary() {
+  if (clinicianModules) {
+    clinicianModules.innerHTML = PORTAL_MODULES.clinician.map(moduleCard).join("");
+  }
+  if (publicModules) {
+    publicModules.innerHTML = PORTAL_MODULES.public.map(moduleCard).join("");
+  }
+}
+
+function moduleCard(item) {
+  return `
+    <article>
+      <span>${escapeHtml(item.status)}</span>
+      <strong>${escapeHtml(item.title)}</strong>
+      <p>${escapeHtml(item.flow)}</p>
+      <em>${item.evidence.map((key) => escapeHtml(EVIDENCE_SOURCES[key])).join(" · ")}</em>
+    </article>
+  `;
+}
+
+function renderLanguageSupport() {
+  const content = LANGUAGE_CONTENT[state.language] || LANGUAGE_CONTENT.en;
+  if (languageTitle) languageTitle.textContent = content.title;
+  if (languageIntro) languageIntro.textContent = content.intro;
+  if (languageCards) {
+    languageCards.innerHTML = content.cards.map((card, index) => `
+      <article>
+        <span>${content.name} ${String(index + 1).padStart(2, "0")}</span>
+        <strong>${escapeHtml(card[0])}</strong>
+        <p>${escapeHtml(card[1])}</p>
+      </article>
+    `).join("");
+  }
+}
+
+async function saveCurrentAssessment() {
+  if (!lastReportJson) {
+    updateAssessment();
+  }
+  if (!lastReportJson) {
+    setOutputMeta("No assessment available");
+    return;
+  }
+  if (!state.portalSession) {
+    setOutputMeta("Sign in to save");
+    document.getElementById("portal")?.scrollIntoView({ behavior: "smooth" });
+    return;
+  }
+  if (!hasConsentAgreement()) {
+    setOutputMeta("Accept consent terms first");
+    document.getElementById("portal")?.scrollIntoView({ behavior: "smooth" });
+    return;
+  }
+
+  const record = {
+    id: `${Date.now()}-${Math.random().toString(16).slice(2)}`,
+    savedAt: new Date().toISOString(),
+    role: state.portalSession.role,
+    language: state.language,
+    consent: consentMetadata(),
+    summary: lastReportJson,
+  };
+
+  if (state.supabaseClient && state.portalSession.mode === "supabase") {
+    const { error } = await state.supabaseClient.from("assessments").insert({
+      owner_id: state.portalSession.userId,
+      role_context: state.portalSession.role,
+      language_code: state.language,
+      patient_snapshot: lastReportJson.patientInputs,
+      spirometry_result: lastReportJson.spirometry,
+      care_map: lastReportJson.careMap,
+      clinician_actions: lastReportJson.clinicianActions,
+      patient_plan: lastReportJson.patientCompanionPlan,
+      follow_up_plan: lastReportJson.followUpPlan,
+      report_text: lastReportText,
+      consent_context: consentMetadata(),
+    });
+    if (error) {
+      setOutputMeta(error.message);
+      return;
+    }
+    await loadSupabaseAssessments();
+    setOutputMeta("Saved to Supabase");
+    return;
+  }
+
+  state.savedAssessments.unshift(record);
+  state.savedAssessments = state.savedAssessments.slice(0, 8);
+  renderTimeline();
+  setOutputMeta("Saved in demo timeline");
+}
+
+function hasConsentAgreement() {
+  return Boolean(consentAgreement?.checked);
+}
+
+function consentMetadata() {
+  return {
+    accepted: hasConsentAgreement(),
+    acceptedAt: hasConsentAgreement() ? new Date().toISOString() : null,
+    version: "dpdp-clinical-support-v1",
+    scope: "minimum necessary clinical decision support, education, documentation, and follow-up planning",
+    warning: "not emergency triage, diagnosis, or prescribing",
+  };
+}
+
+async function loadSupabaseAssessments() {
+  if (!state.supabaseClient || !state.portalSession?.userId) return;
+  const { data, error } = await state.supabaseClient
+    .from("assessments")
+    .select("id, created_at, role_context, language_code, spirometry_result, follow_up_plan")
+    .order("created_at", { ascending: false })
+    .limit(8);
+  if (error) {
+    setOutputMeta(error.message);
+    return;
+  }
+  state.savedAssessments = (data || []).map((row) => ({
+    id: row.id,
+    savedAt: row.created_at,
+    role: row.role_context,
+    language: row.language_code,
+    summary: {
+      spirometry: row.spirometry_result,
+      followUpPlan: row.follow_up_plan,
+    },
+  }));
+  renderTimeline();
+}
+
+function renderTimeline() {
+  if (!timelineIntro || !timelineList) return;
+  timelineIntro.textContent = state.portalSession?.mode === "supabase"
+    ? "Assessments are stored under the signed-in Supabase user with row-level security."
+    : "Demo assessments are kept only in this browser unless Supabase is configured.";
+  if (!state.savedAssessments.length) {
+    timelineList.innerHTML = `<div class="empty-state">No saved assessments yet. Run the calculator, sign in, and select Save to portal.</div>`;
+    return;
+  }
+  timelineList.innerHTML = state.savedAssessments.map((record) => {
+    const pattern = record.summary?.spirometry?.pattern || record.summary?.spirometry?.classification ? "Saved spirometry result" : "Assessment saved";
+    const followUp = record.summary?.followUpPlan?.timing || "Follow-up plan available";
+    return `
+      <article>
+        <span>${escapeHtml(new Date(record.savedAt).toLocaleString())}</span>
+        <strong>${escapeHtml(pattern)}</strong>
+        <p>${escapeHtml(followUp)} · ${escapeHtml(record.role)} · ${escapeHtml(record.language)}</p>
+      </article>
+    `;
+  }).join("");
+}
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   updateAssessment();
@@ -59,6 +568,61 @@ form.addEventListener("input", () => {
 form.addEventListener("reset", () => {
   window.setTimeout(updateAssessment, 0);
 });
+
+if (languageSelect) {
+  languageSelect.addEventListener("change", () => {
+    state.language = languageSelect.value;
+    renderLanguageSupport();
+    renderPortalShell();
+    document.documentElement.lang = state.language;
+  });
+}
+
+if (authForm) {
+  authForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    await signInPortal(false);
+  });
+}
+
+if (authRole) {
+  authRole.addEventListener("change", () => {
+    renderPortalShell();
+  });
+}
+
+if (registerAccount) {
+  registerAccount.addEventListener("click", async () => {
+    await signInPortal(true);
+  });
+}
+
+if (signOut) {
+  signOut.addEventListener("click", async () => {
+    if (state.supabaseClient && state.portalSession?.mode === "supabase") {
+      await state.supabaseClient.auth.signOut();
+    }
+    state.portalSession = null;
+    renderPortalShell();
+    setOutputMeta("Signed out");
+  });
+}
+
+document.querySelectorAll("[data-demo-account]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const account = DEMO_ACCOUNTS[button.dataset.demoAccount];
+    if (!account) return;
+    authEmail.value = account.email;
+    authPassword.value = account.password;
+    authRole.value = account.role;
+  });
+});
+
+if (saveAssessment) {
+  saveAssessment.addEventListener("click", async () => {
+    await saveCurrentAssessment();
+  });
+}
 
 printReport.addEventListener("click", () => {
   window.print();
@@ -724,7 +1288,7 @@ function setOutputMeta(text) {
 }
 
 function initNavigation() {
-  const sectionIds = ["calculator", "care-map", "patient-plan", "portal", "evidence"];
+  const sectionIds = ["calculator", "care-map", "patient-plan", "portal", "language-support", "evidence"];
   const navLinks = Array.from(document.querySelectorAll("[data-nav-link]"));
   const sectionMap = new Map(
     sectionIds

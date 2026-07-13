@@ -23,7 +23,19 @@
           <a href="#care-map" data-nav-link="care-map">Care map</a>
           <a href="#patient-plan" data-nav-link="patient-plan">Patient plan</a>
           <a href="#portal" data-nav-link="portal">Portal</a>
+          <a href="#language-support" data-nav-link="language-support">Languages</a>
           <a href="#evidence" data-nav-link="evidence">Evidence</a>
+          <label class="language-control" aria-label="Interface language">
+            <span>Language</span>
+            <select id="languageSelect">
+              <option value="en">English</option>
+              <option value="hi">हिन्दी</option>
+              <option value="kn">ಕನ್ನಡ</option>
+              <option value="ta">தமிழ்</option>
+              <option value="te">తెలుగు</option>
+              <option value="mr">मराठी</option>
+            </select>
+          </label>
           <button class="ghost-button" type="button" id="copyReport">Copy</button>
           <button class="ghost-button" type="button" id="downloadReport">JSON</button>
           <button class="ghost-button" type="button" id="printReport">Print</button>
@@ -95,7 +107,8 @@
         <a href="#care-map" data-nav-link="care-map"><span>02</span> Care map</a>
         <a href="#patient-plan" data-nav-link="patient-plan"><span>03</span> Patient plan</a>
         <a href="#portal" data-nav-link="portal"><span>04</span> Portal</a>
-        <a href="#evidence" data-nav-link="evidence"><span>05</span> Evidence</a>
+        <a href="#language-support" data-nav-link="language-support"><span>05</span> Languages</a>
+        <a href="#evidence" data-nav-link="evidence"><span>06</span> Evidence</a>
       </nav>
 
       <section class="workspace" id="calculator">
@@ -226,6 +239,7 @@
           <div class="form-actions">
             <button class="primary-button" type="submit">Update assessment</button>
             <button class="secondary-button" type="reset">Reset example</button>
+            <button class="secondary-button" type="button" id="saveAssessment">Save to portal</button>
           </div>
         </form>
 
@@ -314,40 +328,113 @@
 
       <section class="portal-band" id="portal" aria-label="Healthy ageing portal roadmap">
         <div class="portal-heading">
-          <p class="eyebrow">Portal roadmap</p>
-          <h2>Expandable into a complete healthy ageing support portal</h2>
+          <p class="eyebrow">Secure portal workspace</p>
+          <h2>Clinician, patient, and caregiver workflows</h2>
           <p>
-            The current release can become a broader clinician-and-patient platform by adding modules in staged,
-            clinically governed increments while preserving privacy, explainability, and evidence provenance.
+            Sign in to explore role-specific assessment, support, education, and follow-up workflows. Demo mode
+            works immediately; Supabase authentication and database persistence activate when project keys are configured.
+          </p>
+          <div class="portal-status" id="portalStatus">Demo mode active</div>
+        </div>
+        <div class="portal-workspace">
+          <section class="auth-card" aria-label="Sign in or register">
+            <div class="panel-heading">
+              <p class="eyebrow">Sign in / Register</p>
+              <h3>Portal access</h3>
+              <p class="panel-intro">Use a demo account below, or enter a real email/password after Supabase is configured.</p>
+            </div>
+            <form id="authForm" class="auth-form">
+              <label>
+                <span>Email or username</span>
+                <input id="authEmail" type="email" value="clinician.demo@ihacs.local" autocomplete="username">
+              </label>
+              <label>
+                <span>Password</span>
+                <input id="authPassword" type="password" value="DemoClinician#2026" autocomplete="current-password">
+              </label>
+              <label>
+                <span>Role</span>
+                <select id="authRole">
+                  <option value="clinician">Clinician</option>
+                  <option value="patient">Patient</option>
+                  <option value="caregiver">Caregiver</option>
+                  <option value="researcher">Researcher / public health</option>
+                </select>
+              </label>
+              <div class="consent-panel" aria-label="DPDP consent and user agreement">
+                <strong>Consent and user agreement</strong>
+                <p>
+                  By continuing, you agree that this portal is clinical decision support only, not emergency triage,
+                  diagnosis, or prescribing. Do not enter directly identifying information unless your organisation has
+                  a lawful basis, patient notice/consent, and appropriate safeguards under applicable Indian data
+                  protection requirements including the Digital Personal Data Protection Act.
+                </p>
+                <ul>
+                  <li>Use only the minimum patient data needed for assessment and follow-up.</li>
+                  <li>Explain the purpose of collection, storage, review, and withdrawal options to the patient.</li>
+                  <li>Use local clinical judgement, examination, spirometry quality review, and guidelines.</li>
+                  <li>Demo accounts are for training only and must not contain real patient identifiers.</li>
+                </ul>
+                <label class="checkbox-line">
+                  <input id="consentAgreement" type="checkbox">
+                  <span>I accept the consent, privacy, and clinical-use terms for this session.</span>
+                </label>
+              </div>
+              <div class="form-actions compact-actions">
+                <button class="primary-button" type="submit">Sign in</button>
+                <button class="secondary-button" type="button" id="registerAccount">Register</button>
+                <button class="ghost-button" type="button" id="signOut">Sign out</button>
+              </div>
+            </form>
+            <div class="demo-accounts" aria-label="Demo accounts">
+              <strong>Demo accounts</strong>
+              <button type="button" data-demo-account="clinician">Clinician: clinician.demo@ihacs.local / DemoClinician#2026</button>
+              <button type="button" data-demo-account="patient">Patient: patient.demo@ihacs.local / DemoPatient#2026</button>
+              <button type="button" data-demo-account="caregiver">Caregiver: care.demo@ihacs.local / DemoCare#2026</button>
+            </div>
+          </section>
+
+          <section class="role-dashboard" aria-label="Role dashboard">
+            <div class="panel-heading output-heading">
+              <div>
+                <p class="eyebrow">Workflow cockpit</p>
+                <h3 id="roleTitle">Clinician workspace</h3>
+                <p class="panel-intro" id="roleIntro">Structured review, documentation, patient education, and follow-up planning.</p>
+              </div>
+              <div class="output-meta" id="sessionStatus">Not signed in</div>
+            </div>
+            <div class="workflow-grid" id="workflowGrid"></div>
+            <div class="module-lanes" aria-label="Evidence-based portal modules">
+              <section>
+                <h4>Clinician modules</h4>
+                <div class="module-list" id="clinicianModules"></div>
+              </section>
+              <section>
+                <h4>Public, patient, and caregiver modules</h4>
+                <div class="module-list" id="publicModules"></div>
+              </section>
+            </div>
+            <div class="timeline-panel">
+              <div>
+                <strong>Saved assessment timeline</strong>
+                <p id="timelineIntro">Demo assessments are kept only in this browser unless Supabase is configured.</p>
+              </div>
+              <div class="timeline-list" id="timelineList"></div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="language-band" id="language-support" aria-label="Indian language support">
+        <div class="language-heading">
+          <p class="eyebrow">Indian language support</p>
+          <h2 id="languageTitle">Patient education in Indian languages</h2>
+          <p id="languageIntro">
+            Choose a language to adapt the patient-facing education, visit preparation, warning symptoms,
+            and follow-up support content. Clinical calculations remain unchanged.
           </p>
         </div>
-        <div class="portal-grid">
-          <article>
-            <span>Clinician workspace</span>
-            <strong>Structured assessment and decision support</strong>
-            <p>Respiratory interpretation, frailty, falls, cognition, mood, multimorbidity, medication review, nutrition, vaccination, function, referral prompts, and printable summaries.</p>
-          </article>
-          <article>
-            <span>Patient companion</span>
-            <strong>Plain-language goals and follow-up</strong>
-            <p>Patient-friendly reports, self-monitoring checklists, exercise and nutrition goals, warning symptoms, appointment preparation, and caregiver-facing guidance.</p>
-          </article>
-          <article>
-            <span>Longitudinal tracker</span>
-            <strong>Trend function, symptoms, and goals</strong>
-            <p>Future releases can track repeated spirometry, falls, BP, HbA1c, walking ability, vaccinations, and patient goals across visits.</p>
-          </article>
-          <article>
-            <span>Evidence library</span>
-            <strong>Transparent sources and model limits</strong>
-            <p>LASI reference provenance, validation notes, guideline links, version history, change logs, and external validation status by module.</p>
-          </article>
-          <article>
-            <span>Governance layer</span>
-            <strong>Safe clinical deployment</strong>
-            <p>Role-based access if accounts are added, consent language, data minimisation, audit trails, expert review, clinical disclaimers, and local guideline adaptation.</p>
-          </article>
-        </div>
+        <div class="language-grid" id="languageCards"></div>
       </section>
 
       <section class="evidence-band" id="evidence">
@@ -385,6 +472,18 @@
             <strong>Patient privacy</strong>
             <span>Client-side calculation only; no database or analytics endpoint is used.</span>
           </div>
+          <div>
+            <strong>Healthy ageing framework</strong>
+            <span>Designed around intrinsic capacity, functional ability, environment, person-centred goals, and follow-up.</span>
+          </div>
+          <div>
+            <strong>Evidence backbone</strong>
+            <span>LASI respiratory equations, WHO ICOPE/Healthy Ageing concepts, WHO physical activity guidance, and falls-prevention logic.</span>
+          </div>
+          <div>
+            <strong>Module maturity</strong>
+            <span>Education and prompts are active; diagnostic, prescribing, risk-prediction, and automated triage modules require separate validation.</span>
+          </div>
         </div>
       </section>
 
@@ -415,10 +514,15 @@
       <a href="#care-map" data-nav-link="care-map"><span>Care</span></a>
       <a href="#patient-plan" data-nav-link="patient-plan"><span>Plan</span></a>
       <a href="#portal" data-nav-link="portal"><span>Portal</span></a>
+      <a href="#language-support" data-nav-link="language-support"><span>Lang</span></a>
       <a href="#evidence" data-nav-link="evidence"><span>Info</span></a>
     </nav>
     <button class="back-to-top" type="button" id="backToTop" aria-label="Back to top">Top</button>
 
+    <script>
+      window.IHACS_CONFIG = window.IHACS_CONFIG || {};
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="app.js"></script>
   </body>
 </html>

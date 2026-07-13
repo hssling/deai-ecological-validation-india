@@ -102,6 +102,37 @@ def test_assessment_summary_explains_outputs():
     assert "High-priority prompts" in js
 
 
+def test_portal_language_consent_and_demo_accounts_exist():
+    html = (ROOT / "index.html").read_text(encoding="utf-8")
+    js = (ROOT / "app.js").read_text(encoding="utf-8")
+    assert "हिन्दी" in html
+    assert "ಕನ್ನಡ" in html
+    assert "தமிழ்" in html
+    assert "తెలుగు" in html
+    assert "मराठी" in html
+    assert "clinician.demo@ihacs.local" in html
+    assert "DemoClinician#2026" in html
+    assert "patient.demo@ihacs.local" in html
+    assert "care.demo@ihacs.local" in html
+    assert "Digital Personal Data Protection Act" in html
+    assert "consentAgreement" in js
+    assert "LANGUAGE_CONTENT" in js
+    assert "ROLE_WORKFLOWS" in js
+
+
+def test_supabase_schema_scaffold_exists():
+    migration = ROOT / "supabase" / "migrations" / "202607130001_portal_foundation.sql"
+    seed = ROOT / "supabase" / "migrations" / "202607130002_seed_education_modules.sql"
+    config = ROOT / "supabase" / "config.toml"
+    for path in (migration, seed, config, ROOT / "config.example.json"):
+        assert path.exists(), path
+    sql = migration.read_text(encoding="utf-8")
+    assert "create table public.assessments" in sql
+    assert "create table public.consent_events" in sql
+    assert "enable row level security" in sql
+    assert "active education modules are public" in sql
+
+
 def test_static_references_resolve():
     html = (ROOT / "index.html").read_text(encoding="utf-8")
     for path in re.findall(r'(?:src|href)="([^"]+)"', html):
