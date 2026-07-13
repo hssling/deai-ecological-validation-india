@@ -138,12 +138,14 @@ def test_supabase_runtime_config_is_generated_at_build_time():
     vercel = (ROOT / "vercel.json").read_text(encoding="utf-8")
     script = (ROOT / "scripts" / "build-config.js")
     assert script.exists()
+    assert (ROOT / "config.public.json").exists()
     text = script.read_text(encoding="utf-8")
     assert "NEXT_PUBLIC_SUPABASE_URL" in text
     assert "NEXT_PUBLIC_SUPABASE_ANON_KEY" in text
     assert "YOUR_PUBLIC_ANON_KEY" not in text
     assert '"build": "node scripts/build-config.js"' in package
     assert '"buildCommand": "npm run build"' in vercel
+    assert "config.public.json" in (ROOT / "app.js").read_text(encoding="utf-8")
 
 
 def test_static_references_resolve():

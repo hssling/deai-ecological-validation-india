@@ -320,9 +320,14 @@ async function loadRuntimeConfig() {
   }
   try {
     const response = await fetch("config.json", { cache: "no-store" });
-    if (!response.ok) return inlineConfig;
-    const fileConfig = await response.json();
-    return { ...inlineConfig, ...fileConfig };
+    if (response.ok) {
+      const fileConfig = await response.json();
+      return { ...inlineConfig, ...fileConfig };
+    }
+    const publicResponse = await fetch("config.public.json", { cache: "no-store" });
+    if (!publicResponse.ok) return inlineConfig;
+    const publicConfig = await publicResponse.json();
+    return { ...inlineConfig, ...publicConfig };
   } catch {
     return inlineConfig;
   }

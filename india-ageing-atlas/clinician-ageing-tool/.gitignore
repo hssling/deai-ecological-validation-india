@@ -1,3 +1,4 @@
 .vercel
 config.json
+supabase/.temp
 !assets/lasi_gamlss_lms_table.csv
