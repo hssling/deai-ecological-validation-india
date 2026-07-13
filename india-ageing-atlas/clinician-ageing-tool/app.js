@@ -266,15 +266,23 @@ const languageCards = document.getElementById("languageCards");
 const portalStatus = document.getElementById("portalStatus");
 const portalLanding = document.querySelector(".portal-landing");
 const portalLaunchGrid = document.getElementById("portalLaunchGrid");
+const authModal = document.getElementById("authModal");
+const openSignIn = document.getElementById("openSignIn");
+const openRegister = document.getElementById("openRegister");
+const closeAuthModal = document.getElementById("closeAuthModal");
+const authModeTitle = document.getElementById("authModeTitle");
+const authModeIntro = document.getElementById("authModeIntro");
 const sessionStatus = document.getElementById("sessionStatus");
 const authForm = document.getElementById("authForm");
 const authEmail = document.getElementById("authEmail");
 const authPassword = document.getElementById("authPassword");
 const authRole = document.getElementById("authRole");
 const authStatus = document.getElementById("authStatus");
+const landingAuthStatus = document.getElementById("landingAuthStatus");
 const consentAgreement = document.getElementById("consentAgreement");
 const registerAccount = document.getElementById("registerAccount");
 const signOut = document.getElementById("signOut");
+const topSignOut = document.getElementById("topSignOut");
 const roleTitle = document.getElementById("roleTitle");
 const roleIntro = document.getElementById("roleIntro");
 const workflowGrid = document.getElementById("workflowGrid");
@@ -426,6 +434,7 @@ async function signInPortal(register = false) {
     setAuthMessage(consentError
       ? `${register ? "Registered and signed in" : "Signed in"}; consent audit could not be saved`
       : register ? "Registered and signed in" : "Signed in");
+    closeAuthDialog();
     renderPortalShell();
     await loadSupabaseAssessments();
     return;
@@ -445,6 +454,7 @@ async function signInPortal(register = false) {
   };
   authRole.value = demo.role;
   setAuthMessage(register ? "Demo accounts are already registered; demo sign-in active" : "Demo sign-in active");
+  closeAuthDialog();
   renderPortalShell();
 }
 
@@ -495,6 +505,8 @@ function friendlyAuthMessage(message = "", register = false) {
 function renderPortalShell() {
   const role = state.portalSession?.role || authRole?.value || "clinician";
   const workflow = ROLE_WORKFLOWS[role] || ROLE_WORKFLOWS.clinician;
+  document.body.classList.toggle("is-authenticated", Boolean(state.portalSession));
+  document.body.classList.toggle("auth-locked", !state.portalSession);
   portalLanding?.classList.toggle("is-signed-in", Boolean(state.portalSession));
   if (roleTitle) roleTitle.textContent = workflow.title;
   if (roleIntro) roleIntro.textContent = workflow.intro;
@@ -515,6 +527,37 @@ function renderPortalShell() {
   renderPortalLaunches(role);
   renderModuleLibrary();
   renderTimeline();
+}
+
+function openAuthModalWithMode(mode = "signin") {
+  if (!authModal) return;
+  const isRegister = mode === "register";
+  if (authModeTitle) authModeTitle.textContent = isRegister ? "Create account" : "Sign in";
+  if (authModeIntro) {
+    authModeIntro.textContent = isRegister
+      ? "Create a Supabase-backed account. If email auto-confirm is enabled, registration signs you in immediately."
+      : "Enter a registered account, or use the demo accounts listed on the landing screen.";
+  }
+  authModal.hidden = false;
+  authModal.classList.add("is-open");
+  window.setTimeout(() => authEmail?.focus(), 0);
+}
+
+function closeAuthDialog() {
+  if (!authModal) return;
+  authModal.classList.remove("is-open");
+  authModal.hidden = true;
+}
+
+async function signOutPortal() {
+  if (state.supabaseClient && state.portalSession?.mode === "supabase") {
+    await state.supabaseClient.auth.signOut();
+  }
+  state.portalSession = null;
+  closeAuthDialog();
+  renderPortalShell();
+  setAuthMessage("Signed out");
+  document.getElementById("portal")?.scrollIntoView({ behavior: "smooth" });
 }
 
 function renderPortalLaunches(role) {
@@ -721,6 +764,30 @@ if (authRole) {
   });
 }
 
+if (openSignIn) {
+  openSignIn.addEventListener("click", () => openAuthModalWithMode("signin"));
+}
+
+if (openRegister) {
+  openRegister.addEventListener("click", () => openAuthModalWithMode("register"));
+}
+
+if (closeAuthModal) {
+  closeAuthModal.addEventListener("click", closeAuthDialog);
+}
+
+if (authModal) {
+  authModal.addEventListener("click", (event) => {
+    if (event.target === authModal) closeAuthDialog();
+  });
+}
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && authModal?.classList.contains("is-open")) {
+    closeAuthDialog();
+  }
+});
+
 if (registerAccount) {
   registerAccount.addEventListener("click", async () => {
     await signInPortal(true);
@@ -729,12 +796,13 @@ if (registerAccount) {
 
 if (signOut) {
   signOut.addEventListener("click", async () => {
-    if (state.supabaseClient && state.portalSession?.mode === "supabase") {
-      await state.supabaseClient.auth.signOut();
-    }
-    state.portalSession = null;
-    renderPortalShell();
-    setAuthMessage("Signed out");
+    await signOutPortal();
+  });
+}
+
+if (topSignOut) {
+  topSignOut.addEventListener("click", async () => {
+    await signOutPortal();
   });
 }
 
@@ -1421,6 +1489,7 @@ function setOutputMeta(text) {
 
 function setAuthMessage(text) {
   if (authStatus) authStatus.textContent = text;
+  if (landingAuthStatus) landingAuthStatus.textContent = text;
   setOutputMeta(text);
 }
 

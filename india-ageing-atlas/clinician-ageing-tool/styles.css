@@ -50,6 +50,35 @@ select {
   overflow-wrap: anywhere;
 }
 
+body.auth-locked .topbar,
+body.auth-locked main,
+body.auth-locked .site-footer,
+body.auth-locked .mobile-tabbar,
+body.auth-locked .back-to-top,
+body.auth-locked .landing-cockpit {
+  display: none;
+}
+
+body.auth-locked .portal-landing {
+  grid-template-columns: minmax(0, 920px);
+  justify-content: center;
+  min-height: 100vh;
+}
+
+body.auth-locked .landing-auth-card {
+  align-self: center;
+}
+
+body.is-authenticated .landing-auth-card {
+  display: none;
+}
+
+body.is-authenticated .portal-landing {
+  grid-template-columns: 1fr;
+  min-height: auto;
+  padding-top: clamp(28px, 5vw, 54px);
+}
+
 .skip-link {
   position: fixed;
   top: 10px;
@@ -245,6 +274,12 @@ button {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 26px;
+}
+
+.auth-entry-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .primary-button,
@@ -1236,6 +1271,83 @@ a:focus-visible {
   padding: 11px 12px;
 }
 
+.auth-assurance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.auth-assurance-grid div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 13px;
+}
+
+.auth-assurance-grid strong,
+.auth-assurance-grid span {
+  display: block;
+}
+
+.auth-assurance-grid strong {
+  color: #263b51;
+}
+
+.auth-assurance-grid span {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.auth-modal[hidden] {
+  display: none;
+}
+
+.auth-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  background: rgba(10, 21, 32, 0.58);
+  padding: 18px;
+}
+
+.auth-modal-panel {
+  width: min(780px, 100%);
+  max-height: min(92vh, 860px);
+  overflow: auto;
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 240, 0.98), rgba(246, 251, 255, 0.98)),
+    #ffffff;
+  box-shadow: 0 28px 70px rgba(10, 21, 32, 0.34);
+  padding: clamp(18px, 3vw, 26px);
+}
+
+.modal-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.modal-heading h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.modal-heading p {
+  margin: 7px 0 0;
+  color: var(--muted);
+}
+
+.modal-close {
+  flex: 0 0 auto;
+}
+
 .demo-accounts strong {
   color: #263b51;
 }
@@ -1793,6 +1905,7 @@ a:focus-visible {
   .pathway-grid,
   .portal-grid,
   .portal-launch-grid,
+  .auth-assurance-grid,
   .workflow-grid,
   .module-lanes,
   .language-grid,
@@ -1822,7 +1935,8 @@ a:focus-visible {
   }
 
   .cockpit-header,
-  .landing-reference {
+  .landing-reference,
+  .modal-heading {
     display: block;
   }
 

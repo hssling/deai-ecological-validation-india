@@ -7,7 +7,7 @@
     <title>India Healthy Ageing Clinical Support</title>
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
+  <body class="auth-locked">
     <a class="skip-link" href="#portal">Skip to portal access</a>
     <header class="app-header">
       <nav class="topbar" aria-label="Primary">
@@ -39,6 +39,7 @@
           <button class="ghost-button" type="button" id="copyReport">Copy</button>
           <button class="ghost-button" type="button" id="downloadReport">JSON</button>
           <button class="ghost-button" type="button" id="printReport">Print</button>
+          <button class="ghost-button" type="button" id="topSignOut">Sign out</button>
         </div>
       </nav>
 
@@ -48,62 +49,35 @@
             <p class="eyebrow">Portal access</p>
             <h1>Sign in to healthy-ageing workflows.</h1>
             <p class="lede">
-              Use demo access instantly, or register a real Supabase-backed account for saved assessments,
-              consent audit logging, education support, and longitudinal follow-up.
+              A secure entry screen for clinicians, patients, caregivers, and public-health users. Sign in before
+              the calculator, module library, saved timeline, and follow-up workspace become visible.
             </p>
             <div class="portal-status" id="portalStatus">Demo mode active</div>
           </div>
-          <form id="authForm" class="auth-form">
-            <div class="field-grid two">
-              <label>
-                <span>Email or username</span>
-                <input id="authEmail" type="email" value="clinician.demo@ihacs.local" autocomplete="username">
-              </label>
-              <label>
-                <span>Password</span>
-                <input id="authPassword" type="password" value="DemoClinician#2026" autocomplete="current-password">
-              </label>
-            </div>
-            <label>
-              <span>Role</span>
-              <select id="authRole">
-                <option value="clinician">Clinician</option>
-                <option value="patient">Patient</option>
-                <option value="caregiver">Caregiver</option>
-                <option value="researcher">Researcher / public health</option>
-              </select>
-            </label>
-            <div class="consent-panel" aria-label="DPDP consent and user agreement">
-              <strong>Consent and user agreement</strong>
-              <p>
-                By continuing, you agree that this portal is clinical decision support only, not emergency triage,
-                diagnosis, or prescribing. Do not enter directly identifying information unless your organisation has
-                a lawful basis, patient notice/consent, and appropriate safeguards under applicable Indian data
-                protection requirements including the Digital Personal Data Protection Act.
-              </p>
-              <ul>
-                <li>Use only the minimum patient data needed for assessment and follow-up.</li>
-                <li>Explain the purpose of collection, storage, review, and withdrawal options to the patient.</li>
-                <li>Use local clinical judgement, examination, spirometry quality review, and guidelines.</li>
-                <li>Demo accounts are for training only and must not contain real patient identifiers.</li>
-              </ul>
-              <label class="checkbox-line">
-                <input id="consentAgreement" type="checkbox">
-                <span>I accept the consent, privacy, and clinical-use terms for this session.</span>
-              </label>
-            </div>
-            <div class="form-actions compact-actions">
-              <button class="primary-button" type="submit">Sign in</button>
-              <button class="secondary-button" type="button" id="registerAccount">Register</button>
-              <button class="ghost-button" type="button" id="signOut">Sign out</button>
-            </div>
-          </form>
-          <div class="auth-status" id="authStatus">Select a demo account or sign in to open modules.</div>
+          <div class="auth-entry-actions">
+            <button class="primary-button" type="button" id="openSignIn">Sign in</button>
+            <button class="secondary-button" type="button" id="openRegister">Create account</button>
+          </div>
+          <div class="auth-status" id="landingAuthStatus">Sign in or use a demo account to open the portal workspace.</div>
           <div class="demo-accounts" aria-label="Demo accounts">
             <strong>Demo accounts</strong>
             <button type="button" data-demo-account="clinician">Clinician: clinician.demo@ihacs.local / DemoClinician#2026</button>
             <button type="button" data-demo-account="patient">Patient: patient.demo@ihacs.local / DemoPatient#2026</button>
             <button type="button" data-demo-account="caregiver">Caregiver: care.demo@ihacs.local / DemoCare#2026</button>
+          </div>
+          <div class="auth-assurance-grid" aria-label="Portal safeguards">
+            <div>
+              <strong>Private by design</strong>
+              <span>Use minimum necessary data and avoid direct identifiers.</span>
+            </div>
+            <div>
+              <strong>Role-based flow</strong>
+              <span>Clinician, patient, caregiver, and research views are separated after sign-in.</span>
+            </div>
+            <div>
+              <strong>Evidence linked</strong>
+              <span>LASI equations and healthy-ageing prompts stay visible in the workspace.</span>
+            </div>
           </div>
         </section>
 
@@ -125,6 +99,65 @@
         </section>
       </section>
     </header>
+
+    <div class="auth-modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authModeTitle" hidden>
+      <div class="auth-modal-panel">
+        <div class="modal-heading">
+          <div>
+            <p class="eyebrow">Secure access</p>
+            <h2 id="authModeTitle">Sign in</h2>
+            <p id="authModeIntro">Enter a registered account or select one of the demo accounts.</p>
+          </div>
+          <button class="ghost-button modal-close" type="button" id="closeAuthModal" aria-label="Close authentication dialog">Close</button>
+        </div>
+        <form id="authForm" class="auth-form">
+          <div class="auth-status" id="authStatus">Complete the form and accept consent terms.</div>
+          <div class="field-grid two">
+            <label>
+              <span>Email or username</span>
+              <input id="authEmail" type="email" value="clinician.demo@ihacs.local" autocomplete="username">
+            </label>
+            <label>
+              <span>Password</span>
+              <input id="authPassword" type="password" value="DemoClinician#2026" autocomplete="current-password">
+            </label>
+          </div>
+          <label>
+            <span>Role</span>
+            <select id="authRole">
+              <option value="clinician">Clinician</option>
+              <option value="patient">Patient</option>
+              <option value="caregiver">Caregiver</option>
+              <option value="researcher">Researcher / public health</option>
+            </select>
+          </label>
+          <div class="consent-panel" aria-label="DPDP consent and user agreement">
+            <strong>Consent and user agreement</strong>
+            <p>
+              By continuing, you agree that this portal is clinical decision support only, not emergency triage,
+              diagnosis, or prescribing. Do not enter directly identifying information unless your organisation has
+              a lawful basis, patient notice/consent, and appropriate safeguards under applicable Indian data
+              protection requirements including the Digital Personal Data Protection Act.
+            </p>
+            <ul>
+              <li>Use only the minimum patient data needed for assessment and follow-up.</li>
+              <li>Explain the purpose of collection, storage, review, and withdrawal options to the patient.</li>
+              <li>Use local clinical judgement, examination, spirometry quality review, and guidelines.</li>
+              <li>Demo accounts are for training only and must not contain real patient identifiers.</li>
+            </ul>
+            <label class="checkbox-line">
+              <input id="consentAgreement" type="checkbox">
+              <span>I accept the consent, privacy, and clinical-use terms for this session.</span>
+            </label>
+          </div>
+          <div class="form-actions compact-actions">
+            <button class="primary-button" type="submit">Sign in</button>
+            <button class="secondary-button" type="button" id="registerAccount">Register</button>
+            <button class="ghost-button" type="button" id="signOut">Sign out</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
     <main>
       <section class="notice-band" id="scope">
@@ -444,7 +477,7 @@
           </div>
           <div>
             <strong>Patient privacy</strong>
-            <span>Client-side calculation only; no database or analytics endpoint is used.</span>
+            <span>Calculations run in the browser; signed-in saved assessments use Supabase row-level security.</span>
           </div>
           <div>
             <strong>Healthy ageing framework</strong>
@@ -463,8 +496,8 @@
 
       <section class="feature-band" aria-label="Technical safeguards">
         <div>
-          <strong>Browser-only computation</strong>
-          <span>No patient identifiers, accounts, cookies, databases, or analytics endpoints are required.</span>
+          <strong>Client-side computation</strong>
+          <span>Assessment calculations run in the browser; optional signed-in saves use the configured Supabase project.</span>
         </div>
         <div>
           <strong>Equation provenance</strong>
