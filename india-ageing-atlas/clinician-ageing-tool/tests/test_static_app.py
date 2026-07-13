@@ -116,6 +116,10 @@ def test_portal_language_consent_and_demo_accounts_exist():
     assert 'id="landingAuthStatus"' in html
     assert 'id="portalLaunchGrid"' in html
     assert 'id="sessionOverviewGrid"' in html
+    assert "login-brand-lockup" in html
+    assert "IHACS Healthy Ageing Portal" in html
+    assert "Clinical Support Portal" in html
+    assert "LASI-powered respiratory and healthy-ageing decision support" in html
     assert "Sign in to healthy-ageing workflows" in html
     assert "Module library, saved timeline, and follow-up" in html
     assert "हिन्दी" in html

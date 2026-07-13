@@ -415,9 +415,100 @@ button:disabled {
   padding: clamp(20px, 3vw, 30px);
 }
 
+.login-brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  border: 1px solid rgba(214, 226, 235, 0.92);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(246, 162, 26, 0.14), rgba(8, 127, 122, 0.1) 48%, rgba(112, 85, 184, 0.1)),
+    #ffffff;
+  padding: 12px;
+}
+
+.login-logo-mark {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 26% 24%, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0) 28%),
+    linear-gradient(135deg, var(--saffron), var(--teal) 50%, var(--violet));
+  color: #ffffff;
+  box-shadow: 0 14px 32px rgba(8, 127, 122, 0.26);
+  overflow: hidden;
+}
+
+.login-logo-mark::after {
+  content: "";
+  position: absolute;
+  right: 9px;
+  bottom: 9px;
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.86);
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-radius: 50%;
+}
+
+.login-logo-mark span {
+  position: relative;
+  z-index: 1;
+  display: block;
+  line-height: 1;
+  letter-spacing: 0;
+  text-shadow: 0 2px 8px rgba(22, 33, 46, 0.24);
+}
+
+.login-logo-mark span:first-child {
+  font-size: 1.42rem;
+  font-weight: 950;
+}
+
+.login-logo-mark span:last-child {
+  margin-top: 3px;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.login-brand-lockup p,
+.login-brand-lockup strong,
+.login-brand-lockup small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.login-brand-lockup p {
+  margin: 0;
+  color: var(--teal);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.login-brand-lockup strong {
+  margin-top: 2px;
+  color: #1c3348;
+  font-size: clamp(1.18rem, 2.4vw, 1.62rem);
+  line-height: 1.08;
+}
+
+.login-brand-lockup small {
+  margin-top: 5px;
+  color: #526779;
+  font-size: 0.84rem;
+  line-height: 1.32;
+}
+
 .portal-landing h1 {
   max-width: 720px;
-  font-size: clamp(2.3rem, 5vw, 4.2rem);
+  font-size: clamp(2.25rem, 4.8vw, 4rem);
 }
 
 .portal-landing .lede {
@@ -2170,9 +2261,16 @@ a:focus-visible {
   }
 
   .cockpit-header,
+  .login-brand-lockup,
   .landing-reference,
   .modal-heading {
     display: block;
+  }
+
+  .login-logo-mark {
+    margin-bottom: 10px;
+    width: 62px;
+    height: 62px;
   }
 
   .landing-reference img {
