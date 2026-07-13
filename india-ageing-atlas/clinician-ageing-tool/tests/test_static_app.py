@@ -147,16 +147,22 @@ def test_content_enrichment_and_evidence_resources_exist():
     html = (ROOT / "index.html").read_text(encoding="utf-8")
     js = (ROOT / "app.js").read_text(encoding="utf-8")
     css = (ROOT / "styles.css").read_text(encoding="utf-8")
-    assert 'id="contentRoadmapGrid"' in html
+    assert 'id="contentPackGrid"' in html
     assert 'id="evidenceResourceGrid"' in html
     assert 'id="evidence-resources"' in html
-    assert "Content enrichment roadmap" in html
+    assert "Implemented content enrichment packs" in html
+    assert "Active content now available inside the portal" in html
+    assert "Content enrichment roadmap" not in html
+    assert "CONTENT_ROADMAP" not in js
     assert "Useful links for clinicians, patients, caregivers, and researchers" in html
-    assert "CONTENT_ROADMAP" in js
+    assert "CONTENT_PACKS" in js
     assert "EVIDENCE_RESOURCE_LIBRARY" in js
-    assert "renderContentRoadmap" in js
+    assert "renderContentPacks" in js
     assert "renderEvidenceResourceLibrary" in js
-    assert "Validated scale pack" in js
+    assert "Structured screen prompt pack" in js
+    assert "Follow-up task templates" in js
+    assert "Validation-readiness pack" in js
+    assert "Use locally validated instruments when scoring is required" in js
     assert "Intrinsic-capacity review" in js
     assert "Falls and frailty pathway" in js
     assert "LASI project hub" in js
@@ -168,6 +174,7 @@ def test_content_enrichment_and_evidence_resources_exist():
     assert "https://www.who.int/teams/maternal-newborn-child-adolescent-health-and-ageing/ageing-and-health/integrated-care-for-older-people-icope" in js
     assert "https://www.cdc.gov/steadi/index.html" in js
     assert "https://dghs.mohfw.gov.in/national-programme-for-the-health-care-of-the-elderly.php" in js
+    assert ".content-pack-grid" in css
     assert ".evidence-resource-grid" in css
     assert ".resource-card" in css
 

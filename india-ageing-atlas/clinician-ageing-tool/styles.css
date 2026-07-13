@@ -1665,7 +1665,7 @@ a:focus-visible {
   font-weight: 800;
 }
 
-.content-roadmap-panel {
+.content-pack-panel {
   display: grid;
   gap: 12px;
   margin-top: 16px;
@@ -1677,23 +1677,23 @@ a:focus-visible {
   padding: 16px;
 }
 
-.content-roadmap-panel strong {
+.content-pack-panel strong {
   display: block;
   color: #263b51;
 }
 
-.content-roadmap-panel p {
+.content-pack-panel p {
   margin: 6px 0 0;
   color: var(--muted);
 }
 
-.content-roadmap-grid {
+.content-pack-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
 }
 
-.content-roadmap-grid article {
+.content-pack-grid article {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #fff;
@@ -1701,37 +1701,50 @@ a:focus-visible {
   padding: 13px;
 }
 
-.content-roadmap-grid article:nth-child(2),
-.content-roadmap-grid article:nth-child(5) {
+.content-pack-grid article:nth-child(2),
+.content-pack-grid article:nth-child(5) {
   border-top-color: var(--teal);
 }
 
-.content-roadmap-grid article:nth-child(3),
-.content-roadmap-grid article:nth-child(6) {
+.content-pack-grid article:nth-child(3),
+.content-pack-grid article:nth-child(6) {
   border-top-color: var(--saffron);
 }
 
-.content-roadmap-grid span,
-.content-roadmap-grid strong,
-.content-roadmap-grid p {
+.content-pack-grid span,
+.content-pack-grid strong,
+.content-pack-grid p {
   display: block;
 }
 
-.content-roadmap-grid span {
+.content-pack-grid span {
   color: var(--blue);
   font-size: 0.72rem;
   font-weight: 900;
   text-transform: uppercase;
 }
 
-.content-roadmap-grid strong {
+.content-pack-grid strong {
   margin-top: 6px;
   font-size: 0.98rem;
 }
 
-.content-roadmap-grid p {
+.content-pack-grid p {
   margin-top: 6px;
   font-size: 0.84rem;
+}
+
+.content-pack-grid ul {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.content-pack-grid li {
+  color: #40566b;
+  font-size: 0.8rem;
+  line-height: 1.42;
 }
 
 .evidence-resource-panel {
@@ -2230,7 +2243,7 @@ a:focus-visible {
   .portal-launch-grid,
   .session-overview-grid,
   .auth-assurance-grid,
-  .content-roadmap-grid,
+  .content-pack-grid,
   .evidence-resource-grid,
   .workflow-grid,
   .module-lanes,

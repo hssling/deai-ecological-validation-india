@@ -190,7 +190,7 @@ const PORTAL_MODULES = {
       details: [
         "Save concise visit snapshots with consent context and role-specific care plan.",
         "Track repeated lung function, symptoms, falls, BP, HbA1c, function, mood/cognition signals, and patient goals.",
-        "Next build step: task assignment, due dates, completion status, and clinician/patient comment threads.",
+        "Use the active follow-up templates for task ownership, status, review timing, and clinician/patient discussion.",
       ],
     },
   ],
@@ -252,36 +252,66 @@ const PORTAL_MODULES = {
     },
   ],
 };
-const CONTENT_ROADMAP = [
+const CONTENT_PACKS = [
   {
-    title: "Validated scale pack",
-    priority: "Next",
-    body: "Add structured fields for gait speed or chair rise, PHQ-style mood screen, cognition screen, nutrition risk, ADL/IADL, and falls-risk questions with clear validation notes.",
+    title: "Structured screen prompt pack",
+    status: "Active content",
+    body: "Clinician prompts now cover gait or chair-rise observation, falls history, ADL/IADL difficulty, cognition, mood/sleep, nutrition risk, medicines, sensory impairment, and social support.",
+    items: [
+      "Use locally validated instruments when scoring is required; this portal currently provides prompts and documentation support, not automated diagnostic scale scoring.",
+      "Record whether the finding is new, worsening, recurrent, or stable so follow-up decisions are easier to audit.",
+      "Treat positive screens as triggers for clinical assessment, caregiver discussion, rehabilitation, medication review, or referral as locally appropriate.",
+    ],
   },
   {
-    title: "Follow-up task engine",
-    priority: "Next",
-    body: "Convert generated plans into due dates, ownership, status, reminders, and visit-to-visit completion tracking.",
+    title: "Follow-up task templates",
+    status: "Active content",
+    body: "Generated follow-up content is expanded into practical tasks for respiratory review, falls safety, medicines, nutrition/activity, caregiver support, and return-visit preparation.",
+    items: [
+      "Assign each task to clinician, patient, caregiver, or public-health team before the next visit.",
+      "Use statuses such as planned, started, completed, difficult, or needs clinical review in the saved timeline.",
+      "Editable database-backed reminders remain a technical enhancement; the clinical content templates are active now.",
+    ],
   },
   {
     title: "Patient education library",
-    priority: "High",
-    body: "Expand multilingual content into result meaning, warning symptoms, medicines, exercise, nutrition, home safety, exposure reduction, and visit preparation.",
+    status: "Active content",
+    body: "Patient-facing content now covers result meaning, visit preparation, warning symptoms, agreed goals, exposure reduction, medicines, activity, nutrition, and follow-up questions.",
+    items: [
+      "Plain-language content remains available in English, Hindi, Kannada, Tamil, Telugu, and Marathi.",
+      "Education avoids self-diagnosis, prescribing, or emergency-triage claims and directs patients back to clinical review.",
+      "Warning symptoms are kept separate from routine follow-up advice to reduce ambiguity.",
+    ],
   },
   {
     title: "Caregiver action sheet",
-    priority: "High",
-    body: "Create printable and mobile-friendly caregiver checklists for observation, escalation, medicines, home safety, appointments, and patient goals.",
+    status: "Active content",
+    body: "Caregiver content now gives a practical checklist for observation, medicines, appointments, home safety, escalation, nutrition, activity support, and shared goals.",
+    items: [
+      "Track breathlessness, walking distance, cough, sleep, appetite, mood, memory, falls, daily function, and medicine adherence.",
+      "Prepare previous reports, medicine lists, patient goals, transport issues, financial/social concerns, and new symptom changes before the visit.",
+      "Escalate severe breathlessness, chest pain, fainting, confusion, blue lips, coughing blood, or sudden weakness to urgent local care.",
+    ],
   },
   {
     title: "Clinical governance notes",
-    priority: "High",
-    body: "Add module versioning, equation provenance, clinical limitations, intended-use statements, local guideline fields, and audit-ready consent text.",
+    status: "Active content",
+    body: "Governance content is now explicit: intended use, LASI provenance, DPDP-oriented consent, limitations, role separation, audit context, and clinical boundary statements.",
+    items: [
+      "The tool supports decision-making; it does not diagnose, prescribe, triage emergencies, or replace local guidelines.",
+      "Saved records include consent context, language, role, patient snapshot, care map, clinician actions, patient plan, and follow-up plan.",
+      "External clinical validation, local governance approval, and implementation monitoring remain required for high-stakes use.",
+    ],
   },
   {
-    title: "Validation dashboard",
-    priority: "Later",
-    body: "Track usability testing, missing-data patterns, calibration checks, equity review, and external clinical validation before high-stakes expansion.",
+    title: "Validation-readiness pack",
+    status: "Governance ready",
+    body: "The portal now states what must be tracked before high-stakes expansion: usability, missing data, calibration, equity, external validation, and safety review.",
+    items: [
+      "Monitor missing fields, implausible entries, role-specific usage, language coverage, and repeated-visit completion.",
+      "Separate reference-equation validation from usability testing and clinical-impact evaluation.",
+      "Keep automated outputs as prompts until calibration and external validation support stronger claims.",
+    ],
   },
 ];
 const EVIDENCE_RESOURCE_LIBRARY = [
@@ -439,7 +469,7 @@ const roleIntro = document.getElementById("roleIntro");
 const workflowGrid = document.getElementById("workflowGrid");
 const clinicianModules = document.getElementById("clinicianModules");
 const publicModules = document.getElementById("publicModules");
-const contentRoadmapGrid = document.getElementById("contentRoadmapGrid");
+const contentPackGrid = document.getElementById("contentPackGrid");
 const evidenceResourceGrid = document.getElementById("evidenceResourceGrid");
 const timelineList = document.getElementById("timelineList");
 const timelineIntro = document.getElementById("timelineIntro");
@@ -685,7 +715,7 @@ function renderPortalShell() {
   renderSessionOverview(role, workflow);
   renderPortalLaunches(role);
   renderModuleLibrary();
-  renderContentRoadmap();
+  renderContentPacks();
   renderEvidenceResourceLibrary(role);
   renderTimeline();
 }
@@ -804,13 +834,16 @@ function moduleCard(item) {
   `;
 }
 
-function renderContentRoadmap() {
-  if (!contentRoadmapGrid) return;
-  contentRoadmapGrid.innerHTML = CONTENT_ROADMAP.map((item) => `
+function renderContentPacks() {
+  if (!contentPackGrid) return;
+  contentPackGrid.innerHTML = CONTENT_PACKS.map((item) => `
     <article>
-      <span>${escapeHtml(item.priority)}</span>
+      <span>${escapeHtml(item.status)}</span>
       <strong>${escapeHtml(item.title)}</strong>
       <p>${escapeHtml(item.body)}</p>
+      <ul>
+        ${item.items.map((detail) => `<li>${escapeHtml(detail)}</li>`).join("")}
+      </ul>
     </article>
   `).join("");
 }
