@@ -136,11 +136,11 @@ The credibility-ranking and translational-readiness tables, the figures, and the
 
 10. Brandhorst S, Choi IY, Wei M, Cheng CW, Sedrakyan S, Navarrete G, et al. A periodic diet that mimics fasting promotes multi-system regeneration, enhanced cognitive performance, and healthspan. Cell Metab. 2015;22(1):86-99. PMID:26094889.
 
-11. Collins J, Longhurst G, Roschel H, Gualano B. Resistance training and co-supplementation with creatine and protein in older subjects with frailty. J Frailty Aging. 2016. doi:10.14283/jfa.2016.85.
+11. Collins J, Longhurst G, Roschel H, Gualano B. Resistance training and co-supplementation with creatine and protein in older subjects with frailty. J Frailty Aging. 2016;5(2):1-9. doi:10.14283/jfa.2016.85.
 
-12. Houston DK, Fanning J, Nicklas BJ, Delany JP, Hsu FC, Chen SH, et al. Caloric restriction and time-restricted eating in older adults with overweight or obesity: the HALLO Pilot Study. J Gerontol A Biol Sci Med Sci. 2026;81(4):glag061. doi:10.1093/gerona/glag061.
+12. Houston DK, Fanning J, Nicklas BJ, Delany JP, Hsu FC, Chen SH, et al. Caloric restriction and time-restricted eating in older adults with overweight or obesity: The Health, Aging, and Later-Life Outcomes Pilot Study. J Gerontol A Biol Sci Med Sci. 2026;81(4):glag061. doi:10.1093/gerona/glag061.
 
-13. Olaso-Gonzalez G, Millan-Domingo F, Garcia-Fernandez L, Garcia-Tercero E, Cebrian M, Garcia-Dominguez C, et al. A multidomain lifestyle intervention is associated with improved functional trajectories and favorable changes in epigenetic aging markers in frail older adults: a randomized controlled trial. Aging Cell. 2026. doi:10.1111/acel.70376.
+13. Olaso-Gonzalez G, Millan-Domingo F, Garcia-Fernandez L, Garcia-Tercero E, Cebrian M, Garcia-Dominguez C, et al. A multidomain lifestyle intervention is associated with improved functional trajectories and favorable changes in epigenetic aging markers in frail older adults: a randomized controlled trial. Aging Cell. 2026;25(2):e70376. doi:10.1111/acel.70376.
 
 14. Ji J, Crespi CM, Yee L, Zekster YA, Al-Saleem A, Petersen L, et al. A phase II randomized placebo-controlled study of fisetin to improve physical function in breast cancer survivors: the TROFFi study rationale and trial design. Ther Adv Med Oncol. 2026;18:17588359261424668. doi:10.1177/17588359261424668.
 

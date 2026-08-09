@@ -57,11 +57,11 @@ All in-text citations resolve to a reference-list entry; all listed refs 1–14 
 | 6 | Zhu Z, Zhou X, Chen M, Dou C, Liu D, Kong L, et al. | Lancet Reg Health West Pac | 2025;66:101780 | doi:10.1016/j.lanwpc.2025.101780 | PubMed-verified; **year corrected 2026→2025** |
 | 7 | Brandhorst S, Levine ME, Wei M, Shelehchi M, Morgan TE, Nayak KS, et al. | Nat Commun | 2024;15(1):1309 | doi:10.1038/s41467-024-45260-9 | PubMed-verified |
 | 8 | Chung CL, Lawrence I, Hoffman M, Elgindi D, Nadhan K, Potnis M, et al. | GeroScience | 2019;41(6):861-869 | PMID:31761958 | PubMed-verified |
-| 9 | Moel M, Harinath G, Lee V, Nyquist A, Morgan SL, Isman A, et al. | Aging (Albany NY) | 2025;17(4):840-863 | PMID:40188830 | PubMed-verified |
+| 9 | Moel M, Harinath G, Lee V, Nyquist A, Morgan SL, Isman A, et al. | Aging (Albany NY) | 2025;17(4):908-936 | PMID:40188830 | PubMed-verified; submitted DOCX page range corrected in proof request |
 | 10 | Brandhorst S, Choi IY, Wei M, Cheng CW, Sedrakyan S, Navarrete G, et al. | Cell Metab | 2015;22(1):86-99 | PMID:26094889 | PubMed-verified |
-| 11 | Collins J, Longhurst G, Roschel H, Gualano B. | J Frailty Aging | 2016 | doi:10.14283/jfa.2016.85 | DOI confirmed |
+| 11 | Collins J, Longhurst G, Roschel H, Gualano B. | J Frailty Aging | 2016;5(2):1-9 | doi:10.14283/jfa.2016.85 | DOI and page range verified; proof correction requested |
 | 12 | Houston DK, Fanning J, Nicklas BJ, Delany JP, Hsu FC, Chen SH, et al. | J Gerontol A Biol Sci Med Sci | 2026;81(4):glag061 | doi:10.1093/gerona/glag061 | PubMed-verified (PMID 41766355); **DOI confirmed correct** |
-| 13 | Olaso-Gonzalez G, Millan-Domingo F, Garcia-Fernandez L, Garcia-Tercero E, Cebrian M, Garcia-Dominguez C, et al. | Aging Cell | 2026 | doi:10.1111/acel.70376 | DOI confirmed |
+| 13 | Olaso-Gonzalez G, Millan-Domingo F, Garcia-Fernandez L, Garcia-Tercero E, Cebrian M, Garcia-Dominguez C, et al. | Aging Cell | 2026;25(2):e70376 | doi:10.1111/acel.70376 | DOI and issue/article number verified; proof issue-number correction requested |
 | 14 | Ji J, Crespi CM, Yee L, Zekster YA, Al-Saleem A, Petersen L, et al. | Ther Adv Med Oncol | 2026;18:17588359261424668 | doi:10.1177/17588359261424668 | DOI confirmed |
 
 *Notes: Volume/issue/article and page numbers were added from PubMed, Crossref, and publisher records; entries verified directly against those sources are marked. Ref 6 was published in 2025 (eCollection January 2026); the publication year (2025) is used. Ref 12 (HALLO Pilot Study) DOI 10.1093/gerona/glag061 was independently re-checked against PubMed (PMID 41766355) and is correct. Where a DOI could not be confirmed, the PubMed identifier (PMID) is retained.*
