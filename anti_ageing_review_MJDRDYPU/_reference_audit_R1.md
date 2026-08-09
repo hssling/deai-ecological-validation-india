@@ -59,7 +59,7 @@ All in-text citations resolve to a reference-list entry; all listed refs 1–14 
 | 8 | Chung CL, Lawrence I, Hoffman M, Elgindi D, Nadhan K, Potnis M, et al. | GeroScience | 2019;41(6):861-869 | PMID:31761958 | PubMed-verified |
 | 9 | Moel M, Harinath G, Lee V, Nyquist A, Morgan SL, Isman A, et al. | Aging (Albany NY) | 2025;17(4):908-936 | PMID:40188830 | PubMed-verified; submitted DOCX page range corrected in proof request |
 | 10 | Brandhorst S, Choi IY, Wei M, Cheng CW, Sedrakyan S, Navarrete G, et al. | Cell Metab | 2015;22(1):86-99 | PMID:26094889 | PubMed-verified |
-| 11 | Collins J, Longhurst G, Roschel H, Gualano B. | J Frailty Aging | 2016;5(2):1-9 | doi:10.14283/jfa.2016.85 | DOI and page range verified; proof correction requested |
+| 11 | Collins J, Longhurst G, Roschel H, Gualano B. | J Frailty Aging | 2016;5(2):126-134 | doi:10.14283/jfa.2016.85 | DOI and page range verified; no proof correction required |
 | 12 | Houston DK, Fanning J, Nicklas BJ, Delany JP, Hsu FC, Chen SH, et al. | J Gerontol A Biol Sci Med Sci | 2026;81(4):glag061 | doi:10.1093/gerona/glag061 | PubMed-verified (PMID 41766355); **DOI confirmed correct** |
 | 13 | Olaso-Gonzalez G, Millan-Domingo F, Garcia-Fernandez L, Garcia-Tercero E, Cebrian M, Garcia-Dominguez C, et al. | Aging Cell | 2026;25(2):e70376 | doi:10.1111/acel.70376 | DOI and issue/article number verified; proof issue-number correction requested |
 | 14 | Ji J, Crespi CM, Yee L, Zekster YA, Al-Saleem A, Petersen L, et al. | Ther Adv Med Oncol | 2026;18:17588359261424668 | doi:10.1177/17588359261424668 | DOI confirmed |

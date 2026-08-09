@@ -136,7 +136,7 @@ The credibility-ranking and translational-readiness tables, the figures, and the
 
 10. Brandhorst S, Choi IY, Wei M, Cheng CW, Sedrakyan S, Navarrete G, et al. A periodic diet that mimics fasting promotes multi-system regeneration, enhanced cognitive performance, and healthspan. Cell Metab. 2015;22(1):86-99. PMID:26094889.
 
-11. Collins J, Longhurst G, Roschel H, Gualano B. Resistance training and co-supplementation with creatine and protein in older subjects with frailty. J Frailty Aging. 2016;5(2):1-9. doi:10.14283/jfa.2016.85.
+11. Collins J, Longhurst G, Roschel H, Gualano B. Resistance training and co-supplementation with creatine and protein in older subjects with frailty. J Frailty Aging. 2016;5(2):126-134. doi:10.14283/jfa.2016.85.
 
 12. Houston DK, Fanning J, Nicklas BJ, Delany JP, Hsu FC, Chen SH, et al. Caloric restriction and time-restricted eating in older adults with overweight or obesity: The Health, Aging, and Later-Life Outcomes Pilot Study. J Gerontol A Biol Sci Med Sci. 2026;81(4):glag061. doi:10.1093/gerona/glag061.
 
