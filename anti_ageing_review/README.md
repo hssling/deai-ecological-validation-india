@@ -55,12 +55,12 @@ as independently adjudicated clinical evidence.
 
 The author proof contains two unresolved author queries and several production-stage
 items. See `PROOF_CORRECTIONS.md` for the confirmation/correction list. In particular,
-the proof currently points to the repository root; after this package is committed,
-the article-specific reproducibility link should be:
+the proof currently points to the repository root; the article-specific reproducibility
+link is now live at:
 
 `https://github.com/hssling/deai-ecological-validation-india/tree/main/anti_ageing_review`
 
-Do not claim that URL as live until the package is pushed to the repository.
+The package was committed and pushed in commit `28153a7`.
 
 ## Reproducibility limitations
 

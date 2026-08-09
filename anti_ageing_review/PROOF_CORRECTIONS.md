@@ -9,7 +9,7 @@ This note records the proof-stage checks for `mjdrdypu_451_26_R3.pdf`.
 
 ## Corrections requested before final approval
 
-- Replace the proof’s data-availability link with the article-specific repository folder after it has been committed and pushed:
+- Replace the proof’s data-availability link with the article-specific repository folder, now committed and pushed in commit `28153a7`:
   `https://github.com/hssling/deai-ecological-validation-india/tree/main/anti_ageing_review`
   The current root URL resolves to an unrelated DEAI manuscript.
 - Complete production placeholders: `Volume XX`, `Issue XX`, `Month 2026`, `Web Publication: ***`, and `2026;XX:XX-XX` in the citation box.
