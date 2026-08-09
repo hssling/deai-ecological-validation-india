@@ -101,3 +101,12 @@ supplementary material, figure-generation code, input tables/CSV data, generated
 figures, and package-validation instructions. Start with the package
 [README](./anti_ageing_review/README.md) for the reproducibility workflow and
 scope limitations.
+
+## Current anti-ageing package location
+
+The complete MJDRDYPU anti-ageing evidence-map package is maintained in
+[`anti_ageing_review_MJDRDYPU/`](./anti_ageing_review_MJDRDYPU/). It contains the
+project source, configuration, data snapshots, methods, analysis outputs, tests,
+manuscript/submission assets, and proof-response files. The article's existing
+data-availability address remains the repository root:
+https://github.com/hssling/deai-ecological-validation-india

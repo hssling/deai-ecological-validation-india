@@ -44,8 +44,8 @@ def main() -> int:
             raise SystemExit(f"Missing ranking field: {field}")
 
     manuscript = (HERE / "_manuscript_R1.md").read_text(encoding="utf-8")
-    if "deai-ecological-validation-india/tree/main/anti_ageing_review" not in manuscript:
-        raise SystemExit("Manuscript data-availability link is not article-specific")
+    if "https://github.com/hssling/deai-ecological-validation-india" not in manuscript:
+        raise SystemExit("Manuscript data-availability link is missing")
     if '("controversial")' in manuscript:
         raise SystemExit("Obsolete 'controversial' label remains in manuscript text")
 
@@ -61,7 +61,7 @@ def main() -> int:
     print("Anti-ageing package validation passed:")
     print(f"- {len(rows)} intervention classes found")
     print("- required figures and source files present")
-    print("- article-specific data-availability link present")
+    print("- repository-root data-availability link present")
     print("- obsolete category wording absent from manuscript source")
     print("- excluded full-text caches absent")
     return 0
