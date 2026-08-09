@@ -1,0 +1,3 @@
+study,year,intervention,outcome,timepoint,sample_size,effect_95ci,risk_of_bias,source
+CALERIE,2023,caloric_restriction,DunedinPACE,24_months_itt,128 vs 69,-0.250 (-0.410 to -0.090),low,https://www.nature.com/articles/s43587-022-00357-y
+DO-HEALTH,2025,omega_3,DunedinPACE,36_months_itt_main_effect,DNAm subset reported in source,-0.170 (-0.310 to -0.040),some_concern,https://www.nature.com/articles/s43587-024-00793-y

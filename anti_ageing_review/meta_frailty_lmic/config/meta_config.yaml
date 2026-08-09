@@ -1,0 +1,68 @@
+project:
+  title: "Community-deliverable interventions for physical frailty in older adults"
+  short_title: "Frailty interventions for Indian primary care"
+  target_journal_primary: "Indian Journal of Medical Research"
+  target_journal_backups:
+    - "Indian Journal of Community Medicine"
+    - "National Medical Journal of India"
+  authors:
+    - "Dr Siddalingaiah H S"
+    - "Dr Chandrakala D"
+  run_date: "2026-05-18"
+
+paths:
+  raw: "data/raw"
+  interim: "data/interim"
+  processed: "data/processed"
+  results_tables: "results/tables"
+  results_figures: "results/figures"
+  docs: "docs"
+  manuscript: "manuscript"
+  submission_assets: "submission_assets"
+
+eligibility:
+  population:
+    min_age: 60
+    include_mean_age_ge: 65
+    frailty_required: true
+    preferred_settings:
+      - "community"
+      - "primary care"
+      - "outpatient"
+      - "home"
+  designs_for_meta:
+    - "randomized controlled trial"
+    - "cluster randomized trial"
+  intervention_scope:
+    - "exercise"
+    - "nutrition"
+    - "exercise plus nutrition"
+    - "multidomain"
+    - "digital or home-supported"
+    - "mind-body physical activity"
+
+outcomes:
+  primary:
+    - "frailty status improvement"
+    - "frailty score"
+    - "gait speed"
+    - "SPPB"
+    - "grip strength"
+  secondary:
+    - "ADL"
+    - "IADL"
+    - "falls"
+    - "quality of life"
+    - "adherence"
+    - "dropout"
+    - "adverse events"
+
+nma_gate:
+  min_rcts_overall: 20
+  min_nodes_with_two_studies: 3
+  require_connected_network: true
+  require_transitivity_table: true
+
+ijmr_gate:
+  protocol_registration_required: true
+  prisma_required: true

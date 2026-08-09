@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "Can Ageing Be Slowed or Reversed? Anti-ageing evidence map reproducibility package"
+message: "If you use this repository, cite the associated MJDRDYPU article and the specific release or commit used."
+type: dataset
+authors:
+  - family-names: Siddalingaiah
+    given-names: H S
+repository-code: https://github.com/hssling/deai-ecological-validation-india
+url: https://github.com/hssling/deai-ecological-validation-india/tree/main/anti_ageing_review
+license: NOASSERTION
+version: "2026.08.09"

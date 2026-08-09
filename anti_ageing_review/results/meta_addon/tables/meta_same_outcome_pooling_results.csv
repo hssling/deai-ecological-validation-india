@@ -1,0 +1,2 @@
+endpoint_family,effect_metric,outcome_name,n_studies,study_ids,fixed_effect_estimate,fixed_effect_se,fixed_effect_ci_lower,fixed_effect_ci_upper,random_effect_estimate,random_effect_se,random_effect_ci_lower,random_effect_ci_upper,tau_sq,q_statistic,i_squared_percent
+epigenetic_biological_age,cohens_d_standardized_change_difference,DunedinPACE,2,37118425; 39900648,-0.2032686822589846,0.05264252564977814,-0.3064480325325497,-0.10008933198541944,-0.2032686822589846,0.05264252564977814,-0.3064480325325497,-0.10008933198541944,0.0,0.5610094694808909,0.0

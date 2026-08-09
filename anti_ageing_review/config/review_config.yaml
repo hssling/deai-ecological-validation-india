@@ -1,0 +1,28 @@
+project:
+  title: "Can Ageing Be Slowed or Reversed? An Autonomous Systematic Review, Evidence Grading, and Mechanistic Synthesis of Anti-Ageing and Age-Reversal Interventions"
+  version: "0.1.0"
+  run_label: "initial_pilot"
+  max_records_per_query: 35
+  email: "hssling@yahoo.com"
+paths:
+  data_raw: "data_raw"
+  data_processed: "data_processed"
+  results_tables: "results/tables"
+  results_figures: "results/figures"
+  results_supplement: "results/supplement"
+  logs: "logs"
+  docs: "docs"
+  manuscript: "manuscript"
+sources:
+  pubmed: true
+  europe_pmc: true
+  crossref: true
+  preprints: true
+screening:
+  include_threshold: 5
+  uncertain_threshold: 3
+  min_year: 1990
+full_text_verification:
+  max_priority_human_records: 40
+submission:
+  revision_suffix: "final_v2"

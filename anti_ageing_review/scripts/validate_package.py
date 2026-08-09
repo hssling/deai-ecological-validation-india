@@ -22,6 +22,12 @@ def main() -> int:
         HERE / "figures" / "translational_matrix.png",
         HERE / "_manuscript_R1.md",
         HERE / "_supplementary_R1.md",
+        HERE / "METHODS.md",
+        HERE / "DATA_DICTIONARY.md",
+        HERE / "DATA_AVAILABILITY.md",
+        HERE / "config" / "review_config.yaml",
+        HERE / "src" / "run_pipeline.py",
+        HERE / "tests",
         HERE / "proof_review" / "mjdrdypu_451_26_R3_annotated_corrections.pdf",
         HERE / "proof_review" / "MJDRDYPU_451_26_author_proof_corrections_2026-08-09.docx",
     ]
@@ -43,11 +49,21 @@ def main() -> int:
     if '("controversial")' in manuscript:
         raise SystemExit("Obsolete 'controversial' label remains in manuscript text")
 
+    excluded = [
+        HERE / "data_processed" / "open_text_cache",
+        HERE / "meta_frailty_lmic" / "data" / "raw" / "pmc_fulltext",
+        HERE / "meta_dnam_clocks" / "data" / "raw" / "fulltext",
+    ]
+    for path in excluded:
+        if path.exists():
+            raise SystemExit(f"Redistribution-excluded cache is present: {path.relative_to(HERE)}")
+
     print("Anti-ageing package validation passed:")
     print(f"- {len(rows)} intervention classes found")
     print("- required figures and source files present")
     print("- article-specific data-availability link present")
     print("- obsolete category wording absent from manuscript source")
+    print("- excluded full-text caches absent")
     return 0
 
 

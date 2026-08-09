@@ -1,0 +1,14 @@
+# GRADE Profile Report
+
+| clock                      |   calculable_effects | grade_status   | certainty   | reason                             |
+|:---------------------------|---------------------:|:---------------|:------------|:-----------------------------------|
+| DNAmTL                     |                    0 | not_assessable | not_rated   | fewer than 3 real effect estimates |
+| DunedinPACE                |                    0 | not_assessable | not_rated   | fewer than 3 real effect estimates |
+| GrimAge                    |                    0 | not_assessable | not_rated   | fewer than 3 real effect estimates |
+| GrimAge2                   |                    0 | not_assessable | not_rated   | fewer than 3 real effect estimates |
+| Hannum                     |                    0 | not_assessable | not_rated   | fewer than 3 real effect estimates |
+| Horvath                    |                    0 | not_assessable | not_rated   | fewer than 3 real effect estimates |
+| PhenoAge                   |                    0 | not_assessable | not_rated   | fewer than 3 real effect estimates |
+| UNSPECIFIED_EPIGENETIC_AGE |                    1 | not_assessable | not_rated   | fewer than 3 real effect estimates |
+
+GRADE certainty was not assigned because no clock has enough real extracted effect estimates.

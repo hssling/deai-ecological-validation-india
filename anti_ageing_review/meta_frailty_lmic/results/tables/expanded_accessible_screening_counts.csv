@@ -1,0 +1,11 @@
+decision,n
+exclude_no_frailty_or_sarcopenia,3913
+exclude_not_rct_signal,2527
+fulltext_candidate,973
+secondary_disease_specific,711
+context_protocol,575
+context_review,418
+registry_candidate,353
+exclude_population_unclear,244
+maybe_intervention_unclear,239
+secondary_setting,164

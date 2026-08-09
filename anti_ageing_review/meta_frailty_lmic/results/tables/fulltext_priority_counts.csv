@@ -1,0 +1,11 @@
+screen_decision,fulltext_priority,n
+context_protocol,not_applicable,325
+context_review,not_applicable,564
+exclude,not_applicable,656
+include_title_abs,A_primary_fulltext,297
+include_title_abs,B_secondary_fulltext,210
+include_title_abs,C_sarcopenia_secondary,97
+include_title_abs,D_sarcopenia_context,123
+include_title_abs,low,402
+maybe_nonrandomized,not_applicable,384
+maybe_outcome_unclear,not_applicable,360

@@ -1,0 +1,7 @@
+gate,status,value
+Primary-accessible first-reviewer includes >=20,pass,39
+At least 3 preliminary intervention nodes with >=2 studies,pass,6
+Arm-level effect sizes extracted,not_met,0
+Comparator network connectivity assessed,not_assessed,
+Transitivity assessed,not_assessed,
+Second reviewer agreement completed,not_met,0

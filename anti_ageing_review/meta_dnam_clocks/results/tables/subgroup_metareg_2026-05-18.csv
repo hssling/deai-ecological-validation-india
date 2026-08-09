@@ -1,0 +1,16 @@
+clock,moderator,stratum,k,mu,se,ci_lower,ci_upper,tau2,I2,status,reason
+DunedinPACE,intervention_class,exercise,1,,,,,,,gate_failed,k=1 < 2; cannot pool
+DunedinPACE,intervention_class,pharmacological,1,,,,,,,gate_failed,k=1 < 2; cannot pool
+DunedinPACE,intervention_class,supplement,1,,,,,,,gate_failed,k=1 < 2; cannot pool
+DunedinPACE,intervention_class,(between-subgroup-test),0,,,,,,,gate_failed,fewer than 2 strata with k>=2
+DunedinPACE,duration_band,unknown,3,-0.008952506650985622,0.05275963482011219,-0.11236139089840552,0.09445637759643427,0.0056905138265527936,78.99130361216264,pooled,
+DunedinPACE,duration_band,(between-subgroup-test),1,,,,,,,gate_failed,fewer than 2 strata with k>=2
+DunedinPACE,age_band,unknown,3,-0.008952506650985622,0.05275963482011219,-0.11236139089840552,0.09445637759643427,0.0056905138265527936,78.99130361216264,pooled,
+DunedinPACE,age_band,(between-subgroup-test),1,,,,,,,gate_failed,fewer than 2 strata with k>=2
+DunedinPACE,health_status,unknown,3,-0.008952506650985622,0.05275963482011219,-0.11236139089840552,0.09445637759643427,0.0056905138265527936,78.99130361216264,pooled,
+DunedinPACE,health_status,(between-subgroup-test),1,,,,,,,gate_failed,fewer than 2 strata with k>=2
+DunedinPACE,(meta_regression),(continuous covariates),3,,,,,,,meta_reg_gate_failed,k=3 < 10; meta-regression not run
+GrimAge,(any),(any),2,,,,,,,gate_failed,clock k=2 < 3; subgroup pooling not run
+GrimAge2,(any),(any),1,,,,,,,gate_failed,clock k=1 < 3; subgroup pooling not run
+PCClock,(any),(any),1,,,,,,,gate_failed,clock k=1 < 3; subgroup pooling not run
+PhenoAge,(any),(any),1,,,,,,,gate_failed,clock k=1 < 3; subgroup pooling not run

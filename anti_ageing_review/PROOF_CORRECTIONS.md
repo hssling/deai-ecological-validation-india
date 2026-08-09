@@ -11,7 +11,8 @@ This note records the proof-stage checks for `mjdrdypu_451_26_R3.pdf`.
 
 - Replace the proof’s data-availability link with the article-specific repository folder, now committed and pushed in commit `28153a7`:
   `https://github.com/hssling/deai-ecological-validation-india/tree/main/anti_ageing_review`
-  The current root URL resolves to an unrelated DEAI manuscript.
+  The current root URL resolves to an unrelated DEAI manuscript. The article
+  package now includes the full project source, data snapshots, methods, and tests.
 - Complete production placeholders: `Volume XX`, `Issue XX`, `Month 2026`, `Web Publication: ***`, and `2026;XX:XX-XX` in the citation box.
 - Verify the internal proof identifier: the file is named `R3`, while the page header reads `mjdrdypu_451_26_R2_SREM`.
 - Remove or clarify the obsolete parenthetical **“controversial”** in the Results text and Figure 3 legend. The revised manuscript states that the category was renamed **Plasma/telomerase**; the old label should not persist without a clear definition.

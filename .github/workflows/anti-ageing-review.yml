@@ -1,0 +1,31 @@
+name: anti-ageing review reproducibility
+
+on:
+  push:
+    paths:
+      - "anti_ageing_review/**"
+      - ".github/workflows/anti-ageing-review.yml"
+  pull_request:
+    paths:
+      - "anti_ageing_review/**"
+      - ".github/workflows/anti-ageing-review.yml"
+
+jobs:
+  validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install review dependencies
+        run: python -m pip install -r anti_ageing_review/requirements.txt
+      - name: Regenerate evidence-map figures
+        working-directory: anti_ageing_review
+        run: python make_figures.py
+      - name: Validate package contents
+        working-directory: anti_ageing_review
+        run: python scripts/validate_package.py
+      - name: Run project tests
+        working-directory: anti_ageing_review
+        run: pytest tests -q

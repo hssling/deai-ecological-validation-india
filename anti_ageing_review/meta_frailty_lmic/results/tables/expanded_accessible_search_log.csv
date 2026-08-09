@@ -1,0 +1,10 @@
+database,status,records,note
+PubMed_existing,ok,3418,From prior authenticated PubMed XML pull
+Europe PMC,ok,5000,page_size=1000; max_pages=5
+ClinicalTrials.gov,ok,895,page_size=100; max_pages=10
+Crossref,ok,1000,rows=1000
+OpenAlex,ok,1000,rows_limit=1000
+Embase,not_searched_no_subscription,0,Requires institutional subscription/API access
+Scopus,not_searched_no_subscription,0,Requires institutional subscription/API access
+CENTRAL,not_searched_no_api_in_workspace,0,Search manually or through Cochrane Library access before final submission
+Web of Science,not_searched_no_subscription,0,Requires institutional subscription/API access

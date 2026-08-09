@@ -1,0 +1,9 @@
+clock,k,nma_performed,reason
+DunedinPACE,3,no,k=3 < 10; below NMA threshold
+GrimAge,2,no,k=2 < 10; below NMA threshold
+GrimAge2,1,no,k=1 < 10; below NMA threshold
+PhenoAge,1,no,k=1 < 10; below NMA threshold
+Horvath,0,no,k=0 < 10; below NMA threshold
+Hannum,0,no,k=0 < 10; below NMA threshold
+PCClock,1,no,k=1 < 10; below NMA threshold
+DNAmTL,0,no,k=0 < 10; below NMA threshold

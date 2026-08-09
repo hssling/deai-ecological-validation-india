@@ -1,0 +1,8 @@
+domain,criterion,result,value,interpretation
+study_volume,At least 20 high-confidence RCT candidates before numeric extraction,pass,179,Large enough to proceed to full extraction and pairwise synthesis planning.
+fulltext_availability,Open-access PMC full text mined for at least 20 candidates,pass,95,Sufficient for immediate author extraction subset; remaining records need publisher/library access.
+candidate_nodes,At least 3 preliminary intervention nodes have two or more studies,pass,8,"Component coding appears feasible, but node definitions must be confirmed from full texts."
+mined_nodes,At least 3 preliminary intervention nodes have two or more mined full texts,pass,7,Open-access subset supports early piloting of extraction and component coding.
+network_connectivity,Comparator nodes form a connected analyzable network,not_assessed,,Requires final comparator extraction; cannot be inferred from abstracts or snippets.
+transitivity,"Baseline frailty, setting, dose and comparator distributions are clinically coherent",not_assessed,,Requires final extraction and a transitivity table before NMA.
+ijmr_submission_gate,Protocol registration completed before final screening/synthesis is reported as submission-ready,pending,,PROSPERO draft exists but registration number must be added before IJMR submission assets are finalized.

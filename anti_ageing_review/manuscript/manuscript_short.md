@@ -1,0 +1,28 @@
+# Can Ageing Be Slowed or Reversed? Concise Pilot Evidence Map
+
+The current anti-ageing review is a reproducible pilot evidence map, not a final systematic review. It retrieved 1155 raw records, deduplicated to 1029, and screened 1029 records. Screening produced 29 includes, 455 uncertain records, and 545 exclusions. The full-text queue currently contains 484 include/uncertain records.
+
+The strongest extracted signal is for exercise as a healthspan-oriented human evidence domain. Caloric restriction, fasting, metformin, rapamycin/mTOR modulation, microbiome interventions, senolytics, NAD/sirtuin approaches, supplements, stem-cell approaches, plasma-based approaches, and partial reprogramming should be separated by model system and outcome type. None should be presented as proven human age reversal in this pilot draft.
+
+## Evidence Ranking
+
+|   rank | intervention_name   |   n_extracted_records |   credibility_score | credibility_tier                        |   human_records |   human_trial_records |   healthspan_records |   hard_ageing_records |   biomarker_records |   hype_rate |   max_claim_score |   mean_claim_score |
+|-------:|:--------------------|----------------------:|--------------------:|:----------------------------------------|----------------:|----------------------:|---------------------:|----------------------:|--------------------:|------------:|------------------:|-------------------:|
+|      1 | exercise            |                    80 |               31.48 | highest_current_human_healthspan_signal |              37 |                    10 |                   16 |                     3 |                   2 |        0.01 |              13.5 |               9.17 |
+|      2 | microbiome          |                    58 |               21.5  | human_signal_requires_verification      |               8 |                     2 |                    2 |                     2 |                   2 |        0.05 |              12   |               6.37 |
+|      3 | rapamycin_mtor      |                    34 |               21.24 | human_signal_requires_verification      |               7 |                     3 |                    1 |                     3 |                   3 |        0.03 |              11   |               7.01 |
+|      4 | senolytics          |                    63 |               19.94 | human_signal_requires_verification      |               7 |                     1 |                    3 |                     3 |                  25 |        0.08 |              10   |               7.1  |
+|      5 | caloric_restriction |                    57 |               19.52 | human_signal_requires_verification      |               5 |                     3 |                    0 |                    18 |                   0 |        0.04 |              11   |               7.08 |
+|      6 | lifestyle_bundle    |                     5 |               17    | human_signal_requires_verification      |               3 |                     2 |                    1 |                     0 |                   0 |        0    |              12   |               9    |
+|      7 | nad_sirtuin         |                    66 |               16.64 | human_signal_requires_verification      |               8 |                     2 |                    0 |                     1 |                   2 |        0.03 |               9.5 |               6.22 |
+|      8 | fasting             |                    13 |               15.1  | human_signal_requires_verification      |               5 |                     2 |                    0 |                     0 |                   1 |        0.15 |              10.5 |               7.15 |
+|      9 | supplements         |                     7 |               13.7  | biomarker_or_indirect_human_signal      |               6 |                     0 |                    0 |                     1 |                   0 |        0    |               9   |               7.79 |
+|     10 | metformin           |                    15 |               12.39 | biomarker_or_indirect_human_signal      |               1 |                     1 |                    0 |                     2 |                   0 |        0.13 |              11   |               7.27 |
+|     11 | sleep_circadian     |                    17 |               10.45 | biomarker_or_indirect_human_signal      |               1 |                     1 |                    0 |                     0 |                   0 |        0    |              11   |               6.65 |
+|     12 | controversial       |                    22 |                6.88 | biomarker_or_indirect_human_signal      |               2 |                     0 |                    0 |                     2 |                   0 |        0.41 |               7.5 |               3.5  |
+|     13 | reprogramming       |                    13 |                5.91 | biomarker_or_indirect_human_signal      |               0 |                     0 |                    0 |                     1 |                   1 |        0.77 |               8   |               4.23 |
+|     14 | stem_cell           |                    34 |                1.68 | low_directness_or_speculative           |               0 |                     0 |                    0 |                     0 |                   0 |        0.41 |               5.5 |               4.53 |
+
+## Required Before Submission
+
+Full-text verification, duplicate cohort review, formal risk-of-bias assessment, effect-size extraction, final references, and refreshed figures are still required.

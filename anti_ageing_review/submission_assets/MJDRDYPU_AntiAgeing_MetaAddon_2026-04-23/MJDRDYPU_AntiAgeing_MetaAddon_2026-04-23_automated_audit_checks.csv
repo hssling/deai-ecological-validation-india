@@ -1,0 +1,11 @@
+check,status
+author_name_in_blinded,pass
+author_email_in_blinded,pass
+author_orcid_in_blinded,pass
+table_1_cited,pass
+figure_1_cited,pass
+intro_reference_sequence,pass
+methods_reference_3,pass
+reference_1_present,pass
+reference_2_present,pass
+reference_3_present,pass

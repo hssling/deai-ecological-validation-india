@@ -1,0 +1,11 @@
+outcome,effect_extract_status,candidate_table_rows
+,no_candidate_table_found,5
+adherence,candidate_table_found,2
+adl_iadl,candidate_table_found,15
+adverse_events,candidate_table_found,6
+falls,candidate_table_found,12
+frailty_status_or_score,candidate_table_found,56
+gait_speed,candidate_table_found,27
+grip_strength,candidate_table_found,34
+quality_of_life,candidate_table_found,13
+sppb,candidate_table_found,21

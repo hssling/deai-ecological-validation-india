@@ -58,3 +58,22 @@ logs/*.txt
 *.tar.gz
 *.gz
 *.bz2
+
+# The anti-ageing review is a deliberately complete reproducibility package.
+# Re-include its source data and audit exports despite the generic data rules
+# above; licensed/local full-text caches remain excluded below.
+!anti_ageing_review/
+!anti_ageing_review/**/
+!anti_ageing_review/**
+anti_ageing_review/**/open_text_cache/
+anti_ageing_review/**/open_text_cache/**
+anti_ageing_review/**/pmc_fulltext/
+anti_ageing_review/**/pmc_fulltext/**
+anti_ageing_review/**/.pytest_cache/
+anti_ageing_review/**/.pytest_cache/**
+anti_ageing_review/**/__pycache__/
+anti_ageing_review/**/__pycache__/**
+anti_ageing_review/**/tmp_proof_render/
+anti_ageing_review/**/tmp_proof_render/**
+anti_ageing_review/**/proof_review_outputs/
+anti_ageing_review/**/proof_review_outputs/**

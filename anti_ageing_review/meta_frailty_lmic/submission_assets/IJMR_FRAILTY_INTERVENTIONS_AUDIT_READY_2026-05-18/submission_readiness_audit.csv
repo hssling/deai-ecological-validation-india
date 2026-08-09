@@ -1,0 +1,25 @@
+domain,check,status,detail,action
+search,PubMed download count is internally consistent,pass,search_log records_downloaded=3418; screened_title_abstract rows=3418,
+screening,Title/abstract count sums to downloaded records,pass,title_abs count sum=3418; records_downloaded=3418,
+identifiers,No duplicate PMIDs in screened records,pass,duplicate PMIDs=0,
+identifiers,High-confidence extraction queue has unique PMIDs,pass,high-confidence rows=179; duplicate PMIDs=0,
+workbook,Extraction workbook row count matches high-confidence queue,pass,workbook rows=179; high-confidence rows=179,
+workbook,Dual-author assignments match extraction workbook,pass,assignments rows=179; workbook rows=179,
+full_text,PMC fetch and mining counts match,pass,fetch fetched=95; mining ok=95,
+full_text,All PMC-mined local XML paths exist,pass,missing local paths=0,Refetch PMC XML if any path is missing.
+references,Candidate references are PubMed-searchable,pass,PubMed URL missing=0; DOI missing=4; PMCID missing=84,Final reference list still requires metadata verification after study inclusion.
+evidence_gate,Final full-text inclusion decisions completed,blocking_pending,final_include filled=0/179,Complete author-verified full-text screening before submission.
+evidence_gate,Numeric effect extraction completed,blocking_pending,converted_effect_size filled=0/1969,Extract outcome data before meta-analysis or NMA claims.
+evidence_gate,RoB 2 judgements completed,blocking_pending,RoB 2 judgement filled=0/1074,Complete RoB 2 before final inference.
+asset_presence,first_page exists,pass,IJMR_frailty_first_page_2026-05-18.docx; bytes=37347,
+asset_presence,declarations exists,pass,IJMR_frailty_declarations_2026-05-18.docx; bytes=37602,
+asset_presence,manuscript_scaffold exists,pass,IJMR_frailty_blinded_manuscript_scaffold_2026-05-18.docx; bytes=38744,
+asset_presence,figures_docx exists,pass,IJMR_frailty_figures_2026-05-18.docx; bytes=237773,
+asset_presence,supplementary exists,pass,IJMR_frailty_supplementary_2026-05-18.docx; bytes=38921,
+asset_presence,cover_letter exists,pass,IJMR_frailty_cover_letter_hold_2026-05-18.docx; bytes=37128,
+asset_presence,figure1_png exists,pass,figure1_screening_progress_flow.png; bytes=133490,
+asset_presence,figure2_png exists,pass,figure2_preliminary_node_distribution.png; bytes=105935,
+citation_sequence,Manuscript scaffold cites figures sequentially,pass,"figure mentions=1,2",Re-run after final manuscript expansion.
+citation_sequence,Main manuscript table citations,pass,"table mentions=1,2,1,2",Add sequential table citations after final results tables are generated.
+journal_gate,Protocol registration number present,blocking_pending,No PROSPERO/registry number detected in local draft.,Register protocol and update title page/manuscript before IJMR submission.
+journal_gate,Final PRISMA 2020 checklist ready,blocking_pending,Only progress-flow and extraction-preparation materials exist; final PRISMA checklist cannot be completed before final inclusion/synthesis.,Complete final PRISMA checklist after extraction and synthesis.

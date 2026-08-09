@@ -1,0 +1,14 @@
+# Local/generated files
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+tmp_proof_render/
+proof_review_outputs/
+
+# Cached full text is retrieved locally when permitted; do not commit it.
+data_processed/open_text_cache/
+meta_frailty_lmic/data/raw/pmc_fulltext/
+meta_dnam_clocks/data/raw/fulltext/

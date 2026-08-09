@@ -1,0 +1,14 @@
+name: anti-ageing-review
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pandas
+  - numpy
+  - requests
+  - pyyaml
+  - matplotlib
+  - seaborn
+  - networkx
+  - scikit-learn
+  - pytest
