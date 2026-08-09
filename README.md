@@ -87,3 +87,17 @@ This release is intended for:
 - teaching and reproducibility
 
 It should not be used for individual prediction, patient triage, or causal inference.
+
+## Anti-ageing evidence map
+
+This repository also contains a separate reproducibility package for the manuscript
+“Can Ageing Be Slowed or Reversed? A Reproducible Evidence Map and Credibility
+Ranking of Anti-Ageing and Age-Reversal Interventions.” The package is kept in
+[`anti_ageing_review/`](./anti_ageing_review/) and does not alter the DEAI project
+files above.
+
+The anti-ageing package includes the manuscript and submission source files, the
+supplementary material, figure-generation code, input tables/CSV data, generated
+figures, and package-validation instructions. Start with the package
+[README](./anti_ageing_review/README.md) for the reproducibility workflow and
+scope limitations.
